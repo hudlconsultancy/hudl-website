@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thanks — We'll Be In Touch | HUDL Consultancy</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W55VXXLD');</script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black:   #000000;
+      --white:   #ffffff;
+      --yellow:  #fbbf46;
+      --red:     #ff515e;
+      --blue:    #45aeff;
+      --cyan:    #1edfd4;
+      --dark:    #0c0c0c;
+      --mid:     #161616;
+      --muted:   #7a7a7a;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body:    'Source Sans 3', Arial, sans-serif;
+    }
+    html, body { height: 100%; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-body);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== STRIPE BAR ===== */
+    .stripe-bar { display: flex; height: 6px; flex-shrink: 0; }
+    .stripe-bar span { flex: 1; }
+    .stripe-bar span:nth-child(1) { background: var(--yellow); }
+    .stripe-bar span:nth-child(2) { background: var(--blue); }
+    .stripe-bar span:nth-child(3) { background: var(--red); }
+    .stripe-bar span:nth-child(4) { background: var(--cyan); }
+
+    /* ===== NAV ===== */
+    nav {
+      height: 72px;
+      background: rgba(0,0,0,0.92);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 32px;
+      letter-spacing: 2px;
+      display: flex;
+    }
+    .lh { color: var(--yellow); }
+    .lu { color: var(--blue); }
+    .ld { color: var(--red); }
+    .ll { color: var(--cyan); }
+
+    /* ===== MAIN ===== */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+    }
+    .thank-you-card {
+      max-width: 640px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Animated tick */
+    .tick-wrap {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(251,191,70,0.1);
+      border: 2px solid var(--yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 32px;
+      animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    }
+    @keyframes pop {
+      from { transform: scale(0); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+    .tick-wrap svg {
+      width: 36px;
+      height: 36px;
+      stroke: var(--yellow);
+      stroke-width: 2.5;
+      fill: none;
+      stroke-dasharray: 60;
+      stroke-dashoffset: 60;
+      animation: draw 0.5s 0.3s ease forwards;
+    }
+    @keyframes draw {
+      to { stroke-dashoffset: 0; }
+    }
+
+    .tag {
+      font-family: var(--font-display);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--yellow);
+      display: block;
+      margin-bottom: 16px;
+      animation: fadeUp 0.5s 0.2s ease both;
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 8vw, 80px);
+      line-height: 0.95;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+      animation: fadeUp 0.5s 0.3s ease both;
+    }
+    h1 span { color: var(--yellow); }
+    p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      margin-bottom: 12px;
+      animation: fadeUp 0.5s 0.4s ease both;
+    }
+    p strong { color: var(--white); }
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: var(--yellow);
+      margin: 32px auto;
+      animation: fadeUp 0.5s 0.5s ease both;
+    }
+    .what-next {
+      background: var(--mid);
+      border-radius: 4px;
+      padding: 28px 32px;
+      text-align: left;
+      margin-bottom: 36px;
+      animation: fadeUp 0.5s 0.5s ease both;
+    }
+    .what-next h3 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 16px;
+    }
+    .what-next ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .what-next li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.5;
+    }
+    .what-next li span.num {
+      font-family: var(--font-display);
+      font-size: 18px;
+      color: var(--yellow);
+      min-width: 24px;
+      line-height: 1.2;
+    }
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 0.5s 0.6s ease both;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--yellow);
+      color: var(--black);
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 4px;
+      transition: transform 0.2s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 15px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--white); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    footer p { font-size: 13px; color: var(--muted); }
+    footer a { font-size: 13px; color: var(--yellow); }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W55VXXLD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="stripe-bar" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+  <nav>
+    <a href="/" class="nav-logo" aria-label="HUDL Consultancy home">
+      <span class="lh">H</span><span class="lu">U</span><span class="ld">D</span><span class="ll">L</span>
+    </a>
+  </nav>
+
+  <main>
+    <div class="thank-you-card">
+      <div class="tick-wrap">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+
+      <span class="tag">Consultation Request Received</span>
+      <h1>LET'S <span>HUDL</span><br>TOGETHER.</h1>
+      <p>Thanks for reaching out — we've got your details and <strong>we'll be in touch within 1 business day</strong> to arrange your free consultation.</p>
+      <p>In the meantime, have a look at what we've been up to.</p>
+
+      <div class="divider"></div>
+
+      <div class="what-next">
+        <h3>What happens next</h3>
+        <ul>
+          <li><span class="num">01</span><span>One of the HUDL team will review your enquiry and reach out to arrange a call at a time that suits you.</span></li>
+          <li><span class="num">02</span><span>We'll spend 30 minutes understanding your business, your goals and where your marketing is falling short.</span></li>
+          <li><span class="num">03</span><span>We'll come back to you with honest thinking on where we can add the most value — no fluff, no hard sell.</span></li>
+        </ul>
+      </div>
+
+      <div class="btn-row">
+        <a href="/" class="btn-primary">Back to HUDL gg</a>
+        <a href="/blog.html" class="btn-secondary">Read Our Insights</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 HUDL Consultancy Ltd. All rights reserved.</p>
+    <a href="/">hudl.gg</a>
+  </footer>
+
+</body>
+</html>
