@@ -1708,5 +1708,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     observer.observe(el);
   });
 </script>
+  <script>
+  const form = document.querySelector('form[name="consultation"]');
+  if (form) {
+    form.addEventListener('submit', function() {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'event': 'generate_lead',
+        'form_name': 'consultation'
+      });
+    });
+  }
+</script>
 </body>
 </html>
