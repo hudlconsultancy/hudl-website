@@ -1,9 +1,12 @@
 ---
 title: Why UK Businesses Are Wasting Their PPC Budget
-date: 2026-03-13T00:00:00.000Z
+date: 2026-03-26T03:22:00.000+00:00
 category: marketing-tips
-summary: UK businesses waste thousands on PPC every month — not because paid search doesn't work, but because most campaigns are built on shaky foundations and left to drift. Here's what's going wrong and how to fix it.
+summary: UK businesses waste thousands on PPC every month — not because paid
+  search doesn't work, but because most campaigns are built on shaky foundations
+  and left to drift. Here's what's going wrong and how to fix it.
 read_time: 5 min read
+thumbnail: /images/uploads/uk-businesses-are-wasting-their-ppc-budget.png
 ---
 
 If you're running Google Ads and wondering why your cost-per-lead keeps climbing while conversions stay flat, you're not alone. PPC mistakes UK businesses make cost them thousands every month — not because paid search doesn't work, but because most campaigns are built on shaky foundations and left to drift. This post breaks down the most common culprits behind wasted ad spend and what you can do about it.
