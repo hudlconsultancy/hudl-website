@@ -4,25 +4,18 @@ backend:
   branch: main
 
 media_folder: "images/uploads"
-public_folder: "/images/uploads"
 
 collections:
-  - name: "posts"
+  - name: "blog"
     label: "Blog Posts"
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - label: "Category"
-        name: "category"
-        widget: "select"
-        options:
-          - { label: "Case Study", value: "case-study" }
-          - { label: "Marketing Tips", value: "marketing-tips" }
-          - { label: "Industry Insights", value: "industry-insights" }
-      - { label: "Summary", name: "summary", widget: "text" }
-      - { label: "Read Time (e.g. 5 min read)", name: "read_time", widget: "string" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Category", name: "category", widget: "select", options: ["case-study", "marketing-tips", "industry-insights"]}
+      - {label: "Summary", name: "summary", widget: "text"}
+      - {label: "Read Time", name: "read_time", widget: "string"}
+      - {label: "Thumbnail", name: "thumbnail", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
