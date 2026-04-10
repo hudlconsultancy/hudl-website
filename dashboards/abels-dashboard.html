@@ -6,6 +6,94 @@
 <title>Abels Moving Services — Marketing Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  #password-gate {
+    position: fixed; inset: 0;
+    background: #000000;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 9999;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+  #password-gate .gate-box {
+    width: 100%; max-width: 400px;
+    padding: 48px 40px;
+    background: #111111;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-top: 3px solid #fbbf46;
+    border-radius: 8px;
+    text-align: center;
+  }
+  #password-gate .gate-brand {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px; font-weight: 800;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: #ffffff; margin-bottom: 4px;
+  }
+  #password-gate .gate-brand span { color: #fbbf46; }
+  #password-gate .gate-sub {
+    font-size: 11px; color: #666666;
+    text-transform: uppercase; letter-spacing: 1.5px;
+    margin-bottom: 32px;
+  }
+  #password-gate input {
+    width: 100%; padding: 12px 16px;
+    background: #000000; border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 4px; color: #ffffff;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 15px; text-align: center;
+    outline: none; margin-bottom: 12px;
+    transition: border-color 0.2s;
+  }
+  #password-gate input:focus { border-color: #fbbf46; }
+  #password-gate button {
+    width: 100%; padding: 12px;
+    background: #fbbf46; color: #000000;
+    border: none; border-radius: 4px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px;
+    cursor: pointer; transition: opacity 0.2s;
+  }
+  #password-gate button:hover { opacity: 0.85; }
+  #password-gate .gate-error {
+    font-size: 12px; color: #ff515e;
+    margin-top: 10px; min-height: 18px;
+  }
+  #password-gate .gate-footer {
+    font-size: 11px; color: #444444;
+    margin-top: 24px;
+  }
+</style>
+<script>
+  // ── PASSWORD GATE ──────────────────────────────────────────
+  // Replace the value below with your chosen password before
+  // committing to GitHub. Do not share this file with the password
+  // visible — set it directly in the GitHub editor.
+  const DASHBOARD_PASSWORD = 'THEARTOFMOVING2026';
+  // ───────────────────────────────────────────────────────────
+
+  function checkPassword() {
+    const input = document.getElementById('gate-input').value;
+    const error = document.getElementById('gate-error');
+    if (input === DASHBOARD_PASSWORD) {
+      sessionStorage.setItem('abels_auth', 'true');
+      document.getElementById('password-gate').style.display = 'none';
+    } else {
+      error.textContent = 'Incorrect password. Please try again.';
+      document.getElementById('gate-input').value = '';
+      document.getElementById('gate-input').focus();
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    if (sessionStorage.getItem('abels_auth') === 'true') {
+      document.getElementById('password-gate').style.display = 'none';
+    }
+    document.getElementById('gate-input').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') checkPassword();
+    });
+  });
+</script>
+<style>
   :root {
     --navy: #000000;
     --navy-mid: #0c0c0c;
@@ -369,6 +457,18 @@
 </style>
 </head>
 <body>
+
+<!-- HEADER -->
+<div id="password-gate">
+  <div class="gate-box">
+    <div class="gate-brand">A<span>·</span>BELS</div>
+    <div class="gate-sub">Marketing Dashboard · Restricted Access</div>
+    <input type="password" id="gate-input" placeholder="Enter password" autocomplete="off">
+    <button onclick="checkPassword()">Access Dashboard</button>
+    <div class="gate-error" id="gate-error"></div>
+    <div class="gate-footer">HUDL Consultancy · AGM Group</div>
+  </div>
+</div>
 
 <!-- HEADER -->
 <div class="header">
