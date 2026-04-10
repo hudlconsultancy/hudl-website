@@ -2,3 +2,9 @@
 /admin       /admin/index.html  200
 /thank-you   /thank-you.html    200
 /posts/why-uk-businesses-are-wasting-their-ppc-budget   /posts/why-uk-businesses-are-wasting-their-ppc-budget.html   200
+# Dashboard subdomain redirects
+https://abels.hudl.gg/*          https://hudl.gg/dashboards/abels-dashboard.html  200
+https://gerson.hudl.gg/*         https://hudl.gg/dashboards/gerson-relocation-dashboard.html  200
+https://bishops.hudl.gg/*        https://hudl.gg/dashboards/bishops-move-dashboard.html  200
+https://gms.hudl.gg/*            https://hudl.gg/dashboards/gms-dashboard.html  200
+https://agm.hudl.gg/*            https://hudl.gg/dashboards/agm-group-dashboard.html  200
