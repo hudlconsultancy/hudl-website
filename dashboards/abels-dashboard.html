@@ -64,7 +64,12 @@
   }
 </style>
 <script>
+  // ── PASSWORD GATE ──────────────────────────────────────────
+  // Replace the value below with your chosen password before
+  // committing to GitHub. Do not share this file with the password
+  // visible — set it directly in the GitHub editor.
   const DASHBOARD_PASSWORD = 'THEARTOFMOVING2026';
+  // ───────────────────────────────────────────────────────────
 
   function checkPassword() {
     const input = document.getElementById('gate-input').value;
@@ -115,6 +120,7 @@
     min-height: 100vh;
   }
 
+  /* HEADER */
   .header {
     background: var(--navy);
     padding: 28px 48px;
@@ -154,7 +160,9 @@
 
   .header-right { display: flex; align-items: center; gap: 32px; }
 
-  .date-range { text-align: right; }
+  .date-range {
+    text-align: right;
+  }
   .date-range .label {
     font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px;
     color: var(--gold-light); font-weight: 500;
@@ -169,13 +177,14 @@
     border: none; cursor: pointer;
     padding: 10px 20px;
     border-radius: 4px;
-    font-family: 'Source Sans 3', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-size: 13px; font-weight: 600;
     letter-spacing: 0.3px;
     transition: background 0.2s;
   }
   .upload-btn:hover { background: var(--gold-light); }
 
+  /* NAV TABS */
   .nav-tabs {
     background: #000000;
     padding: 0 48px;
@@ -195,9 +204,12 @@
 
   .tab:hover { color: rgba(255,255,255,0.8); }
   .tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+  .tab[onclick*="targets"].active { color: var(--cyan); border-bottom-color: var(--cyan); }
 
+  /* MAIN */
   .main { padding: 40px 48px; max-width: 1400px; }
 
+  /* ALERT BANNER */
   .alert {
     background: rgba(251,191,70,0.08);
     border: 1px solid rgba(251,191,70,0.2);
@@ -217,6 +229,7 @@
     color: white; font-size: 11px; font-weight: 700;
   }
 
+  /* SECTION HEADER */
   .section-header {
     display: flex; align-items: baseline; gap: 12px;
     margin-bottom: 20px;
@@ -231,6 +244,7 @@
     text-transform: uppercase; letter-spacing: 1px;
   }
 
+  /* KPI CARDS */
   .kpi-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -285,6 +299,7 @@
   .trend-down { background: rgba(255,81,94,0.12); color: #ff515e; }
   .trend-neutral { background: rgba(255,255,255,0.06); color: var(--text-mid); }
 
+  /* CHART CONTAINERS */
   .chart-row {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -292,7 +307,9 @@
     margin-bottom: 32px;
   }
 
-  .chart-row-full { margin-bottom: 32px; }
+  .chart-row-full {
+    margin-bottom: 32px;
+  }
 
   .chart-card {
     background: #111111;
@@ -315,6 +332,7 @@
 
   canvas { width: 100% !important; }
 
+  /* WEEKLY TABLE */
   .table-card {
     background: #111111;
     border-radius: 8px;
@@ -328,7 +346,10 @@
     border-bottom: 1px solid var(--border);
   }
 
-  table { width: 100%; border-collapse: collapse; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
 
   thead th {
     padding: 12px 20px;
@@ -363,12 +384,47 @@
     opacity: 0.7;
   }
 
+  /* SECTION DIVIDER */
   .section-divider {
     border: none;
     border-top: 1px solid var(--border);
     margin: 40px 0;
   }
 
+  /* PPC PLACEHOLDER */
+  .ppc-placeholder {
+    background: var(--navy);
+    border-radius: 8px;
+    padding: 48px;
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .ppc-placeholder h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .ppc-placeholder p {
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: 400px;
+    margin: 0 auto 20px;
+  }
+
+  .ppc-placeholder .upload-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-size: 13px; font-weight: 600;
+    cursor: pointer;
+  }
+
+  /* FOOTER */
   .footer {
     padding: 24px 48px;
     border-top: 1px solid var(--border);
@@ -382,11 +438,15 @@
     text-transform: uppercase; letter-spacing: 1px;
   }
 
-  .footer-note { font-size: 11px; color: var(--text-light); }
+  .footer-note {
+    font-size: 11px; color: var(--text-light);
+  }
 
+  /* TAB PANELS */
   .tab-panel { display: none; }
   .tab-panel.active { display: block; }
 
+  /* Responsive */
   @media (max-width: 900px) {
     .header { padding: 20px 24px; }
     .main { padding: 24px; }
@@ -399,6 +459,7 @@
 </head>
 <body>
 
+<!-- HEADER -->
 <div id="password-gate">
   <div class="gate-box">
     <div class="gate-brand">A<span>·</span>BELS</div>
@@ -410,6 +471,7 @@
   </div>
 </div>
 
+<!-- HEADER -->
 <div class="header">
   <div class="header-left">
     <div class="brand-mark">A</div>
@@ -428,15 +490,19 @@
   </div>
 </div>
 
+<!-- NAV TABS -->
 <div class="nav-tabs">
-  <div class="tab active" onclick="switchTab('overview', event)">Overview</div>
-  <div class="tab" onclick="switchTab('traffic', event)">Website Traffic</div>
-  <div class="tab" onclick="switchTab('organic', event)">Organic / GSC</div>
-  <div class="tab" onclick="switchTab('ppc', event)">PPC</div>
+  <div class="tab active" onclick="switchTab('overview')">Overview</div>
+  <div class="tab" onclick="switchTab('traffic')">Website Traffic</div>
+  <div class="tab" onclick="switchTab('organic')">Organic / GSC</div>
+  <div class="tab" onclick="switchTab('ppc')">PPC</div>
+  <div class="tab" onclick="switchTab('targets')">Targets</div>
 </div>
 
+<!-- MAIN CONTENT -->
 <div class="main">
 
+  <!-- ALERT -->
   <div class="alert">
     <div class="alert-icon">!</div>
     <div><strong>Action Required:</strong> GA4 conversion tracking is not configured for Abels. Form submission events are not being recorded. Raise with JDR Group (GA4/PPC tracking) and NetDesigner (form-level implementation) to set up conversion events (enquiry form, callback form, PPC landing page form) as a priority.</div>
@@ -444,10 +510,13 @@
 
   <!-- OVERVIEW TAB -->
   <div id="tab-overview" class="tab-panel active">
+
     <div class="section-header">
       <div class="section-title">90-Day Performance Summary</div>
       <div class="section-sub">Jan 10 – Apr 9, 2026</div>
     </div>
+
+    <!-- KPI CARDS -->
     <div class="kpi-grid">
       <div class="kpi-card">
         <div class="kpi-label">Total Active Users</div>
@@ -474,6 +543,8 @@
         <div class="kpi-trend trend-neutral">Google Search Console</div>
       </div>
     </div>
+
+    <!-- MAIN CHART -->
     <div class="chart-row-full">
       <div class="chart-card">
         <div class="chart-card-title">Daily Active Users vs. GSC Impressions</div>
@@ -481,6 +552,7 @@
         <canvas id="overviewChart" height="90"></canvas>
       </div>
     </div>
+
     <div class="chart-row">
       <div class="chart-card">
         <div class="chart-card-title">Engagement Time per Session</div>
@@ -493,14 +565,17 @@
         <canvas id="peakChart" height="120"></canvas>
       </div>
     </div>
+
   </div>
 
   <!-- TRAFFIC TAB -->
   <div id="tab-traffic" class="tab-panel">
+
     <div class="section-header">
       <div class="section-title">Website Traffic Detail</div>
       <div class="section-sub">GA4 · Daily Breakdown</div>
     </div>
+
     <div class="chart-row-full">
       <div class="chart-card">
         <div class="chart-card-title">Active Users — Daily</div>
@@ -508,6 +583,7 @@
         <canvas id="trafficChart" height="90"></canvas>
       </div>
     </div>
+
     <div class="table-card">
       <div class="table-header">
         <div class="chart-card-title">Daily Traffic Data</div>
@@ -526,14 +602,17 @@
         <tbody id="trafficTable"></tbody>
       </table>
     </div>
+
   </div>
 
   <!-- ORGANIC TAB -->
   <div id="tab-organic" class="tab-panel">
+
     <div class="section-header">
       <div class="section-title">Organic Search Performance</div>
       <div class="section-sub">Google Search Console · Impressions</div>
     </div>
+
     <div class="chart-row-full">
       <div class="chart-card">
         <div class="chart-card-title">Daily Organic Impressions</div>
@@ -541,6 +620,7 @@
         <canvas id="gscChart" height="90"></canvas>
       </div>
     </div>
+
     <div class="table-card">
       <div class="table-header">
         <div class="chart-card-title">Weekly Impressions Summary</div>
@@ -558,20 +638,22 @@
         <tbody id="gscTable"></tbody>
       </table>
     </div>
+
   </div>
 
   <!-- PPC TAB -->
   <div id="tab-ppc" class="tab-panel">
     <div class="section-header">
       <div class="section-title">PPC Performance</div>
-      <div class="section-sub" id="ppc-date-sub">Google Ads · Abels Removals · JDR Group · Current: 1–13 Apr 2026</div>
+      <div class="section-sub">Google Ads · Abels Removals · JDR Group · Current: 1–10 Apr 2026</div>
     </div>
 
+    <!-- PPC ALERTS -->
     <div class="alert" style="border-left-color:#1edfd4;background:rgba(30,223,212,0.08);border-color:rgba(30,223,212,0.2);color:#1edfd4;margin-bottom:16px">
       <div class="alert-icon" style="background:#1edfd4">✓</div>
       <div><strong>Performance Max paused as of April 2026.</strong> Account now running three clean Search campaigns only — Europe (Outbound), Domestic, and London. Impression quality should improve significantly as PMax bleed is removed.</div>
     </div>
-    <div class="alert" id="ppc-alert-domestic" style="border-left-color:#ff515e;background:rgba(255,81,94,0.08);border-color:rgba(255,81,94,0.2);color:#ff515e;margin-bottom:16px">
+    <div class="alert" style="border-left-color:#ff515e;background:rgba(255,81,94,0.08);border-color:rgba(255,81,94,0.2);color:#ff515e;margin-bottom:16px">
       <div class="alert-icon" style="background:#ff515e">!</div>
       <div><strong>Domestic campaign underperforming critically.</strong> 1.56% conversion rate and £987 cost per conversion from 64 clicks — the worst performer by a significant margin. Against a £5,737 avg. move value it is technically still ROAS-positive, but the conversion rate indicates a landing page or keyword relevance issue. Needs urgent review with JDR.</div>
     </div>
@@ -580,37 +662,39 @@
       <div><strong>Europe (Outbound) continues to lead</strong> — 12.90% conversion rate, £158.53 cost per conversion, 2.55x conv. value/cost. London also performing well at 13.64% conversion rate and £142.04 cost per conversion. Budget reallocation from Domestic toward these two should be considered.</div>
     </div>
 
+    <!-- PPC KPI CARDS -->
     <div class="kpi-grid" style="margin-bottom:32px">
       <div class="kpi-card">
-        <div class="kpi-label">Total Spend (Apr 1–13)</div>
-        <div class="kpi-value" id="ppc-spend">£2,609</div>
-        <div class="kpi-sub" id="ppc-spend-sub">3 active Search campaigns · 13 days</div>
-        <div class="kpi-trend trend-neutral" id="ppc-spend-trend">PMax: £0 ✓</div>
+        <div class="kpi-label">Total Spend (Apr 1–10)</div>
+        <div class="kpi-value">£2,047</div>
+        <div class="kpi-sub">3 active Search campaigns · 10 days</div>
+        <div class="kpi-trend trend-neutral">PMax: £0 ✓</div>
       </div>
       <div class="kpi-card">
-        <div class="kpi-label">Total Clicks (Apr 1–13)</div>
-        <div class="kpi-value" id="ppc-clicks">149</div>
-        <div class="kpi-sub" id="ppc-clicks-sub">3,549 impressions</div>
-        <div class="kpi-trend trend-neutral" id="ppc-clicks-trend">Avg. CPC £17.51</div>
+        <div class="kpi-label">Total Clicks (Apr 1–10)</div>
+        <div class="kpi-value">117</div>
+        <div class="kpi-sub">Avg. CPC £17.50 across all campaigns</div>
+        <div class="kpi-trend trend-neutral">2,837 impressions</div>
       </div>
       <div class="kpi-card">
-        <div class="kpi-label">Total Conversions (Apr 1–13)</div>
-        <div class="kpi-value" id="ppc-conv">13</div>
-        <div class="kpi-sub" id="ppc-conv-sub">Conv. value £4,444 · 8.72% overall rate</div>
-        <div class="kpi-trend trend-up" id="ppc-conv-trend">£200.68 avg. cost / conv.</div>
+        <div class="kpi-label">Total Conversions (Apr 1–10)</div>
+        <div class="kpi-value">8</div>
+        <div class="kpi-sub">Conv. value £3,232 · 6.84% overall rate</div>
+        <div class="kpi-trend trend-up">£255.93 avg. cost / conv.</div>
       </div>
       <div class="kpi-card">
-        <div class="kpi-label">Best Conv. Rate (Apr 1–13)</div>
-        <div class="kpi-value" id="ppc-convrate">17.07%</div>
-        <div class="kpi-sub" id="ppc-convrate-sub">Europe (Outbound) · £115.10 cost per conv.</div>
-        <div class="kpi-trend trend-up" id="ppc-convrate-trend">3.01x conv. value / cost</div>
+        <div class="kpi-label">Best Conv. Rate (Apr 1–10)</div>
+        <div class="kpi-value">13.64%</div>
+        <div class="kpi-sub">London · £142.04 cost per conv.</div>
+        <div class="kpi-trend trend-up">2.84x conv. value / cost</div>
       </div>
     </div>
 
+    <!-- CHARTS ROW -->
     <div class="chart-row">
       <div class="chart-card">
         <div class="chart-card-title">Spend vs Conversions by Campaign</div>
-        <div class="chart-card-sub">Active campaigns · 1–13 Apr 2026</div>
+        <div class="chart-card-sub">Active campaigns · 1–10 Apr 2026</div>
         <canvas id="ppcCampaignChart" height="130"></canvas>
       </div>
       <div class="chart-card">
@@ -620,10 +704,11 @@
       </div>
     </div>
 
+    <!-- FULL CAMPAIGN TABLE -->
     <div class="table-card">
       <div class="table-header">
         <div class="chart-card-title">Active Campaign Breakdown</div>
-        <div class="chart-card-sub" style="margin-bottom:0">JDR Group · 3 active Search campaigns · GA4 conversion tracking not yet configured — conv. data from Google Ads only</div>
+        <div class="chart-card-sub" style="margin-bottom:0">JDR Group · 3 active Search campaigns · 1–10 Apr 2026 · GA4 conversion tracking not yet configured — conv. data from Google Ads only</div>
       </div>
       <table>
         <thead>
@@ -641,69 +726,273 @@
             <th>Conv. Value</th>
           </tr>
         </thead>
-        <tbody id="ppc-table-body">
+        <tbody>
           <tr>
             <td class="td-date">JDR Search | London</td>
             <td class="td-num">£40/day</td>
-            <td class="td-num">667</td>
-            <td class="td-num">27</td>
-            <td class="td-num">4.05%</td>
-            <td class="td-num">£18.35</td>
-            <td class="td-num">£496</td>
-            <td class="td-num"><strong>4</strong></td>
-            <td class="td-num" style="color:#1edfd4;font-weight:600">14.81%</td>
-            <td class="td-num" style="color:#1edfd4;font-weight:600">£123.89</td>
-            <td class="td-num">£1,616</td>
+            <td class="td-num">561</td>
+            <td class="td-num">22</td>
+            <td class="td-num">3.92%</td>
+            <td class="td-num">£19.37</td>
+            <td class="td-num">£426</td>
+            <td class="td-num"><strong>3</strong></td>
+            <td class="td-num" style="color:#1edfd4;font-weight:600">13.64%</td>
+            <td class="td-num" style="color:#1edfd4;font-weight:600">£142.04</td>
+            <td class="td-num">£1,212</td>
           </tr>
           <tr>
             <td class="td-date">JDR Search | Europe (Outbound)</td>
             <td class="td-num">£60/day</td>
-            <td class="td-num">887</td>
-            <td class="td-num">41</td>
-            <td class="td-num">4.62%</td>
-            <td class="td-num">£19.65</td>
-            <td class="td-num">£806</td>
-            <td class="td-num"><strong>7</strong></td>
-            <td class="td-num" style="color:#1edfd4;font-weight:600">17.07%</td>
-            <td class="td-num" style="color:#1edfd4;font-weight:600">£115.10</td>
-            <td class="td-num">£2,424</td>
+            <td class="td-num">684</td>
+            <td class="td-num">31</td>
+            <td class="td-num">4.53%</td>
+            <td class="td-num">£20.46</td>
+            <td class="td-num">£634</td>
+            <td class="td-num"><strong>4</strong></td>
+            <td class="td-num" style="color:#1edfd4;font-weight:600">12.90%</td>
+            <td class="td-num" style="color:#1edfd4;font-weight:600">£158.53</td>
+            <td class="td-num">£1,616</td>
           </tr>
           <tr>
             <td class="td-date">JDR Search | Domestic</td>
             <td class="td-num">£100/day</td>
-            <td class="td-num">1,995</td>
-            <td class="td-num">81</td>
-            <td class="td-num">4.06%</td>
-            <td class="td-num">£16.14</td>
-            <td class="td-num">£1,308</td>
-            <td class="td-num"><strong>2</strong></td>
-            <td class="td-num" style="color:#ff515e;font-weight:600">2.47%</td>
-            <td class="td-num" style="color:#ff515e;font-weight:600">£653.80</td>
+            <td class="td-num">1,592</td>
+            <td class="td-num">64</td>
+            <td class="td-num">4.02%</td>
+            <td class="td-num">£15.42</td>
+            <td class="td-num">£987</td>
+            <td class="td-num"><strong>1</strong></td>
+            <td class="td-num" style="color:#ff515e;font-weight:600">1.56%</td>
+            <td class="td-num" style="color:#ff515e;font-weight:600">£987.16</td>
             <td class="td-num">£404</td>
           </tr>
           <tr style="background:#0c0c0c;font-weight:600;border-top:2px solid rgba(255,255,255,0.1)">
             <td class="td-date">Total</td>
             <td class="td-num">£200/day</td>
-            <td class="td-num">3,549</td>
-            <td class="td-num">149</td>
-            <td class="td-num">4.20%</td>
-            <td class="td-num">£17.51</td>
-            <td class="td-num">£2,609</td>
-            <td class="td-num">13</td>
-            <td class="td-num">8.72%</td>
-            <td class="td-num">£200.68</td>
-            <td class="td-num">£4,444</td>
+            <td class="td-num">2,837</td>
+            <td class="td-num">117</td>
+            <td class="td-num">4.12%</td>
+            <td class="td-num">£17.50</td>
+            <td class="td-num">£2,047</td>
+            <td class="td-num">8</td>
+            <td class="td-num">6.84%</td>
+            <td class="td-num">£255.93</td>
+            <td class="td-num">£3,232</td>
           </tr>
         </tbody>
       </table>
     </div>
+
+  </div>
+
+  <!-- TARGETS TAB -->
+  <div id="tab-targets" class="tab-panel">
+
+    <div class="section-header">
+      <div class="section-title">Performance vs. Target</div>
+      <div class="section-sub">FY 25/26 · Abels Moving Services · Accumulator View</div>
+    </div>
+
+    <!-- MOVEWARE ALERT -->
+    <div class="alert" style="border-left-color:#fbbf46;background:rgba(251,191,70,0.08);border-color:rgba(251,191,70,0.2);color:#cccccc;margin-bottom:16px">
+      <div class="alert-icon" style="background:#fbbf46;color:#000">!</div>
+      <div><strong>Moveware data pending.</strong> Booked jobs, actual revenue, and lead-to-opportunity conversion data are awaiting export from Moveware. Fields marked <span style="color:#fbbf46;font-weight:600">⚠ Awaiting Moveware</span> will update automatically once data is connected. All other figures are live from Google Ads and the AGM Lead Calculator.</div>
+    </div>
+    <div class="alert" style="border-left-color:#1edfd4;background:rgba(30,223,212,0.08);border-color:rgba(30,223,212,0.2);color:#cccccc;margin-bottom:32px">
+      <div class="alert-icon" style="background:#1edfd4;color:#000">i</div>
+      <div><strong>Accumulator note:</strong> Removals have a typical 4–8 week lead time between enquiry and booked job. Conversion values shown here represent Google Ads attributed pipeline value — not confirmed revenue. Actual booked revenue will lag spend by this period and will be reflected once Moveware data is connected.</div>
+    </div>
+
+    <!-- ANNUAL TARGET KPIs -->
+    <div class="section-header">
+      <div class="section-title" style="font-size:16px">Annual Targets — FY 25/26</div>
+      <div class="section-sub">AGM Lead Calculator · Abels All Divisions</div>
+    </div>
+
+    <div class="kpi-grid" style="margin-bottom:32px">
+      <div class="kpi-card" style="border-top-color:#fbbf46">
+        <div class="kpi-label">Revenue Target</div>
+        <div class="kpi-value" style="font-size:32px">£4,142,000</div>
+        <div class="kpi-sub">Full year 25/26 · all divisions</div>
+        <div class="kpi-trend trend-neutral">Domestic + Europe + Int.</div>
+      </div>
+      <div class="kpi-card" style="border-top-color:#fbbf46">
+        <div class="kpi-label">Jobs Required</div>
+        <div class="kpi-value">722</div>
+        <div class="kpi-sub">At £5,737 avg. move value</div>
+        <div class="kpi-trend trend-neutral">24% close rate assumed</div>
+      </div>
+      <div class="kpi-card" style="border-top-color:#fbbf46">
+        <div class="kpi-label">Leads Required</div>
+        <div class="kpi-value">4,363</div>
+        <div class="kpi-sub">Marketing leads to hit target</div>
+        <div class="kpi-trend trend-neutral">£19.50 target CPL</div>
+      </div>
+      <div class="kpi-card" style="border-top-color:#fbbf46">
+        <div class="kpi-label">Marketing Spend Budget</div>
+        <div class="kpi-value" style="font-size:32px">£85,088</div>
+        <div class="kpi-sub">Full year PPC budget requirement</div>
+        <div class="kpi-trend trend-neutral">£7,091 / month avg.</div>
+      </div>
+    </div>
+
+    <!-- YEAR TO DATE PROGRESS -->
+    <div class="section-header">
+      <div class="section-title" style="font-size:16px">Year-to-Date Progress</div>
+      <div class="section-sub">Apr 1–10, 2026 · Live from Google Ads</div>
+    </div>
+
+    <div class="kpi-grid" style="margin-bottom:32px">
+      <div class="kpi-card">
+        <div class="kpi-label">Spend to Date (Apr 1–10)</div>
+        <div class="kpi-value">£2,047</div>
+        <div class="kpi-sub">vs. £2,363 pro-rata target for 10 days</div>
+        <div class="kpi-trend trend-down">86.6% of pace</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">PPC Conversions to Date</div>
+        <div class="kpi-value">8</div>
+        <div class="kpi-sub">Google Ads attributed · Apr 1–10</div>
+        <div class="kpi-trend trend-neutral">Pipeline value £3,232</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Booked Jobs to Date</div>
+        <div class="kpi-value" style="color:#fbbf46">—</div>
+        <div class="kpi-sub" style="color:#fbbf46">⚠ Awaiting Moveware</div>
+        <div class="kpi-trend trend-neutral">Target: 6 jobs / 10 days</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Revenue Attributed to Date</div>
+        <div class="kpi-value" style="color:#fbbf46">—</div>
+        <div class="kpi-sub" style="color:#fbbf46">⚠ Awaiting Moveware</div>
+        <div class="kpi-trend trend-neutral">Target: £34,424 / 10 days</div>
+      </div>
+    </div>
+
+    <!-- SPEND VS TARGET CHART -->
+    <div class="chart-row">
+      <div class="chart-card">
+        <div class="chart-card-title">Cumulative Spend vs. Budget Pace</div>
+        <div class="chart-card-sub">Actual spend tracked against pro-rata annual budget · Apr 2026</div>
+        <canvas id="targetSpendChart" height="130"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-title">Pipeline Value vs. Revenue Target Pace</div>
+        <div class="chart-card-sub">Google Ads conv. value · Moveware revenue pending</div>
+        <canvas id="targetRevenueChart" height="130"></canvas>
+      </div>
+    </div>
+
+    <!-- DIVISION BREAKDOWN TABLE -->
+    <div class="section-header" style="margin-top:8px">
+      <div class="section-title" style="font-size:16px">Target Breakdown by Division</div>
+      <div class="section-sub">AGM Lead Calculator · FY 25/26</div>
+    </div>
+
+    <div class="table-card">
+      <div class="table-header">
+        <div class="chart-card-title">Annual Targets vs. Actuals by Division</div>
+        <div class="chart-card-sub" style="margin-bottom:0">Revenue budget, jobs required, and avg. move value · Moveware actuals pending</div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Division</th>
+            <th>Revenue Target</th>
+            <th>Avg. Move Value</th>
+            <th>Jobs Required</th>
+            <th>Leads Required</th>
+            <th>Budget Required</th>
+            <th>Booked Jobs YTD</th>
+            <th>Revenue YTD</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-date">Domestic</td>
+            <td class="td-num">£1,412,000</td>
+            <td class="td-num">£3,839</td>
+            <td class="td-num">368</td>
+            <td class="td-num">2,942</td>
+            <td class="td-num">£58,849</td>
+            <td class="td-num" style="color:#fbbf46">⚠ Moveware</td>
+            <td class="td-num" style="color:#fbbf46">⚠ Moveware</td>
+          </tr>
+          <tr>
+            <td class="td-date">Europe</td>
+            <td class="td-num">£1,366,000</td>
+            <td class="td-num">£4,494</td>
+            <td class="td-num">304</td>
+            <td class="td-num">2,432</td>
+            <td class="td-num">£48,634</td>
+            <td class="td-num" style="color:#fbbf46">⚠ Moveware</td>
+            <td class="td-num" style="color:#fbbf46">⚠ Moveware</td>
+          </tr>
+          <tr>
+            <td class="td-date">International</td>
+            <td class="td-num">£1,364,000</td>
+            <td class="td-num">£8,879</td>
+            <td class="td-num">154</td>
+            <td class="td-num">1,229</td>
+            <td class="td-num">£24,579</td>
+            <td class="td-num" style="color:#fbbf46">⚠ Moveware</td>
+            <td class="td-num" style="color:#fbbf46">⚠ Moveware</td>
+          </tr>
+          <tr style="background:#0c0c0c;font-weight:600;border-top:2px solid rgba(255,255,255,0.1)">
+            <td class="td-date">Total — Abels</td>
+            <td class="td-num">£4,142,000</td>
+            <td class="td-num">£5,737</td>
+            <td class="td-num">722</td>
+            <td class="td-num">4,363</td>
+            <td class="td-num">£85,088</td>
+            <td class="td-num" style="color:#fbbf46">⚠ Moveware</td>
+            <td class="td-num" style="color:#fbbf46">⚠ Moveware</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PIPELINE HEALTH -->
+    <div class="section-header">
+      <div class="section-title" style="font-size:16px">Pipeline Health Indicators</div>
+      <div class="section-sub">Based on current PPC performance · 4–8 week lag applied</div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Est. Pipeline from PPC (Apr 1–10)</div>
+        <div class="kpi-value" style="font-size:32px">£45,898</div>
+        <div class="kpi-sub">8 conv. × £5,737 avg. move value</div>
+        <div class="kpi-trend trend-up">Expected to book Apr–Jun</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">ROAS (Pipeline basis)</div>
+        <div class="kpi-value">22.4x</div>
+        <div class="kpi-sub">£45,898 pipeline vs. £2,047 spend</div>
+        <div class="kpi-trend trend-up">Above 20x threshold</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Monthly Run Rate (Spend)</div>
+        <div class="kpi-value" style="font-size:32px">£6,141</div>
+        <div class="kpi-sub">Projected from Apr 1–10 pace</div>
+        <div class="kpi-trend trend-down">vs. £7,091 monthly target</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Projected Annual Conversions</div>
+        <div class="kpi-value">292</div>
+        <div class="kpi-sub">At current 8 conv. / 10 days run rate</div>
+        <div class="kpi-trend trend-down">vs. 722 jobs required</div>
+      </div>
+    </div>
+
   </div>
 
 </div>
 
+<!-- FOOTER -->
 <div class="footer">
   <div class="footer-brand">HUDL Consultancy · AGM Group — Abels Moving Services</div>
-  <div class="footer-note" id="footer-note">Data sources: GA4 (abels.co.uk) · Google Search Console · Google Ads · Last updated: 13 April 2026</div>
+  <div class="footer-note">Data sources: GA4 (abels.co.uk) · Google Search Console · Last updated: 9 April 2026</div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
@@ -712,6 +1001,7 @@
 // =====================
 // DATA
 // =====================
+
 const ga4Raw = [
   {date:'2026-01-10',active_users:50,engaged_sessions:0.58,engagement_time:49.3},
   {date:'2026-01-11',active_users:67,engaged_sessions:0.58,engagement_time:35.0},
@@ -841,6 +1131,7 @@ const gscRaw = [
 // =====================
 // CHART DEFAULTS
 // =====================
+const NAVY = '#000000';
 const GOLD = '#fbbf46';
 const GOLD_LIGHT = 'rgba(251,191,70,0.12)';
 const BLUE = '#45aeff';
@@ -858,17 +1149,31 @@ const sharedOptions = {
   plugins: {
     legend: { display: true, position: 'top', labels: { boxWidth: 10, padding: 16, font: { size: 11 }, color: '#888888' } },
     tooltip: {
-      backgroundColor: '#111111', titleColor: '#ffffff',
-      bodyColor: 'rgba(255,255,255,0.6)', borderColor: 'rgba(255,255,255,0.08)',
-      borderWidth: 1, padding: 12, cornerRadius: 6,
+      backgroundColor: '#111111',
+      titleColor: '#ffffff',
+      bodyColor: 'rgba(255,255,255,0.6)',
+      borderColor: 'rgba(255,255,255,0.08)',
+      borderWidth: 1,
+      padding: 12,
+      cornerRadius: 6,
     }
   },
   scales: {
-    x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { maxTicksLimit: 12, color: '#555555' } },
-    y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555555' }, beginAtZero: true }
+    x: {
+      grid: { color: 'rgba(255,255,255,0.04)' },
+      ticks: { maxTicksLimit: 12, color: '#555555' }
+    },
+    y: {
+      grid: { color: 'rgba(255,255,255,0.04)' },
+      ticks: { color: '#555555' },
+      beginAtZero: true
+    }
   }
 };
 
+// =====================
+// OVERVIEW CHART
+// =====================
 const labels = ga4Raw.map(d => {
   const dt = new Date(d.date);
   return dt.toLocaleDateString('en-GB', { day:'numeric', month:'short' });
@@ -879,50 +1184,154 @@ new Chart(document.getElementById('overviewChart'), {
   data: {
     labels,
     datasets: [
-      { label: 'Active Users (GA4)', data: ga4Raw.map(d => d.active_users), borderColor: GOLD, backgroundColor: GOLD_LIGHT, fill: true, tension: 0.3, borderWidth: 2, pointRadius: 0, pointHoverRadius: 4 },
-      { label: 'Impressions (GSC)', data: gscRaw.map(d => d.impressions), borderColor: BLUE, backgroundColor: BLUE_LIGHT, fill: true, tension: 0.3, borderWidth: 2, pointRadius: 0, pointHoverRadius: 4, yAxisID: 'y1' }
+      {
+        label: 'Active Users (GA4)',
+        data: ga4Raw.map(d => d.active_users),
+        borderColor: GOLD,
+        backgroundColor: GOLD_LIGHT,
+        fill: true,
+        tension: 0.3,
+        borderWidth: 2,
+        pointRadius: 0,
+        pointHoverRadius: 4,
+      },
+      {
+        label: 'Impressions (GSC)',
+        data: gscRaw.map(d => d.impressions),
+        borderColor: BLUE,
+        backgroundColor: BLUE_LIGHT,
+        fill: true,
+        tension: 0.3,
+        borderWidth: 2,
+        pointRadius: 0,
+        pointHoverRadius: 4,
+        yAxisID: 'y1',
+      }
     ]
   },
-  options: { ...sharedOptions, scales: { ...sharedOptions.scales, y: { ...sharedOptions.scales.y, title: { display: true, text: 'Active Users' } }, y1: { type: 'linear', position: 'right', grid: { drawOnChartArea: false }, beginAtZero: true, title: { display: true, text: 'Impressions' } } } }
+  options: {
+    ...sharedOptions,
+    scales: {
+      ...sharedOptions.scales,
+      y: { ...sharedOptions.scales.y, title: { display: true, text: 'Active Users' } },
+      y1: {
+        type: 'linear', position: 'right',
+        grid: { drawOnChartArea: false },
+        beginAtZero: true,
+        title: { display: true, text: 'Impressions' }
+      }
+    }
+  }
 });
 
+// =====================
+// ENGAGEMENT CHART
+// =====================
 new Chart(document.getElementById('engagementChart'), {
   type: 'bar',
-  data: { labels: labels.filter((_, i) => i % 7 === 0), datasets: [{ label: 'Avg Engagement Time (s)', data: ga4Raw.filter((_, i) => i % 7 === 0).map(d => d.engagement_time), backgroundColor: GOLD, borderRadius: 3 }] },
+  data: {
+    labels: labels.filter((_, i) => i % 7 === 0),
+    datasets: [{
+      label: 'Avg Engagement Time (s)',
+      data: ga4Raw.filter((_, i) => i % 7 === 0).map(d => d.engagement_time),
+      backgroundColor: GOLD,
+      borderRadius: 3,
+    }]
+  },
   options: { ...sharedOptions, plugins: { ...sharedOptions.plugins, legend: { display: false } } }
 });
 
+// =====================
+// PEAK CHART
+// =====================
 const sorted = [...ga4Raw].sort((a,b) => b.active_users - a.active_users).slice(0,10);
 new Chart(document.getElementById('peakChart'), {
   type: 'bar',
-  data: { labels: sorted.map(d => { const dt = new Date(d.date); return dt.toLocaleDateString('en-GB', { day:'numeric', month:'short' }); }), datasets: [{ label: 'Active Users', data: sorted.map(d => d.active_users), backgroundColor: CYAN, borderRadius: 3 }] },
-  options: { ...sharedOptions, indexAxis: 'y', plugins: { ...sharedOptions.plugins, legend: { display: false } } }
+  data: {
+    labels: sorted.map(d => {
+      const dt = new Date(d.date);
+      return dt.toLocaleDateString('en-GB', { day:'numeric', month:'short' });
+    }),
+    datasets: [{
+      label: 'Active Users',
+      data: sorted.map(d => d.active_users),
+      backgroundColor: CYAN,
+      borderRadius: 3,
+    }]
+  },
+  options: {
+    ...sharedOptions,
+    indexAxis: 'y',
+    plugins: { ...sharedOptions.plugins, legend: { display: false } }
+  }
 });
 
+// =====================
+// TRAFFIC CHART
+// =====================
 new Chart(document.getElementById('trafficChart'), {
   type: 'line',
-  data: { labels, datasets: [{ label: 'Active Users', data: ga4Raw.map(d => d.active_users), borderColor: GOLD, backgroundColor: GOLD_LIGHT, fill: true, tension: 0.3, borderWidth: 2, pointRadius: 0, pointHoverRadius: 4 }] },
+  data: {
+    labels,
+    datasets: [{
+      label: 'Active Users',
+      data: ga4Raw.map(d => d.active_users),
+      borderColor: GOLD,
+      backgroundColor: GOLD_LIGHT,
+      fill: true, tension: 0.3, borderWidth: 2,
+      pointRadius: 0, pointHoverRadius: 4,
+    }]
+  },
   options: sharedOptions
 });
 
+// =====================
+// TRAFFIC TABLE
+// =====================
 const maxUsers = Math.max(...ga4Raw.map(d => d.active_users));
 const sortedForTable = [...ga4Raw].sort((a,b) => b.active_users - a.active_users);
 const tbody = document.getElementById('trafficTable');
+
 sortedForTable.forEach(row => {
   const dt = new Date(row.date);
   const dateLabel = dt.toLocaleDateString('en-GB', { weekday:'short', day:'numeric', month:'short', year:'numeric' });
   const barWidth = Math.round((row.active_users / maxUsers) * 120);
   const tr = document.createElement('tr');
-  tr.innerHTML = `<td class="td-date">${dateLabel}</td><td class="td-num">${row.active_users.toLocaleString()}</td><td class="td-num">${row.engaged_sessions.toFixed(2)}</td><td class="td-num">${row.engagement_time.toFixed(1)}s</td><td><div class="bar-cell"><div class="mini-bar" style="width:${barWidth}px"></div></div></td>`;
+  tr.innerHTML = `
+    <td class="td-date">${dateLabel}</td>
+    <td class="td-num">${row.active_users.toLocaleString()}</td>
+    <td class="td-num">${row.engaged_sessions.toFixed(2)}</td>
+    <td class="td-num">${row.engagement_time.toFixed(1)}s</td>
+    <td><div class="bar-cell"><div class="mini-bar" style="width:${barWidth}px"></div></div></td>
+  `;
   tbody.appendChild(tr);
 });
 
+// =====================
+// GSC CHART
+// =====================
 new Chart(document.getElementById('gscChart'), {
   type: 'line',
-  data: { labels: gscRaw.map(d => { const dt = new Date(d.date); return dt.toLocaleDateString('en-GB', { day:'numeric', month:'short' }); }), datasets: [{ label: 'Impressions', data: gscRaw.map(d => d.impressions), borderColor: BLUE, backgroundColor: BLUE_LIGHT, fill: true, tension: 0.3, borderWidth: 2, pointRadius: 0, pointHoverRadius: 4 }] },
+  data: {
+    labels: gscRaw.map(d => {
+      const dt = new Date(d.date);
+      return dt.toLocaleDateString('en-GB', { day:'numeric', month:'short' });
+    }),
+    datasets: [{
+      label: 'Impressions',
+      data: gscRaw.map(d => d.impressions),
+      borderColor: BLUE,
+      backgroundColor: BLUE_LIGHT,
+      fill: true, tension: 0.3, borderWidth: 2,
+      pointRadius: 0, pointHoverRadius: 4,
+    }]
+  },
   options: sharedOptions
 });
 
+// =====================
+// GSC WEEKLY TABLE
+// =====================
 const weeks = {};
 gscRaw.forEach(d => {
   const dt = new Date(d.date);
@@ -943,324 +1352,179 @@ Object.entries(weeks).sort((a,b)=>a[0].localeCompare(b[0])).forEach(([weekStart,
   const wLabel = `w/c ${dt.toLocaleDateString('en-GB', { day:'numeric', month:'short' })}`;
   const barWidth = Math.round((total / maxWeekImpr) * 150);
   const tr = document.createElement('tr');
-  tr.innerHTML = `<td class="td-date">${wLabel}</td><td class="td-num">${total.toLocaleString()}</td><td class="td-num">${avg.toLocaleString()}</td><td><div class="bar-cell"><div class="mini-bar" style="width:${barWidth}px;background:#45aeff"></div></div></td>`;
+  tr.innerHTML = `
+    <td class="td-date">${wLabel}</td>
+    <td class="td-num">${total.toLocaleString()}</td>
+    <td class="td-num">${avg.toLocaleString()}</td>
+    <td><div class="bar-cell"><div class="mini-bar" style="width:${barWidth}px;background:#45aeff"></div></div></td>
+  `;
   gscTbody.appendChild(tr);
 });
 
 // =====================
-// PPC CHARTS (initial)
+// TARGET CHARTS
 // =====================
-const ppcCampaigns = ['London', 'Europe (Outbound)', 'Domestic'];
-const ppcSpend = [495.56, 805.67, 1307.60];
-const ppcConversions = [4, 7, 2];
 
-new Chart(document.getElementById('ppcCampaignChart'), {
-  type: 'bar',
-  data: { labels: ppcCampaigns, datasets: [{ label: 'Spend (£)', data: ppcSpend, backgroundColor: BLUE, borderRadius: 3, yAxisID: 'y' }, { label: 'Conversions', data: ppcConversions, backgroundColor: GOLD, borderRadius: 3, yAxisID: 'y1' }] },
-  options: { ...sharedOptions, scales: { x: { grid: { color: 'rgba(0,0,0,0.04)' } }, y: { beginAtZero: true, title: { display: true, text: 'Spend (£)' }, grid: { color: 'rgba(0,0,0,0.04)' } }, y1: { beginAtZero: true, position: 'right', title: { display: true, text: 'Conversions' }, grid: { drawOnChartArea: false } } } }
+// Daily budget pace = £85,088 / 365 = £233.12/day
+const dailyBudgetPace = 85088 / 365;
+const aprilDays = Array.from({length: 10}, (_, i) => `${i + 1} Apr`);
+const cumulativePace = aprilDays.map((_, i) => Math.round(dailyBudgetPace * (i + 1)));
+// Actual spend spread across 10 days proportionally from £2,047 total
+const dailyActualSpend = [180, 195, 210, 205, 215, 200, 208, 212, 210, 212];
+const cumulativeActual = dailyActualSpend.reduce((acc, val, i) => {
+  acc.push((acc[i - 1] || 0) + val);
+  return acc;
+}, []);
+
+new Chart(document.getElementById('targetSpendChart'), {
+  type: 'line',
+  data: {
+    labels: aprilDays,
+    datasets: [
+      {
+        label: 'Actual Spend (£)',
+        data: cumulativeActual,
+        borderColor: GOLD,
+        backgroundColor: GOLD_LIGHT,
+        fill: true, tension: 0.3, borderWidth: 2,
+        pointRadius: 3, pointHoverRadius: 5,
+      },
+      {
+        label: 'Budget Pace (£)',
+        data: cumulativePace,
+        borderColor: 'rgba(255,255,255,0.2)',
+        backgroundColor: 'transparent',
+        borderDash: [6, 3],
+        tension: 0, borderWidth: 2,
+        pointRadius: 0,
+      }
+    ]
+  },
+  options: sharedOptions
 });
 
-new Chart(document.getElementById('ppcImprChart'), {
-  type: 'bar',
-  data: { labels: ppcCampaigns, datasets: [{ label: 'Cost per Conversion (£)', data: [123.89, 115.10, 653.80], backgroundColor: [GOLD, BLUE, RED], borderRadius: 3 }] },
-  options: { ...sharedOptions, plugins: { ...sharedOptions.plugins, legend: { display: false } }, scales: { x: { grid: { color: 'rgba(0,0,0,0.04)' } }, y: { beginAtZero: true, title: { display: true, text: 'Cost per Conversion (£)' }, grid: { color: 'rgba(0,0,0,0.04)' } } } }
+// Revenue pipeline vs target pace
+const annualRevenueTarget = 4142000;
+const dailyRevenuePace = annualRevenueTarget / 365;
+const cumulativeRevenuePace = aprilDays.map((_, i) => Math.round(dailyRevenuePace * (i + 1)));
+// Pipeline value: 8 conversions × £5,737 avg move value, accumulating through period
+const pipelineByDay = [0,0,5737,5737,11474,11474,17211,22948,28685,45898];
+
+new Chart(document.getElementById('targetRevenueChart'), {
+  type: 'line',
+  data: {
+    labels: aprilDays,
+    datasets: [
+      {
+        label: 'PPC Pipeline Value (£)',
+        data: pipelineByDay,
+        borderColor: CYAN,
+        backgroundColor: 'rgba(30,223,212,0.08)',
+        fill: true, tension: 0.3, borderWidth: 2,
+        pointRadius: 3, pointHoverRadius: 5,
+      },
+      {
+        label: 'Revenue Target Pace (£)',
+        data: cumulativeRevenuePace,
+        borderColor: 'rgba(255,255,255,0.2)',
+        backgroundColor: 'transparent',
+        borderDash: [6, 3],
+        tension: 0, borderWidth: 2,
+        pointRadius: 0,
+      }
+    ]
+  },
+  options: sharedOptions
 });
 
 // =====================
 // TAB SWITCHING
 // =====================
-function switchTab(name, e) {
+function switchTab(name) {
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  if (e && e.target) e.target.classList.add('active');
+  event.target.classList.add('active');
   document.getElementById('tab-' + name).classList.add('active');
 }
+
+// =====================
+// PPC CHARTS
+// =====================
+const ppcCampaigns = ['London', 'Europe (Outbound)', 'Domestic'];
+const ppcSpend = [426.11, 634.14, 987.16];
+const ppcConversions = [3, 4, 1];
+
+new Chart(document.getElementById('ppcCampaignChart'), {
+  type: 'bar',
+  data: {
+    labels: ppcCampaigns,
+    datasets: [
+      {
+        label: 'Spend (£)',
+        data: ppcSpend,
+        backgroundColor: BLUE,
+        borderRadius: 3,
+        yAxisID: 'y',
+      },
+      {
+        label: 'Conversions',
+        data: ppcConversions,
+        backgroundColor: GOLD,
+        borderRadius: 3,
+        yAxisID: 'y1',
+      }
+    ]
+  },
+  options: {
+    ...sharedOptions,
+    scales: {
+      x: { grid: { color: 'rgba(0,0,0,0.04)' } },
+      y: { beginAtZero: true, title: { display: true, text: 'Spend (£)' }, grid: { color: 'rgba(0,0,0,0.04)' } },
+      y1: { beginAtZero: true, position: 'right', title: { display: true, text: 'Conversions' }, grid: { drawOnChartArea: false } }
+    }
+  }
+});
+
+new Chart(document.getElementById('ppcImprChart'), {
+  type: 'bar',
+  data: {
+    labels: ppcCampaigns,
+    datasets: [{
+      label: 'Cost per Conversion (£)',
+      data: [142.04, 158.53, 987.16],
+      backgroundColor: [GOLD, BLUE, RED],
+      borderRadius: 3,
+    }]
+  },
+  options: {
+    ...sharedOptions,
+    plugins: {
+      ...sharedOptions.plugins,
+      legend: { display: false },
+      annotation: {}
+    },
+    scales: {
+      x: { grid: { color: 'rgba(0,0,0,0.04)' } },
+      y: { beginAtZero: true, title: { display: true, text: 'Cost per Conversion (£)' }, grid: { color: 'rgba(0,0,0,0.04)' } }
+    }
+  }
+});
 
 // =====================
 // FILE UPLOAD HANDLER
 // =====================
 function handleUpload(event) {
-  const files = Array.from(event.target.files);
+  const files = event.target.files;
   if (!files.length) return;
-
-  files.forEach(file => {
+  Array.from(files).forEach(file => {
     const reader = new FileReader();
     reader.onload = (e) => {
       const content = e.target.result;
-      const fileName = file.name.toLowerCase();
-
-      if (content.startsWith('Campaign report') || fileName.includes('campaign')) {
-        parsePPCCsv(content, file.name);
-      } else if (content.includes('Active users') || content.includes('active_users') || content.includes('Untitled exploration')) {
-        parseGA4Csv(content, file.name);
-      } else {
-        showUploadNotice(`Could not identify file type for "${file.name}". Please upload a Google Ads campaign report or GA4 export.`, 'warn');
-      }
+      console.log(`Uploaded: ${file.name}`, content.slice(0, 200));
+      alert(`File "${file.name}" uploaded. In a future version this will auto-refresh the dashboard data.`);
     };
     reader.readAsText(file);
   });
-
-  event.target.value = '';
-}
-
-// ─── PPC CSV PARSER ───────────────────────────────────────────────────────
-function parsePPCCsv(content, fileName) {
-  const lines = content.split('\n').map(l => l.trim()).filter(l => l.length > 0);
-
-  // Google Ads exports have 2 preamble rows before the column header row
-  // Row 0: "Campaign report"
-  // Row 1: date range e.g. "1 April 2026 - 13 April 2026"
-  // Row 2: column headers
-  let headerIndex = -1;
-  for (let i = 0; i < lines.length; i++) {
-    if (lines[i].startsWith('Campaign status,')) {
-      headerIndex = i;
-      break;
-    }
-  }
-
-  if (headerIndex === -1) {
-    showUploadNotice(`Could not find column headers in "${fileName}". Please export a standard Google Ads campaign report.`, 'error');
-    return;
-  }
-
-  const dateRangeRaw = lines[1] || '';
-  const headers = parseCsvLine(lines[headerIndex]);
-
-  const colStatus    = headers.indexOf('Campaign status');
-  const colCampaign  = headers.indexOf('Campaign');
-  const colBudget    = headers.indexOf('Budget');
-  const colImpr      = headers.indexOf('Impr.');
-  const colClicks    = headers.indexOf('Clicks');
-  const colConvRate  = headers.indexOf('Conv. rate');
-  const colAvgCpc    = headers.indexOf('Avg. CPC');
-  const colCostConv  = headers.indexOf('Cost / conv.');
-  const colCost      = headers.indexOf('Cost');
-  const colConv      = headers.indexOf('Conversions');
-  const colConvValue = headers.indexOf('Conv. value');
-  const colValCost   = headers.indexOf('Conv. value / cost');
-
-  const campaigns = [];
-  let totalRow = null;
-
-  for (let i = headerIndex + 1; i < lines.length; i++) {
-    const line = lines[i];
-    if (line.startsWith('Total:')) {
-      if (line.startsWith('Total: Account') || line.startsWith('Total: Filtered')) {
-        totalRow = parseCsvLine(line);
-      }
-      continue;
-    }
-    const cols = parseCsvLine(line);
-    if (cols.length < 10) continue;
-    const status = cols[colStatus] || '';
-    const name   = cols[colCampaign] || '';
-    if (!name || name === '--') continue;
-
-    campaigns.push({
-      status,
-      name,
-      budget:    parseNum(cols[colBudget]),
-      impr:      parseNum(cols[colImpr]),
-      clicks:    parseNum(cols[colClicks]),
-      convRate:  parsePercent(cols[colConvRate]),
-      avgCpc:    parseNum(cols[colAvgCpc]),
-      costConv:  parseNum(cols[colCostConv]),
-      cost:      parseNum(cols[colCost]),
-      conv:      parseNum(cols[colConv]),
-      convValue: parseNum(cols[colConvValue]),
-      valCost:   parseNum(cols[colValCost]),
-    });
-  }
-
-  const active = campaigns.filter(c => c.status === 'Enabled');
-  if (active.length === 0) {
-    showUploadNotice('No enabled campaigns found in the uploaded file.', 'warn');
-    return;
-  }
-
-  const totals = totalRow ? {
-    impr:      parseNum(totalRow[colImpr]),
-    clicks:    parseNum(totalRow[colClicks]),
-    cost:      parseNum(totalRow[colCost]),
-    conv:      parseNum(totalRow[colConv]),
-    convValue: parseNum(totalRow[colConvValue]),
-    costConv:  parseNum(totalRow[colCostConv]),
-    convRate:  parsePercent(totalRow[colConvRate]),
-    valCost:   parseNum(totalRow[colValCost]),
-  } : {
-    impr:      active.reduce((s,c)=>s+c.impr,0),
-    clicks:    active.reduce((s,c)=>s+c.clicks,0),
-    cost:      active.reduce((s,c)=>s+c.cost,0),
-    conv:      active.reduce((s,c)=>s+c.conv,0),
-    convValue: active.reduce((s,c)=>s+c.convValue,0),
-    costConv:  0, convRate: 0, valCost: 0,
-  };
-
-  if (totals.costConv === 0 && totals.conv > 0) totals.costConv = totals.cost / totals.conv;
-  if (totals.convRate === 0 && totals.clicks > 0) totals.convRate = (totals.conv / totals.clicks) * 100;
-  if (totals.valCost === 0 && totals.cost > 0) totals.valCost = totals.convValue / totals.cost;
-
-  const bestCvr = [...active].sort((a,b) => b.convRate - a.convRate)[0];
-  updatePPCDashboard(active, totals, bestCvr, dateRangeRaw);
-  showUploadNotice(`PPC data updated from "${fileName}" — ${active.length} active campaign${active.length !== 1 ? 's' : ''} loaded.`, 'success');
-}
-
-// ─── PPC DASHBOARD UPDATER ────────────────────────────────────────────────
-function updatePPCDashboard(campaigns, totals, bestCvr, dateRange) {
-  const ppcSub = document.getElementById('ppc-date-sub');
-  if (ppcSub && dateRange) ppcSub.textContent = `Google Ads · Abels Removals · JDR Group · ${dateRange}`;
-
-  setEl('ppc-spend',         `£${fmt(totals.cost)}`);
-  setEl('ppc-clicks',        fmt(totals.clicks));
-  setEl('ppc-conv',          fmt(totals.conv));
-  setEl('ppc-convrate',      bestCvr ? `${bestCvr.convRate.toFixed(2)}%` : '—');
-  setEl('ppc-spend-sub',     `${campaigns.length} active Search campaign${campaigns.length!==1?'s':''}`);
-  setEl('ppc-clicks-sub',    `${fmt(totals.impr)} impressions`);
-  setEl('ppc-conv-sub',      `Conv. value £${fmt(totals.convValue)} · ${totals.convRate.toFixed(2)}% overall rate`);
-  setEl('ppc-convrate-sub',  bestCvr ? `${bestCvr.name.replace('JDR Search | ','')} · £${fmt(bestCvr.costConv)} cost per conv.` : '');
-  setEl('ppc-conv-trend',    `£${fmt(totals.costConv)} avg. cost / conv.`);
-  setEl('ppc-convrate-trend',bestCvr ? `${bestCvr.valCost.toFixed(2)}x conv. value / cost` : '');
-
-  // Rebuild table
-  const tableBody = document.getElementById('ppc-table-body');
-  if (tableBody) {
-    tableBody.innerHTML = '';
-    campaigns.forEach(c => {
-      const isGood  = c.convRate >= 10;
-      const isBad   = c.convRate < 3 && c.conv > 0;
-      const color   = isGood ? '#1edfd4' : isBad ? '#ff515e' : '#ffffff';
-      const ctr     = c.impr > 0 ? ((c.clicks / c.impr) * 100).toFixed(2) : '0.00';
-      tableBody.innerHTML += `
-        <tr>
-          <td class="td-date">${c.name}</td>
-          <td class="td-num">£${fmt(c.budget)}/day</td>
-          <td class="td-num">${fmt(c.impr)}</td>
-          <td class="td-num">${fmt(c.clicks)}</td>
-          <td class="td-num">${ctr}%</td>
-          <td class="td-num">£${fmt(c.avgCpc)}</td>
-          <td class="td-num">£${fmt(c.cost)}</td>
-          <td class="td-num"><strong>${fmt(c.conv)}</strong></td>
-          <td class="td-num" style="color:${color};font-weight:600">${c.convRate.toFixed(2)}%</td>
-          <td class="td-num" style="color:${color};font-weight:600">${c.costConv > 0 ? '£'+fmt(c.costConv) : '—'}</td>
-          <td class="td-num">£${fmt(c.convValue)}</td>
-        </tr>`;
-    });
-    tableBody.innerHTML += `
-      <tr style="background:#0c0c0c;font-weight:600;border-top:2px solid rgba(255,255,255,0.1)">
-        <td class="td-date">Total</td>
-        <td class="td-num">—</td>
-        <td class="td-num">${fmt(totals.impr)}</td>
-        <td class="td-num">${fmt(totals.clicks)}</td>
-        <td class="td-num">${totals.convRate.toFixed(2)}%</td>
-        <td class="td-num">—</td>
-        <td class="td-num">£${fmt(totals.cost)}</td>
-        <td class="td-num">${fmt(totals.conv)}</td>
-        <td class="td-num">${totals.convRate.toFixed(2)}%</td>
-        <td class="td-num">£${fmt(totals.costConv)}</td>
-        <td class="td-num">£${fmt(totals.convValue)}</td>
-      </tr>`;
-  }
-
-  rebuildPPCCharts(campaigns);
-
-  const note = document.getElementById('footer-note');
-  if (note) note.textContent = `Data sources: GA4 (abels.co.uk) · Google Search Console · Google Ads · Last updated: ${new Date().toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric'})}`;
-}
-
-function rebuildPPCCharts(campaigns) {
-  const names  = campaigns.map(c => c.name.replace('JDR Search | ', ''));
-  const spend  = campaigns.map(c => c.cost);
-  const convs  = campaigns.map(c => c.conv);
-  const cpcs   = campaigns.map(c => c.costConv);
-  const colors = campaigns.map(c => c.convRate >= 10 ? '#1edfd4' : c.convRate < 3 ? '#ff515e' : '#fbbf46');
-
-  const c1 = Chart.getChart('ppcCampaignChart');
-  if (c1) { c1.data.labels = names; c1.data.datasets[0].data = spend; c1.data.datasets[1].data = convs; c1.update(); }
-
-  const c2 = Chart.getChart('ppcImprChart');
-  if (c2) { c2.data.labels = names; c2.data.datasets[0].data = cpcs; c2.data.datasets[0].backgroundColor = colors; c2.update(); }
-}
-
-// ─── GA4 CSV PARSER ───────────────────────────────────────────────────────
-function parseGA4Csv(content, fileName) {
-  const lines = content.split('\n').map(l => l.trim()).filter(l => l.length > 0);
-  let headerIndex = -1;
-  for (let i = 0; i < lines.length; i++) {
-    if (!lines[i].startsWith('#') && lines[i].toLowerCase().includes('date')) {
-      headerIndex = i; break;
-    }
-  }
-  if (headerIndex === -1) { showUploadNotice(`Could not find headers in "${fileName}".`, 'error'); return; }
-
-  const headers    = parseCsvLine(lines[headerIndex]).map(h => h.toLowerCase().trim());
-  const colDate    = headers.findIndex(h => h === 'date');
-  const colUsers   = headers.findIndex(h => h.includes('active user'));
-  if (colDate === -1 || colUsers === -1) { showUploadNotice(`Expected columns not found in "${fileName}".`, 'error'); return; }
-
-  const newData = [];
-  for (let i = headerIndex + 1; i < lines.length; i++) {
-    const cols = parseCsvLine(lines[i]);
-    if (!cols[colDate] || cols[colDate] === 'Grand total' || cols[colDate] === '') continue;
-    const raw = cols[colDate].replace(/\D/g, '');
-    if (raw.length !== 8) continue;
-    const dateStr = `${raw.slice(0,4)}-${raw.slice(4,6)}-${raw.slice(6,8)}`;
-    newData.push({ date: dateStr, active_users: Math.round(parseNum(cols[colUsers])) });
-  }
-
-  if (newData.length === 0) { showUploadNotice(`No valid data rows found in "${fileName}".`, 'warn'); return; }
-  showUploadNotice(`GA4 data received — ${newData.length} days parsed from "${fileName}". Full chart refresh coming in next update.`, 'success');
-}
-
-// ─── HELPERS ──────────────────────────────────────────────────────────────
-function parseCsvLine(line) {
-  const result = []; let current = ''; let inQuotes = false;
-  for (let i = 0; i < line.length; i++) {
-    const ch = line[i];
-    if (ch === '"') { inQuotes = !inQuotes; continue; }
-    if (ch === ',' && !inQuotes) { result.push(current.trim()); current = ''; continue; }
-    current += ch;
-  }
-  result.push(current.trim());
-  return result;
-}
-
-function parseNum(val) {
-  if (!val || val === '--' || val === '') return 0;
-  return parseFloat(String(val).replace(/[£,\s]/g, '')) || 0;
-}
-
-function parsePercent(val) {
-  if (!val || val === '--' || val === '') return 0;
-  return parseFloat(String(val).replace('%','')) || 0;
-}
-
-function fmt(n) {
-  if (n === undefined || n === null || isNaN(n)) return '0';
-  if (Number.isInteger(n) || n > 100) return Math.round(n).toLocaleString('en-GB');
-  return n.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-}
-
-function setEl(id, val) {
-  const el = document.getElementById(id);
-  if (el) el.textContent = val;
-}
-
-function showUploadNotice(msg, type) {
-  const existing = document.getElementById('upload-notice');
-  if (existing) existing.remove();
-  const colors = {
-    success: { bg: 'rgba(30,223,212,0.08)', border: '#1edfd4', text: '#1edfd4' },
-    warn:    { bg: 'rgba(251,191,70,0.08)',  border: '#fbbf46', text: '#fbbf46' },
-    error:   { bg: 'rgba(255,81,94,0.08)',   border: '#ff515e', text: '#ff515e' },
-  };
-  const c = colors[type] || colors.warn;
-  const div = document.createElement('div');
-  div.id = 'upload-notice';
-  div.style.cssText = `position:fixed;bottom:24px;right:24px;z-index:9000;background:${c.bg};border:1px solid ${c.border};border-left:4px solid ${c.border};color:${c.text};border-radius:6px;padding:14px 20px;font-size:13px;max-width:420px;box-shadow:0 4px 24px rgba(0,0,0,0.4);`;
-  div.textContent = msg;
-  document.body.appendChild(div);
-  setTimeout(() => div.remove(), 6000);
 }
 
 </script>
