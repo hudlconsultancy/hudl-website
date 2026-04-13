@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Article | HUDL Consultancy</title>
+  <meta name="robots" content="index, follow" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W55VXXLD');</script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #fbbf46;
+      --blue:   #45aeff;
+      --red:    #ff515e;
+      --cyan:   #1edfd4;
+      --black:  #000000;
+      --dark:   #0c0c0c;
+      --mid:    #161616;
+      --white:  #ffffff;
+      --muted:  #7a7a7a;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body:    'Source Sans 3', Arial, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: var(--font-body); font-size: 16px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+
+    /* STRIPE */
+    .stripe-bar { display: flex; height: 6px; }
+    .stripe-bar span { flex: 1; }
+    .stripe-bar span:nth-child(1) { background: var(--yellow); }
+    .stripe-bar span:nth-child(2) { background: var(--blue); }
+    .stripe-bar span:nth-child(3) { background: var(--red); }
+    .stripe-bar span:nth-child(4) { background: var(--cyan); }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 100; height: 72px; background: rgba(0,0,0,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    nav .container { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+    .nav-logo { font-family: var(--font-display); font-size: 22px; font-weight: 900; letter-spacing: 2px; }
+    .nav-logo .lh { color: var(--yellow); }
+    .nav-logo .lu { color: var(--blue); }
+    .nav-logo .ld { color: var(--red); }
+    .nav-logo .ll { color: var(--cyan); }
+    .nav-logo .sub { font-size: 9px; font-weight: 700; letter-spacing: 3px; color: var(--muted); display: block; margin-top: -4px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+    .nav-links a { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.65); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--yellow); }
+    .nav-cta { background: var(--yellow); color: var(--black) !important; padding: 8px 18px; border-radius: 2px; }
+    .nav-cta:hover { background: #f5b832; color: var(--black) !important; }
+
+    /* ARTICLE LAYOUT */
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 40px 100px; }
+
+    /* BREADCRUMB */
+    .breadcrumb { font-size: 12px; color: var(--muted); margin-bottom: 32px; }
+    .breadcrumb a { color: var(--muted); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--yellow); }
+    .breadcrumb span { margin: 0 8px; }
+
+    /* CATEGORY BADGE */
+    .article-cat { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; margin-bottom: 20px; }
+    .cat-case-study        { background: rgba(251,191,70,0.15); color: var(--yellow); }
+    .cat-marketing-tips    { background: rgba(69,174,255,0.15); color: var(--blue); }
+    .cat-industry-insights { background: rgba(30,223,212,0.15); color: var(--cyan); }
+
+    /* HEADLINE */
+    .article-title { font-family: var(--font-display); font-size: clamp(36px, 6vw, 68px); font-weight: 900; line-height: 0.95; text-transform: uppercase; letter-spacing: -0.5px; margin-bottom: 24px; }
+
+    /* META */
+    .article-meta { display: flex; gap: 20px; align-items: center; font-size: 13px; color: var(--muted); margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.08); flex-wrap: wrap; }
+    .article-meta strong { color: rgba(255,255,255,0.5); }
+
+    /* HERO IMAGE */
+    .article-hero-img { width: 100%; border-radius: 4px; margin-bottom: 48px; display: block; }
+
+    /* ARTICLE BODY — markdown rendered */
+    .article-body { font-size: 17px; line-height: 1.8; color: rgba(255,255,255,0.85); }
+    .article-body h1,
+    .article-body h2 { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; line-height: 1.05; margin: 48px 0 16px; }
+    .article-body h1 { font-size: 42px; }
+    .article-body h2 { font-size: 32px; color: var(--yellow); }
+    .article-body h3 { font-family: var(--font-display); font-size: 22px; font-weight: 800; text-transform: uppercase; margin: 36px 0 12px; color: rgba(255,255,255,0.9); }
+    .article-body p { margin-bottom: 20px; }
+    .article-body ul, .article-body ol { margin: 0 0 20px 24px; }
+    .article-body li { margin-bottom: 8px; }
+    .article-body strong { color: var(--white); font-weight: 700; }
+    .article-body em { font-style: italic; color: rgba(255,255,255,0.7); }
+    .article-body a { color: var(--yellow); border-bottom: 1px solid rgba(251,191,70,0.3); transition: border-color 0.2s; }
+    .article-body a:hover { border-color: var(--yellow); }
+    .article-body blockquote { border-left: 3px solid var(--yellow); padding: 12px 24px; margin: 32px 0; background: rgba(251,191,70,0.05); color: rgba(255,255,255,0.7); font-style: italic; }
+    .article-body code { background: #1a1a1a; border: 1px solid rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 3px; font-size: 14px; font-family: 'Courier New', monospace; color: var(--cyan); }
+    .article-body pre { background: #111; border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 20px; overflow-x: auto; margin-bottom: 24px; }
+    .article-body pre code { background: none; border: none; padding: 0; }
+    .article-body img { max-width: 100%; border-radius: 4px; margin: 24px 0; }
+    .article-body hr { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 48px 0; }
+    .article-body table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 15px; }
+    .article-body th { background: var(--mid); padding: 10px 14px; text-align: left; font-weight: 700; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+    .article-body td { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+
+    /* CTA STRIP */
+    .article-cta { background: var(--dark); border-top: 1px solid rgba(255,255,255,0.06); padding: 80px 40px; text-align: center; }
+    .article-cta h2 { font-family: var(--font-display); font-size: clamp(36px, 5vw, 64px); font-weight: 900; text-transform: uppercase; margin-bottom: 12px; }
+    .article-cta p { color: rgba(255,255,255,0.55); font-size: 18px; margin-bottom: 32px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; background: var(--yellow); color: var(--black); font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 14px 28px; border-radius: 2px; transition: background 0.2s; }
+    .btn:hover { background: #f5b832; }
+
+    /* FOOTER */
+    footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.06); padding: 32px 0; }
+    footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    footer p { font-size: 12px; color: var(--muted); }
+    footer a { font-size: 12px; color: var(--muted); transition: color 0.2s; }
+    footer a:hover { color: var(--yellow); }
+
+    /* STATE */
+    .state-msg { text-align: center; padding: 120px 20px; }
+    .state-msg h3 { font-family: var(--font-display); font-size: 28px; color: rgba(255,255,255,0.3); text-transform: uppercase; margin-bottom: 12px; }
+    .state-msg a { color: var(--yellow); font-size: 14px; }
+    .spinner { width: 32px; height: 32px; border: 2px solid rgba(255,255,255,0.1); border-top-color: var(--yellow); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 20px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @media (max-width: 768px) { .article-wrap { padding: 40px 20px 80px; } .container { padding: 0 20px; } .nav-links { display: none; } }
+  </style>
+</head>
+<body>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W55VXXLD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="stripe-bar"><span></span><span></span><span></span><span></span></div>
+
+<nav>
+  <div class="container">
+    <a href="/" class="nav-logo">
+      <span><span class="lh">H</span><span class="lu">U</span><span class="ld">D</span><span class="ll">L</span></span>
+      <span class="sub">CONSULTANCY</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#process">How We Work</a></li>
+      <li><a href="/blog">Insights</a></li>
+      <li><a href="/#cta" class="nav-cta">Free Consultation</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="state-msg">
+    <div class="spinner"></div>
+    <h3>Loading Article</h3>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2025 HUDL Consultancy Ltd. All rights reserved.</p>
+    <a href="https://www.hudl.gg">hudl.gg</a>
+  </div>
+</footer>
+
+<script>
+  // ── CONFIG ─────────────────────────────────────────────────────────────────
+  const REPO = 'hudlconsultancy/hudl-website';
+  const POSTS_PATH = '_posts';
+
+  // ── MARKDOWN PARSER ────────────────────────────────────────────────────────
+  // Lightweight markdown to HTML — covers headings, bold, italic, links,
+  // blockquotes, code blocks, inline code, lists, images, hr, tables
+  function mdToHtml(md) {
+    let html = md;
+
+    // Fenced code blocks
+    html = html.replace(/```[\w]*\n([\s\S]*?)```/g, (_, code) =>
+      `<pre><code>${escHtml(code.trimEnd())}</code></pre>`);
+
+    // HR
+    html = html.replace(/^(-{3,}|\*{3,})$/gm, '<hr>');
+
+    // Headings
+    html = html.replace(/^### (.+)$/gm, '<h3>$1</h3>');
+    html = html.replace(/^## (.+)$/gm, '<h2>$1</h2>');
+    html = html.replace(/^# (.+)$/gm, '<h1>$1</h1>');
+
+    // Blockquotes
+    html = html.replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>');
+
+    // Bold and italic
+    html = html.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
+    html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
+
+    // Inline code
+    html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+
+    // Images (before links)
+    html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">');
+
+    // Links
+    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+
+    // Unordered lists
+    html = html.replace(/(^- .+\n?)+/gm, match => {
+      const items = match.trim().split('\n').map(l => `<li>${l.replace(/^- /, '')}</li>`).join('');
+      return `<ul>${items}</ul>`;
+    });
+
+    // Ordered lists
+    html = html.replace(/(^\d+\. .+\n?)+/gm, match => {
+      const items = match.trim().split('\n').map(l => `<li>${l.replace(/^\d+\. /, '')}</li>`).join('');
+      return `<ol>${items}</ol>`;
+    });
+
+    // Tables
+    html = html.replace(/(\|.+\|\n\|[-| :]+\|\n(\|.+\|\n?)+)/g, match => {
+      const rows = match.trim().split('\n');
+      const headers = rows[0].split('|').filter(c => c.trim()).map(c => `<th>${c.trim()}</th>`).join('');
+      const bodyRows = rows.slice(2).map(row => {
+        const cells = row.split('|').filter(c => c.trim()).map(c => `<td>${c.trim()}</td>`).join('');
+        return `<tr>${cells}</tr>`;
+      }).join('');
+      return `<table><thead><tr>${headers}</tr></thead><tbody>${bodyRows}</tbody></table>`;
+    });
+
+    // Paragraphs — wrap lines not already in block elements
+    html = html.split(/\n{2,}/).map(block => {
+      const trimmed = block.trim();
+      if (!trimmed) return '';
+      if (/^<(h[1-6]|ul|ol|pre|blockquote|hr|table|img)/.test(trimmed)) return trimmed;
+      return `<p>${trimmed.replace(/\n/g, ' ')}</p>`;
+    }).join('\n');
+
+    return html;
+  }
+
+  function escHtml(str) {
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  // ── FRONTMATTER ────────────────────────────────────────────────────────────
+  function parseFrontmatter(raw) {
+    const match = raw.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
+    if (!match) return { meta: {}, body: raw };
+    const meta = {};
+    match[1].split('\n').forEach(line => {
+      const idx = line.indexOf(':');
+      if (idx === -1) return;
+      const key = line.slice(0, idx).trim();
+      const val = line.slice(idx + 1).trim().replace(/^["']|["']$/g, '');
+      if (key) meta[key] = val;
+    });
+    return { meta, body: match[2].trim() };
+  }
+
+  // ── UTILS ──────────────────────────────────────────────────────────────────
+  function formatDate(dateStr) {
+    if (!dateStr) return '';
+    return new Date(dateStr).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+  }
+
+  function catLabel(cat) {
+    const labels = { 'case-study': 'Case Study', 'marketing-tips': 'Marketing Tips', 'industry-insights': 'Industry Insights' };
+    return labels[cat] || cat;
+  }
+
+  // ── FIND POST FILE ─────────────────────────────────────────────────────────
+  async function findPostFile(slug) {
+    const res = await fetch(`https://api.github.com/repos/${REPO}/contents/${POSTS_PATH}`);
+    if (!res.ok) throw new Error('Could not reach posts folder');
+    const files = await res.json();
+    // Slug matches the filename minus the date prefix and .md extension
+    const match = files.find(f => f.name.endsWith('.md') && f.name.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/\.md$/, '') === slug);
+    return match || null;
+  }
+
+  // ── RENDER ─────────────────────────────────────────────────────────────────
+  async function loadArticle() {
+    const main = document.getElementById('main-content');
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('post');
+
+    if (!slug) {
+      main.innerHTML = `<div class="state-msg"><h3>No article specified</h3><a href="/blog">← Back to Insights</a></div>`;
+      return;
+    }
+
+    try {
+      const file = await findPostFile(slug);
+      if (!file) {
+        main.innerHTML = `<div class="state-msg"><h3>Article not found</h3><a href="/blog">← Back to Insights</a></div>`;
+        return;
+      }
+
+      const r = await fetch(file.download_url);
+      const raw = await r.text();
+      const { meta, body } = parseFrontmatter(raw);
+
+      // Update page title and meta
+      document.title = `${meta.title || 'Article'} | HUDL Consultancy`;
+      const metaDesc = document.querySelector('meta[name="description"]') || document.createElement('meta');
+      metaDesc.name = 'description';
+      metaDesc.content = meta.summary || '';
+      document.head.appendChild(metaDesc);
+
+      const cat = meta.category || '';
+      const heroImg = meta.thumbnail ? `<img class="article-hero-img" src="${meta.thumbnail}" alt="${meta.title}">` : '';
+
+      main.innerHTML = `
+        <article>
+          <div class="article-wrap">
+            <nav class="breadcrumb">
+              <a href="/">Home</a><span>/</span>
+              <a href="/blog">Insights</a><span>/</span>
+              ${meta.title || 'Article'}
+            </nav>
+
+            <span class="article-cat cat-${cat}">${catLabel(cat)}</span>
+
+            <h1 class="article-title">${meta.title || ''}</h1>
+
+            <div class="article-meta">
+              <span>${formatDate(meta.date)}</span>
+              ${meta.read_time ? `<strong>${meta.read_time}</strong>` : ''}
+              <a href="/blog">← Back to Insights</a>
+            </div>
+
+            ${heroImg}
+
+            <div class="article-body">
+              ${mdToHtml(body)}
+            </div>
+          </div>
+
+          <section class="article-cta">
+            <h2>READY TO GROW<br>YOUR BUSINESS?</h2>
+            <p>Let's talk about what's holding your marketing back.</p>
+            <a href="/#cta" class="btn">BOOK YOUR FREE CONSULTATION <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </section>
+        </article>`;
+
+    } catch (err) {
+      main.innerHTML = `<div class="state-msg"><h3>Could not load article</h3><p style="color:var(--muted);font-size:14px;">${err.message}</p><br><a href="/blog">← Back to Insights</a></div>`;
+    }
+  }
+
+  loadArticle();
+</script>
+</body>
+</html>
