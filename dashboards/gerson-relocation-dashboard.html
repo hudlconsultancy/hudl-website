@@ -64,12 +64,7 @@
   }
 </style>
 <script>
-  // ── PASSWORD GATE ──────────────────────────────────────────
-  // Replace the value below with your chosen password before
-  // committing to GitHub. Do not share this file with the password
-  // visible — set it directly in the GitHub editor.
   const DASHBOARD_PASSWORD = 'GLOBALCORPORATE2026';
-  // ───────────────────────────────────────────────────────────
 
   function checkPassword() {
     const input = document.getElementById('gate-input').value;
@@ -419,10 +414,10 @@
   <div class="header-right">
     <div class="date-range">
       <div class="label">Reporting Period</div>
-      <div class="value">9 Feb – 9 Apr 2026 &nbsp;(60 days)</div>
+      <div class="value" id="header-date-range">9 Feb – 9 Apr 2026 &nbsp;(60 days)</div>
     </div>
     <button class="upload-btn" onclick="document.getElementById('csvUpload').click()">↑ Upload New Data</button>
-    <input type="file" id="csvUpload" accept=".csv" multiple style="display:none">
+    <input type="file" id="csvUpload" accept=".csv" multiple style="display:none" onchange="handleUpload(event)">
   </div>
 </div>
 
@@ -448,31 +443,31 @@
 
     <div class="section-header">
       <div class="section-title">60-Day Performance Summary</div>
-      <div class="section-sub">Feb 9 – Apr 9, 2026</div>
+      <div class="section-sub" id="overview-period-sub">Feb 9 – Apr 9, 2026</div>
     </div>
 
     <div class="kpi-grid">
       <div class="kpi-card">
         <div class="kpi-label">Total Active Users</div>
-        <div class="kpi-value">6,648</div>
-        <div class="kpi-sub">Unique active users · 60 days</div>
+        <div class="kpi-value" id="kpi-total-users">6,648</div>
+        <div class="kpi-sub" id="kpi-total-users-sub">Unique active users · 60 days</div>
         <div class="kpi-trend trend-neutral">GA4 · gerson.co.uk</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Avg Active Users / Day</div>
-        <div class="kpi-value">111</div>
+        <div class="kpi-value" id="kpi-avg-users">111</div>
         <div class="kpi-sub">Daily average across period</div>
         <div class="kpi-trend trend-neutral">GA4 Traffic</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Avg Engagement Time</div>
-        <div class="kpi-value">61.2s</div>
+        <div class="kpi-value" id="kpi-engagement-time">61.2s</div>
         <div class="kpi-sub">Per session · well above benchmark</div>
         <div class="kpi-trend trend-up">Strong engagement signal</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Avg Engaged Sessions/User</div>
-        <div class="kpi-value">0.62</div>
+        <div class="kpi-value" id="kpi-engaged-sessions">0.62</div>
         <div class="kpi-sub">Sessions per active user</div>
         <div class="kpi-trend trend-neutral">GA4 Engagement</div>
       </div>
@@ -481,7 +476,7 @@
     <div class="chart-row-full">
       <div class="chart-card">
         <div class="chart-card-title">Daily Active Users</div>
-        <div class="chart-card-sub">60-day trend · GA4 · 9 Feb – 9 Apr 2026</div>
+        <div class="chart-card-sub" id="overview-chart-sub">60-day trend · GA4 · 9 Feb – 9 Apr 2026</div>
         <canvas id="overviewChart" height="90"></canvas>
       </div>
     </div>
@@ -520,7 +515,7 @@
     <div class="table-card">
       <div class="table-header">
         <div class="chart-card-title">Daily Traffic Data</div>
-        <div class="chart-card-sub" style="margin-bottom:0">All 60 days · sorted by active users (highest first)</div>
+        <div class="chart-card-sub" style="margin-bottom:0">All days · sorted by active users (highest first)</div>
       </div>
       <table>
         <thead>
@@ -543,7 +538,7 @@
 
     <div class="section-header">
       <div class="section-title">PPC Performance</div>
-      <div class="section-sub">Google Ads · Gerson Relocation · Historical + Pre-Launch</div>
+      <div class="section-sub" id="ppc-date-sub">Google Ads · Gerson Relocation · Historical + Pre-Launch</div>
     </div>
 
     <div class="alert" style="border-left-color:var(--yellow);background:rgba(251,191,70,0.08);border-color:rgba(251,191,70,0.2);color:#cccccc;margin-bottom:16px">
@@ -555,30 +550,29 @@
       <div><strong>Legacy account structure requires urgent cleanup.</strong> 60+ paused campaigns across multiple themes, bid strategies, and naming conventions are cluttering the account. Before new campaigns launch, the account should be audited and legacy campaigns archived to ensure clean reporting from day one.</div>
     </div>
 
-    <!-- HISTORICAL KPIs -->
     <div class="section-header" style="margin-top:8px">
       <div class="section-title" style="font-size:16px">Historical Spend Summary</div>
-      <div class="section-sub">Jan 10 – Apr 9, 2026 · MCM-managed (now paused)</div>
+      <div class="section-sub" id="ppc-historic-sub">Jan 10 – Apr 9, 2026 · MCM-managed (now paused)</div>
     </div>
 
     <div class="kpi-grid" style="margin-bottom:32px">
       <div class="kpi-card">
         <div class="kpi-label">Total Historic Spend</div>
-        <div class="kpi-value">£1,277</div>
-        <div class="kpi-sub">3 campaigns with activity · all now paused</div>
-        <div class="kpi-trend trend-neutral">MCM · Jan–Apr 2026</div>
+        <div class="kpi-value" id="ppc-spend">£1,277</div>
+        <div class="kpi-sub" id="ppc-spend-sub">3 campaigns with activity · all now paused</div>
+        <div class="kpi-trend trend-neutral" id="ppc-spend-trend">MCM · Jan–Apr 2026</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Total Clicks</div>
-        <div class="kpi-value">553</div>
-        <div class="kpi-sub">Avg. CPC £2.31 across all campaigns</div>
-        <div class="kpi-trend trend-neutral">12,104 impressions</div>
+        <div class="kpi-value" id="ppc-clicks">553</div>
+        <div class="kpi-sub" id="ppc-clicks-sub">Avg. CPC £2.31 across all campaigns</div>
+        <div class="kpi-trend trend-neutral" id="ppc-clicks-trend">12,104 impressions</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Total Conversions</div>
-        <div class="kpi-value">11</div>
-        <div class="kpi-sub">1.99% overall conversion rate</div>
-        <div class="kpi-trend trend-neutral">£116.09 cost / conv.</div>
+        <div class="kpi-value" id="ppc-conv">11</div>
+        <div class="kpi-sub" id="ppc-conv-sub">1.99% overall conversion rate</div>
+        <div class="kpi-trend trend-neutral" id="ppc-conv-trend">£116.09 cost / conv.</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Avg Move Value</div>
@@ -588,11 +582,10 @@
       </div>
     </div>
 
-    <!-- HISTORIC CAMPAIGN TABLE -->
     <div class="table-card" style="margin-bottom:32px">
       <div class="table-header">
-        <div class="chart-card-title">Historic Campaign Breakdown</div>
-        <div class="chart-card-sub" style="margin-bottom:0">MCM-managed · campaigns with spend only · Jan 10 – Apr 9, 2026 · all now paused</div>
+        <div class="chart-card-title">Campaign Breakdown</div>
+        <div class="chart-card-sub" style="margin-bottom:0" id="ppc-table-sub">MCM-managed · campaigns with spend only · all now paused</div>
       </div>
       <table>
         <thead>
@@ -608,7 +601,7 @@
             <th>Cost / Conv.</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="ppc-table-body">
           <tr>
             <td class="td-date">MCM | Moving Generic | Search | UK</td>
             <td class="td-num">5,146</td>
@@ -657,32 +650,21 @@
       </table>
     </div>
 
-    <!-- UPCOMING LAUNCH PLACEHOLDER -->
     <div class="ppc-coming">
       <h3>New PPC Campaigns — Pre-Launch</h3>
       <p>New campaigns are planned to launch imminently. Once live, upload a fresh Google Ads campaign report to populate this dashboard with live performance data.</p>
       <p style="color:var(--text-light);font-size:12px;margin-top:4px">Target avg. move value: £3,000 · Revenue budget 25/26: £1,000,000 · Leads required: 6,667</p>
       <div class="metric-row">
-        <div class="metric-item">
-          <div class="val">£3,000</div>
-          <div class="lbl">Avg Move Value</div>
-        </div>
-        <div class="metric-item">
-          <div class="val">333</div>
-          <div class="lbl">Jobs Required</div>
-        </div>
-        <div class="metric-item">
-          <div class="val">10%</div>
-          <div class="lbl">Target Conv. Rate</div>
-        </div>
+        <div class="metric-item"><div class="val">£3,000</div><div class="lbl">Avg Move Value</div></div>
+        <div class="metric-item"><div class="val">333</div><div class="lbl">Jobs Required</div></div>
+        <div class="metric-item"><div class="val">10%</div><div class="lbl">Target Conv. Rate</div></div>
       </div>
     </div>
 
-    <!-- PPC CHART -->
     <div class="chart-row-half">
       <div class="chart-card">
-        <div class="chart-card-title">Historic Spend vs Conversions</div>
-        <div class="chart-card-sub">MCM campaigns with activity · Jan–Apr 2026</div>
+        <div class="chart-card-title">Spend vs Conversions by Campaign</div>
+        <div class="chart-card-sub" id="ppc-chart-sub">MCM campaigns with activity · Jan–Apr 2026</div>
         <canvas id="ppcCampaignChart" height="150"></canvas>
       </div>
       <div class="chart-card">
@@ -698,13 +680,16 @@
 
 <div class="footer">
   <div class="footer-brand">HUDL Consultancy · AGM Group — Gerson Relocation</div>
-  <div class="footer-note">Data sources: GA4 (gerson.co.uk) · Google Ads (MCM · historic) · Last updated: 9 April 2026</div>
+  <div class="footer-note" id="footer-note">Data sources: GA4 (gerson.co.uk) · Google Ads (MCM · historic) · Last updated: 9 April 2026</div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <script>
 
-const grlGA4Raw = [
+// =====================
+// DATA
+// =====================
+let grlGA4Raw = [
   {date:'2026-02-09',active_users:107,engaged_sessions:0.68,engagement_time:81.9},
   {date:'2026-02-10',active_users:110,engaged_sessions:0.71,engagement_time:72.8},
   {date:'2026-02-11',active_users:169,engaged_sessions:0.72,engagement_time:78.6},
@@ -767,7 +752,9 @@ const grlGA4Raw = [
   {date:'2026-04-09',active_users:74,engaged_sessions:0.69,engagement_time:56.2},
 ];
 
+// =====================
 // CHART CONSTANTS
+// =====================
 const YELLOW = '#fbbf46';
 const RED = '#ff515e';
 const BLUE = '#45aeff';
@@ -784,15 +771,7 @@ const sharedOptions = {
   interaction: { mode: 'index', intersect: false },
   plugins: {
     legend: { display: true, position: 'top', labels: { boxWidth: 10, padding: 16, font: { size: 11 }, color: '#888888' } },
-    tooltip: {
-      backgroundColor: '#111111',
-      titleColor: '#ffffff',
-      bodyColor: 'rgba(255,255,255,0.6)',
-      borderColor: 'rgba(255,255,255,0.08)',
-      borderWidth: 1,
-      padding: 12,
-      cornerRadius: 6,
-    }
+    tooltip: { backgroundColor: '#111111', titleColor: '#ffffff', bodyColor: 'rgba(255,255,255,0.6)', borderColor: 'rgba(255,255,255,0.08)', borderWidth: 1, padding: 12, cornerRadius: 6 }
   },
   scales: {
     x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { maxTicksLimit: 12, color: '#555555' } },
@@ -800,144 +779,408 @@ const sharedOptions = {
   }
 };
 
-const labels = grlGA4Raw.map(d => {
-  const dt = new Date(d.date);
-  return dt.toLocaleDateString('en-GB', { day:'numeric', month:'short' });
-});
+// =====================
+// CHART INIT
+// =====================
+function buildLabels(data) {
+  return data.map(d => {
+    const dt = new Date(d.date);
+    return dt.toLocaleDateString('en-GB', { day:'numeric', month:'short' });
+  });
+}
 
-// OVERVIEW CHART
-new Chart(document.getElementById('overviewChart'), {
-  type: 'line',
-  data: {
-    labels,
-    datasets: [{
-      label: 'Active Users (GA4)',
-      data: grlGA4Raw.map(d => d.active_users),
-      borderColor: BLUE,
-      backgroundColor: BLUE_LIGHT,
-      fill: true, tension: 0.3, borderWidth: 2,
-      pointRadius: 0, pointHoverRadius: 4,
-    }]
-  },
-  options: sharedOptions
-});
+let overviewChart, engagementChart, peakChart, trafficChart;
 
-// ENGAGEMENT CHART
-new Chart(document.getElementById('engagementChart'), {
-  type: 'bar',
-  data: {
-    labels: labels.filter((_, i) => i % 7 === 0),
-    datasets: [{
-      label: 'Avg Engagement Time (s)',
-      data: grlGA4Raw.filter((_, i) => i % 7 === 0).map(d => d.engagement_time),
-      backgroundColor: YELLOW,
-      borderRadius: 3,
-    }]
-  },
-  options: { ...sharedOptions, plugins: { ...sharedOptions.plugins, legend: { display: false } } }
-});
+function initCharts() {
+  const labels = buildLabels(grlGA4Raw);
 
-// PEAK CHART
-const sorted = [...grlGA4Raw].sort((a,b) => b.active_users - a.active_users).slice(0,10);
-new Chart(document.getElementById('peakChart'), {
-  type: 'bar',
-  data: {
-    labels: sorted.map(d => {
-      const dt = new Date(d.date);
-      return dt.toLocaleDateString('en-GB', { day:'numeric', month:'short' });
-    }),
-    datasets: [{
-      label: 'Active Users',
-      data: sorted.map(d => d.active_users),
-      backgroundColor: CYAN,
-      borderRadius: 3,
-    }]
-  },
-  options: { ...sharedOptions, indexAxis: 'y', plugins: { ...sharedOptions.plugins, legend: { display: false } } }
-});
+  overviewChart = new Chart(document.getElementById('overviewChart'), {
+    type: 'line',
+    data: { labels, datasets: [{ label: 'Active Users (GA4)', data: grlGA4Raw.map(d => d.active_users), borderColor: BLUE, backgroundColor: BLUE_LIGHT, fill: true, tension: 0.3, borderWidth: 2, pointRadius: 0, pointHoverRadius: 4 }] },
+    options: sharedOptions
+  });
 
-// TRAFFIC CHART
-new Chart(document.getElementById('trafficChart'), {
-  type: 'line',
-  data: {
-    labels,
-    datasets: [{
-      label: 'Active Users',
-      data: grlGA4Raw.map(d => d.active_users),
-      borderColor: BLUE,
-      backgroundColor: BLUE_LIGHT,
-      fill: true, tension: 0.3, borderWidth: 2,
-      pointRadius: 0, pointHoverRadius: 4,
-    }]
-  },
-  options: sharedOptions
-});
+  engagementChart = new Chart(document.getElementById('engagementChart'), {
+    type: 'bar',
+    data: { labels: labels.filter((_, i) => i % 7 === 0), datasets: [{ label: 'Avg Engagement Time (s)', data: grlGA4Raw.filter((_, i) => i % 7 === 0).map(d => d.engagement_time), backgroundColor: YELLOW, borderRadius: 3 }] },
+    options: { ...sharedOptions, plugins: { ...sharedOptions.plugins, legend: { display: false } } }
+  });
 
-// TRAFFIC TABLE
-const maxUsers = Math.max(...grlGA4Raw.map(d => d.active_users));
-const sortedTable = [...grlGA4Raw].sort((a,b) => b.active_users - a.active_users);
-const tbody = document.getElementById('trafficTable');
-sortedTable.forEach(row => {
-  const dt = new Date(row.date);
-  const dateLabel = dt.toLocaleDateString('en-GB', { weekday:'short', day:'numeric', month:'short', year:'numeric' });
-  const barWidth = Math.round((row.active_users / maxUsers) * 120);
-  const tr = document.createElement('tr');
-  tr.innerHTML = `
-    <td class="td-date">${dateLabel}</td>
-    <td class="td-num">${row.active_users.toLocaleString()}</td>
-    <td class="td-num">${row.engaged_sessions.toFixed(2)}</td>
-    <td class="td-num">${row.engagement_time.toFixed(1)}s</td>
-    <td><div class="bar-cell"><div class="mini-bar" style="width:${barWidth}px"></div></div></td>
-  `;
-  tbody.appendChild(tr);
-});
+  const sortedPeak = [...grlGA4Raw].sort((a,b) => b.active_users - a.active_users).slice(0,10);
+  peakChart = new Chart(document.getElementById('peakChart'), {
+    type: 'bar',
+    data: { labels: sortedPeak.map(d => { const dt = new Date(d.date); return dt.toLocaleDateString('en-GB', { day:'numeric', month:'short' }); }), datasets: [{ label: 'Active Users', data: sortedPeak.map(d => d.active_users), backgroundColor: CYAN, borderRadius: 3 }] },
+    options: { ...sharedOptions, indexAxis: 'y', plugins: { ...sharedOptions.plugins, legend: { display: false } } }
+  });
 
-// PPC CHARTS
+  trafficChart = new Chart(document.getElementById('trafficChart'), {
+    type: 'line',
+    data: { labels, datasets: [{ label: 'Active Users', data: grlGA4Raw.map(d => d.active_users), borderColor: BLUE, backgroundColor: BLUE_LIGHT, fill: true, tension: 0.3, borderWidth: 2, pointRadius: 0, pointHoverRadius: 4 }] },
+    options: sharedOptions
+  });
+
+  buildTrafficTable();
+}
+
+function buildTrafficTable() {
+  const maxUsers = Math.max(...grlGA4Raw.map(d => d.active_users));
+  const sortedTable = [...grlGA4Raw].sort((a,b) => b.active_users - a.active_users);
+  const tbody = document.getElementById('trafficTable');
+  tbody.innerHTML = '';
+  sortedTable.forEach(row => {
+    const dt = new Date(row.date);
+    const dateLabel = dt.toLocaleDateString('en-GB', { weekday:'short', day:'numeric', month:'short', year:'numeric' });
+    const barWidth = Math.round((row.active_users / maxUsers) * 120);
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td class="td-date">${dateLabel}</td><td class="td-num">${row.active_users.toLocaleString()}</td><td class="td-num">${row.engaged_sessions.toFixed(2)}</td><td class="td-num">${row.engagement_time.toFixed(1)}s</td><td><div class="bar-cell"><div class="mini-bar" style="width:${barWidth}px"></div></div></td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+// PPC CHARTS (static — updated via upload)
 const ppcCampaigns = ['Moving Generic', 'SEO Support', 'Brand'];
-new Chart(document.getElementById('ppcCampaignChart'), {
+let ppcCampaignChart = new Chart(document.getElementById('ppcCampaignChart'), {
   type: 'bar',
-  data: {
-    labels: ppcCampaigns,
-    datasets: [
-      { label: 'Spend (£)', data: [818.17, 324.16, 134.61], backgroundColor: BLUE, borderRadius: 3, yAxisID: 'y' },
-      { label: 'Conversions', data: [9, 0, 2], backgroundColor: YELLOW, borderRadius: 3, yAxisID: 'y1' }
-    ]
-  },
-  options: {
-    ...sharedOptions,
-    scales: {
-      x: { grid: { color: 'rgba(255,255,255,0.04)' } },
-      y: { beginAtZero: true, title: { display: true, text: 'Spend (£)', color: '#555' }, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555' } },
-      y1: { beginAtZero: true, position: 'right', title: { display: true, text: 'Conversions', color: '#555' }, grid: { drawOnChartArea: false }, ticks: { color: '#555' } }
-    }
-  }
+  data: { labels: ppcCampaigns, datasets: [{ label: 'Spend (£)', data: [818.17, 324.16, 134.61], backgroundColor: BLUE, borderRadius: 3, yAxisID: 'y' }, { label: 'Conversions', data: [9, 0, 2], backgroundColor: YELLOW, borderRadius: 3, yAxisID: 'y1' }] },
+  options: { ...sharedOptions, scales: { x: { grid: { color: 'rgba(255,255,255,0.04)' } }, y: { beginAtZero: true, title: { display: true, text: 'Spend (£)', color: '#555' }, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555' } }, y1: { beginAtZero: true, position: 'right', title: { display: true, text: 'Conversions', color: '#555' }, grid: { drawOnChartArea: false }, ticks: { color: '#555' } } } }
 });
 
-new Chart(document.getElementById('ppcImprChart'), {
+let ppcImprChart = new Chart(document.getElementById('ppcImprChart'), {
   type: 'doughnut',
-  data: {
-    labels: ['SEO Support (6,606)', 'Moving Generic (5,146)', 'Brand (352)'],
-    datasets: [{
-      data: [6606, 5146, 352],
-      backgroundColor: [BLUE, YELLOW, CYAN],
-      borderWidth: 0,
-    }]
-  },
-  options: {
-    responsive: true,
-    plugins: {
-      legend: { position: 'bottom', labels: { boxWidth: 10, padding: 12, font: { size: 11 }, color: '#888' } },
-      tooltip: { backgroundColor: '#111', titleColor: '#fff', bodyColor: 'rgba(255,255,255,0.6)', padding: 12, cornerRadius: 6 }
-    }
-  }
+  data: { labels: ['SEO Support (6,606)', 'Moving Generic (5,146)', 'Brand (352)'], datasets: [{ data: [6606, 5146, 352], backgroundColor: [BLUE, YELLOW, CYAN], borderWidth: 0 }] },
+  options: { responsive: true, plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, padding: 12, font: { size: 11 }, color: '#888' } }, tooltip: { backgroundColor: '#111', titleColor: '#fff', bodyColor: 'rgba(255,255,255,0.6)', padding: 12, cornerRadius: 6 } } }
 });
 
+initCharts();
+
+// =====================
 // TAB SWITCHING
+// =====================
 function switchTab(name, event) {
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  event.target.classList.add('active');
+  if (event && event.target) event.target.classList.add('active');
   document.getElementById('tab-' + name).classList.add('active');
+}
+
+// =====================
+// FILE UPLOAD HANDLER
+// =====================
+function handleUpload(event) {
+  const files = Array.from(event.target.files);
+  if (!files.length) return;
+
+  files.forEach(file => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const content = e.target.result;
+      const fileName = file.name.toLowerCase();
+
+      if (content.startsWith('Campaign report') || fileName.includes('campaign')) {
+        parsePPCCsv(content, file.name);
+      } else if (content.includes('Active users') || content.includes('active_users') || content.includes('Untitled exploration') || content.startsWith('#')) {
+        parseGA4Csv(content, file.name);
+      } else {
+        showUploadNotice(`Could not identify file type for "${file.name}". Please upload a Google Ads campaign report or GA4 export.`, 'warn');
+      }
+    };
+    reader.readAsText(file);
+  });
+
+  event.target.value = '';
+}
+
+// ─── PPC CSV PARSER ───────────────────────────────────────────────────────
+function parsePPCCsv(content, fileName) {
+  const lines = content.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+
+  let headerIndex = -1;
+  for (let i = 0; i < lines.length; i++) {
+    if (lines[i].startsWith('Campaign status,')) { headerIndex = i; break; }
+  }
+
+  if (headerIndex === -1) {
+    showUploadNotice(`Could not find column headers in "${fileName}". Please export a standard Google Ads campaign report.`, 'error');
+    return;
+  }
+
+  const dateRangeRaw = lines[1] || '';
+  const headers = parseCsvLine(lines[headerIndex]);
+
+  const colStatus    = headers.indexOf('Campaign status');
+  const colCampaign  = headers.indexOf('Campaign');
+  const colBudget    = headers.indexOf('Budget');
+  const colImpr      = headers.indexOf('Impr.');
+  const colClicks    = headers.indexOf('Clicks');
+  const colConvRate  = headers.indexOf('Conv. rate');
+  const colAvgCpc    = headers.indexOf('Avg. CPC');
+  const colCostConv  = headers.indexOf('Cost / conv.');
+  const colCost      = headers.indexOf('Cost');
+  const colConv      = headers.indexOf('Conversions');
+  const colConvValue = headers.indexOf('Conv. value');
+  const colValCost   = headers.indexOf('Conv. value / cost');
+
+  const campaigns = [];
+  let totalRow = null;
+
+  for (let i = headerIndex + 1; i < lines.length; i++) {
+    const line = lines[i];
+    if (line.startsWith('Total:')) {
+      if (line.startsWith('Total: Account') || line.startsWith('Total: Filtered')) totalRow = parseCsvLine(line);
+      continue;
+    }
+    const cols = parseCsvLine(line);
+    if (cols.length < 10) continue;
+    const status = cols[colStatus] || '';
+    const name   = cols[colCampaign] || '';
+    if (!name || name === '--') continue;
+
+    campaigns.push({
+      status, name,
+      budget:    parseNum(cols[colBudget]),
+      impr:      parseNum(cols[colImpr]),
+      clicks:    parseNum(cols[colClicks]),
+      convRate:  parsePercent(cols[colConvRate]),
+      avgCpc:    parseNum(cols[colAvgCpc]),
+      costConv:  parseNum(cols[colCostConv]),
+      cost:      parseNum(cols[colCost]),
+      conv:      parseNum(cols[colConv]),
+      convValue: parseNum(cols[colConvValue]),
+      valCost:   parseNum(cols[colValCost]),
+    });
+  }
+
+  // For Gerson, include all campaigns with spend regardless of status (all are paused)
+  const withSpend = campaigns.filter(c => c.cost > 0);
+  if (withSpend.length === 0) {
+    showUploadNotice('No campaigns with spend found in the uploaded file.', 'warn');
+    return;
+  }
+
+  const totals = totalRow ? {
+    impr:      parseNum(totalRow[colImpr]),
+    clicks:    parseNum(totalRow[colClicks]),
+    cost:      parseNum(totalRow[colCost]),
+    conv:      parseNum(totalRow[colConv]),
+    convValue: parseNum(totalRow[colConvValue]),
+    costConv:  parseNum(totalRow[colCostConv]),
+    convRate:  parsePercent(totalRow[colConvRate]),
+  } : {
+    impr:      withSpend.reduce((s,c)=>s+c.impr,0),
+    clicks:    withSpend.reduce((s,c)=>s+c.clicks,0),
+    cost:      withSpend.reduce((s,c)=>s+c.cost,0),
+    conv:      withSpend.reduce((s,c)=>s+c.conv,0),
+    convValue: withSpend.reduce((s,c)=>s+c.convValue,0),
+    costConv:  0, convRate: 0,
+  };
+
+  if (totals.costConv === 0 && totals.conv > 0) totals.costConv = totals.cost / totals.conv;
+  if (totals.convRate === 0 && totals.clicks > 0) totals.convRate = (totals.conv / totals.clicks) * 100;
+
+  updatePPCDashboard(withSpend, totals, dateRangeRaw);
+  showUploadNotice(`PPC data updated from "${fileName}" — ${withSpend.length} campaign${withSpend.length !== 1 ? 's' : ''} with spend loaded.`, 'success');
+}
+
+// ─── PPC DASHBOARD UPDATER ────────────────────────────────────────────────
+function updatePPCDashboard(campaigns, totals, dateRange) {
+  if (dateRange) {
+    setEl('ppc-date-sub', `Google Ads · Gerson Relocation · ${dateRange}`);
+    setEl('ppc-historic-sub', `${dateRange} · campaign data`);
+    setEl('ppc-chart-sub', `Campaigns with spend · ${dateRange}`);
+    setEl('ppc-table-sub', `Campaigns with spend · ${dateRange}`);
+  }
+
+  const avgCpc = totals.clicks > 0 ? totals.cost / totals.clicks : 0;
+
+  setEl('ppc-spend',       `£${fmt(totals.cost)}`);
+  setEl('ppc-spend-sub',   `${campaigns.length} campaign${campaigns.length!==1?'s':''} with spend`);
+  setEl('ppc-clicks',      fmt(totals.clicks));
+  setEl('ppc-clicks-sub',  `Avg. CPC £${fmt(avgCpc)} across all campaigns`);
+  setEl('ppc-clicks-trend',`${fmt(totals.impr)} impressions`);
+  setEl('ppc-conv',        fmt(totals.conv));
+  setEl('ppc-conv-sub',    `${totals.convRate.toFixed(2)}% overall conversion rate`);
+  setEl('ppc-conv-trend',  totals.costConv > 0 ? `£${fmt(totals.costConv)} cost / conv.` : 'No conversions recorded');
+
+  // Rebuild table
+  const tableBody = document.getElementById('ppc-table-body');
+  if (tableBody) {
+    tableBody.innerHTML = '';
+    campaigns.forEach(c => {
+      const ctr    = c.impr > 0 ? ((c.clicks / c.impr) * 100).toFixed(2) : '0.00';
+      const isGood = c.convRate >= 4;
+      const isBad  = c.conv === 0 && c.cost > 50;
+      const color  = isGood ? 'var(--cyan)' : isBad ? 'var(--red)' : '#ffffff';
+      tableBody.innerHTML += `
+        <tr>
+          <td class="td-date">${c.name}</td>
+          <td class="td-num">${fmt(c.impr)}</td>
+          <td class="td-num">${fmt(c.clicks)}</td>
+          <td class="td-num">${ctr}%</td>
+          <td class="td-num">£${fmt(c.avgCpc)}</td>
+          <td class="td-num">£${fmt(c.cost)}</td>
+          <td class="td-num"><strong>${fmt(c.conv)}</strong></td>
+          <td class="td-num" style="color:${color};font-weight:600">${c.convRate.toFixed(2)}%</td>
+          <td class="td-num" style="color:${color};font-weight:600">${c.costConv > 0 ? '£'+fmt(c.costConv) : '—'}</td>
+        </tr>`;
+    });
+    tableBody.innerHTML += `
+      <tr style="background:#0c0c0c;font-weight:600;border-top:2px solid rgba(255,255,255,0.1)">
+        <td class="td-date">Total</td>
+        <td class="td-num">${fmt(totals.impr)}</td>
+        <td class="td-num">${fmt(totals.clicks)}</td>
+        <td class="td-num">${totals.convRate.toFixed(2)}%</td>
+        <td class="td-num">£${fmt(totals.cost > 0 && totals.clicks > 0 ? totals.cost/totals.clicks : 0)}</td>
+        <td class="td-num">£${fmt(totals.cost)}</td>
+        <td class="td-num">${fmt(totals.conv)}</td>
+        <td class="td-num">${totals.convRate.toFixed(2)}%</td>
+        <td class="td-num">${totals.costConv > 0 ? '£'+fmt(totals.costConv) : '—'}</td>
+      </tr>`;
+  }
+
+  // Rebuild PPC charts
+  ppcCampaignChart.data.labels = campaigns.map(c => c.name.replace(/MCM \| /i, '').replace(/ \| Search \| UK/i, ''));
+  ppcCampaignChart.data.datasets[0].data = campaigns.map(c => c.cost);
+  ppcCampaignChart.data.datasets[1].data = campaigns.map(c => c.conv);
+  ppcCampaignChart.update();
+
+  ppcImprChart.data.labels = campaigns.map(c => `${c.name.replace(/MCM \| /i,'').replace(/ \| Search \| UK/i,'')} (${fmt(c.impr)})`);
+  ppcImprChart.data.datasets[0].data = campaigns.map(c => c.impr);
+  ppcImprChart.update();
+
+  setEl('footer-note', `Data sources: GA4 (gerson.co.uk) · Google Ads · Last updated: ${new Date().toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric'})}`);
+}
+
+// ─── GA4 CSV PARSER ───────────────────────────────────────────────────────
+function parseGA4Csv(content, fileName) {
+  const lines = content.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+
+  let headerIndex = -1;
+  for (let i = 0; i < lines.length; i++) {
+    if (!lines[i].startsWith('#') && lines[i].toLowerCase().includes('date')) { headerIndex = i; break; }
+  }
+
+  if (headerIndex === -1) { showUploadNotice(`Could not find headers in "${fileName}".`, 'error'); return; }
+
+  const headers    = parseCsvLine(lines[headerIndex]).map(h => h.toLowerCase().trim());
+  const colDate    = headers.findIndex(h => h === 'date');
+  const colUsers   = headers.findIndex(h => h.includes('active user'));
+  const colEngSess = headers.findIndex(h => h.includes('engaged session'));
+  const colEngTime = headers.findIndex(h => h.includes('engagement time'));
+
+  if (colDate === -1 || colUsers === -1) { showUploadNotice(`Expected columns not found in "${fileName}".`, 'error'); return; }
+
+  const newData = [];
+  for (let i = headerIndex + 1; i < lines.length; i++) {
+    const cols = parseCsvLine(lines[i]);
+    if (!cols[colDate] || cols[colDate] === 'Grand total' || cols[colDate] === '') continue;
+    const raw = cols[colDate].replace(/\D/g, '');
+    if (raw.length !== 8) continue;
+    const dateStr = `${raw.slice(0,4)}-${raw.slice(4,6)}-${raw.slice(6,8)}`;
+    newData.push({
+      date: dateStr,
+      active_users:     Math.round(parseNum(cols[colUsers])),
+      engaged_sessions: colEngSess > -1 ? parseNum(cols[colEngSess]) : 0,
+      engagement_time:  colEngTime > -1 ? parseNum(cols[colEngTime]) : 0,
+    });
+  }
+
+  if (newData.length === 0) { showUploadNotice(`No valid data rows found in "${fileName}".`, 'warn'); return; }
+
+  newData.sort((a,b) => a.date.localeCompare(b.date));
+  grlGA4Raw = newData;
+
+  // Update KPI cards
+  const totalUsers   = newData.reduce((s,d) => s+d.active_users, 0);
+  const avgUsers     = Math.round(totalUsers / newData.length);
+  const avgEngTime   = newData.reduce((s,d) => s+d.engagement_time, 0) / newData.length;
+  const avgEngSess   = newData.reduce((s,d) => s+d.engaged_sessions, 0) / newData.length;
+  const days         = newData.length;
+  const firstDate    = new Date(newData[0].date).toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'});
+  const lastDate     = new Date(newData[newData.length-1].date).toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'});
+
+  setEl('kpi-total-users',      totalUsers.toLocaleString('en-GB'));
+  setEl('kpi-total-users-sub',  `Unique active users · ${days} days`);
+  setEl('kpi-avg-users',        avgUsers.toLocaleString('en-GB'));
+  setEl('kpi-engagement-time',  `${avgEngTime.toFixed(1)}s`);
+  setEl('kpi-engaged-sessions', avgEngSess.toFixed(2));
+  setEl('overview-period-sub',  `${firstDate} – ${lastDate}`);
+  setEl('overview-chart-sub',   `${days}-day trend · GA4 · ${firstDate} – ${lastDate}`);
+  setEl('header-date-range',    `${firstDate} – ${lastDate} \u00a0(${days} days)`);
+
+  // Rebuild charts
+  const labels = buildLabels(newData);
+  overviewChart.data.labels = labels;
+  overviewChart.data.datasets[0].data = newData.map(d => d.active_users);
+  overviewChart.update();
+
+  engagementChart.data.labels = labels.filter((_, i) => i % 7 === 0);
+  engagementChart.data.datasets[0].data = newData.filter((_, i) => i % 7 === 0).map(d => d.engagement_time);
+  engagementChart.update();
+
+  const sortedPeak = [...newData].sort((a,b) => b.active_users - a.active_users).slice(0,10);
+  peakChart.data.labels = sortedPeak.map(d => { const dt = new Date(d.date); return dt.toLocaleDateString('en-GB', { day:'numeric', month:'short' }); });
+  peakChart.data.datasets[0].data = sortedPeak.map(d => d.active_users);
+  peakChart.update();
+
+  trafficChart.data.labels = labels;
+  trafficChart.data.datasets[0].data = newData.map(d => d.active_users);
+  trafficChart.update();
+
+  buildTrafficTable();
+
+  setEl('footer-note', `Data sources: GA4 (gerson.co.uk) · Google Ads · Last updated: ${new Date().toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric'})}`);
+  showUploadNotice(`GA4 data updated from "${fileName}" — ${newData.length} days loaded. All charts and KPIs refreshed.`, 'success');
+}
+
+// ─── HELPERS ──────────────────────────────────────────────────────────────
+function parseCsvLine(line) {
+  const result = []; let current = ''; let inQuotes = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (ch === '"') { inQuotes = !inQuotes; continue; }
+    if (ch === ',' && !inQuotes) { result.push(current.trim()); current = ''; continue; }
+    current += ch;
+  }
+  result.push(current.trim());
+  return result;
+}
+
+function parseNum(val) {
+  if (!val || val === '--' || val === '') return 0;
+  return parseFloat(String(val).replace(/[£,\s]/g, '')) || 0;
+}
+
+function parsePercent(val) {
+  if (!val || val === '--' || val === '') return 0;
+  return parseFloat(String(val).replace('%','')) || 0;
+}
+
+function fmt(n) {
+  if (n === undefined || n === null || isNaN(n)) return '0';
+  if (Number.isInteger(n) || n > 100) return Math.round(n).toLocaleString('en-GB');
+  return n.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function setEl(id, val) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = val;
+}
+
+function showUploadNotice(msg, type) {
+  const existing = document.getElementById('upload-notice');
+  if (existing) existing.remove();
+  const colors = {
+    success: { bg: 'rgba(30,223,212,0.08)', border: '#1edfd4', text: '#1edfd4' },
+    warn:    { bg: 'rgba(251,191,70,0.08)',  border: '#fbbf46', text: '#fbbf46' },
+    error:   { bg: 'rgba(255,81,94,0.08)',   border: '#ff515e', text: '#ff515e' },
+  };
+  const c = colors[type] || colors.warn;
+  const div = document.createElement('div');
+  div.id = 'upload-notice';
+  div.style.cssText = `position:fixed;bottom:24px;right:24px;z-index:9000;background:${c.bg};border:1px solid ${c.border};border-left:4px solid ${c.border};color:${c.text};border-radius:6px;padding:14px 20px;font-size:13px;max-width:420px;box-shadow:0 4px 24px rgba(0,0,0,0.4);`;
+  div.textContent = msg;
+  document.body.appendChild(div);
+  setTimeout(() => div.remove(), 6000);
 }
 
 </script>
