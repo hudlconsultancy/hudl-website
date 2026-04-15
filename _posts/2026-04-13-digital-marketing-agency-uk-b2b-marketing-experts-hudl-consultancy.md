@@ -3,11 +3,11 @@ title: Digital Marketing Agency UK | B2B Marketing Experts | HUDL Consultancy
 date: 2026-04-14T00:29:00.000+01:00
 category: marketing-tips
 summary: >
-  ## Meta Description
-
-  HUDL is a leading digital marketing agency UK businesses trust for results-driven B2B strategies. Our London marketing consultancy delivers measurable growth. Request a free consultation.
+  HUDL is a leading digital marketing agency UK businesses trust for
+  results-driven B2B strategies. Our London marketing consultancy delivers
+  measurable growth. Request a free consultation.
 read_time: 5 minutes
-thumbnail: /images/uploads/gemini_generated_image_p5gb3sp5gb3sp5gb.png
+thumbnail: /images/uploads/digital-marketing-agency-uk-b2b-marketing-experts-hudl-consultancy.webp
 ---
 
 ---
