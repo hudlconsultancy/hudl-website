@@ -1536,19 +1536,280 @@ new Chart(document.getElementById('ppcImprChart'), {
 });
 
 // =====================
-// FILE UPLOAD HANDLER
+// FILE UPLOAD HANDLER — FIXED
 // =====================
 function handleUpload(event) {
   const files = event.target.files;
   if (!files.length) return;
+
   Array.from(files).forEach(file => {
+    if (!file.name.endsWith('.csv')) {
+      alert('Please upload a CSV file exported from Google Ads.');
+      return;
+    }
     const reader = new FileReader();
     reader.onload = (e) => {
-      const content = e.target.result;
-      console.log(`Uploaded: ${file.name}`, content.slice(0, 200));
-      alert(`File "${file.name}" uploaded. In a future version this will auto-refresh the dashboard data.`);
+      try {
+        parsePPCCsv(e.target.result, file.name);
+      } catch(err) {
+        alert('Could not parse CSV: ' + err.message + '\n\nMake sure this is a Google Ads Campaign performance report exported as CSV.');
+      }
     };
     reader.readAsText(file);
+  });
+
+  // Reset input so same file can be re-uploaded
+  event.target.value = '';
+}
+
+function parsePPCCsv(text, filename) {
+  const lines = text.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+
+  // Google Ads CSVs have 2 preamble rows before headers
+  // Row 0: "Campaign performance"
+  // Row 1: date range e.g. "1 January 2026 - 29 May 2026"
+  // Row 2: column headers
+  // Row 3+: data
+
+  let headerRowIndex = 0;
+  for (let i = 0; i < lines.length; i++) {
+    if (lines[i].toLowerCase().startsWith('campaign,') || lines[i].toLowerCase().startsWith('"campaign",')) {
+      headerRowIndex = i;
+      break;
+    }
+  }
+
+  // Extract date range from row 1
+  const dateRangeLine = lines[1] || '';
+
+  // Parse header row
+  const headers = parseCsvRow(lines[headerRowIndex]);
+
+  // Parse data rows
+  const rows = [];
+  for (let i = headerRowIndex + 1; i < lines.length; i++) {
+    if (!lines[i] || lines[i].startsWith('Total:') || lines[i].startsWith('"Total:')) continue;
+    const vals = parseCsvRow(lines[i]);
+    if (vals.length < headers.length) continue;
+    const obj = {};
+    headers.forEach((h, idx) => { obj[h.trim()] = vals[idx] ? vals[idx].trim() : ''; });
+    rows.push(obj);
+  }
+
+  if (rows.length === 0) throw new Error('No campaign data found in CSV.');
+
+  // Map column names — Google Ads uses slightly different names
+  const colMap = {
+    campaign:    findCol(headers, ['Campaign']),
+    clicks:      findCol(headers, ['Clicks']),
+    impressions: findCol(headers, ['Impr.']),
+    ctr:         findCol(headers, ['CTR']),
+    avgCpc:      findCol(headers, ['Avg. CPC']),
+    cost:        findCol(headers, ['Cost']),
+    conversions: findCol(headers, ['Conversions']),
+    costPerConv: findCol(headers, ['Cost / conv.']),
+    convRate:    findCol(headers, ['Conv. rate']),
+  };
+
+  // Parse rows into clean objects
+  const campaigns = rows.map(r => ({
+    name:        r[colMap.campaign] || '',
+    clicks:      parseNum(r[colMap.clicks]),
+    impressions: parseNum(r[colMap.impressions]),
+    ctr:         r[colMap.ctr] || '—',
+    avgCpc:      parseNum(r[colMap.avgCpc]),
+    cost:        parseNum(r[colMap.cost]),
+    conversions: parseNum(r[colMap.conversions]),
+    costPerConv: parseNum(r[colMap.costPerConv]),
+    convRate:    r[colMap.convRate] || '—',
+  }));
+
+  // Update the dashboard
+  updatePPCTab(campaigns, dateRangeLine);
+  updatePPCKpis(campaigns);
+  updatePPCCharts(campaigns);
+
+  // Switch to PPC tab
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelector('.tab[onclick*="ppc"]').classList.add('active');
+  document.getElementById('tab-ppc').classList.add('active');
+
+  // Update header date range
+  if (dateRangeLine) {
+    document.querySelector('.date-range .value').textContent = dateRangeLine;
+  }
+
+  alert(`✓ Dashboard updated from "${filename}"\n${campaigns.length} campaigns loaded.`);
+}
+
+// ── Helpers ──────────────────────────────────────────────────
+function parseCsvRow(line) {
+  const result = [];
+  let current = '';
+  let inQuotes = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (ch === '"') { inQuotes = !inQuotes; continue; }
+    if (ch === ',' && !inQuotes) { result.push(current); current = ''; continue; }
+    current += ch;
+  }
+  result.push(current);
+  return result;
+}
+
+function findCol(headers, candidates) {
+  for (const c of candidates) {
+    const found = headers.find(h => h.trim() === c);
+    if (found) return found.trim();
+  }
+  return candidates[0];
+}
+
+function parseNum(val) {
+  if (!val) return 0;
+  return parseFloat(val.replace(/[£,%"]/g, '').replace(/,/g, '')) || 0;
+}
+
+function fmt(n, decimals = 0) {
+  return n.toLocaleString('en-GB', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+}
+
+// ── Update campaign table ────────────────────────────────────
+function updatePPCTab(campaigns, dateRange) {
+  const tbody = document.querySelector('#tab-ppc .table-card tbody');
+  if (!tbody) return;
+  tbody.innerHTML = '';
+
+  const totals = { impressions: 0, clicks: 0, cost: 0, conversions: 0 };
+
+  campaigns.forEach(c => {
+    totals.impressions  += c.impressions;
+    totals.clicks       += c.clicks;
+    totals.cost         += c.cost;
+    totals.conversions  += c.conversions;
+
+    const convRateNum = parseFloat(c.convRate) || 0;
+    const convRateColour = convRateNum >= 10 ? '#1edfd4' : convRateNum >= 5 ? '#fbbf46' : '#ff515e';
+    const cpaColour = c.costPerConv > 0 && c.costPerConv <= 200 ? '#1edfd4' : c.costPerConv <= 350 ? '#fbbf46' : '#ff515e';
+
+    const shortName = c.name.replace('JDR Search | ', '');
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="td-date">${shortName}</td>
+      <td class="td-num">${fmt(c.impressions)}</td>
+      <td class="td-num">${fmt(c.clicks)}</td>
+      <td class="td-num">${c.ctr}</td>
+      <td class="td-num">£${fmt(c.avgCpc, 2)}</td>
+      <td class="td-num">£${fmt(c.cost, 2)}</td>
+      <td class="td-num"><strong>${fmt(c.conversions, 2)}</strong></td>
+      <td class="td-num" style="color:${convRateColour};font-weight:600">${c.convRate}</td>
+      <td class="td-num" style="color:${cpaColour};font-weight:600">${c.costPerConv > 0 ? '£' + fmt(c.costPerConv, 2) : '—'}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  // Totals row
+  const avgConvRate = totals.clicks > 0 ? (totals.conversions / totals.clicks * 100).toFixed(2) + '%' : '—';
+  const avgCpa = totals.conversions > 0 ? totals.cost / totals.conversions : 0;
+  const totalTr = document.createElement('tr');
+  totalTr.style.cssText = 'background:#0c0c0c;font-weight:600;border-top:2px solid rgba(255,255,255,0.1)';
+  totalTr.innerHTML = `
+    <td class="td-date">Total (All Campaigns)</td>
+    <td class="td-num">${fmt(totals.impressions)}</td>
+    <td class="td-num">${fmt(totals.clicks)}</td>
+    <td class="td-num">—</td>
+    <td class="td-num">—</td>
+    <td class="td-num">£${fmt(totals.cost, 2)}</td>
+    <td class="td-num">${fmt(totals.conversions, 2)}</td>
+    <td class="td-num">${avgConvRate}</td>
+    <td class="td-num">${avgCpa > 0 ? '£' + fmt(avgCpa, 2) : '—'}</td>
+  `;
+  tbody.appendChild(totalTr);
+}
+
+// ── Update KPI cards ─────────────────────────────────────────
+function updatePPCKpis(campaigns) {
+  const totals = campaigns.reduce((acc, c) => {
+    acc.cost        += c.cost;
+    acc.clicks      += c.clicks;
+    acc.impressions += c.impressions;
+    acc.conversions += c.conversions;
+    return acc;
+  }, { cost: 0, clicks: 0, impressions: 0, conversions: 0 });
+
+  const avgCpa     = totals.conversions > 0 ? totals.cost / totals.conversions : 0;
+  const convRate   = totals.clicks > 0 ? (totals.conversions / totals.clicks * 100) : 0;
+  const bestCampaign = [...campaigns].filter(c => c.convRate !== '—' && parseFloat(c.convRate) > 0)
+                        .sort((a, b) => parseFloat(b.convRate) - parseFloat(a.convRate))[0];
+
+  const kpiCards = document.querySelectorAll('#tab-ppc .kpi-grid .kpi-card');
+  if (kpiCards[0]) {
+    kpiCards[0].querySelector('.kpi-value').textContent = `£${fmt(totals.cost)}`;
+    kpiCards[0].querySelector('.kpi-sub').textContent = `${campaigns.length} campaigns · ${fmt(totals.impressions)} impressions`;
+  }
+  if (kpiCards[1]) {
+    kpiCards[1].querySelector('.kpi-value').textContent = fmt(totals.clicks);
+    kpiCards[1].querySelector('.kpi-sub').textContent = `Avg. CPC £${fmt(totals.cost / totals.clicks, 2)} across campaigns`;
+  }
+  if (kpiCards[2]) {
+    kpiCards[2].querySelector('.kpi-value').textContent = fmt(totals.conversions, 2);
+    kpiCards[2].querySelector('.kpi-sub').textContent = `${convRate.toFixed(2)}% overall conv. rate · £${fmt(avgCpa)} CPA`;
+  }
+  if (kpiCards[3] && bestCampaign) {
+    kpiCards[3].querySelector('.kpi-value').textContent = bestCampaign.convRate;
+    const shortName = bestCampaign.name.replace('JDR Search | ', '');
+    kpiCards[3].querySelector('.kpi-sub').textContent = `${shortName} · £${fmt(bestCampaign.costPerConv, 2)} CPA`;
+  }
+}
+
+// ── Update PPC charts ────────────────────────────────────────
+function updatePPCCharts(campaigns) {
+  const labels    = campaigns.map(c => c.name.replace('JDR Search | ', '').replace(' (Removals & Packing)', '').replace(' (High CPC Markets - Outbound)', '').replace(' (Premium & Storage)', ''));
+  const spend     = campaigns.map(c => c.cost);
+  const convs     = campaigns.map(c => c.conversions);
+  const cpas      = campaigns.map(c => c.costPerConv);
+
+  // Destroy and rebuild spend vs conversions chart
+  const ctx1 = document.getElementById('ppcCampaignChart');
+  if (ctx1._chart) ctx1._chart.destroy();
+  ctx1._chart = new Chart(ctx1, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        { label: 'Spend (£)', data: spend, backgroundColor: '#45aeff', borderRadius: 3, yAxisID: 'y' },
+        { label: 'Conversions', data: convs, backgroundColor: '#fbbf46', borderRadius: 3, yAxisID: 'y1' }
+      ]
+    },
+    options: {
+      ...sharedOptions,
+      scales: {
+        x: { grid: { color: 'rgba(255,255,255,0.04)' } },
+        y: { beginAtZero: true, title: { display: true, text: 'Spend (£)' }, grid: { color: 'rgba(255,255,255,0.04)' } },
+        y1: { beginAtZero: true, position: 'right', title: { display: true, text: 'Conversions' }, grid: { drawOnChartArea: false } }
+      }
+    }
+  });
+
+  // Destroy and rebuild CPA chart
+  const ctx2 = document.getElementById('ppcImprChart');
+  if (ctx2._chart) ctx2._chart.destroy();
+  const cpaColours = cpas.map(v => v <= 200 ? '#1edfd4' : v <= 350 ? '#fbbf46' : '#ff515e');
+  ctx2._chart = new Chart(ctx2, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{ label: 'Cost per Conversion (£)', data: cpas, backgroundColor: cpaColours, borderRadius: 3 }]
+    },
+    options: {
+      ...sharedOptions,
+      plugins: { ...sharedOptions.plugins, legend: { display: false } },
+      scales: {
+        x: { grid: { color: 'rgba(255,255,255,0.04)' } },
+        y: { beginAtZero: true, title: { display: true, text: 'Cost per Conversion (£)' }, grid: { color: 'rgba(255,255,255,0.04)' } }
+      }
+    }
   });
 }
 
