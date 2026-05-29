@@ -1838,7 +1838,8 @@ function updatePPCCharts(campaigns) {
 
   // Destroy and rebuild spend vs conversions chart
   const ctx1 = document.getElementById('ppcCampaignChart');
-  if (ctx1._chart) ctx1._chart.destroy();
+const existing1 = Chart.getChart('ppcCampaignChart');
+if (existing1) existing1.destroy();
   ctx1._chart = new Chart(ctx1, {
     type: 'bar',
     data: {
@@ -1859,8 +1860,9 @@ function updatePPCCharts(campaigns) {
   });
 
   // Destroy and rebuild CPA chart
-  const ctx2 = document.getElementById('ppcImprChart');
-  if (ctx2._chart) ctx2._chart.destroy();
+ const ctx2 = document.getElementById('ppcImprChart');
+const existing2 = Chart.getChart('ppcImprChart');
+if (existing2) existing2.destroy();
   const cpaColours = cpas.map(v => v <= 200 ? '#1edfd4' : v <= 350 ? '#fbbf46' : '#ff515e');
   ctx2._chart = new Chart(ctx2, {
     type: 'bar',
