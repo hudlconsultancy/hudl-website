@@ -24,10 +24,11 @@
 - Key metrics we report on: [to confirm]
 
 ## Reporting
-- **Dashboard:** not built yet — expected at `dashboards/agm-group-dashboard.html` (subdomain `agm.hudl.gg` already redirects here)
-- **Dashboard password:** [set on creation]
+- **Dashboard:** `dashboards/agm-group-dashboard.html` (live, awaiting first data upload) · subdomain `agm.hudl.gg`
+- **Dashboard password:** `AGMGROUP2026`
 - **Storage key:** `agm_auth`
 - **Reporting cadence:** [to confirm]
+- _Populate by opening the dashboard → "Upload New Data" → a Google Ads Campaign performance CSV._
 
 ## Voice & guardrails
 - Tone: [to confirm]

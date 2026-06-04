@@ -32,10 +32,10 @@ Examples:
 |------|--------|--------|-----------|
 | `hudl` | HUDL Consultancy _(our own)_ | UK marketing consultancy | _internal — blog ships to `/_posts`_ |
 | `abels` | Abels Moving Services | UK removals & relocation | `dashboards/abels-dashboard.html` |
-| `bishops` | Bishop's Move | UK removals & storage | _not built yet_ (`bishops-move-dashboard.html`) |
+| `bishops` | Bishop's Move | UK removals & storage | `dashboards/bishops-move-dashboard.html` _(awaiting data)_ |
 | `gerson` | Gerson Relocation | Corporate / global relocation | `dashboards/gerson-relocation-dashboard.html` |
-| `gms` | GMS _(confirm name)_ | _to confirm_ | _not built yet_ (`gms-dashboard.html`) |
-| `agm` | AGM Group _(confirm name)_ | _to confirm_ | _not built yet_ (`agm-group-dashboard.html`) |
+| `gms` | GMS _(confirm name)_ | _to confirm_ | `dashboards/gms-dashboard.html` _(awaiting data)_ |
+| `agm` | AGM Group _(confirm name)_ | _to confirm_ | `dashboards/agm-group-dashboard.html` _(awaiting data)_ |
 
 ## Onboarding a new client
 

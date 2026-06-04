@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bishop's Move — Marketing Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  #password-gate { position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:9999;font-family:'Source Sans 3',sans-serif; }
+  #password-gate .gate-box { width:100%;max-width:400px;padding:48px 40px;background:#111;border:1px solid rgba(255,255,255,0.08);border-top:3px solid #fbbf46;border-radius:8px;text-align:center; }
+  #password-gate .gate-brand { font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:4px; }
+  #password-gate .gate-brand span { color:#fbbf46; }
+  #password-gate .gate-sub { font-size:11px;color:#666;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:32px; }
+  #password-gate input { width:100%;padding:12px 16px;background:#000;border:1px solid rgba(255,255,255,0.12);border-radius:4px;color:#fff;font-family:'Source Sans 3',sans-serif;font-size:15px;text-align:center;outline:none;margin-bottom:12px;transition:border-color .2s; }
+  #password-gate input:focus { border-color:#fbbf46; }
+  #password-gate button { width:100%;padding:12px;background:#fbbf46;color:#000;border:none;border-radius:4px;font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer;transition:opacity .2s; }
+  #password-gate button:hover { opacity:.85; }
+  #password-gate .gate-error { font-size:12px;color:#ff515e;margin-top:10px;min-height:18px; }
+  #password-gate .gate-footer { font-size:11px;color:#444;margin-top:24px; }
+</style>
+<script>
+  const DASHBOARD_PASSWORD = 'BISHOPSMOVE2026';
+  function checkPassword() {
+    const input = document.getElementById('gate-input').value;
+    const error = document.getElementById('gate-error');
+    if (input === DASHBOARD_PASSWORD) {
+      sessionStorage.setItem('bishops_auth','true');
+      document.getElementById('password-gate').style.display='none';
+    } else {
+      error.textContent='Incorrect password. Please try again.';
+      document.getElementById('gate-input').value='';
+      document.getElementById('gate-input').focus();
+    }
+  }
+  window.addEventListener('DOMContentLoaded',()=>{
+    if(sessionStorage.getItem('bishops_auth')==='true') document.getElementById('password-gate').style.display='none';
+    document.getElementById('gate-input').addEventListener('keydown',e=>{ if(e.key==='Enter') checkPassword(); });
+  });
+</script>
+<style>
+  :root { --navy:#000;--gold:#fbbf46;--gold-light:#fcd06e;--white:#fff;--text-mid:#aaa;--text-light:#666;--success:#1edfd4;--warn:#fbbf46;--danger:#ff515e;--blue:#45aeff;--border:rgba(255,255,255,0.08); }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Source Sans 3',sans-serif;background:#0c0c0c;color:#fff;min-height:100vh;}
+  .header{background:#000;padding:28px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid #fbbf46;}
+  .header-left{display:flex;align-items:center;gap:20px;}
+  .brand-mark{width:48px;height:48px;background:#fbbf46;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:#000;}
+  .header-title h1{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:#fff;letter-spacing:1px;text-transform:uppercase;}
+  .header-title p{font-size:12px;font-weight:300;color:#fcd06e;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;}
+  .header-right{display:flex;align-items:center;gap:32px;}
+  .date-range{text-align:right;}
+  .date-range .label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#fcd06e;font-weight:500;}
+  .date-range .value{font-size:13px;color:#fff;font-weight:500;margin-top:2px;}
+  .upload-btn{background:#fbbf46;color:#000;border:none;cursor:pointer;padding:10px 20px;border-radius:4px;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:600;transition:background .2s;}
+  .upload-btn:hover{background:#fcd06e;}
+  .nav-tabs{background:#000;padding:0 48px;display:flex;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .tab{padding:14px 24px;font-size:13px;font-weight:500;color:rgba(255,255,255,0.5);cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;}
+  .tab:hover{color:rgba(255,255,255,0.8);}
+  .tab.active{color:#fbbf46;border-bottom-color:#fbbf46;}
+  .main{padding:40px 48px;max-width:1400px;}
+  .alert{border-left:4px solid #fbbf46;border-radius:6px;padding:14px 20px;margin-bottom:32px;display:flex;align-items:center;gap:12px;font-size:13px;color:#ccc;background:rgba(251,191,70,0.08);border:1px solid rgba(251,191,70,0.2);border-left-width:4px;}
+  .alert-icon{width:20px;height:20px;min-width:20px;background:#fbbf46;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;}
+  .section-header{display:flex;align-items:baseline;gap:12px;margin-bottom:20px;}
+  .section-title{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:1px;}
+  .section-sub{font-size:12px;color:#666;text-transform:uppercase;letter-spacing:1px;}
+  .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:40px;}
+  .kpi-card{background:#111;border-radius:8px;padding:24px;border:1px solid rgba(255,255,255,0.08);position:relative;overflow:hidden;}
+  .kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:#fbbf46;}
+  .kpi-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;color:#666;margin-bottom:12px;}
+  .kpi-value{font-family:'Barlow Condensed',sans-serif;font-size:42px;font-weight:800;color:#fff;line-height:1;}
+  .kpi-sub{font-size:12px;color:#666;margin-top:6px;}
+  .kpi-trend{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;margin-top:10px;padding:3px 8px;border-radius:100px;}
+  .trend-up{background:rgba(30,223,212,0.12);color:#1edfd4;}
+  .trend-down{background:rgba(255,81,94,0.12);color:#ff515e;}
+  .trend-neutral{background:rgba(255,255,255,0.06);color:#aaa;}
+  .chart-row{display:grid;grid-template-columns:2fr 1fr;gap:24px;margin-bottom:32px;}
+  .chart-row-full{margin-bottom:32px;}
+  .chart-card{background:#111;border-radius:8px;padding:28px;border:1px solid rgba(255,255,255,0.08);}
+  .chart-card-title{font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;}
+  .chart-card-sub{font-size:11px;color:#666;text-transform:uppercase;letter-spacing:.8px;margin-bottom:24px;}
+  canvas{width:100%!important;}
+  .empty-state{background:#111;border:1px dashed rgba(255,255,255,0.15);border-radius:8px;padding:56px 40px;text-align:center;color:#888;font-size:14px;margin-bottom:32px;}
+  .empty-state .es-icon{width:44px;height:44px;border-radius:50%;background:rgba(251,191,70,0.12);color:#fbbf46;display:flex;align-items:center;justify-content:center;font-size:20px;margin:0 auto 16px;}
+  .empty-state strong{color:#fff;display:block;font-size:16px;margin-bottom:6px;font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px;text-transform:uppercase;}
+  .table-card{background:#111;border-radius:8px;border:1px solid rgba(255,255,255,0.08);overflow:hidden;margin-bottom:32px;}
+  .table-header{padding:20px 28px;border-bottom:1px solid rgba(255,255,255,0.08);}
+  table{width:100%;border-collapse:collapse;}
+  thead th{padding:12px 20px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#666;background:#0c0c0c;border-bottom:1px solid rgba(255,255,255,0.08);}
+  tbody tr{border-bottom:1px solid rgba(255,255,255,0.08);transition:background .15s;}
+  tbody tr:last-child{border-bottom:none;}
+  tbody tr:hover{background:rgba(255,255,255,0.03);}
+  tbody td{padding:13px 20px;font-size:13px;color:#ccc;}
+  .td-date{font-weight:500;color:#fff;}
+  .td-num{font-variant-numeric:tabular-nums;}
+  .footer{padding:24px 48px;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;align-items:center;margin-top:40px;background:#000;}
+  .footer-brand,.footer-note{font-size:11px;color:#666;text-transform:uppercase;letter-spacing:1px;}
+  .tab-panel{display:none;}
+  .tab-panel.active{display:block;}
+  @media(max-width:900px){.header,.main,.nav-tabs,.footer{padding:20px 24px;}.kpi-grid{grid-template-columns:repeat(2,1fr);}.chart-row{grid-template-columns:1fr;}.footer{flex-direction:column;gap:8px;text-align:center;}}
+</style>
+</head>
+<body>
+
+<div id="password-gate">
+  <div class="gate-box">
+    <div class="gate-brand">BISHOP'S <span>MOVE</span></div>
+    <div class="gate-sub">Marketing Dashboard · Restricted Access</div>
+    <input type="password" id="gate-input" placeholder="Enter password" autocomplete="off">
+    <button onclick="checkPassword()">Access Dashboard</button>
+    <div class="gate-error" id="gate-error"></div>
+    <div class="gate-footer">HUDL Consultancy</div>
+  </div>
+</div>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-mark">B</div>
+    <div class="header-title">
+      <h1>Bishop's Move</h1>
+      <p>Marketing Performance Dashboard</p>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="date-range">
+      <div class="label">Reporting Period</div>
+      <div class="value" id="dateRangeDisplay">Awaiting data</div>
+    </div>
+    <button class="upload-btn" onclick="document.getElementById('csvUpload').click()">&#8593; Upload New Data</button>
+    <input type="file" id="csvUpload" accept=".csv" style="display:none" onchange="handleUpload(event)">
+  </div>
+</div>
+
+<div class="nav-tabs">
+  <div class="tab active" onclick="switchTab('overview',event)">Overview</div>
+  <div class="tab" onclick="switchTab('ppc',event)">PPC</div>
+</div>
+
+<div class="main">
+
+<div class="alert">
+  <div class="alert-icon">i</div>
+  <div><strong>Dashboard ready &mdash; awaiting data.</strong> This dashboard for Bishop's Move is set up and on-brand. Click <strong>Upload New Data</strong> (top right) and select a Google Ads <em>Campaign performance</em> CSV to populate the PPC tab instantly. GA4 &amp; Search Console panels will be wired up once analytics access is confirmed.</div>
+</div>
+
+<!-- OVERVIEW TAB -->
+<div id="tab-overview" class="tab-panel active">
+  <div class="section-header"><div class="section-title">Performance Summary</div><div class="section-sub">UK Removals & Storage</div></div>
+  <div class="kpi-grid">
+    <div class="kpi-card"><div class="kpi-label">Total Spend</div><div class="kpi-value" id="ovKpi1">&mdash;</div><div class="kpi-sub">Awaiting Google Ads data</div><div class="kpi-trend trend-neutral">Upload CSV</div></div>
+    <div class="kpi-card"><div class="kpi-label">Total Clicks</div><div class="kpi-value" id="ovKpi2">&mdash;</div><div class="kpi-sub">Awaiting Google Ads data</div><div class="kpi-trend trend-neutral">Upload CSV</div></div>
+    <div class="kpi-card"><div class="kpi-label">Conversions</div><div class="kpi-value" id="ovKpi3">&mdash;</div><div class="kpi-sub">Awaiting Google Ads data</div><div class="kpi-trend trend-neutral">Upload CSV</div></div>
+    <div class="kpi-card"><div class="kpi-label">Website Users</div><div class="kpi-value">&mdash;</div><div class="kpi-sub">Awaiting GA4 access</div><div class="kpi-trend trend-neutral">GA4 pending</div></div>
+  </div>
+  <div class="empty-state">
+    <div class="es-icon">&#8593;</div>
+    <strong>No data loaded yet</strong>
+    Upload a Google Ads Campaign performance CSV to populate spend, clicks, conversions and campaign charts. GA4 and Search Console trends will appear here once analytics access for Bishop's Move is confirmed.
+  </div>
+</div>
+
+<!-- PPC TAB -->
+<div id="tab-ppc" class="tab-panel">
+  <div class="section-header"><div class="section-title">PPC Performance</div><div class="section-sub">Google Ads · Bishop's Move</div></div>
+
+  <div class="alert" style="border-left-color:#1edfd4;background:rgba(30,223,212,0.08);border-color:rgba(30,223,212,0.2);margin-bottom:16px">
+    <div class="alert-icon" style="background:#1edfd4;color:#000">&#8593;</div>
+    <div><strong>To load PPC data:</strong> click "Upload New Data" (top right) and select your Google Ads Campaign performance CSV. All figures and charts below will update automatically.</div>
+  </div>
+
+  <div class="kpi-grid" style="margin-bottom:32px">
+    <div class="kpi-card"><div class="kpi-label">Total Spend</div><div class="kpi-value" id="ppcKpi1Val">&mdash;</div><div class="kpi-sub" id="ppcKpi1Sub">Awaiting upload</div><div class="kpi-trend trend-neutral">Google Ads</div></div>
+    <div class="kpi-card"><div class="kpi-label">Total Clicks</div><div class="kpi-value" id="ppcKpi2Val">&mdash;</div><div class="kpi-sub" id="ppcKpi2Sub">Awaiting upload</div><div class="kpi-trend trend-neutral" id="ppcKpi2Trend">&mdash; impressions</div></div>
+    <div class="kpi-card"><div class="kpi-label">Total Conversions</div><div class="kpi-value" id="ppcKpi3Val">&mdash;</div><div class="kpi-sub" id="ppcKpi3Sub">Awaiting upload</div><div class="kpi-trend trend-neutral">Upload CSV to refresh</div></div>
+    <div class="kpi-card"><div class="kpi-label">Best Conv. Rate</div><div class="kpi-value" id="ppcKpi4Val">&mdash;</div><div class="kpi-sub" id="ppcKpi4Sub">Awaiting upload</div><div class="kpi-trend trend-neutral">Upload CSV to refresh</div></div>
+  </div>
+
+  <div class="empty-state" id="ppcEmpty">
+    <div class="es-icon">&#9788;</div>
+    <strong>No PPC data yet</strong>
+    Upload a Google Ads Campaign performance CSV (GBP) to populate the KPIs, campaign charts and breakdown table for Bishop's Move.
+  </div>
+
+  <div class="chart-row" id="ppcChartsRow" style="display:none">
+    <div class="chart-card"><div class="chart-card-title">Spend vs Conversions by Campaign</div><div class="chart-card-sub">All campaigns</div><canvas id="ppcCampaignChart" height="130"></canvas></div>
+    <div class="chart-card"><div class="chart-card-title">Cost per Conversion by Campaign</div><div class="chart-card-sub">Lower is better</div><canvas id="ppcImprChart" height="130"></canvas></div>
+  </div>
+
+  <div class="table-card" id="ppcTableCard" style="display:none">
+    <div class="table-header"><div class="chart-card-title">Campaign Breakdown</div><div class="chart-card-sub" style="margin-bottom:0">Loaded from your Google Ads CSV</div></div>
+    <table>
+      <thead><tr><th>Campaign</th><th>Impr.</th><th>Clicks</th><th>CTR</th><th>Avg. CPC</th><th>Cost</th><th>Conv.</th><th>Conv. Rate</th><th>Cost / Conv.</th></tr></thead>
+      <tbody id="ppcTableBody"></tbody>
+    </table>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-brand">HUDL Consultancy — Bishop's Move</div>
+  <div class="footer-note">Data: Google Ads (upload CSV) · GA4 &amp; Search Console pending</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script>
+const GOLD='#fbbf46',GL='rgba(251,191,70,0.12)',BLUE='#45aeff',BL='rgba(69,174,255,0.12)',CYAN='#1edfd4',RED='#ff515e';
+Chart.defaults.font.family="'Source Sans 3',sans-serif";
+Chart.defaults.font.size=11;
+Chart.defaults.color='#666';
+const SO={responsive:true,interaction:{mode:'index',intersect:false},plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,padding:16,font:{size:11},color:'#888'}},tooltip:{backgroundColor:'#111',titleColor:'#fff',bodyColor:'rgba(255,255,255,0.6)',borderColor:'rgba(255,255,255,0.08)',borderWidth:1,padding:12,cornerRadius:6}},scales:{x:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{maxTicksLimit:12,color:'#555'}},y:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'#555'},beginAtZero:true}}};
+
+function switchTab(name,event){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));if(event&&event.target)event.target.classList.add('active');document.getElementById('tab-'+name).classList.add('active');}
+
+function handleUpload(event){
+  const files=event.target.files;
+  if(!files.length)return;
+  const file=files[0];
+  if(!file.name.endsWith('.csv')){alert('Please upload a CSV file exported from Google Ads.');return;}
+  const reader=new FileReader();
+  reader.onload=(e)=>{
+    try{parsePPCCsv(e.target.result,file.name);}
+    catch(err){alert('Could not parse CSV: '+err.message);}
+  };
+  reader.readAsText(file);
+  event.target.value='';
+}
+
+function parsePPCCsv(text,filename){
+  const lines=text.split('\n').map(l=>l.trim()).filter(l=>l.length>0);
+  let hi=0;
+  for(let i=0;i<lines.length;i++){
+    if(lines[i].toLowerCase().startsWith('campaign,')||lines[i].toLowerCase().startsWith('"campaign",')){hi=i;break;}
+  }
+  const dateRange=lines[1]||'';
+  const headers=parseCsvRow(lines[hi]);
+  const rows=[];
+  for(let i=hi+1;i<lines.length;i++){
+    if(!lines[i]||lines[i].startsWith('Total:')||lines[i].startsWith('"Total:'))continue;
+    const vals=parseCsvRow(lines[i]);
+    if(vals.length<headers.length)continue;
+    const obj={};
+    headers.forEach((h,idx)=>{obj[h.trim()]=vals[idx]?vals[idx].trim():'';});
+    rows.push(obj);
+  }
+  if(rows.length===0)throw new Error('No campaign data found.');
+  const cm={
+    campaign:fc(headers,['Campaign']),clicks:fc(headers,['Clicks']),impressions:fc(headers,['Impr.']),
+    ctr:fc(headers,['CTR']),avgCpc:fc(headers,['Avg. CPC']),cost:fc(headers,['Cost']),
+    conversions:fc(headers,['Conversions']),costPerConv:fc(headers,['Cost / conv.']),convRate:fc(headers,['Conv. rate'])
+  };
+  const campaigns=rows.map(r=>({
+    name:r[cm.campaign]||'',clicks:pn(r[cm.clicks]),impressions:pn(r[cm.impressions]),
+    ctr:r[cm.ctr]||'—',avgCpc:pn(r[cm.avgCpc]),cost:pn(r[cm.cost]),
+    conversions:pn(r[cm.conversions]),costPerConv:pn(r[cm.costPerConv]),convRate:r[cm.convRate]||'—'
+  }));
+  document.getElementById('ppcEmpty').style.display='none';
+  document.getElementById('ppcChartsRow').style.display='grid';
+  document.getElementById('ppcTableCard').style.display='block';
+  updateTable(campaigns);
+  updateKpis(campaigns);
+  updateCharts(campaigns);
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelector('.tab[onclick*="ppc"]').classList.add('active');
+  document.getElementById('tab-ppc').classList.add('active');
+  if(dateRange)document.getElementById('dateRangeDisplay').textContent=dateRange;
+  alert('✓ Dashboard updated from "'+filename+'"\n'+campaigns.length+' campaigns loaded.');
+}
+
+function parseCsvRow(line){const r=[];let c='';let q=false;for(let i=0;i<line.length;i++){const ch=line[i];if(ch==='"'){q=!q;continue;}if(ch===','&&!q){r.push(c);c='';continue;}c+=ch;}r.push(c);return r;}
+function fc(headers,candidates){for(const c of candidates){const f=headers.find(h=>h.trim()===c);if(f)return f.trim();}return candidates[0];}
+function pn(val){if(!val)return 0;return parseFloat(val.replace(/[£,%"]/g,'').replace(/,/g,''))||0;}
+function fmt(n,d=0){return n.toLocaleString('en-GB',{minimumFractionDigits:d,maximumFractionDigits:d});}
+
+function updateTable(campaigns){
+  const tbody=document.getElementById('ppcTableBody');
+  tbody.innerHTML='';
+  const tot={impressions:0,clicks:0,cost:0,conversions:0};
+  campaigns.forEach(c=>{
+    tot.impressions+=c.impressions;tot.clicks+=c.clicks;tot.cost+=c.cost;tot.conversions+=c.conversions;
+    const cr=parseFloat(c.convRate)||0;
+    const crc=cr>=10?'#1edfd4':cr>=5?'#fbbf46':'#ff515e';
+    const cpac=c.costPerConv>0&&c.costPerConv<=200?'#1edfd4':c.costPerConv<=350?'#fbbf46':'#ff515e';
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td class="td-date">${c.name}</td><td class="td-num">${fmt(c.impressions)}</td><td class="td-num">${fmt(c.clicks)}</td><td class="td-num">${c.ctr}</td><td class="td-num">£${fmt(c.avgCpc,2)}</td><td class="td-num">£${fmt(c.cost,2)}</td><td class="td-num"><strong>${fmt(c.conversions,2)}</strong></td><td class="td-num" style="color:${crc};font-weight:600">${c.convRate}</td><td class="td-num" style="color:${cpac};font-weight:600">${c.costPerConv>0?'£'+fmt(c.costPerConv,2):'—'}</td>`;
+    tbody.appendChild(tr);
+  });
+  const acr=tot.clicks>0?(tot.conversions/tot.clicks*100).toFixed(2)+'%':'—';
+  const acpa=tot.conversions>0?tot.cost/tot.conversions:0;
+  const tt=document.createElement('tr');
+  tt.style.cssText='background:#0c0c0c;font-weight:600;border-top:2px solid rgba(255,255,255,0.1)';
+  tt.innerHTML=`<td class="td-date">Total (All Campaigns)</td><td class="td-num">${fmt(tot.impressions)}</td><td class="td-num">${fmt(tot.clicks)}</td><td class="td-num">—</td><td class="td-num">—</td><td class="td-num">£${fmt(tot.cost,2)}</td><td class="td-num">${fmt(tot.conversions,2)}</td><td class="td-num">${acr}</td><td class="td-num">${acpa>0?'£'+fmt(acpa,2):'—'}</td>`;
+  tbody.appendChild(tt);
+}
+
+function updateKpis(campaigns){
+  const t=campaigns.reduce((a,c)=>({cost:a.cost+c.cost,clicks:a.clicks+c.clicks,impressions:a.impressions+c.impressions,conversions:a.conversions+c.conversions}),{cost:0,clicks:0,impressions:0,conversions:0});
+  const acpa=t.conversions>0?t.cost/t.conversions:0;
+  const acr=t.clicks>0?(t.conversions/t.clicks*100):0;
+  const best=[...campaigns].filter(c=>parseFloat(c.convRate)>0).sort((a,b)=>parseFloat(b.convRate)-parseFloat(a.convRate))[0];
+  document.getElementById('ppcKpi1Val').textContent='£'+fmt(t.cost);
+  document.getElementById('ppcKpi1Sub').textContent=campaigns.length+' campaigns · '+fmt(t.impressions)+' impressions';
+  document.getElementById('ppcKpi2Val').textContent=fmt(t.clicks);
+  document.getElementById('ppcKpi2Sub').textContent='Avg. CPC £'+(t.clicks>0?fmt(t.cost/t.clicks,2):'—')+' across campaigns';
+  document.getElementById('ppcKpi2Trend').textContent=fmt(t.impressions)+' impressions';
+  document.getElementById('ppcKpi3Val').textContent=fmt(t.conversions,2);
+  document.getElementById('ppcKpi3Sub').textContent=acr.toFixed(2)+'% conv. rate · £'+fmt(acpa)+' CPA';
+  if(best){document.getElementById('ppcKpi4Val').textContent=best.convRate;document.getElementById('ppcKpi4Sub').textContent=best.name+' · £'+fmt(best.costPerConv,2)+' CPA';}
+  // mirror headline KPIs on the Overview tab
+  document.getElementById('ovKpi1').textContent='£'+fmt(t.cost);
+  document.getElementById('ovKpi2').textContent=fmt(t.clicks);
+  document.getElementById('ovKpi3').textContent=fmt(t.conversions,2);
+}
+
+function updateCharts(campaigns){
+  const lbs=campaigns.map(c=>c.name);
+  const c1=document.getElementById('ppcCampaignChart');
+  const e1=Chart.getChart(c1);if(e1)e1.destroy();
+  new Chart(c1,{type:'bar',data:{labels:lbs,datasets:[{label:'Spend (£)',data:campaigns.map(c=>c.cost),backgroundColor:BLUE,borderRadius:3,yAxisID:'y'},{label:'Conversions',data:campaigns.map(c=>c.conversions),backgroundColor:GOLD,borderRadius:3,yAxisID:'y1'}]},options:{...SO,scales:{x:{grid:{color:'rgba(255,255,255,0.04)'}},y:{beginAtZero:true,title:{display:true,text:'Spend (£)'},grid:{color:'rgba(255,255,255,0.04)'}},y1:{beginAtZero:true,position:'right',title:{display:true,text:'Conversions'},grid:{drawOnChartArea:false}}}}});
+  const c2=document.getElementById('ppcImprChart');
+  const e2=Chart.getChart(c2);if(e2)e2.destroy();
+  new Chart(c2,{type:'bar',data:{labels:lbs,datasets:[{label:'Cost per Conversion (£)',data:campaigns.map(c=>c.costPerConv),backgroundColor:campaigns.map(c=>c.costPerConv<=200?CYAN:c.costPerConv<=350?GOLD:RED),borderRadius:3}]},options:{...SO,plugins:{...SO.plugins,legend:{display:false}},scales:{x:{grid:{color:'rgba(255,255,255,0.04)'}},y:{beginAtZero:true,title:{display:true,text:'Cost per Conversion (£)'},grid:{color:'rgba(255,255,255,0.04)'}}}}});
+}
+</script>
+</body>
+</html>
