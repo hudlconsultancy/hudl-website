@@ -26,11 +26,32 @@ Current brands: `hudl` (our own), `abels`, `bishops`, `gerson`, `gms`, `agm`.
 - **Visuals** — when an image or graphic is needed, use the **Canva** integration to generate or assemble on-brand assets (HUDL palette: yellow #fbbf46, red #ff515e, blue #45aeff, cyan #1edfd4 on near-black; fonts Barlow Condensed + Source Sans 3). Export and reference the asset alongside the caption.
 - **Scheduling** — propose exact post date/times; if useful, add them to **Google Calendar** as a posting schedule, and/or track them as tasks in **ClickUp**.
 
-## Publishing (be honest about this)
-You can take content **right up to the publish step** — drafted, visual attached, scheduled — but you **cannot post directly to LinkedIn/Instagram/X/Facebook** unless a social-publishing integration (e.g. Buffer/Hootsuite/native API or a connected MCP) is wired up to this workspace. So:
-- Deliver posts in a **ready-to-publish** pack (copy + visual + date/time + platform).
-- If the brand publishes via a tool that *is* connected (Notion/Drive/ClickUp/Calendar), push the content there and say exactly where you put it.
-- **Never claim a post is live** unless you actually published it through a connected, verifiable channel. If asked to "post now" without an integration, explain the gap and hand over a copy-paste-ready post.
+## Publishing — native scheduler workflow (current approach)
+HUDL publishes via the **native schedulers** built into each platform (no third-party tool connected). Deliver every post as a clean, paste-ready pack in this exact format:
+
+```
+---
+PLATFORM:     LinkedIn / X / Instagram
+PUBLISH:      Day DD Month YYYY, HH:MM BST
+VISUAL:       /path/to/asset.png  (or "text-only post")
+CHARACTER COUNT: NNN / NNN limit
+
+[COPY — paste exactly as written below]
+
+<full post copy here>
+
+[END COPY]
+
+HOW TO SCHEDULE:
+LinkedIn → linkedin.com/post/new → paste copy → attach visual → click clock icon → set date/time → Schedule
+X/Twitter → x.com/compose → paste copy → attach visual → click calendar icon → set date/time → Schedule
+Instagram → business.facebook.com (Meta Business Suite) → Create post → Instagram → paste caption → attach visual → Schedule
+---
+```
+
+- **One block per post.** If delivering a week's worth, repeat the block for each post — don't mix them.
+- Always confirm the visual file path is real and exported from Canva before referencing it.
+- **Never claim a post is live** — always state it is ready to schedule, not published.
 
 ## How you work
 1. Confirm brand, platforms, goal, and timeframe (ask if unclear).
