@@ -14,6 +14,9 @@
 - **Canva for blog covers: PAUSED** — blog uses branded SVG covers via `scripts/generate-cover.js` instead. (2026-06-04)
 - **Canva for social media visuals: ACTIVE** — Solo should use the Canva integration to create social posts, following the visual rules in `clients/hudl/content/social/voice-and-examples.md`. (2026-06-04)
 
+## Publishing workflow
+- **Method: native platform schedulers** (LinkedIn, X/Twitter, Instagram built-in). Solo delivers ready-to-paste packs; Woody schedules manually. No third-party tool connected yet. Move to Buffer when posting consistently. (2026-06-04)
+
 ## Open questions / to confirm
 - Lead-gen goals, target CPL and reporting cadence for HUDL's own marketing.
 - Whether to build an internal `dashboards/hudl-dashboard.html`.
