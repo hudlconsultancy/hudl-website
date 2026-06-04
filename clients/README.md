@@ -7,20 +7,24 @@ Each HUDL client has a dedicated workspace under `clients/<slug>/`. This gives e
 ```
 clients/<slug>/
   profile.md     # Persistent client context — agents READ this first
+  decisions.md   # Saved preferences & corrections — the client's memory (READ second)
   data/          # Campaign exports, CSVs, raw data
-  reports/       # PPC analyses & performance summaries (ppc-analyst)
-  content/       # Blog drafts & content for this client (content-writer)
-  outreach/      # Emails, proposals, ad copy (outreach-copywriter)
+  reports/       # PPC analyses & performance summaries (Pippa / ppc-analyst)
+  content/       # Blog drafts & content for this client (Cora / content-writer)
+  outreach/      # Emails, proposals, ad copy (Otis / outreach-copywriter)
 ```
+
+> Before all of this, every agent reads the repo-root **`BRAIN.md`** — the shared hub (team, voice, rules, priorities, client map).
 
 Client dashboards still live in the top-level `dashboards/` folder (so they deploy with the site), but each `profile.md` links to the client's dashboard, password and storage key.
 
 ## How agents use a workspace
 
 When you name a client, the agent should:
-1. **Read `clients/<slug>/profile.md`** for the client's sector, services, tone, dashboard and current focus.
+1. **Read `BRAIN.md`** (repo root) for shared context, then **`clients/<slug>/profile.md`** for the client's sector, services, tone, dashboard and current focus, then **`clients/<slug>/decisions.md`** for any saved preferences/corrections.
 2. **Look in `data/`** for the latest exports to work from.
 3. **Write its output into the matching subfolder** (`reports/`, `content/`, `outreach/`) with a dated filename, e.g. `reports/2026-06-04-ppc-review.md`.
+4. **Log any new preference or correction** back into `decisions.md` so it's remembered next time.
 
 Examples:
 - `@ppc-analyst review the latest export for Abels` → reads `clients/abels/`, writes to `clients/abels/reports/`.
