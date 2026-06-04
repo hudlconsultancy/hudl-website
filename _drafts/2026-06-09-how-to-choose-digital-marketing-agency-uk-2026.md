@@ -4,6 +4,7 @@ date: 2026-06-09
 category: marketing-tips
 summary: "Choosing the right digital marketing agency is one of the most consequential decisions a UK business makes. Here's how to evaluate proposals, spot red flags, and ask the right questions"
 read_time: "6 min read"
+thumbnail: /images/uploads/how-to-choose-digital-marketing-agency-uk-2026.svg
 ---
 
 There is no shortage of digital marketing agencies in the UK. There are tens of thousands of them — ranging from one-person freelance operations to multi-hundred-person networks — and most of them will tell you, convincingly, that they are exactly what your business needs.

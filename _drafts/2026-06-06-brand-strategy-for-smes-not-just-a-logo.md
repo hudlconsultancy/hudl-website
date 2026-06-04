@@ -4,6 +4,7 @@ date: 2026-06-06
 category: industry-insights
 summary: "Brand strategy is the commercial framework beneath everything your business does — not an aesthetic exercise. Here's why it matters and what it covers"
 read_time: "6 min read"
+thumbnail: /images/uploads/brand-strategy-for-smes-not-just-a-logo.svg
 ---
 
 Ask a small business owner what their brand is, and most will describe their logo, their colour palette, and maybe their font choices. Ask them what their brand strategy is, and you'll often get a blank look — or a confident answer that turns out to be a description of the same visual assets.

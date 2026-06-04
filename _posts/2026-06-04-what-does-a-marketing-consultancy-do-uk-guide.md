@@ -4,6 +4,7 @@ date: 2026-06-04T09:00:00.000Z
 category: "industry-insights"
 summary: "Confused about what a marketing consultancy actually does — or how it differs from an agency? Here's a clear-eyed answer for UK business owners."
 read_time: "6 min read"
+thumbnail: /images/uploads/what-does-a-marketing-consultancy-do-uk-guide.svg
 ---
 
 Most UK business owners arrive at the same crossroads eventually. Growth has plateaued, the marketing budget is being spent without clear evidence it's working, and someone — a board member, an investor, a frustrated MD — asks the obvious question: do we need a marketing consultancy?

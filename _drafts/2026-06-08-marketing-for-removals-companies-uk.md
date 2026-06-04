@@ -4,6 +4,7 @@ date: 2026-06-08
 category: case-study
 summary: "The removals buyer journey is short and high-intent. Here's how removals companies can use Google Ads, local SEO, and brand to win more leads online"
 read_time: "6 min read"
+thumbnail: /images/uploads/marketing-for-removals-companies-uk.svg
 ---
 
 Marketing for removals companies is not the same as marketing for most service businesses. The buyer journey is compressed, the intent signals are strong, and the window between a search and a decision to request a quote can be measured in minutes rather than weeks.

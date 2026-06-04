@@ -35,6 +35,8 @@ Blog posts are **two files**:
    ```
    Body is markdown: H2/H3 headings, short paras, occasional bullet lists, a closing CTA pointing to a free consultation at hudl.gg.
 
+   **Cover images:** every post needs a `thumbnail`. After writing a draft, run `node scripts/generate-cover.js <file.md>` to auto-create an on-brand SVG cover and inject the `thumbnail:` field. (The daily publish Action also runs this as a safety net, so a post never goes live without a cover.) Only skip the generator if a bespoke image already exists in `/images/uploads/`.
+
 2. **`posts/slug.html`** (only when asked) — a companion HTML page that mirrors the existing posts. Reuse the structure/styles already in `posts/why-uk-businesses-are-wasting-their-ppc-budget.html`: same nav, brand CSS variables, stripe bar, article hero, and the marked.js render pattern. Match `<title>`, meta description, and canonical URL `https://www.hudl.gg/posts/slug`.
 
 ## How you work
