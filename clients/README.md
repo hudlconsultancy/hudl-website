@@ -30,6 +30,7 @@ Examples:
 
 | Slug | Client | Sector | Dashboard |
 |------|--------|--------|-----------|
+| `hudl` | HUDL Consultancy _(our own)_ | UK marketing consultancy | _internal — blog ships to `/_posts`_ |
 | `abels` | Abels Moving Services | UK removals & relocation | `dashboards/abels-dashboard.html` |
 | `bishops` | Bishop's Move | UK removals & storage | _not built yet_ (`bishops-move-dashboard.html`) |
 | `gerson` | Gerson Relocation | Corporate / global relocation | `dashboards/gerson-relocation-dashboard.html` |
