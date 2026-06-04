@@ -47,4 +47,6 @@
 
 ## Working notes
 _Chronological log — newest at top._
+- 2026-06-04 — June 2026 social content pack delivered: 4-week LinkedIn-led calendar (12 posts, Mon/Wed/Fri cadence), 3 full launch post drafts with variants, and 4 Canva visual candidates generated for Post 1 (brand kit kAGFbvk0hqM). Files: `content/social/2026-06-content-calendar.md`, `content/social/2026-06-launch-posts.md`. Awaiting candidate selection to save Canva design to account.
+- 2026-06-04 — SEO content plan (6 articles) saved to `clients/hudl/content/seo-content-plan.md`. First article drafted: `_posts/2026-06-04-what-does-a-marketing-consultancy-do-uk-guide.md` (target keyword: "marketing consultancy UK"; category: industry-insights; ~1,050 words; 6 min read). Remaining planned articles cover: Google Ads for SMEs, brand strategy for small business, performance marketing UK, removals-sector marketing, and how to choose a digital marketing agency UK.
 - 2026-06-04 — HUDL's own workspace created.
