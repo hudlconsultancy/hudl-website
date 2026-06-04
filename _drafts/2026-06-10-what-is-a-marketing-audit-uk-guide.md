@@ -4,6 +4,7 @@ date: 2026-06-10
 category: industry-insights
 summary: "A marketing audit tells you what's working, what's wasting budget, and where the real growth opportunities lie — before you spend another penny"
 read_time: "6 min read"
+thumbnail: /images/uploads/what-is-a-marketing-audit-uk-guide.svg
 ---
 
 If your marketing feels busy but the results feel flat, the honest answer is rarely "do more." More often, it's "understand what you actually have first." That's what a marketing audit is for.

@@ -27,15 +27,24 @@ jobs:
             echo "filename=$(basename "$DRAFT")" >> $GITHUB_OUTPUT
           fi
 
+      - name: Ensure cover image
+        if: steps.find-draft.outputs.has_draft == 'true'
+        run: |
+          # Generate an on-brand SVG cover if the draft has no thumbnail yet.
+          node scripts/generate-cover.js "${{ steps.find-draft.outputs.draft_file }}"
+
       - name: Publish post
         if: steps.find-draft.outputs.has_draft == 'true'
         run: |
           DRAFT="${{ steps.find-draft.outputs.draft_file }}"
           FILENAME="${{ steps.find-draft.outputs.filename }}"
+          SLUG="${FILENAME#????-??-??-}"; SLUG="${SLUG%.md}"
           git config user.name "HUDL Content Bot"
           git config user.email "noreply@hudl.gg"
           cp "$DRAFT" "_posts/$FILENAME"
           git add "_posts/$FILENAME"
+          # Stage the generated cover (if any) so it ships with the post.
+          [ -f "images/uploads/$SLUG.svg" ] && git add "images/uploads/$SLUG.svg"
           git rm "$DRAFT"
           git commit -m "publish: $FILENAME"
           git push

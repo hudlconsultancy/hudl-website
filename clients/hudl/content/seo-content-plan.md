@@ -15,8 +15,8 @@ _Created: 2026-06-04 · Updated: 2026-06-04_
 | 4 | 2026-06-07 | performance-marketing-explained-uk | Performance Marketing Explained: What It Is and Why It Matters | performance marketing UK | marketing-tips | Informational | ⏳ In _drafts |
 | 5 | 2026-06-08 | marketing-for-removals-companies-uk | Marketing for Removals Companies: How to Win More Leads Online | marketing for removals companies UK | case-study | Informational/Commercial | ⏳ In _drafts |
 | 6 | 2026-06-09 | how-to-choose-digital-marketing-agency-uk-2026 | How to Choose a Digital Marketing Agency in the UK (2026 Guide) | how to choose a digital marketing agency UK | marketing-tips | Informational/Commercial | ⏳ In _drafts |
-| 7 | 2026-06-10 | what-is-a-marketing-audit-uk-guide | What Is a Marketing Audit — And Does Your Business Need One? | marketing audit UK | industry-insights | Informational | 📋 Planned |
-| 8 | 2026-06-11 | how-to-set-marketing-budget-uk-sme | How to Set a Marketing Budget for Your Business (UK SME Guide) | marketing budget small business UK | marketing-tips | Informational | 📋 Planned |
+| 7 | 2026-06-10 | what-is-a-marketing-audit-uk-guide | What Is a Marketing Audit — And Does Your Business Need One? | marketing audit UK | industry-insights | Informational | ⏳ In _drafts |
+| 8 | 2026-06-11 | how-to-set-marketing-budget-uk-sme | How to Set a Marketing Budget for Your Business (UK SME Guide) | marketing budget small business UK | marketing-tips | Informational | ⏳ In _drafts |
 | 9 | 2026-06-12 | seo-vs-paid-search-which-is-right-for-your-business | SEO vs Paid Search: Which Is Right for Your Business in 2026? | SEO vs PPC UK | marketing-tips | Informational/Commercial | 📋 Planned |
 | 10 | 2026-06-13 | why-your-website-traffic-isnt-converting | Why Your Website Traffic Isn't Converting (And How to Fix It) | website conversion rate optimisation UK | marketing-tips | Informational | 📋 Planned |
 | 11 | 2026-06-14 | content-marketing-b2b-what-actually-works-uk | Content Marketing for B2B: What Actually Works in the UK | B2B content marketing UK | marketing-tips | Informational | 📋 Planned |

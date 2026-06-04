@@ -4,6 +4,7 @@ date: 2026-06-05
 category: marketing-tips
 summary: "Google Ads can deliver qualified leads fast — but only if you set them up correctly. Here's a plain-English framework for UK small business owners"
 read_time: "6 min read"
+thumbnail: /images/uploads/google-ads-for-small-business-uk-guide.svg
 ---
 
 Google Ads is one of the fastest ways to put your business in front of people who are actively looking for what you sell. It's also one of the fastest ways to burn through a budget with nothing to show for it.

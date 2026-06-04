@@ -4,6 +4,7 @@ date: 2026-06-11
 category: marketing-tips
 summary: "Most UK SMEs either underspend on marketing or spread budget too thin. Here's a practical framework for setting a budget that actually drives growth"
 read_time: "6 min read"
+thumbnail: /images/uploads/how-to-set-marketing-budget-uk-sme.svg
 ---
 
 "How much should we be spending on marketing?" is one of the most common questions we hear at HUDL — and one of the most consistently mishandled. Some business owners set budgets based on what's left over after other costs. Others pick a round number that feels manageable. A few copy what they assume competitors are spending.

@@ -4,6 +4,7 @@ date: 2026-06-07
 category: marketing-tips
 summary: "Performance marketing ties every pound of spend to a commercial outcome. Here's what it actually means, the metrics that matter, and how to build a measurement framework"
 read_time: "6 min read"
+thumbnail: /images/uploads/performance-marketing-explained-uk.svg
 ---
 
 There is a category of marketing spend that most UK businesses carry without realising it: budget allocated to activities that feel productive — impressions, reach, social engagement — but that cannot be connected to revenue, leads, or any other outcome the business actually cares about.
