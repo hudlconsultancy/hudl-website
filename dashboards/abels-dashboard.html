@@ -333,10 +333,12 @@ function handleUpload(event){
 
 function parsePPCCsv(text,filename){
   const lines=text.split('\n').map(l=>l.trim()).filter(l=>l.length>0);
-  let hi=0;
+  let hi=-1;
   for(let i=0;i<lines.length;i++){
-    if(lines[i].toLowerCase().startsWith('campaign,')||lines[i].toLowerCase().startsWith('"campaign",')){hi=i;break;}
+    const cells=parseCsvRow(lines[i]).map(c=>c.trim());
+    if(cells.includes('Campaign')&&(cells.includes('Cost')||cells.includes('Clicks')||cells.includes('Impr.'))){hi=i;break;}
   }
+  if(hi<0)throw new Error('Could not find a campaign header row in this CSV.');
   const dateRange=lines[1]||'';
   const headers=parseCsvRow(lines[hi]);
   const rows=[];
@@ -351,14 +353,14 @@ function parsePPCCsv(text,filename){
   if(rows.length===0)throw new Error('No campaign data found.');
   const cm={
     campaign:fc(headers,['Campaign']),clicks:fc(headers,['Clicks']),impressions:fc(headers,['Impr.']),
-    ctr:fc(headers,['CTR']),avgCpc:fc(headers,['Avg. CPC']),cost:fc(headers,['Cost']),
+    ctr:fc(headers,['CTR','Interaction rate']),avgCpc:fc(headers,['Avg. CPC']),cost:fc(headers,['Cost']),
     conversions:fc(headers,['Conversions']),costPerConv:fc(headers,['Cost / conv.']),convRate:fc(headers,['Conv. rate'])
   };
   const campaigns=rows.map(r=>({
     name:r[cm.campaign]||'',clicks:pn(r[cm.clicks]),impressions:pn(r[cm.impressions]),
     ctr:r[cm.ctr]||'—',avgCpc:pn(r[cm.avgCpc]),cost:pn(r[cm.cost]),
     conversions:pn(r[cm.conversions]),costPerConv:pn(r[cm.costPerConv]),convRate:r[cm.convRate]||'—'
-  }));
+  })).filter(c=>c.name && !c.name.startsWith('Total:'));
   updateTable(campaigns);
   updateKpis(campaigns);
   updateCharts(campaigns);
