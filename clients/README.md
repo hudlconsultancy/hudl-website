@@ -31,8 +31,10 @@ Examples:
 | Slug | Client | Sector | Dashboard |
 |------|--------|--------|-----------|
 | `abels` | Abels Moving Services | UK removals & relocation | `dashboards/abels-dashboard.html` |
-| `bishops` | Bishop's Move | UK removals & storage | _not built yet_ |
+| `bishops` | Bishop's Move | UK removals & storage | _not built yet_ (`bishops-move-dashboard.html`) |
 | `gerson` | Gerson Relocation | Corporate / global relocation | `dashboards/gerson-relocation-dashboard.html` |
+| `gms` | GMS _(confirm name)_ | _to confirm_ | _not built yet_ (`gms-dashboard.html`) |
+| `agm` | AGM Group _(confirm name)_ | _to confirm_ | _not built yet_ (`agm-group-dashboard.html`) |
 
 ## Onboarding a new client
 

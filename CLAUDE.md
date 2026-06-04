@@ -9,7 +9,7 @@ Static marketing site for **HUDL Consultancy** (hudl.gg), a UK strategic marketi
 - `dashboards/*.html` — self-contained, password-gated client reporting dashboards.
 - `Campaign performance.csv` — example Google Ads export (GBP).
 - `launchpad.html` — internal control panel for the AI agents (noindex).
-- `clients/<slug>/` — dedicated workspace per client (`profile.md` + `data/`, `reports/`, `content/`, `outreach/`). See `clients/README.md`. Current clients: `abels`, `bishops`, `gerson`. Copy `clients/_template` to onboard a new one.
+- `clients/<slug>/` — dedicated workspace per client (`profile.md` + `data/`, `reports/`, `content/`, `outreach/`). See `clients/README.md`. Current clients: `abels`, `bishops`, `gerson`, `gms`, `agm`. Copy `clients/_template` to onboard a new one.
 
 ## Brand
 Dark theme. Colours: `--yellow #fbbf46`, `--red #ff515e`, `--blue #45aeff`, `--cyan #1edfd4`, on near-black `#0c0c0c`/`#000`. Fonts: **Barlow Condensed** (display, uppercase) + **Source Sans 3** (body). Four-colour stripe bar (yellow/blue/red/cyan) is a recurring accent. British English everywhere.

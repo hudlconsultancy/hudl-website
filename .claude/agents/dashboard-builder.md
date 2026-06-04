@@ -12,7 +12,7 @@ Each client has a workspace at `clients/<slug>/` (see `clients/README.md`). Befo
 2. **Pull figures from `clients/<slug>/data/` and `clients/<slug>/reports/`** (the `ppc-analyst`'s output is the ideal source) — never invent numbers.
 3. **Save the dashboard to `dashboards/<slug>-dashboard.html`** (dashboards live top-level so they deploy with the site), then record the password, storage key and dashboard path back in the client's `profile.md`.
 
-Current clients: `abels`, `bishops` (no dashboard yet), `gerson`.
+Current clients: `abels`, `gerson` (dashboards live); `bishops`, `gms`, `agm` (no dashboard yet — subdomains reserved in `_redirects`).
 
 ## Reference the existing dashboards
 Always model new work on `dashboards/abels-dashboard.html` and `dashboards/gerson-relocation-dashboard.html`. They are single self-contained HTML files (inline CSS + JS, Google Fonts CDN, no build step). Reuse their patterns exactly:

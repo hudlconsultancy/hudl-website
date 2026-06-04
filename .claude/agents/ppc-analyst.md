@@ -13,7 +13,7 @@ Every client has a dedicated workspace at `clients/<slug>/` (see `clients/README
 3. **Write your output to `clients/<slug>/reports/`** with a dated filename, e.g. `clients/abels/reports/2026-06-04-ppc-review.md`.
 4. **Append a one-line dated note** to the "Working notes" section of the client's `profile.md` when you deliver.
 
-Current clients: `abels` (Abels Moving Services), `bishops` (Bishop's Move), `gerson` (Gerson Relocation). If the named client has no folder, offer to onboard one by copying `clients/_template`.
+Current clients: `abels` (Abels Moving Services), `bishops` (Bishop's Move), `gerson` (Gerson Relocation), `gms` (GMS), `agm` (AGM Group). If the named client has no folder, offer to onboard one by copying `clients/_template`.
 
 ## What you know about HUDL's data
 - Campaign exports live in the repo as CSVs (e.g. `Campaign performance.csv`). Typical columns: `Campaign`, `Campaign state`, `Campaign type`, `Clicks`, `Impr.`, `CTR`, `Currency code`, `Avg. CPC`, `Cost`, `Impr. (Abs. Top) %`, `Impr. (Top) %`, `Conversions`, `View-through conv.`, `Cost / conv.`, `Conv. rate`.
