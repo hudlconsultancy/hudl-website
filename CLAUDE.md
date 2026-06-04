@@ -20,12 +20,12 @@ Dark theme. Colours: `--yellow #fbbf46`, `--red #ff515e`, `--blue #45aeff`, `--c
 
 ## AI Agents (`.claude/agents/`)
 Claude Code subagents tailored to the business, each with a friendly name — see `launchpad.html` for the friendly overview and copy-paste quick actions:
-- **Hudson** (`campaign-manager`) — the **front door / concierge**. Ask "what should I work on?", or for whole multi-channel campaigns; orchestrates the others. Saves to `clients/<slug>/campaigns/`.
+- **Hunter** (`campaign-manager`) — the **front door / concierge**. Ask "what should I work on?", or for whole multi-channel campaigns; orchestrates the others. Saves to `clients/<slug>/campaigns/`.
 - **Pippa** (`ppc-analyst`) — analyses campaign CSVs, flags wasted spend, writes client summaries.
-- **Cora** (`content-writer`) — SEO blog posts in the `_posts` + `posts/` format and HUDL voice.
+- **Hendrix** (`content-writer`) — SEO blog posts in the `_posts` + `posts/` format and HUDL voice.
 - **Dash** (`dashboard-builder`) — new client dashboards matching `dashboards/*.html`.
 - **Otis** (`outreach-copywriter`) — outreach emails, ad copy, landing pages, proposals.
-- **Sasha** (`social-media-manager`) — social calendar + platform-native posts (LinkedIn/Instagram/X/Facebook), Canva visuals, scheduling. Prepares ready-to-publish packs; can't auto-post without a publishing integration.
+- **Solo** (`social-media-manager`) — social calendar + platform-native posts (LinkedIn/Instagram/X/Facebook), Canva visuals, scheduling. Prepares ready-to-publish packs; can't auto-post without a publishing integration.
 
 All agents are **client-aware**: after the Brain, when a client is named they read `clients/<slug>/profile.md` **and `clients/<slug>/decisions.md`** (the client's learned preferences/corrections), work from that client's `data/`, and write deliverables into the client's `reports/`/`content/`/`outreach/` folders. New corrections/preferences get logged back to `decisions.md` so the team never has to be told twice.
 

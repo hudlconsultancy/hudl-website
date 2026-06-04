@@ -10,14 +10,14 @@ Each agent has a friendly name and a job. You can call them by name in plain Eng
 
 | Name | Role | Agent (slug) | Ask them for… |
 |---|---|---|---|
-| **Hudson** | Campaign Manager / concierge | `campaign-manager` | "What should I work on?", whole campaigns, anything multi-step |
+| **Hunter** | Campaign Manager / concierge | `campaign-manager` | "What should I work on?", whole campaigns, anything multi-step |
 | **Pippa** | PPC Analyst | `ppc-analyst` | Google Ads reviews, wasted-spend audits, budget moves, client summaries |
-| **Cora** | Content Writer | `content-writer` | SEO blog posts, articles, landing-page copy, content ideas |
+| **Hendrix** | Content Writer | `content-writer` | SEO blog posts, articles, landing-page copy, content ideas |
 | **Dash** | Dashboard Builder | `dashboard-builder` | New client dashboards, turning a CSV into a report, KPI views |
 | **Otis** | Outreach Copywriter | `outreach-copywriter` | Cold/warm emails, ad copy, proposals, conversion copy |
-| **Sasha** | Social Media Manager | `social-media-manager` | Content calendars, LinkedIn/IG/X posts, Canva visuals |
+| **Solo** | Social Media Manager | `social-media-manager` | Content calendars, LinkedIn/IG/X posts, Canva visuals |
 
-**Hudson is the front door.** If you're not sure who to ask, ask Hudson — it routes the work and assembles the result.
+**Hunter is the front door.** If you're not sure who to ask, ask Hunter — it routes the work and assembles the result.
 
 ---
 
@@ -46,6 +46,14 @@ Each agent has a friendly name and a job. You can call them by name in plain Eng
 1. **Read this Brain.** 2. If a client is named, **read `clients/<slug>/profile.md`** and **`clients/<slug>/decisions.md`** (the client's learned preferences). 3. Do the work into the client's `reports/`/`content/`/`outreach/`/`campaigns/`. 4. Log a dated line in the client's `profile.md` working notes.
 
 For HUDL's own work, the workspace is `clients/hudl/`.
+
+## Which workspace am I in? (never mix two clients)
+The workspace is decided by the **client named in the request** — and only that client.
+1. **A client is named** (e.g. *"…for Abels"* or *"workspace: clients/abels/"*) → that is the **only** workspace for this task. Read its `profile.md` + `decisions.md`, work from its `data/`, write to its folders. Do not touch another client's folder.
+2. **No client named** → assume **HUDL's own** work (`clients/hudl/`). If the task looks client-specific but no client is given, **ask which one before acting** — don't guess.
+3. **One client per task.** If a request spans two clients, split it into separate tasks. Never read one client's data and write it into another's folder.
+4. The launchpad **Brief Pad** stamps the workspace path (`clients/<slug>/`) into the prompt — when you see it, treat it as authoritative.
+At the start of any client task, state which workspace you're in (e.g. *"Working in clients/abels/"*) so it's unambiguous.
 
 ---
 

@@ -105,6 +105,36 @@
   .concierge .qa-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
   @media(max-width:820px){.concierge .qa-row{grid-template-columns:1fr;}}
 
+  /* Brief Pad — task composer */
+  .briefpad{background:linear-gradient(135deg,rgba(30,223,212,0.09),rgba(69,174,255,0.05));border:1px solid rgba(30,223,212,0.30);border-radius:var(--radius);padding:28px 30px 26px;}
+  .briefpad .ctop{display:flex;align-items:center;gap:14px;margin-bottom:6px;}
+  .briefpad .cicon{width:48px;height:48px;border-radius:10px;background:rgba(30,223,212,0.16);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+  .briefpad h2{font-family:var(--font-display);font-size:30px;font-weight:900;text-transform:uppercase;letter-spacing:0.5px;line-height:1;}
+  .briefpad .csub{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:3px;}
+  .briefpad p.bp-intro{color:#e6e6e6;font-size:16px;margin:6px 0 18px;max-width:780px;}
+  .bp-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+  @media(max-width:820px){.bp-row{grid-template-columns:1fr;}}
+  .bp-field label{display:block;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+  .bp-field select,.bp-task textarea{width:100%;background:var(--black);border:1px solid var(--border);border-radius:6px;color:#eee;font-family:inherit;font-size:15px;padding:11px 12px;transition:border-color .15s;}
+  .bp-field select:focus,.bp-task textarea:focus{outline:none;border-color:var(--cyan);}
+  .bp-field select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%237a7a7a' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:34px;}
+  .bp-task{margin-bottom:14px;}
+  .bp-task label{display:block;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+  .bp-task textarea{min-height:96px;resize:vertical;line-height:1.55;}
+  .bp-preview{background:var(--black);border:1px solid var(--border);border-radius:6px;padding:14px 16px;margin-bottom:14px;}
+  .bp-preview .pv-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+  .bp-preview .pv-label span.ws{color:var(--cyan);text-transform:none;letter-spacing:0;font-family:'SFMono-Regular',Consolas,monospace;}
+  .bp-preview .pv-text{font-family:'SFMono-Regular',Consolas,monospace;font-size:13px;color:#dcdcdc;line-height:1.6;white-space:pre-wrap;word-break:break-word;}
+  .bp-preview .pv-text b{color:var(--cyan);font-weight:600;}
+  .bp-actions{display:flex;gap:10px;flex-wrap:wrap;}
+  .bp-btn{font-family:var(--font-display);font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:11px 22px;border-radius:6px;border:1px solid var(--cyan);background:var(--cyan);color:var(--black);cursor:pointer;transition:all .15s;}
+  .bp-btn:hover{filter:brightness(1.08);}
+  .bp-btn.copied{background:var(--yellow);border-color:var(--yellow);}
+  .bp-btn.ghost{background:transparent;color:var(--cyan);}
+  .bp-btn.ghost:hover{background:rgba(30,223,212,0.12);}
+  .bp-hint{font-size:13px;color:var(--muted);margin-top:12px;}
+  .bp-hint b{color:#cfcfcf;font-weight:600;}
+
   /* How it works */
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
   @media(max-width:820px){.steps{grid-template-columns:1fr;}}
@@ -193,6 +223,7 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="blog.html">Blog</a></li>
+      <li><a href="#brief">Brief Pad</a></li>
       <li><a href="#agents">Agents</a></li>
       <li><a href="#brain">The Brain</a></li>
       <li><a href="#clients">Clients</a></li>
@@ -205,7 +236,7 @@
   <div class="container">
     <span class="tag">Internal · AI Control Panel</span>
     <h1>Agent <em>Launch&nbsp;Pad</em></h1>
-    <p>Your team of AI specialists for the HUDL business — <strong style="color:#fff">Hudson, Pippa, Cora, Dash, Otis</strong> and <strong style="color:#fff">Sasha</strong>. Each one knows your brand, your data and your formats (they all read <a href="#brain" style="color:var(--cyan)">The Brain</a> first), and works in a <strong style="color:#fff">dedicated workspace per client</strong>. Not sure who to ask? Just ask Hudson. Copy any prompt below straight into Claude Code.</p>
+    <p>Your team of AI specialists for the HUDL business — <strong style="color:#fff">Hunter, Pippa, Hendrix, Dash, Otis</strong> and <strong style="color:#fff">Solo</strong>. Each one knows your brand, your data and your formats (they all read <a href="#brain" style="color:var(--cyan)">The Brain</a> first), and works in a <strong style="color:#fff">dedicated workspace per client</strong>. Not sure who to ask? Just ask Hunter. Copy any prompt below straight into Claude Code.</p>
   </div>
 </header>
 
@@ -215,16 +246,74 @@
       <div class="ctop">
         <div class="cicon">🧭</div>
         <div>
-          <h2>Start here — ask Hudson</h2>
+          <h2>Start here — ask Hunter</h2>
           <div class="csub">Your concierge · routes work to the right specialist</div>
         </div>
       </div>
-      <p>Hudson is the front door. Tell it what you're trying to do and it'll check where things stand, recommend the next best moves, and hand the work to Pippa, Cora, Dash, Otis or Sasha. Tap a prompt to copy it.</p>
+      <p>Hunter is the front door. Tell it what you're trying to do and it'll check where things stand, recommend the next best moves, and hand the work to Pippa, Hendrix, Dash, Otis or Solo. Tap a prompt to copy it.</p>
       <div class="qa-row">
-        <button class="qa" data-prompt="Hudson, what should I work on today?" onclick="copyQA(this)"><span class="qa-text"><b>Hudson,</b> what should I work on today?</span><span class="qa-copy">Copy</span></button>
-        <button class="qa" data-prompt="Hudson, where are we with Abels — what's done, queued and blocked?" onclick="copyQA(this)"><span class="qa-text"><b>Hudson,</b> where are we with Abels?</span><span class="qa-copy">Copy</span></button>
-        <button class="qa" data-prompt="Hudson, design an integrated campaign for [client] with this goal: [goal]." onclick="copyQA(this)"><span class="qa-text"><b>Hudson,</b> design a campaign for [client]</span><span class="qa-copy">Copy</span></button>
+        <button class="qa" data-prompt="Hunter, what should I work on today?" onclick="copyQA(this)"><span class="qa-text"><b>Hunter,</b> what should I work on today?</span><span class="qa-copy">Copy</span></button>
+        <button class="qa" data-prompt="Hunter, where are we with Abels — what's done, queued and blocked?" onclick="copyQA(this)"><span class="qa-text"><b>Hunter,</b> where are we with Abels?</span><span class="qa-copy">Copy</span></button>
+        <button class="qa" data-prompt="Hunter, design an integrated campaign for [client] with this goal: [goal]." onclick="copyQA(this)"><span class="qa-text"><b>Hunter,</b> design a campaign for [client]</span><span class="qa-copy">Copy</span></button>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="brief" style="padding-top:32px;padding-bottom:0;">
+  <div class="container">
+    <div class="briefpad">
+      <div class="ctop">
+        <div class="cicon">📝</div>
+        <div>
+          <h2>Brief Pad</h2>
+          <div class="csub">Compose a task · stamps the workspace · copy into Claude Code</div>
+        </div>
+      </div>
+      <p class="bp-intro">Write your task like a chat box. Pick <b>who</b> and <b>which client</b>, type what you need, and the pad builds a clean, unambiguous prompt — with the exact workspace path baked in, so an agent never mixes HUDL work up with a client's. Copy it straight into Claude Code.</p>
+
+      <div class="bp-row">
+        <div class="bp-field">
+          <label for="bp-agent">Who should do it?</label>
+          <select id="bp-agent" onchange="buildBrief()">
+            <option value="auto">Auto — let Hunter route it</option>
+            <option value="Hunter">Hunter — campaigns / concierge</option>
+            <option value="Pippa">Pippa — PPC analysis</option>
+            <option value="Hendrix">Hendrix — content / SEO</option>
+            <option value="Dash">Dash — dashboards</option>
+            <option value="Otis">Otis — outreach / copy</option>
+            <option value="Solo">Solo — social media</option>
+          </select>
+        </div>
+        <div class="bp-field">
+          <label for="bp-client">Which workspace?</label>
+          <select id="bp-client" onchange="buildBrief()">
+            <option value="">No specific client — general / ask first</option>
+            <option value="hudl|HUDL (our own marketing)">HUDL — our own marketing</option>
+            <option value="abels|Abels Moving Services">Abels — removals &amp; relocation</option>
+            <option value="bishops|Bishop's Move">Bishop's Move — removals &amp; storage</option>
+            <option value="gerson|Gerson Relocation">Gerson — corporate relocation</option>
+            <option value="gms|GMS">GMS — removals / relocation</option>
+            <option value="agm|AGM Group">AGM Group</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="bp-task">
+        <label for="bp-text">The task</label>
+        <textarea id="bp-text" placeholder="e.g. Review last month's Google Ads export and tell me where we're wasting budget — then draft a client-ready summary." oninput="buildBrief()"></textarea>
+      </div>
+
+      <div class="bp-preview">
+        <div class="pv-label">Prompt preview <span id="pv-ws" class="ws"></span></div>
+        <div id="pv-text" class="pv-text">Pick an agent and a workspace, then type your task…</div>
+      </div>
+
+      <div class="bp-actions">
+        <button class="bp-btn" id="bp-copy" onclick="copyBrief()">Copy prompt</button>
+        <button class="bp-btn ghost" onclick="clearBrief()">Clear</button>
+      </div>
+      <p class="bp-hint"><b>How the workspace works:</b> the agent reads <code style="color:var(--cyan);font-family:monospace">clients/&lt;slug&gt;/profile.md</code> and <code style="color:var(--cyan);font-family:monospace">decisions.md</code> for whichever client you name here — and files its output back into that same folder. Name one client per task to keep the work logic clean. Your draft is saved in this browser.</p>
     </div>
   </div>
 </section>
@@ -256,14 +345,14 @@
         </div>
       </article>
 
-      <!-- Cora · Content Writer -->
+      <!-- Hendrix · Content Writer -->
       <article class="agent agent-blue">
         <div class="accent"></div>
         <div class="agent-body">
           <div class="agent-head">
             <div class="agent-icon">✍️</div>
             <div>
-              <h3>Cora</h3>
+              <h3>Hendrix</h3>
               <div class="role">Content Writer · SEO</div>
               <div class="persona"><code>content-writer</code></div>
             </div>
@@ -271,9 +360,9 @@
           <p class="desc">The HUDL editorial voice — SEO posts in your exact publishing format, with branded covers, ready for the queue.</p>
           <div class="actions">
             <div class="actions-label">Quick actions — tap to copy</div>
-            <button class="qa" data-prompt="Cora, write the next article from the SEO content plan at clients/hudl/content/seo-content-plan.md and add it to the drafts queue with a cover." onclick="copyQA(this)"><span class="qa-text"><b>Cora,</b> write the next blog from the SEO plan</span><span class="qa-copy">Copy</span></button>
-            <button class="qa" data-prompt="Cora, write the next 5 articles from the SEO content plan into _drafts/ with covers." onclick="copyQA(this)"><span class="qa-text"><b>Cora,</b> write the next 5 drafts for the queue</span><span class="qa-copy">Copy</span></button>
-            <button class="qa" data-prompt="Cora, draft a marketing-tips post on '[topic]' for the HUDL blog." onclick="copyQA(this)"><span class="qa-text"><b>Cora,</b> draft a post on '[topic]'</span><span class="qa-copy">Copy</span></button>
+            <button class="qa" data-prompt="Hendrix, write the next article from the SEO content plan at clients/hudl/content/seo-content-plan.md and add it to the drafts queue with a cover." onclick="copyQA(this)"><span class="qa-text"><b>Hendrix,</b> write the next blog from the SEO plan</span><span class="qa-copy">Copy</span></button>
+            <button class="qa" data-prompt="Hendrix, write the next 5 articles from the SEO content plan into _drafts/ with covers." onclick="copyQA(this)"><span class="qa-text"><b>Hendrix,</b> write the next 5 drafts for the queue</span><span class="qa-copy">Copy</span></button>
+            <button class="qa" data-prompt="Hendrix, draft a marketing-tips post on '[topic]' for the HUDL blog." onclick="copyQA(this)"><span class="qa-text"><b>Hendrix,</b> draft a post on '[topic]'</span><span class="qa-copy">Copy</span></button>
           </div>
         </div>
       </article>
@@ -322,14 +411,14 @@
         </div>
       </article>
 
-      <!-- Sasha · Social Media Manager -->
+      <!-- Solo · Social Media Manager -->
       <article class="agent agent-cyan">
         <div class="accent"></div>
         <div class="agent-body">
           <div class="agent-head">
             <div class="agent-icon">📣</div>
             <div>
-              <h3>Sasha</h3>
+              <h3>Solo</h3>
               <div class="role">Social Media Manager</div>
               <div class="persona"><code>social-media-manager</code></div>
             </div>
@@ -337,21 +426,21 @@
           <p class="desc">Builds the content calendar and writes platform-native posts (auto-posting needs a publishing integration).</p>
           <div class="actions">
             <div class="actions-label">Quick actions — tap to copy</div>
-            <button class="qa" data-prompt="Sasha, plan next month's LinkedIn calendar for HUDL and draft the first 3 posts." onclick="copyQA(this)"><span class="qa-text"><b>Sasha,</b> plan next month's LinkedIn calendar</span><span class="qa-copy">Copy</span></button>
-            <button class="qa" data-prompt="Sasha, turn the latest HUDL blog post into a LinkedIn post and an X thread." onclick="copyQA(this)"><span class="qa-text"><b>Sasha,</b> turn the latest blog into social posts</span><span class="qa-copy">Copy</span></button>
-            <button class="qa" data-prompt="Sasha, draft this week's social posts for [client]." onclick="copyQA(this)"><span class="qa-text"><b>Sasha,</b> draft this week's posts for [client]</span><span class="qa-copy">Copy</span></button>
+            <button class="qa" data-prompt="Solo, plan next month's LinkedIn calendar for HUDL and draft the first 3 posts." onclick="copyQA(this)"><span class="qa-text"><b>Solo,</b> plan next month's LinkedIn calendar</span><span class="qa-copy">Copy</span></button>
+            <button class="qa" data-prompt="Solo, turn the latest HUDL blog post into a LinkedIn post and an X thread." onclick="copyQA(this)"><span class="qa-text"><b>Solo,</b> turn the latest blog into social posts</span><span class="qa-copy">Copy</span></button>
+            <button class="qa" data-prompt="Solo, draft this week's social posts for [client]." onclick="copyQA(this)"><span class="qa-text"><b>Solo,</b> draft this week's posts for [client]</span><span class="qa-copy">Copy</span></button>
           </div>
         </div>
       </article>
 
-      <!-- Hudson · Campaign Manager -->
+      <!-- Hunter · Campaign Manager -->
       <article class="agent agent-yellow">
         <div class="accent"></div>
         <div class="agent-body">
           <div class="agent-head">
             <div class="agent-icon">🧭</div>
             <div>
-              <h3>Hudson</h3>
+              <h3>Hunter</h3>
               <div class="role">Campaign Manager · Concierge</div>
               <div class="persona"><code>campaign-manager</code></div>
             </div>
@@ -359,9 +448,9 @@
           <p class="desc">Your front door. Designs integrated, multi-channel campaigns and coordinates the whole team to deliver them.</p>
           <div class="actions">
             <div class="actions-label">Quick actions — tap to copy</div>
-            <button class="qa" data-prompt="Hudson, what should I work on today?" onclick="copyQA(this)"><span class="qa-text"><b>Hudson,</b> what should I work on today?</span><span class="qa-copy">Copy</span></button>
-            <button class="qa" data-prompt="Hudson, design a Q3 lead-gen campaign for [client] with this goal: [goal]." onclick="copyQA(this)"><span class="qa-text"><b>Hudson,</b> design a campaign for [client]</span><span class="qa-copy">Copy</span></button>
-            <button class="qa" data-prompt="Hudson, give me a status across all clients and the blog queue." onclick="copyQA(this)"><span class="qa-text"><b>Hudson,</b> status across all clients + blog</span><span class="qa-copy">Copy</span></button>
+            <button class="qa" data-prompt="Hunter, what should I work on today?" onclick="copyQA(this)"><span class="qa-text"><b>Hunter,</b> what should I work on today?</span><span class="qa-copy">Copy</span></button>
+            <button class="qa" data-prompt="Hunter, design a Q3 lead-gen campaign for [client] with this goal: [goal]." onclick="copyQA(this)"><span class="qa-text"><b>Hunter,</b> design a campaign for [client]</span><span class="qa-copy">Copy</span></button>
+            <button class="qa" data-prompt="Hunter, give me a status across all clients and the blog queue." onclick="copyQA(this)"><span class="qa-text"><b>Hunter,</b> status across all clients + blog</span><span class="qa-copy">Copy</span></button>
           </div>
         </div>
       </article>
@@ -369,7 +458,7 @@
     </div>
 
     <div class="note">
-      <b>One team, one memory.</b> Six specialists — Hudson, Pippa, Cora, Dash, Otis &amp; Sasha — cover analysis, content, dashboards, outreach, social and full campaign orchestration. They all read <a href="#brain" style="color:var(--cyan)">The Brain</a> first and remember your preferences per client. Note: Sasha prepares &amp; schedules content but can't auto-post to live networks until a publishing integration is connected. Want more — SEO auditor, competitor research, client onboarding? Just say the word.
+      <b>One team, one memory.</b> Six specialists — Hunter, Pippa, Hendrix, Dash, Otis &amp; Solo — cover analysis, content, dashboards, outreach, social and full campaign orchestration. They all read <a href="#brain" style="color:var(--cyan)">The Brain</a> first and remember your preferences per client. Note: Solo prepares &amp; schedules content but can't auto-post to live networks until a publishing integration is connected. Want more — SEO auditor, competitor research, client onboarding? Just say the word.
     </div>
 
     <div id="brain" class="onboard" style="margin-top:32px;border-left:4px solid var(--cyan);">
@@ -496,7 +585,7 @@
       <div class="step">
         <div class="num">02</div>
         <h4>Call them by name</h4>
-        <p>Copy a quick action above, or just say <code>"Hudson, what should I do today?"</code> Talk to them in plain English by name — Pippa, Cora, Dash, Otis, Sasha — or let Hudson route it.</p>
+        <p>Copy a quick action above, or just say <code>"Hunter, what should I do today?"</code> Talk to them in plain English by name — Pippa, Hendrix, Dash, Otis, Solo — or let Hunter route it.</p>
       </div>
       <div class="step">
         <div class="num">03</div>
@@ -535,6 +624,83 @@
     try{ document.execCommand('copy'); done(); }catch(e){}
     document.body.removeChild(t);
   }
+
+  /* ---- Brief Pad ---- */
+  const BP_KEY = 'hudl-briefpad-v1';
+
+  function composeBrief(){
+    const agentSel = document.getElementById('bp-agent');
+    const clientSel = document.getElementById('bp-client');
+    const task = document.getElementById('bp-text').value.trim();
+    const agent = agentSel.value === 'auto' ? 'Hunter' : agentSel.value;
+    let slug = '', clientName = '';
+    if(clientSel.value){ [slug, clientName] = clientSel.value.split('|'); }
+
+    let prompt = '';
+    if(slug){
+      prompt = `${agent}, for ${clientName} (workspace: clients/${slug}/): ${task || '[describe the task]'}`;
+    } else {
+      prompt = `${agent}: ${task || '[describe the task]'}`;
+    }
+    return { agent, slug, clientName, task, prompt };
+  }
+
+  function buildBrief(){
+    const { slug, prompt } = composeBrief();
+    const ws = document.getElementById('pv-ws');
+    ws.textContent = slug ? `→ clients/${slug}/` : '';
+    // render with the leading "Agent, ... :" emphasised
+    const pv = document.getElementById('pv-text');
+    const idx = prompt.indexOf(':');
+    if(idx > -1){
+      pv.innerHTML = '<b>' + escapeHtml(prompt.slice(0, idx+1)) + '</b>' + escapeHtml(prompt.slice(idx+1));
+    } else {
+      pv.textContent = prompt;
+    }
+    saveBrief();
+  }
+
+  function escapeHtml(s){ const d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
+
+  function copyBrief(){
+    const { prompt } = composeBrief();
+    const btn = document.getElementById('bp-copy');
+    const done = () => {
+      const orig = btn.textContent;
+      btn.classList.add('copied'); btn.textContent = 'Copied ✓';
+      setTimeout(()=>{ btn.classList.remove('copied'); btn.textContent = orig; }, 1400);
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(prompt).then(done).catch(()=>fallbackCopy(prompt, done));
+    } else { fallbackCopy(prompt, done); }
+  }
+
+  function clearBrief(){
+    document.getElementById('bp-text').value = '';
+    document.getElementById('bp-agent').value = 'auto';
+    document.getElementById('bp-client').value = '';
+    buildBrief();
+  }
+
+  function saveBrief(){
+    try{
+      localStorage.setItem(BP_KEY, JSON.stringify({
+        agent: document.getElementById('bp-agent').value,
+        client: document.getElementById('bp-client').value,
+        task: document.getElementById('bp-text').value
+      }));
+    }catch(e){}
+  }
+
+  (function restoreBrief(){
+    try{
+      const saved = JSON.parse(localStorage.getItem(BP_KEY) || '{}');
+      if(saved.agent) document.getElementById('bp-agent').value = saved.agent;
+      if(saved.client) document.getElementById('bp-client').value = saved.client;
+      if(saved.task) document.getElementById('bp-text').value = saved.task;
+    }catch(e){}
+    buildBrief();
+  })();
 </script>
 </body>
 </html>
