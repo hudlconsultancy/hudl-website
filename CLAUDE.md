@@ -20,6 +20,8 @@ Claude Code subagents tailored to the business — see `launchpad.html` for the 
 - **content-writer** — SEO blog posts in the `_posts` + `posts/` format and HUDL voice.
 - **dashboard-builder** — new client dashboards matching `dashboards/*.html`.
 - **outreach-copywriter** — outreach emails, ad copy, landing pages, proposals.
+- **social-media-manager** — social content calendar + platform-native posts (LinkedIn/Instagram/X/Facebook), Canva visuals, scheduling. Prepares ready-to-publish packs; can't auto-post without a publishing integration.
+- **campaign-manager** — designs integrated multi-channel campaigns (brief, channels, budget, timeline, KPIs) and orchestrates the other agents to deliver them; saves to `clients/<slug>/campaigns/`.
 
 All agents are **client-aware**: when a client is named they read `clients/<slug>/profile.md` first, work from that client's `data/`, and write deliverables into the client's `reports/`/`content/`/`outreach/` folders.
 
