@@ -35,11 +35,13 @@ Examples:
 | Slug | Client | Sector | Dashboard |
 |------|--------|--------|-----------|
 | `hudl` | HUDL Consultancy _(our own)_ | UK marketing consultancy | _internal — blog ships to `/_posts`_ |
-| `abels` | Abels Moving Services | UK removals & relocation | `dashboards/abels-dashboard.html` |
-| `bishops` | Bishop's Move | UK removals & storage | `dashboards/bishops-move-dashboard.html` _(awaiting data)_ |
-| `gerson` | Gerson Relocation | Corporate / global relocation | `dashboards/gerson-relocation-dashboard.html` |
-| `gms` | GMS _(confirm name)_ | _to confirm_ | `dashboards/gms-dashboard.html` _(awaiting data)_ |
-| `agm` | AGM Group _(confirm name)_ | _to confirm_ | `dashboards/agm-group-dashboard.html` _(awaiting data)_ |
+| `agm` | AGM Relocation Ltd _(**parent group**)_ | Group of 4 removal/relocation brands | `dashboards/agm-group-dashboard.html` _(awaiting data)_ |
+| `abels` | Abels Moving Services _(AGM)_ | Premium UK & intl removals · Royal Warrant | `dashboards/abels-dashboard.html` |
+| `bishops` | Bishop's Move _(AGM)_ | UK removals & storage · est. 1854 | `dashboards/bishops-move-dashboard.html` _(awaiting data)_ |
+| `gerson` | Gerson Relocation _(AGM)_ | Corporate / global mobility | `dashboards/gerson-relocation-dashboard.html` |
+| `gms` | Gerson Moving Services (GMS) _(AGM)_ | Consumer / domestic removals | `dashboards/gms-dashboard.html` _(awaiting data)_ |
+
+> **AGM portfolio:** `abels`, `bishops`, `gerson` and `gms` all belong to the **AGM Relocation Limited** group. The master reference is `clients/agm/brand-context.md` — read it for group context (agencies, stakeholders, cross-brand workstreams) before brand work. AGM commercial data is internal-only.
 
 ## Onboarding a new client
 

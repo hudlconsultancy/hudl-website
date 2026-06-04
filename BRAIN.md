@@ -63,14 +63,18 @@ At the start of any client task, state which workspace you're in (e.g. *"Working
 - **Canva — blog covers PAUSED** (use SVG generator instead). **Canva for social media visuals is ACTIVE** — Solo uses it for social posts following the visual guide at `clients/hudl/content/social/voice-and-examples.md`.
 
 ## Clients at a glance
-| Slug | Who | Status | Notes |
-|---|---|---|---|
-| `hudl` | Our own marketing | Active | Blog engine + social workstream |
-| `abels` | Abels Moving Services (removals) | Active | PPC + dashboard; Q3 campaign in flight |
-| `bishops` | Bishop's Move (removals) | Dashboard built, awaiting data | — |
-| `gerson` | Gerson Relocation | Dashboard built | Full persona doc on file |
-| `gms` | GMS (TBC) | Placeholder | Details to confirm |
-| `agm` | AGM Group (TBC) | Placeholder | Details to confirm |
+**`hudl`** is our own marketing. **`agm`** is **AGM Relocation Limited — the parent group** of four removal/relocation brands (Woody is their Fractional Marketing Director, managing all four). Full portfolio reference: `clients/agm/brand-context.md`.
+
+| Slug | Who | Group | Status | Key facts |
+|---|---|---|---|---|
+| `hudl` | Our own marketing | — | Active | Blog engine + social workstream |
+| `agm` | AGM Relocation Ltd (**parent group**) | — | Active | Group reporting, lead attribution, Move Protect, Power BI |
+| `abels` | Abels Moving Services | AGM | Active | Premium; **Royal Warrant**; PPC + dashboard; Q3 campaign in flight; agencies JDR (review)/NetDesigner |
+| `bishops` | Bishop's Move | AGM | Dashboard built, awaiting data | Heritage **est. 1854**; MCM Digital paid media; HUDL £3k/mo retainer |
+| `gerson` | Gerson Relocation | AGM | Dashboard built | Corporate mobility; dual B2B/B2C; CoderKube rebuild; MCM Digital; full persona doc |
+| `gms` | Gerson Moving Services (GMS) | AGM | Placeholder | Consumer/domestic arm of Gerson — **keep distinct from Gerson Relocation** |
+
+⚠️ AGM brand data (retainers, agencies, stakeholders) is **internal** — never surface in public copy. Royal Warrant (Abels) needs compliance sign-off.
 
 *Full detail lives in each `clients/<slug>/profile.md`. This table is just the map.*
 </content>

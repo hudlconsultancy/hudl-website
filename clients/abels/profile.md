@@ -1,21 +1,40 @@
 # Client Profile — Abels Moving Services
 
-> The agents read this file first whenever they work on this client. Keep it current. Don't invent figures — use placeholders and label anything illustrative.
+> The agents read this file first whenever they work on this client. Part of the **AGM Relocation Limited** group — see [`../agm/brand-context.md`](../agm/brand-context.md) for full portfolio context. Keep this current. Don't invent figures — use placeholders and label anything illustrative.
 
 ## Snapshot
 - **Slug:** abels
-- **Sector:** UK removals & relocation
-- **Website:** [to confirm]
-- **Primary contact:** [name] — [email] _(placeholder until confirmed)_
+- **Parent group:** AGM Relocation Limited
+- **Sector:** Premium UK domestic & international removals
+- **Key differentiator:** Holds a **Royal Warrant** — a significant, underutilised commercial asset. Positions Abels firmly in the **premium tier**.
+- **Depots:** Multiple UK locations including **Ely (CB6)**.
+- **Main competitor:** **AnyVan** (significant impression share via auction insights). Positioned *against* mid-market aggregators.
+- **Website:** WordPress (dev: NetDesigner) — [URL to confirm]
+- **Primary contact:** Craig Wood (Woody) — woody@hudl.gg _(group marketing)_
 - **Status:** Active
 
+## Services
+Domestic house removals (UK) · international removals & shipping · European removals · storage · packing/unpacking · fine art & antiques handling.
+
 ## Services HUDL provides
-- [x] Paid media / Google Ads (PPC)
-- [ ] SEO
+- [x] Paid media / Google Ads (PPC) — Woody managing directly during JDR pause
+- [ ] SEO — historically JDR Group (under review)
 - [ ] Content
 - [ ] Brand strategy
 - [x] Performance / analytics (reporting dashboard)
 - Notes: [confirm full scope/retainer]
+
+## Google Ads
+- **Campaign structure:** Domestic · London · Europe Outbound · International.
+- **Bidding:** tCPA; diagnosed via budget-constrained vs efficiency-constrained framework.
+- **Optimisations applied:** location bid modifiers (80-day data), zero-impression locations removed, ad schedule adjustments.
+- **Performance Max** in use. **Customer Match** list from Moveware CRM export (399 rows, 326 usable hashed records) as an audience signal.
+- **Landing page:** dedicated PPC domestic-removals page developed (v1–v5) with real brand photography and Royal Warrant compliance.
+
+## Agency relationships
+- **JDR Group** — PPC & SEO *(relationship under active review; Woody managing PPC directly during the pause)*.
+- **NetDesigner** — WordPress web development.
+- **NetMatters** — technical SEO *(legacy, no longer active)*.
 
 ## Goals & KPIs
 - Primary goal: domestic & international removals enquiries at a viable CPA
@@ -29,10 +48,11 @@
 - **Reporting cadence:** [monthly — to confirm]
 
 ## Voice & guardrails
-- Tone: trusted, established mover ("the art of moving")
-- Do: lead with reliability, care and experience
-- Don't: over-promise timescales or prices
-- Compliance notes: any quoted prices/savings need a real source
+- **Tone:** Premium, trusted, heritage-led ("the art of moving"). Expertise, care, premium service.
+- **Do:** lead with reliability, care and experience; treat the **Royal Warrant** as a mark of exceptional quality.
+- **Don't:** use aggregator-style language; over-promise timescales or prices.
+- **⚠️ Royal Warrant compliance:** reference with care and in line with Royal Warrant guidelines — never as decorative copy. Flag any Warrant-referencing copy for sign-off.
+- **Compliance:** any quoted prices/savings need a real source.
 
 ## Current focus / open actions
 - [ ] Confirm scope, contact and target CPA

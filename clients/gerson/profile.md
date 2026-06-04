@@ -1,26 +1,34 @@
 # Client Profile — Gerson Relocation
 
-> The agents read this file first whenever they work on this client. Keep it current. Don't invent figures — use placeholders and label anything illustrative.
+> The agents read this file first whenever they work on this client. Part of the **AGM Relocation Limited** group — see [`../agm/brand-context.md`](../agm/brand-context.md) for full portfolio context. Keep this current. Don't invent figures — use placeholders and label anything illustrative.
 
 ## Snapshot
 - **Slug:** gerson
-- **Sector:** Corporate & private international relocation
+- **Parent group:** AGM Relocation Limited
+- **Sector:** Corporate / international mobility (B2B buyer + relocating employee)
 - **Positioning:** "A strategic relocation partner delivering consistency, control, and confidence worldwide." Operates as a decision-shaping authority, not a lead form.
 - **Service lines:** Corporate Relocation Programmes · Destination Services · Mobility Consultancy.
+- **Full service set:** international employee relocation, corporate mobility programmes, destination services (settling-in, school search, area orientation), home search, immigration support coordination, tenancy management, cultural training, group moves.
 - **Key geographies:** UK (London-led), USA, Australia, Germany; B2C origins include London, Birmingham, Cardiff, Dublin.
-- **Website:** [to confirm]
-- **Primary contact:** [name] — [email] _(placeholder until confirmed)_
+- **Website:** **rebuild in progress** with **CoderKube** (selected via RFP; Fast Generations & Netdesignr not selected). Dual-audience wireframes built (corporate + employee pathways); 15-slide RFP deck + homepage developer handoff complete.
+- **Primary contact:** Craig Wood (Woody) — woody@hudl.gg _(group marketing)_
 - **Status:** Active
+
+> **⚠️ Dual-brand note:** Gerson **Relocation** (corporate, this profile) is distinct from **GMS / Gerson Moving Services** (`gms`) — the consumer/domestic brand under the same name. Keep the two clearly separate in all work.
 
 > **📄 Full audience reference:** see [`personas-positioning.md`](./personas-positioning.md) — 5 B2B personas (RFP-led corporate buyers) + 5 B2C personas (web-behaviour led). Read it before writing any content, ad copy or targeting for Gerson.
 
 ## Services HUDL provides
-- [x] Paid media / Google Ads (PPC)
+- [x] Paid media / Google Ads (PPC) — executed by **MCM Digital**; phased proof-of-concept budget anchored to Jan 2026 performance, **cost-per-job** North Star
 - [ ] SEO
 - [ ] Content
 - [ ] Brand strategy
 - [x] Performance / analytics (reporting dashboard)
 - Notes: [confirm full scope/retainer]
+
+## Agency relationships
+- **MCM Digital** — paid media.
+- **CoderKube** — website rebuild (selected via RFP).
 
 ## Goals & KPIs
 - Primary goal: corporate & international relocation enquiries
