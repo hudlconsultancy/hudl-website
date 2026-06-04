@@ -1,0 +1,14 @@
+Campaign report
+1 January 2025 - 3 June 2025
+Campaign status,Campaign,Budget,Budget name,Budget type,Currency code,Status,Status reasons,Optimisation score,Campaign type,TrueView avg. CPV,Impr.,Interactions,Interaction rate,Avg. cost,Clicks,Conv. rate,Avg. CPC,Cost / conv.,Cost,Conversions,Impr. (Top) %,Search lost top IS (rank),Search impr. share,Search lost IS (budget),Search exact match IS,Bid strategy type,Conv. value,Conv. value / cost,Original conv. value
+Enabled,JDR Search | Domestic (Removals & Packing),40.00, --,Daily,GBP,Eligible (Limited),limited by budget,56.02,Search,0,0,0, --,0,0,0.00%,0,0.00,0.00,0.00, --, --, --, --, --,Maximise Conversions (Target CPA),0.00,0.00,0.00
+Enabled,JDR Search | Europe (Outbound),97.00, --,Daily,GBP,Eligible (Limited),limited by budget,76.47,Search,0,0,0, --,0,0,0.00%,0,0.00,0.00,0.00, --, --, --, --, --,Maximise Conversions (Target CPA),0.00,0.00,0.00
+Enabled,JDR Search | Brand,5.00, --,Daily,GBP,Eligible,,78.82,Search,0,0,0, --,0,0,0.00%,0,0.00,0.00,0.00, --, --, --, --, --,Maximise Conversions,0.00,0.00,0.00
+Enabled,JDR Search | London,28.00, --,Daily,GBP,Eligible (Limited),limited by budget,57.66,Search,0,0,0, --,0,0,0.00%,0,0.00,0.00,0.00, --, --, --, --, --,Maximise Conversions (Target CPA),0.00,0.00,0.00
+Enabled,JDR Search | International (High CPC Markets - Outbound),30.00, --,Daily,GBP,Eligible (Limited),limited by budget,72.24,Search,0,0,0, --,0,0,0.00%,0,0.00,0.00,0.00, --, --, --, --, --,Maximise Conversions (Target CPA),0.00,0.00,0.00
+Total: Campaigns, --, --, --, --,GBP, --,, --, --,0,0,0, --,0,0,0.00%,0,0.00,0.00,0.00, --, --, --, --, --, --,0.00,0.00,0.00
+Total: Account,,,,,GBP,,,,,0.023,"10,437,164","23,712",0.23%,0.62,"16,514",3.38%,0.90,18.49,14808.07,800.99,57.82%,78.10%,< 10%,13.02%,< 10%,,"171,430.45",11.58,"171,430.45"
+Total: Search,,,,,GBP,,,,Search,0,"54,048","5,197",9.62%,0.65,"5,197",5.98%,0.65,10.82,3364.32,310.95,57.82%,78.10%,< 10%,19.18%,< 10%,,"93,570.53",27.81,"93,570.53"
+Total: Display,,,,,GBP,,,,Display,0,0,0, --,0,0,0.00%,0,0.00,0.00,0.00, --, --, --, --, --,,0.00,0.00,0.00
+Total: Performance Max,,,,,GBP,,,,Performance Max,0.023,"10,383,116","18,515",0.18%,0.62,"11,317",2.65%,1.01,23.35,11443.75,490.03, --, --,< 10%,11.48%,< 10%,,"77,859.92",6.80,"77,859.92"
+Total: In-stream video,,,,,GBP,,,,In-stream video,0,0,0, --,0,0,0.00%,0,0.00,0.00,0.00, --, --, --, --, --,,0.00,0.00,0.00

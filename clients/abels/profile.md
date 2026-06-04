@@ -40,4 +40,5 @@
 
 ## Working notes
 _Chronological log — newest at top._
+- 2026-06-04 — Added GA4 export (1 Jan–4 Jun 2026) to `data/`; refreshed dashboard Overview + Traffic tabs with real data (12,633 active users). Wrote `reports/2026-06-04-ga4-and-data-review.md`. ⚠️ Google Ads export was unusable (campaign rows all zero; header dated 2025) — requested a clean 2026 Campaign performance CSV.
 - 2026-06-04 — Workspace created.
