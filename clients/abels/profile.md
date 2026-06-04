@@ -40,6 +40,8 @@
 
 ## Working notes
 _Chronological log — newest at top._
+- 2026-06-04 — Set up Notion **HUDL Campaigns** hub + **Abels Q3 2026 Campaign Tasks** board (Board + Schedule views, 10 assets seeded, #1 & #2 marked Done) and published the brief + 4 reports as Notion pages. Added a **Reports & Recommendations** tab and a budget-reallocation insight card to the Abels dashboard.
+- 2026-06-04 — Delivered Q3 brief assets #1 and #2: `reports/2026-06-04-domestic-cleanup-pack.md` (negatives, match types, tCPA phasing to pull Domestic CPA from £299 toward £200–230) and `reports/2026-06-04-budget-reallocation-plan.md` (daily budgets: Europe £97→£115–130, London £28→£45–55, Domestic £40→£20; phased go-live 7 Jul; guardrails and review triggers set).
 - 2026-06-04 — Drafted Q3 2026 lead-gen campaign brief (`campaigns/2026-q3-lead-gen/brief.md`): paid-search-led, reallocate budget Domestic → Europe & London, fix Domestic CPA, hold blended CPA ≤ £170. Assets mapped to ppc-analyst, content-writer, outreach-copywriter, dashboard-builder. Awaiting sign-off.
 - 2026-06-04 — Received corrected Google Ads export (1 Jan–31 May 2026). Baked real per-campaign data into the dashboard PPC tab + Targets (spend £16,432, 96.89 conv, £170 CPA). Wrote `reports/2026-06-04-ppc-review.md`. Key finding: Domestic over-funded at £299 CPA / 0.74× while Europe & London (best ROAS) are budget-limited — reallocate.
 - 2026-06-04 — Added GA4 export (1 Jan–4 Jun 2026) to `data/`; refreshed dashboard Overview + Traffic tabs with real data (12,633 active users). Wrote `reports/2026-06-04-ga4-and-data-review.md`. ⚠️ First Google Ads export was unusable (campaign rows all zero; header dated 2025) — requested a clean 2026 Campaign performance CSV.
