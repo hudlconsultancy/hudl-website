@@ -17,9 +17,9 @@ _Created: 2026-06-04 · Updated: 2026-06-04_
 | 6 | 2026-06-09 | how-to-choose-digital-marketing-agency-uk-2026 | How to Choose a Digital Marketing Agency in the UK (2026 Guide) | how to choose a digital marketing agency UK | marketing-tips | Informational/Commercial | ⏳ In _drafts |
 | 7 | 2026-06-10 | what-is-a-marketing-audit-uk-guide | What Is a Marketing Audit — And Does Your Business Need One? | marketing audit UK | industry-insights | Informational | ⏳ In _drafts |
 | 8 | 2026-06-11 | how-to-set-marketing-budget-uk-sme | How to Set a Marketing Budget for Your Business (UK SME Guide) | marketing budget small business UK | marketing-tips | Informational | ⏳ In _drafts |
-| 9 | 2026-06-12 | seo-vs-paid-search-which-is-right-for-your-business | SEO vs Paid Search: Which Is Right for Your Business in 2026? | SEO vs PPC UK | marketing-tips | Informational/Commercial | 📋 Planned |
-| 10 | 2026-06-13 | why-your-website-traffic-isnt-converting | Why Your Website Traffic Isn't Converting (And How to Fix It) | website conversion rate optimisation UK | marketing-tips | Informational | 📋 Planned |
-| 11 | 2026-06-14 | content-marketing-b2b-what-actually-works-uk | Content Marketing for B2B: What Actually Works in the UK | B2B content marketing UK | marketing-tips | Informational | 📋 Planned |
+| 9 | 2026-06-12 | seo-vs-paid-search-which-is-right-for-your-business | SEO vs Paid Search: Which Is Right for Your Business in 2026? | SEO vs PPC UK | marketing-tips | Informational/Commercial | ⏳ In _drafts |
+| 10 | 2026-06-13 | why-your-website-traffic-isnt-converting | Why Your Website Traffic Isn't Converting (And How to Fix It) | website conversion rate optimisation UK | marketing-tips | Informational | ⏳ In _drafts |
+| 11 | 2026-06-14 | content-marketing-b2b-what-actually-works-uk | Content Marketing for B2B: What Actually Works in the UK | B2B content marketing UK | marketing-tips | Informational | ⏳ In _drafts |
 | 12 | 2026-06-15 | google-ads-quality-score-complete-guide | Google Ads Quality Score: A Complete Guide for UK Advertisers | Google Ads quality score | marketing-tips | Informational | 📋 Planned |
 | 13 | 2026-06-16 | how-to-write-a-marketing-brief-uk | How to Write a Marketing Brief That Agencies Actually Love | marketing brief template UK | industry-insights | Informational | 📋 Planned |
 | 14 | 2026-06-17 | ppc-landing-page-best-practices-uk | PPC Landing Pages: Best Practices to Maximise Conversion | PPC landing page best practices | marketing-tips | Informational | 📋 Planned |
