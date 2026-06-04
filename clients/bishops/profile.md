@@ -23,10 +23,11 @@
 - Key metrics we report on: [to confirm]
 
 ## Reporting
-- **Dashboard:** not built yet — ask `@dashboard-builder` to create one
-- **Dashboard password:** [set on creation]
+- **Dashboard:** `dashboards/bishops-move-dashboard.html` (live, awaiting first data upload) · subdomain `bishops.hudl.gg`
+- **Dashboard password:** `BISHOPSMOVE2026`
 - **Storage key:** `bishops_auth`
 - **Reporting cadence:** [to confirm]
+- _Populate by opening the dashboard → "Upload New Data" → a Google Ads Campaign performance CSV._
 
 ## Voice & guardrails
 - Tone: long-established, family-run heritage mover

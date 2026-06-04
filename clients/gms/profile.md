@@ -24,10 +24,11 @@
 - Key metrics we report on: [to confirm]
 
 ## Reporting
-- **Dashboard:** not built yet — expected at `dashboards/gms-dashboard.html` (subdomain `gms.hudl.gg` already redirects here)
-- **Dashboard password:** [set on creation]
+- **Dashboard:** `dashboards/gms-dashboard.html` (live, awaiting first data upload) · subdomain `gms.hudl.gg`
+- **Dashboard password:** `GMSMOVING2026`
 - **Storage key:** `gms_auth`
 - **Reporting cadence:** [to confirm]
+- _Populate by opening the dashboard → "Upload New Data" → a Google Ads Campaign performance CSV._
 
 ## Voice & guardrails
 - Tone: [to confirm]
