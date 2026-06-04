@@ -91,6 +91,27 @@
   .step p{font-size:15px;color:#bdbdbd;}
   .step code{font-family:'SFMono-Regular',Consolas,monospace;font-size:13px;color:var(--cyan);}
 
+  /* Client workspaces */
+  .client-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media(max-width:820px){.client-grid{grid-template-columns:1fr;}}
+  .client{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:14px;}
+  .client-top{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  .client h3{font-family:var(--font-display);font-size:22px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;}
+  .client .sector{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:2px;}
+  .pill{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 9px;border-radius:20px;white-space:nowrap;}
+  .pill-live{background:rgba(30,223,212,0.14);color:var(--cyan);}
+  .pill-soon{background:rgba(251,191,70,0.14);color:var(--yellow);}
+  .client .tree{font-family:'SFMono-Regular',Consolas,monospace;font-size:12px;color:#9aa;background:var(--black);border:1px solid var(--border);border-radius:6px;padding:12px 14px;line-height:1.7;}
+  .client .tree b{color:var(--cyan);font-weight:600;}
+  .client .links{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;}
+  .client .links a{color:var(--blue);}
+  .client .links a:hover{color:var(--yellow);}
+  .client .links span{color:var(--muted);}
+  .onboard{margin-top:28px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;}
+  .onboard .run-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+  .onboard code{font-family:'SFMono-Regular',Consolas,monospace;font-size:13px;color:var(--cyan);}
+  .onboard code b{color:var(--yellow);}
+
   .note{background:rgba(69,174,255,0.07);border:1px solid rgba(69,174,255,0.25);border-left:4px solid var(--blue);border-radius:6px;padding:18px 22px;font-size:15px;color:#d6e9ff;margin-top:32px;}
   .note b{color:var(--white);}
 
@@ -108,6 +129,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="#agents">Agents</a></li>
+      <li><a href="#clients">Clients</a></li>
       <li><a href="#how">How it works</a></li>
     </ul>
   </div>
@@ -117,7 +139,7 @@
   <div class="container">
     <span class="tag">Internal · AI Control Panel</span>
     <h1>Agent <em>Launch&nbsp;Pad</em></h1>
-    <p>Your team of AI specialists for the HUDL business — built as Claude Code subagents. Each one knows your brand, your data and your formats. Spin one up to crunch campaign numbers, write a blog post, build a client dashboard or draft outreach that converts.</p>
+    <p>Your team of AI specialists for the HUDL business — built as Claude Code subagents. Each one knows your brand, your data and your formats, and works in a <strong style="color:#fff">dedicated workspace per client</strong>. Spin one up to crunch campaign numbers, write a post, build a client dashboard or draft outreach that converts.</p>
   </div>
 </header>
 
@@ -145,7 +167,7 @@
           </div>
           <div class="run">
             <div class="run-label">Run it</div>
-            <code><b>@ppc-analyst</b> analyse Campaign performance.csv and tell me where JDR is wasting budget</code>
+            <code><b>@ppc-analyst</b> review the latest export for <b>Abels</b> and tell me where we're wasting budget</code>
           </div>
         </div>
       </article>
@@ -193,7 +215,7 @@
           </div>
           <div class="run">
             <div class="run-label">Run it</div>
-            <code><b>@dashboard-builder</b> build a dashboard for a new client called Northstar from this CSV</code>
+            <code><b>@dashboard-builder</b> build the reporting dashboard for <b>Bishop's Move</b></code>
           </div>
         </div>
       </article>
@@ -226,6 +248,65 @@
 
     <div class="note">
       <b>Want another specialist?</b> You mentioned a fifth agent — tell me what it should do (e.g. social scheduling, SEO audits, client onboarding, competitor research) and I'll add it here with its own card and definition file.
+    </div>
+  </div>
+</section>
+
+<section id="clients">
+  <div class="container">
+    <div class="section-title">Client Workspaces</div>
+    <p style="max-width:720px;color:#cfcfcf;margin:-8px 0 28px;">Each client has a dedicated folder under <code style="color:#1edfd4;font-family:monospace;font-size:14px">clients/</code>. When you name a client, the agent reads that client's <code style="color:#1edfd4;font-family:monospace;font-size:14px">profile.md</code> for context, works from their <code style="color:#1edfd4;font-family:monospace;font-size:14px">data/</code>, and files deliverables into <code style="color:#1edfd4;font-family:monospace;font-size:14px">reports/</code>, <code style="color:#1edfd4;font-family:monospace;font-size:14px">content/</code> or <code style="color:#1edfd4;font-family:monospace;font-size:14px">outreach/</code>.</p>
+
+    <div class="client-grid">
+      <div class="client">
+        <div class="client-top">
+          <div>
+            <h3>Abels</h3>
+            <div class="sector">UK Removals &amp; Relocation</div>
+          </div>
+          <span class="pill pill-live">Dashboard live</span>
+        </div>
+        <div class="tree"><b>clients/abels/</b>
+ ├ profile.md
+ ├ data/ · reports/
+ └ content/ · outreach/</div>
+        <div class="links"><a href="dashboards/abels-dashboard.html">View dashboard →</a></div>
+      </div>
+
+      <div class="client">
+        <div class="client-top">
+          <div>
+            <h3>Bishop's Move</h3>
+            <div class="sector">UK Removals &amp; Storage</div>
+          </div>
+          <span class="pill pill-soon">Dashboard to build</span>
+        </div>
+        <div class="tree"><b>clients/bishops/</b>
+ ├ profile.md
+ ├ data/ · reports/
+ └ content/ · outreach/</div>
+        <div class="links"><span>Ask @dashboard-builder to create one</span></div>
+      </div>
+
+      <div class="client">
+        <div class="client-top">
+          <div>
+            <h3>Gerson</h3>
+            <div class="sector">Corporate / Global Relocation</div>
+          </div>
+          <span class="pill pill-live">Dashboard live</span>
+        </div>
+        <div class="tree"><b>clients/gerson/</b>
+ ├ profile.md
+ ├ data/ · reports/
+ └ content/ · outreach/</div>
+        <div class="links"><a href="dashboards/gerson-relocation-dashboard.html">View dashboard →</a></div>
+      </div>
+    </div>
+
+    <div class="onboard">
+      <div class="run-label">Onboard a new client</div>
+      <code><b>@dashboard-builder</b> onboard a new client called Acme Removals — set up their workspace</code>
     </div>
   </div>
 </section>

@@ -9,6 +9,7 @@ Static marketing site for **HUDL Consultancy** (hudl.gg), a UK strategic marketi
 - `dashboards/*.html` — self-contained, password-gated client reporting dashboards.
 - `Campaign performance.csv` — example Google Ads export (GBP).
 - `launchpad.html` — internal control panel for the AI agents (noindex).
+- `clients/<slug>/` — dedicated workspace per client (`profile.md` + `data/`, `reports/`, `content/`, `outreach/`). See `clients/README.md`. Current clients: `abels`, `bishops`, `gerson`. Copy `clients/_template` to onboard a new one.
 
 ## Brand
 Dark theme. Colours: `--yellow #fbbf46`, `--red #ff515e`, `--blue #45aeff`, `--cyan #1edfd4`, on near-black `#0c0c0c`/`#000`. Fonts: **Barlow Condensed** (display, uppercase) + **Source Sans 3** (body). Four-colour stripe bar (yellow/blue/red/cyan) is a recurring accent. British English everywhere.
@@ -19,6 +20,8 @@ Claude Code subagents tailored to the business — see `launchpad.html` for the 
 - **content-writer** — SEO blog posts in the `_posts` + `posts/` format and HUDL voice.
 - **dashboard-builder** — new client dashboards matching `dashboards/*.html`.
 - **outreach-copywriter** — outreach emails, ad copy, landing pages, proposals.
+
+All agents are **client-aware**: when a client is named they read `clients/<slug>/profile.md` first, work from that client's `data/`, and write deliverables into the client's `reports/`/`content/`/`outreach/` folders.
 
 ## Conventions
 - Keep pages self-contained; match existing inline-CSS patterns and brand variables.
