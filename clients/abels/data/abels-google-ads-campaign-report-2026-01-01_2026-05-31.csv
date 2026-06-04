@@ -1,0 +1,14 @@
+Campaign report
+1 January 2026 - 31 May 2026
+Campaign status,Campaign,Budget,Budget name,Budget type,Currency code,Status,Status reasons,Optimisation score,Campaign type,TrueView avg. CPV,Impr.,Interactions,Interaction rate,Avg. cost,Clicks,Conv. rate,Avg. CPC,Cost / conv.,Cost,Conversions,Impr. (Top) %,Search lost top IS (rank),Search impr. share,Search lost IS (budget),Search exact match IS,Bid strategy type,Conv. value,Conv. value / cost,Original conv. value
+Enabled,JDR Search | Domestic (Removals & Packing),40.00, --,Daily,GBP,Eligible (Limited),limited by budget,56.02,Search,0,"8,957",393,4.39%,15.21,393,5.09%,15.21,298.96,5979.27,20.00,75.03%,22.39%,23.50%,58.27%,24.19%,Maximise Conversions (Target CPA),"4,444.00",0.74,"4,444.00"
+Enabled,JDR Search | Europe (Outbound),97.00, --,Daily,GBP,Eligible (Limited),limited by budget,76.47,Search,0,"6,104",333,5.46%,18.38,333,14.08%,18.38,130.48,6118.91,46.89,83.78%,44.43%,42.87%,19.32%,40.68%,Maximise Conversions (Target CPA),"15,713.52",2.57,"15,713.52"
+Enabled,JDR Search | London,28.00, --,Daily,GBP,Eligible (Limited),limited by budget,57.66,Search,0,"3,882",184,4.74%,15.61,184,10.33%,15.61,151.15,2871.85,19.00,71.56%,62.87%,24.09%,19.67%,32.29%,Maximise Conversions (Target CPA),"5,252.00",1.83,"5,252.00"
+Enabled,JDR Search | Brand,5.00, --,Daily,GBP,Eligible,,78.82,Search,0,47,19,40.43%,3.78,19,15.79%,3.78,23.92,71.76,3.00,89.47%,2.08%,79.17%,20.83%,80.65%,Maximise Conversions,404.00,5.63,404.00
+Enabled,JDR Search | International (High CPC Markets - Outbound),30.00, --,Daily,GBP,Eligible (Limited),limited by budget,72.24,Search,0,"2,077",80,3.85%,17.38,80,10.00%,17.38,173.83,1390.63,8.00,87.14%,36.48%,44.16%,25.21%,41.23%,Maximise Conversions (Target CPA),"2,828.00",2.03,"2,828.00"
+Total: Campaigns, --, --, --, --,GBP, --,, --, --,0,"21,067","1,009",4.79%,16.29,"1,009",9.60%,16.29,169.59,16432.42,96.89,77.92%,36.03%,28.40%,40.82%,31.47%, --,"28,641.52",1.74,"28,641.52"
+Total: Account,,,,,GBP,,,,,0.009,"119,107","37,810",31.74%,0.62,"3,142",0.36%,7.44,173.37,23374.60,134.83,74.07%,56.66%,18.28%,23.44%,13.33%,,"43,966.59",1.88,"43,966.59"
+Total: Display,,,,,GBP,,,,Display,0,0,0, --,0,0,0.00%,0,0.00,0.00,0.00, --, --, --, --, --,,0.00,0.00,0.00
+Total: Performance Max,,,,,GBP,,,,Performance Max,0.009,"75,623","35,433",46.85%,0.03,765,0.00%,1.32,0.00,1010.05,0.00, --, --,< 10%,11.24%,< 10%,,0.00,0.00,0.00
+Total: Search,,,,,GBP,,,,Search,0,"43,484","2,377",5.47%,9.41,"2,377",5.67%,9.41,165.87,22364.55,134.83,74.07%,56.66%,21.41%,26.79%,21.80%,,"43,966.59",1.97,"43,966.59"
+Total: In-stream video,,,,,GBP,,,,In-stream video,0,0,0, --,0,0,0.00%,0,0.00,0.00,0.00, --, --, --, --, --,,0.00,0.00,0.00
