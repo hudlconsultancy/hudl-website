@@ -1,0 +1,41 @@
+name: Publish Daily Blog Post
+
+on:
+  schedule:
+    - cron: '0 8 * * *'   # 8:00 AM UTC every day
+  workflow_dispatch:       # allow manual trigger from GitHub Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Find next draft
+        id: find-draft
+        run: |
+          DRAFT=$(ls _drafts/*.md 2>/dev/null | sort | head -1)
+          if [ -z "$DRAFT" ]; then
+            echo "No drafts to publish — queue is empty."
+            echo "has_draft=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_draft=true" >> $GITHUB_OUTPUT
+            echo "draft_file=$DRAFT" >> $GITHUB_OUTPUT
+            echo "filename=$(basename "$DRAFT")" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Publish post
+        if: steps.find-draft.outputs.has_draft == 'true'
+        run: |
+          DRAFT="${{ steps.find-draft.outputs.draft_file }}"
+          FILENAME="${{ steps.find-draft.outputs.filename }}"
+          git config user.name "HUDL Content Bot"
+          git config user.email "noreply@hudl.gg"
+          cp "$DRAFT" "_posts/$FILENAME"
+          git add "_posts/$FILENAME"
+          git rm "$DRAFT"
+          git commit -m "publish: $FILENAME"
+          git push

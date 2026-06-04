@@ -40,6 +40,7 @@
 
 ## Working notes
 _Chronological log — newest at top._
+- 2026-06-04 — Delivered Q3 brief assets #3, #4 & #6: `campaigns/2026-q3-lead-gen/ad-copy.md` (RSAs for Europe, London, Domestic — 15 headlines each, 4 descriptions, pinning plan, clean-up-pack guidance applied) and `campaigns/2026-q3-lead-gen/landing-pages.md` (Europe & London landing-page copy — hero, VPs, two-step form, FAQ, trust-slot placeholders; message-matched to pinned ad headlines).
 - 2026-06-04 — Set up Notion **HUDL Campaigns** hub + **Abels Q3 2026 Campaign Tasks** board (Board + Schedule views, 10 assets seeded, #1 & #2 marked Done) and published the brief + 4 reports as Notion pages. Added a **Reports & Recommendations** tab and a budget-reallocation insight card to the Abels dashboard.
 - 2026-06-04 — Delivered Q3 brief assets #1 and #2: `reports/2026-06-04-domestic-cleanup-pack.md` (negatives, match types, tCPA phasing to pull Domestic CPA from £299 toward £200–230) and `reports/2026-06-04-budget-reallocation-plan.md` (daily budgets: Europe £97→£115–130, London £28→£45–55, Domestic £40→£20; phased go-live 7 Jul; guardrails and review triggers set).
 - 2026-06-04 — Drafted Q3 2026 lead-gen campaign brief (`campaigns/2026-q3-lead-gen/brief.md`): paid-search-led, reallocate budget Domestic → Europe & London, fix Domestic CPA, hold blended CPA ≤ £170. Assets mapped to ppc-analyst, content-writer, outreach-copywriter, dashboard-builder. Awaiting sign-off.
