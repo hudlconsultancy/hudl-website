@@ -82,6 +82,29 @@
   .run code{font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace;font-size:13px;color:var(--cyan);display:block;white-space:pre-wrap;word-break:break-word;line-height:1.5;}
   .run code b{color:var(--yellow);font-weight:600;}
 
+  /* Persona name + quick actions */
+  .agent .persona{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:4px;}
+  .agent .persona code{font-family:'SFMono-Regular',Consolas,monospace;font-size:11px;color:#9aa;}
+  .actions{margin-top:auto;display:flex;flex-direction:column;gap:8px;}
+  .actions-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+  .qa{display:flex;align-items:flex-start;gap:10px;background:var(--black);border:1px solid var(--border);border-radius:6px;padding:10px 12px;cursor:pointer;transition:border-color .15s,background .15s;text-align:left;width:100%;font-family:inherit;}
+  .qa:hover{border-color:rgba(255,255,255,0.22);background:#0a0a0a;}
+  .qa-text{flex:1;font-family:'SFMono-Regular',Consolas,monospace;font-size:12.5px;color:#dcdcdc;line-height:1.5;}
+  .qa-text b{color:var(--yellow);font-weight:600;}
+  .qa-copy{flex-shrink:0;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);border-radius:4px;padding:3px 7px;transition:all .15s;}
+  .qa:hover .qa-copy{color:var(--cyan);border-color:var(--cyan);}
+  .qa.copied .qa-copy{color:var(--black);background:var(--cyan);border-color:var(--cyan);}
+
+  /* Concierge band */
+  .concierge{background:linear-gradient(135deg,rgba(251,191,70,0.10),rgba(69,174,255,0.06));border:1px solid rgba(251,191,70,0.30);border-radius:var(--radius);padding:30px 30px 26px;}
+  .concierge .ctop{display:flex;align-items:center;gap:14px;margin-bottom:6px;}
+  .concierge .cicon{width:48px;height:48px;border-radius:10px;background:rgba(251,191,70,0.16);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+  .concierge h2{font-family:var(--font-display);font-size:30px;font-weight:900;text-transform:uppercase;letter-spacing:0.5px;line-height:1;}
+  .concierge .csub{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:3px;}
+  .concierge p{color:#e6e6e6;font-size:16px;margin:6px 0 18px;max-width:760px;}
+  .concierge .qa-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+  @media(max-width:820px){.concierge .qa-row{grid-template-columns:1fr;}}
+
   /* How it works */
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
   @media(max-width:820px){.steps{grid-template-columns:1fr;}}
@@ -171,6 +194,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="#agents">Agents</a></li>
+      <li><a href="#brain">The Brain</a></li>
       <li><a href="#clients">Clients</a></li>
       <li><a href="#how">How it works</a></li>
     </ul>
@@ -181,155 +205,163 @@
   <div class="container">
     <span class="tag">Internal · AI Control Panel</span>
     <h1>Agent <em>Launch&nbsp;Pad</em></h1>
-    <p>Your team of AI specialists for the HUDL business — built as Claude Code subagents. Each one knows your brand, your data and your formats, and works in a <strong style="color:#fff">dedicated workspace per client</strong>. Spin one up to crunch campaign numbers, write a post, build a client dashboard, draft outreach, run your social, or design and manage a whole campaign.</p>
+    <p>Your team of AI specialists for the HUDL business — <strong style="color:#fff">Hudson, Pippa, Cora, Dash, Otis</strong> and <strong style="color:#fff">Sasha</strong>. Each one knows your brand, your data and your formats (they all read <a href="#brain" style="color:var(--cyan)">The Brain</a> first), and works in a <strong style="color:#fff">dedicated workspace per client</strong>. Not sure who to ask? Just ask Hudson. Copy any prompt below straight into Claude Code.</p>
   </div>
 </header>
+
+<section style="padding-top:40px;padding-bottom:0;">
+  <div class="container">
+    <div class="concierge">
+      <div class="ctop">
+        <div class="cicon">🧭</div>
+        <div>
+          <h2>Start here — ask Hudson</h2>
+          <div class="csub">Your concierge · routes work to the right specialist</div>
+        </div>
+      </div>
+      <p>Hudson is the front door. Tell it what you're trying to do and it'll check where things stand, recommend the next best moves, and hand the work to Pippa, Cora, Dash, Otis or Sasha. Tap a prompt to copy it.</p>
+      <div class="qa-row">
+        <button class="qa" data-prompt="Hudson, what should I work on today?" onclick="copyQA(this)"><span class="qa-text"><b>Hudson,</b> what should I work on today?</span><span class="qa-copy">Copy</span></button>
+        <button class="qa" data-prompt="Hudson, where are we with Abels — what's done, queued and blocked?" onclick="copyQA(this)"><span class="qa-text"><b>Hudson,</b> where are we with Abels?</span><span class="qa-copy">Copy</span></button>
+        <button class="qa" data-prompt="Hudson, design an integrated campaign for [client] with this goal: [goal]." onclick="copyQA(this)"><span class="qa-text"><b>Hudson,</b> design a campaign for [client]</span><span class="qa-copy">Copy</span></button>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="agents">
   <div class="container">
     <div class="section-title">The Agents</div>
     <div class="grid">
 
-      <!-- PPC Analyst -->
+      <!-- Pippa · PPC Analyst -->
       <article class="agent agent-yellow">
         <div class="accent"></div>
         <div class="agent-body">
           <div class="agent-head">
             <div class="agent-icon">📊</div>
             <div>
-              <h3>PPC Analyst</h3>
-              <div class="role">Paid Media · Google Ads</div>
+              <h3>Pippa</h3>
+              <div class="role">PPC Analyst · Paid Media</div>
+              <div class="persona"><code>ppc-analyst</code></div>
             </div>
           </div>
           <p class="desc">Turns raw Google Ads exports into clear, commercial recommendations a client can act on.</p>
-          <div class="does">
-            <div>Reads your campaign CSVs and computes spend, CPA &amp; conv. rate</div>
-            <div>Flags wasted spend and scales the winners</div>
-            <div>Writes a client-ready, jargon-free summary</div>
-          </div>
-          <div class="run">
-            <div class="run-label">Run it</div>
-            <code><b>@ppc-analyst</b> review the latest export for <b>Abels</b> and tell me where we're wasting budget</code>
+          <div class="actions">
+            <div class="actions-label">Quick actions — tap to copy</div>
+            <button class="qa" data-prompt="Pippa, review the latest Google Ads export for Abels and tell me where we're wasting budget." onclick="copyQA(this)"><span class="qa-text"><b>Pippa,</b> review Abels' latest export — where's the waste?</span><span class="qa-copy">Copy</span></button>
+            <button class="qa" data-prompt="Pippa, write a client-ready PPC summary for [client] for this month." onclick="copyQA(this)"><span class="qa-text"><b>Pippa,</b> write this month's PPC summary for [client]</span><span class="qa-copy">Copy</span></button>
+            <button class="qa" data-prompt="Pippa, which campaigns should I scale and which should I pause for [client]?" onclick="copyQA(this)"><span class="qa-text"><b>Pippa,</b> what should I scale vs pause?</span><span class="qa-copy">Copy</span></button>
           </div>
         </div>
       </article>
 
-      <!-- Content Writer -->
+      <!-- Cora · Content Writer -->
       <article class="agent agent-blue">
         <div class="accent"></div>
         <div class="agent-body">
           <div class="agent-head">
             <div class="agent-icon">✍️</div>
             <div>
-              <h3>Content Writer</h3>
-              <div class="role">SEO · Blog &amp; Articles</div>
+              <h3>Cora</h3>
+              <div class="role">Content Writer · SEO</div>
+              <div class="persona"><code>content-writer</code></div>
             </div>
           </div>
-          <p class="desc">The HUDL editorial voice — SEO posts in your exact publishing format, ready for the CMS.</p>
-          <div class="does">
-            <div>Writes posts as <code style="color:#45aeff">_posts/*.md</code> with correct frontmatter</div>
-            <div>Generates the companion <code style="color:#45aeff">posts/*.html</code> page</div>
-            <div>British English, on-brand, keyword-aware</div>
-          </div>
-          <div class="run">
-            <div class="run-label">Run it</div>
-            <code><b>@content-writer</b> draft a marketing-tips post on "how removals firms can lower their Google Ads CPA"</code>
+          <p class="desc">The HUDL editorial voice — SEO posts in your exact publishing format, with branded covers, ready for the queue.</p>
+          <div class="actions">
+            <div class="actions-label">Quick actions — tap to copy</div>
+            <button class="qa" data-prompt="Cora, write the next article from the SEO content plan at clients/hudl/content/seo-content-plan.md and add it to the drafts queue with a cover." onclick="copyQA(this)"><span class="qa-text"><b>Cora,</b> write the next blog from the SEO plan</span><span class="qa-copy">Copy</span></button>
+            <button class="qa" data-prompt="Cora, write the next 5 articles from the SEO content plan into _drafts/ with covers." onclick="copyQA(this)"><span class="qa-text"><b>Cora,</b> write the next 5 drafts for the queue</span><span class="qa-copy">Copy</span></button>
+            <button class="qa" data-prompt="Cora, draft a marketing-tips post on '[topic]' for the HUDL blog." onclick="copyQA(this)"><span class="qa-text"><b>Cora,</b> draft a post on '[topic]'</span><span class="qa-copy">Copy</span></button>
           </div>
         </div>
       </article>
 
-      <!-- Dashboard Builder -->
+      <!-- Dash · Dashboard Builder -->
       <article class="agent agent-cyan">
         <div class="accent"></div>
         <div class="agent-body">
           <div class="agent-head">
             <div class="agent-icon">📈</div>
             <div>
-              <h3>Dashboard Builder</h3>
-              <div class="role">Client Reporting</div>
+              <h3>Dash</h3>
+              <div class="role">Dashboard Builder · Reporting</div>
+              <div class="persona"><code>dashboard-builder</code></div>
             </div>
           </div>
           <p class="desc">Builds password-gated client dashboards that match your existing Abels &amp; Gerson reports.</p>
-          <div class="does">
-            <div>Self-contained HTML in <code style="color:#1edfd4">dashboards/</code> — opens by double-click</div>
-            <div>Brand-matched KPIs, charts, tables &amp; insight banner</div>
-            <div>Unique password &amp; storage key per client</div>
-          </div>
-          <div class="run">
-            <div class="run-label">Run it</div>
-            <code><b>@dashboard-builder</b> build the reporting dashboard for <b>Bishop's Move</b></code>
+          <div class="actions">
+            <div class="actions-label">Quick actions — tap to copy</div>
+            <button class="qa" data-prompt="Dash, build the reporting dashboard for [client]." onclick="copyQA(this)"><span class="qa-text"><b>Dash,</b> build the dashboard for [client]</span><span class="qa-copy">Copy</span></button>
+            <button class="qa" data-prompt="Dash, turn this CSV into a dashboard view for [client] (I'll paste/attach it)." onclick="copyQA(this)"><span class="qa-text"><b>Dash,</b> turn this CSV into a dashboard</span><span class="qa-copy">Copy</span></button>
+            <button class="qa" data-prompt="Dash, add a campaign-KPI tab to the Abels dashboard." onclick="copyQA(this)"><span class="qa-text"><b>Dash,</b> add a KPI tab to Abels' dashboard</span><span class="qa-copy">Copy</span></button>
           </div>
         </div>
       </article>
 
-      <!-- Outreach Copywriter -->
+      <!-- Otis · Outreach Copywriter -->
       <article class="agent agent-red">
         <div class="accent"></div>
         <div class="agent-body">
           <div class="agent-head">
             <div class="agent-icon">🎯</div>
             <div>
-              <h3>Outreach Copywriter</h3>
-              <div class="role">Lead Gen · Conversion Copy</div>
+              <h3>Otis</h3>
+              <div class="role">Outreach Copywriter · Lead Gen</div>
+              <div class="persona"><code>outreach-copywriter</code></div>
             </div>
           </div>
           <p class="desc">Copy that books consultations — emails, LinkedIn, ad copy, landing pages and proposals.</p>
-          <div class="does">
-            <div>2–3 test-ready variants every time</div>
-            <div>Honest claims, ranges not guarantees</div>
-            <div>One clear, low-friction call to action</div>
-          </div>
-          <div class="run">
-            <div class="run-label">Run it</div>
-            <code><b>@outreach-copywriter</b> write a cold email to UK removals firms pitching our PPC audit</code>
+          <div class="actions">
+            <div class="actions-label">Quick actions — tap to copy</div>
+            <button class="qa" data-prompt="Otis, write a cold email to UK removals firms pitching our PPC audit." onclick="copyQA(this)"><span class="qa-text"><b>Otis,</b> cold email to removals firms — PPC audit</span><span class="qa-copy">Copy</span></button>
+            <button class="qa" data-prompt="Otis, draft a proposal for [prospect] for [service]." onclick="copyQA(this)"><span class="qa-text"><b>Otis,</b> draft a proposal for [prospect]</span><span class="qa-copy">Copy</span></button>
+            <button class="qa" data-prompt="Otis, write 3 LinkedIn outreach messages for [audience]." onclick="copyQA(this)"><span class="qa-text"><b>Otis,</b> 3 LinkedIn messages for [audience]</span><span class="qa-copy">Copy</span></button>
           </div>
         </div>
       </article>
 
-      <!-- Social Media Manager -->
+      <!-- Sasha · Social Media Manager -->
       <article class="agent agent-cyan">
         <div class="accent"></div>
         <div class="agent-body">
           <div class="agent-head">
             <div class="agent-icon">📣</div>
             <div>
-              <h3>Social Media Manager</h3>
-              <div class="role">Social · Create &amp; Schedule</div>
+              <h3>Sasha</h3>
+              <div class="role">Social Media Manager</div>
+              <div class="persona"><code>social-media-manager</code></div>
             </div>
           </div>
-          <p class="desc">Builds the content calendar and writes platform-native posts, with on-brand visuals via Canva.</p>
-          <div class="does">
-            <div>LinkedIn, Instagram, X &amp; Facebook posts in each brand's voice</div>
-            <div>Content calendar + scheduling (Google Calendar / ClickUp)</div>
-            <div>Prepares ready-to-publish packs (auto-posting needs an integration)</div>
-          </div>
-          <div class="run">
-            <div class="run-label">Run it</div>
-            <code><b>@social-media-manager</b> plan June's LinkedIn calendar for Gerson and draft the first three posts</code>
+          <p class="desc">Builds the content calendar and writes platform-native posts (auto-posting needs a publishing integration).</p>
+          <div class="actions">
+            <div class="actions-label">Quick actions — tap to copy</div>
+            <button class="qa" data-prompt="Sasha, plan next month's LinkedIn calendar for HUDL and draft the first 3 posts." onclick="copyQA(this)"><span class="qa-text"><b>Sasha,</b> plan next month's LinkedIn calendar</span><span class="qa-copy">Copy</span></button>
+            <button class="qa" data-prompt="Sasha, turn the latest HUDL blog post into a LinkedIn post and an X thread." onclick="copyQA(this)"><span class="qa-text"><b>Sasha,</b> turn the latest blog into social posts</span><span class="qa-copy">Copy</span></button>
+            <button class="qa" data-prompt="Sasha, draft this week's social posts for [client]." onclick="copyQA(this)"><span class="qa-text"><b>Sasha,</b> draft this week's posts for [client]</span><span class="qa-copy">Copy</span></button>
           </div>
         </div>
       </article>
 
-      <!-- Campaign Manager -->
+      <!-- Hudson · Campaign Manager -->
       <article class="agent agent-yellow">
         <div class="accent"></div>
         <div class="agent-body">
           <div class="agent-head">
             <div class="agent-icon">🧭</div>
             <div>
-              <h3>Campaign Manager</h3>
-              <div class="role">Strategy · Orchestration</div>
+              <h3>Hudson</h3>
+              <div class="role">Campaign Manager · Concierge</div>
+              <div class="persona"><code>campaign-manager</code></div>
             </div>
           </div>
-          <p class="desc">Designs integrated, multi-channel campaigns and coordinates the other agents to deliver them.</p>
-          <div class="does">
-            <div>Full brief: objective, audience, channels, budget, timeline, KPIs</div>
-            <div>Maps every asset to the right agent &amp; tracks delivery (ClickUp)</div>
-            <div>Measures against targets and recommends optimisations</div>
-          </div>
-          <div class="run">
-            <div class="run-label">Run it</div>
-            <code><b>@campaign-manager</b> design a Q3 lead-gen campaign for Abels to scale Europe &amp; London</code>
+          <p class="desc">Your front door. Designs integrated, multi-channel campaigns and coordinates the whole team to deliver them.</p>
+          <div class="actions">
+            <div class="actions-label">Quick actions — tap to copy</div>
+            <button class="qa" data-prompt="Hudson, what should I work on today?" onclick="copyQA(this)"><span class="qa-text"><b>Hudson,</b> what should I work on today?</span><span class="qa-copy">Copy</span></button>
+            <button class="qa" data-prompt="Hudson, design a Q3 lead-gen campaign for [client] with this goal: [goal]." onclick="copyQA(this)"><span class="qa-text"><b>Hudson,</b> design a campaign for [client]</span><span class="qa-copy">Copy</span></button>
+            <button class="qa" data-prompt="Hudson, give me a status across all clients and the blog queue." onclick="copyQA(this)"><span class="qa-text"><b>Hudson,</b> status across all clients + blog</span><span class="qa-copy">Copy</span></button>
           </div>
         </div>
       </article>
@@ -337,7 +369,13 @@
     </div>
 
     <div class="note">
-      <b>Your AI team is growing.</b> Six specialists now cover analysis, content, dashboards, outreach, social and full campaign orchestration. Note: the Social Media Manager prepares &amp; schedules content but can't auto-post to live networks until a publishing integration (e.g. Buffer/native API) is connected. Want more — SEO auditor, competitor research, client onboarding? Just say the word.
+      <b>One team, one memory.</b> Six specialists — Hudson, Pippa, Cora, Dash, Otis &amp; Sasha — cover analysis, content, dashboards, outreach, social and full campaign orchestration. They all read <a href="#brain" style="color:var(--cyan)">The Brain</a> first and remember your preferences per client. Note: Sasha prepares &amp; schedules content but can't auto-post to live networks until a publishing integration is connected. Want more — SEO auditor, competitor research, client onboarding? Just say the word.
+    </div>
+
+    <div id="brain" class="onboard" style="margin-top:32px;border-left:4px solid var(--cyan);">
+      <div class="run-label" style="color:var(--cyan);">🧠 The Brain — shared memory</div>
+      <p style="color:#cfcfcf;font-size:15px;margin:6px 0 14px;max-width:760px;">Every agent reads <code style="color:var(--cyan);font-family:monospace;">BRAIN.md</code> before any task — your voice, the rules that never change, current priorities and the client map. And each client folder has a <code style="color:var(--cyan);font-family:monospace;">decisions.md</code> that logs your corrections and preferences, so the team never has to be told the same thing twice. Teach them once; it sticks.</p>
+      <code><b>To teach the team something new:</b> "Remember for Abels: always lead with the accreditation." → it gets logged to <span style="color:var(--cyan)">clients/abels/decisions.md</span></code>
     </div>
   </div>
 </section>
@@ -345,7 +383,7 @@
 <section id="clients">
   <div class="container">
     <div class="section-title">Client Workspaces</div>
-    <p style="max-width:720px;color:#cfcfcf;margin:-8px 0 28px;">Each client has a dedicated folder under <code style="color:#1edfd4;font-family:monospace;font-size:14px">clients/</code>. When you name a client, the agent reads that client's <code style="color:#1edfd4;font-family:monospace;font-size:14px">profile.md</code> for context, works from their <code style="color:#1edfd4;font-family:monospace;font-size:14px">data/</code>, and files deliverables into <code style="color:#1edfd4;font-family:monospace;font-size:14px">reports/</code>, <code style="color:#1edfd4;font-family:monospace;font-size:14px">content/</code> or <code style="color:#1edfd4;font-family:monospace;font-size:14px">outreach/</code>.</p>
+    <p style="max-width:760px;color:#cfcfcf;margin:-8px 0 28px;">Each client has a dedicated folder under <code style="color:#1edfd4;font-family:monospace;font-size:14px">clients/</code>. When you name a client, the agent reads their <code style="color:#1edfd4;font-family:monospace;font-size:14px">profile.md</code> for context and their <code style="color:#1edfd4;font-family:monospace;font-size:14px">decisions.md</code> for your saved preferences, works from their <code style="color:#1edfd4;font-family:monospace;font-size:14px">data/</code>, and files deliverables into <code style="color:#1edfd4;font-family:monospace;font-size:14px">reports/</code>, <code style="color:#1edfd4;font-family:monospace;font-size:14px">content/</code> or <code style="color:#1edfd4;font-family:monospace;font-size:14px">outreach/</code>.</p>
 
     <div class="client-grid">
       <div class="client">
@@ -457,8 +495,8 @@
       </div>
       <div class="step">
         <div class="num">02</div>
-        <h4>Call an agent</h4>
-        <p>Type <code>@</code> and the agent name, then your request — or just describe the task and Claude routes it to the right specialist for you.</p>
+        <h4>Call them by name</h4>
+        <p>Copy a quick action above, or just say <code>"Hudson, what should I do today?"</code> Talk to them in plain English by name — Pippa, Cora, Dash, Otis, Sasha — or let Hudson route it.</p>
       </div>
       <div class="step">
         <div class="num">03</div>
@@ -475,5 +513,28 @@
     <div>Powered by Claude Code subagents</div>
   </div>
 </footer>
+
+<script>
+  function copyQA(el){
+    const text = el.getAttribute('data-prompt') || el.querySelector('.qa-text').innerText;
+    const badge = el.querySelector('.qa-copy');
+    const done = () => {
+      const orig = badge ? badge.textContent : '';
+      el.classList.add('copied');
+      if(badge) badge.textContent = 'Copied';
+      setTimeout(()=>{ el.classList.remove('copied'); if(badge) badge.textContent = orig || 'Copy'; }, 1400);
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(()=>fallbackCopy(text, done));
+    } else { fallbackCopy(text, done); }
+  }
+  function fallbackCopy(text, done){
+    const t = document.createElement('textarea');
+    t.value = text; t.style.position='fixed'; t.style.opacity='0';
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand('copy'); done(); }catch(e){}
+    document.body.removeChild(t);
+  }
+</script>
 </body>
 </html>
