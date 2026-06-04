@@ -10,7 +10,7 @@ clients/<slug>/
   decisions.md   # Saved preferences & corrections — the client's memory (READ second)
   data/          # Campaign exports, CSVs, raw data
   reports/       # PPC analyses & performance summaries (Pippa / ppc-analyst)
-  content/       # Blog drafts & content for this client (Cora / content-writer)
+  content/       # Blog drafts & content for this client (Hendrix / content-writer)
   outreach/      # Emails, proposals, ad copy (Otis / outreach-copywriter)
 ```
 

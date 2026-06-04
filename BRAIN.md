@@ -10,14 +10,14 @@ Each agent has a friendly name and a job. You can call them by name in plain Eng
 
 | Name | Role | Agent (slug) | Ask them for… |
 |---|---|---|---|
-| **Hudson** | Campaign Manager / concierge | `campaign-manager` | "What should I work on?", whole campaigns, anything multi-step |
+| **Hunter** | Campaign Manager / concierge | `campaign-manager` | "What should I work on?", whole campaigns, anything multi-step |
 | **Pippa** | PPC Analyst | `ppc-analyst` | Google Ads reviews, wasted-spend audits, budget moves, client summaries |
-| **Cora** | Content Writer | `content-writer` | SEO blog posts, articles, landing-page copy, content ideas |
+| **Hendrix** | Content Writer | `content-writer` | SEO blog posts, articles, landing-page copy, content ideas |
 | **Dash** | Dashboard Builder | `dashboard-builder` | New client dashboards, turning a CSV into a report, KPI views |
 | **Otis** | Outreach Copywriter | `outreach-copywriter` | Cold/warm emails, ad copy, proposals, conversion copy |
-| **Sasha** | Social Media Manager | `social-media-manager` | Content calendars, LinkedIn/IG/X posts, Canva visuals |
+| **Solo** | Social Media Manager | `social-media-manager` | Content calendars, LinkedIn/IG/X posts, Canva visuals |
 
-**Hudson is the front door.** If you're not sure who to ask, ask Hudson — it routes the work and assembles the result.
+**Hunter is the front door.** If you're not sure who to ask, ask Hunter — it routes the work and assembles the result.
 
 ---
 
