@@ -10,8 +10,9 @@
 - Daily blog cadence: one post/day auto-published at 08:00 UTC from `_drafts/` → `_posts/`.
 
 ## Things to avoid (learned the hard way)
-- **Don't use AI-generated illustration images** for blog/social (Canva/Gemini-style). Woody rejected these — branded SVG covers are the agreed approach. (2026-06-04)
-- **Canva design project is PAUSED** — do not generate Canva designs until Woody un-pauses it. (2026-06-04)
+- **Don't use AI-generated illustration images** for blog/social (Canva/Gemini-style). Woody rejected these — branded SVG covers are the agreed approach for the blog. (2026-06-04)
+- **Canva for blog covers: PAUSED** — blog uses branded SVG covers via `scripts/generate-cover.js` instead. (2026-06-04)
+- **Canva for social media visuals: ACTIVE** — Solo should use the Canva integration to create social posts, following the visual rules in `clients/hudl/content/social/voice-and-examples.md`. (2026-06-04)
 
 ## Open questions / to confirm
 - Lead-gen goals, target CPL and reporting cadence for HUDL's own marketing.

@@ -60,7 +60,7 @@ At the start of any client task, state which workspace you're in (e.g. *"Working
 ## Current priorities (newest first — keep this trimmed)
 - **2026-06-04** — SEO blog engine live: 30-article plan, daily auto-publish (8am UTC) from `_drafts/`→`_posts/`, branded SVG covers auto-generated. Queue currently runs through **14 June** (articles 2–11). Articles 12–30 planned but unwritten. Blog is now public (Insights link in nav).
 - **2026-06-04** — Abels Q3 lead-gen campaign assets delivered; awaiting client sign-off on flagged claims before go-live (7 July).
-- **Canva visuals — PAUSED** by Woody. Don't generate Canva designs until un-paused.
+- **Canva — blog covers PAUSED** (use SVG generator instead). **Canva for social media visuals is ACTIVE** — Solo uses it for social posts following the visual guide at `clients/hudl/content/social/voice-and-examples.md`.
 
 ## Clients at a glance
 | Slug | Who | Status | Notes |
