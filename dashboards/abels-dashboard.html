@@ -92,6 +92,20 @@
   .mini-bar{height:6px;border-radius:3px;background:#fbbf46;opacity:.7;}
   .footer{padding:24px 48px;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;align-items:center;margin-top:40px;background:#000;}
   .footer-brand,.footer-note{font-size:11px;color:#666;text-transform:uppercase;letter-spacing:1px;}
+  .report-doc{background:#111;border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:26px 30px;margin-bottom:22px;}
+  .report-doc h2{font-family:'Barlow Condensed',sans-serif;color:#fff;font-size:19px;text-transform:uppercase;letter-spacing:.5px;margin:18px 0 8px;border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;}
+  .report-doc h3{font-family:'Barlow Condensed',sans-serif;color:#fcd06e;font-size:15px;letter-spacing:.5px;margin:14px 0 6px;}
+  .report-doc p,.report-doc li{font-size:14px;color:#cfcfcf;line-height:1.7;}
+  .report-doc ul,.report-doc ol{margin:6px 0 6px 20px;}
+  .report-doc table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;}
+  .report-doc th{background:#0c0c0c;color:#888;text-transform:uppercase;font-size:10px;letter-spacing:1px;padding:8px 10px;text-align:left;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .report-doc td{padding:8px 10px;border-bottom:1px solid rgba(255,255,255,0.06);color:#ccc;}
+  .report-doc blockquote{border-left:3px solid #fbbf46;margin:12px 0;padding:6px 16px;color:#aaa;background:rgba(251,191,70,0.05);}
+  .report-doc strong{color:#fff;}
+  .report-meta{font-size:11px;color:#666;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+  .report-links{margin:4px 0 6px;}
+  .report-links a{color:#45aeff;font-size:12px;margin-right:16px;font-weight:600;}
+  .report-links a:hover{color:#fbbf46;}
   .tab-panel{display:none;}
   .tab-panel.active{display:block;}
   @media(max-width:900px){.header,.main,.nav-tabs,.footer{padding:20px 24px;}.kpi-grid{grid-template-columns:repeat(2,1fr);}.chart-row{grid-template-columns:1fr;}.footer{flex-direction:column;gap:8px;text-align:center;}}
@@ -134,6 +148,7 @@
   <div class="tab" onclick="switchTab('organic',event)">Organic / GSC</div>
   <div class="tab" onclick="switchTab('ppc',event)">PPC</div>
   <div class="tab" onclick="switchTab('targets',event)">Targets</div>
+  <div class="tab" onclick="switchTab('reports',event)">Reports</div>
 </div>
 
 <div class="main">
@@ -204,6 +219,20 @@
     <div class="chart-card"><div class="chart-card-title">Cost per Conversion by Campaign</div><div class="chart-card-sub">Lower is better · avg. move value £5,737</div><canvas id="ppcImprChart" height="130"></canvas></div>
   </div>
 
+  <div class="chart-card" style="margin-bottom:32px;border-left:3px solid #1edfd4">
+    <div class="chart-card-title">⚡ Recommended action — reallocate budget (Q3 plan)</div>
+    <div class="chart-card-sub">From the PPC review · full plan in the Reports tab</div>
+    <table>
+      <thead><tr><th>Campaign</th><th>Current /day</th><th>Proposed /day</th><th>Rationale</th></tr></thead>
+      <tbody>
+        <tr><td class="td-date">Europe (Outbound)</td><td>£97</td><td style="color:#1edfd4;font-weight:600">£115–130</td><td>Best CPA (£130, 2.57×) · 44% lost IS</td></tr>
+        <tr><td class="td-date">London</td><td>£28</td><td style="color:#1edfd4;font-weight:600">£45–55</td><td>Most throttled winner (63% lost IS)</td></tr>
+        <tr><td class="td-date">Domestic</td><td>£40</td><td style="color:#ff515e;font-weight:600">£20</td><td>Worst CPA (£299, 0.74×) — cut waste, keep core</td></tr>
+        <tr><td class="td-date">International</td><td>£30</td><td>£15–35</td><td>Efficient (2.03×), small — modest test</td></tr>
+        <tr><td class="td-date">Brand</td><td>£5</td><td>£5</td><td>5.63× — hold always-on</td></tr>
+      </tbody>
+    </table>
+  </div>
   <div class="table-card">
     <div class="table-header"><div class="chart-card-title">Campaign Breakdown</div><div class="chart-card-sub" style="margin-bottom:0">JDR Group · Upload CSV to refresh · GA4 conv. tracking not yet configured</div></div>
     <table>
@@ -268,6 +297,16 @@
     <div class="kpi-card"><div class="kpi-label">Monthly Run Rate (Spend)</div><div class="kpi-value" style="font-size:32px">£3,286</div><div class="kpi-sub">Monthly avg. Jan–May 2026 pace</div><div class="kpi-trend trend-down">vs. £7,091 monthly target</div></div>
     <div class="kpi-card"><div class="kpi-label">Projected Annual Conversions</div><div class="kpi-value">234</div><div class="kpi-sub">At current 96.89 conv. / 151 days run rate</div><div class="kpi-trend trend-down">vs. 722 jobs required</div></div>
   </div>
+</div>
+
+<!-- REPORTS TAB -->
+<div id="tab-reports" class="tab-panel">
+  <div class="section-header"><div class="section-title">Reports &amp; Recommendations</div><div class="section-sub">Latest agent analyses · Abels</div></div>
+  <div class="alert" style="border-left-color:#45aeff;background:rgba(69,174,255,0.08);border-color:rgba(69,174,255,0.2)">
+    <div class="alert-icon" style="background:#45aeff">i</div>
+    <div>Summaries produced by HUDL's analysis agents. Full versions are linked to GitHub and Notion. Last updated 4 Jun 2026.</div>
+  </div>
+  <div id="reportsContainer"></div>
 </div>
 
 </div>
@@ -423,6 +462,54 @@ function updateCharts(campaigns){
   const e2=Chart.getChart(c2);if(e2)e2.destroy();
   new Chart(c2,{type:'bar',data:{labels:lbs,datasets:[{label:'Cost per Conversion (£)',data:campaigns.map(c=>c.costPerConv),backgroundColor:campaigns.map(c=>c.costPerConv<=200?CYAN:c.costPerConv<=350?GOLD:RED),borderRadius:3}]},options:{...SO,plugins:{...SO.plugins,legend:{display:false}},scales:{x:{grid:{color:'rgba(255,255,255,0.04)'}},y:{beginAtZero:true,title:{display:true,text:'Cost per Conversion (£)'},grid:{color:'rgba(255,255,255,0.04)'}}}}});
 }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+<script>
+const ABELS_REPORTS=[
+{title:"PPC Performance Review",meta:"PPC Analyst · 4 Jun 2026 · Google Ads 1 Jan–31 May 2026",github:"https://github.com/hudlconsultancy/hudl-website/blob/main/clients/abels/reports/2026-06-04-ppc-review.md",notion:"https://app.notion.com/p/375f7577c39281e39a88d11aec0db6ae",md:`Search works at a blended **£170 CPA / 9.6% conversion rate** — strong for high-value removals — but spend is **mis-weighted**: the worst campaign (Domestic) is the biggest line item, while the two best (Europe, London) are throttled by budget.
+
+| Campaign | Spend | Conv. | CPA | Value/cost | Lost IS |
+|---|---|---|---|---|---|
+| Europe (Outbound) | £6,119 | 46.89 | £130 | 2.57× | 44.4% |
+| London | £2,872 | 19.00 | £151 | 1.83× | 62.9% |
+| International | £1,391 | 8.00 | £174 | 2.03× | 36.5% |
+| Brand | £72 | 3.00 | £24 | 5.63× | 2.1% |
+| Domestic | £5,979 | 20.00 | £299 | 0.74× | 22.4% |
+
+**Priority actions:** 1) reallocate budget Domestic → Europe & London; 2) clean up Domestic (negatives, match types, landing page); 3) raise Europe & London budgets to recover lost impression share; 4) get Moveware booked-job data to validate pipeline.`},
+{title:"Budget Reallocation Plan",meta:"PPC Analyst · 4 Jun 2026 · Asset #2",github:"https://github.com/hudlconsultancy/hudl-website/blob/main/clients/abels/reports/2026-06-04-budget-reallocation-plan.md",notion:"https://app.notion.com/p/375f7577c392812c9d1fe3cb595be568",md:`Shift ~£600–900/month from Domestic into Europe and London (budget-throttled winners). Hold ~£200/day, or a modest uplift to ~£245/day.
+
+| Campaign | Current | Constrained | Uplift |
+|---|---|---|---|
+| Europe | £97 | £115 | £130 |
+| London | £28 | £45 | £55 |
+| Domestic | £40 | £20 | £20 |
+| International | £30 | £15 | £35 |
+| Brand | £5 | £5 | £5 |
+
+**Phased rollout:** clean Domestic (w/c 23 Jun) → budget changes in one day (7 Jul) → Domestic tCPA £230 (14 Jul) → reviews 31 Jul & 28 Aug → Q3 wrap 29 Sep. **Guardrails:** blended CPA > £185 for two weeks → pause; Domestic conv. < 2/month → restore budget. *Illustrative, not guaranteed.*`},
+{title:"Domestic Clean-Up Pack",meta:"PPC Analyst · 4 Jun 2026 · Asset #1",github:"https://github.com/hudlconsultancy/hudl-website/blob/main/clients/abels/reports/2026-06-04-domestic-cleanup-pack.md",notion:"https://app.notion.com/p/375f7577c3928174bbf8e301c8e64c0b",md:`Pull Domestic CPA from £299 toward £200–230 (target 7%+ conv. rate). The diagnosis is **query quality, not the segment**.
+
+- **Negatives:** ~80 terms across 11 waste themes (jobs, van hire, free/cheap, single-item, student, international bleed, council, packing-only, directories, clearance, courier/freight).
+- **Match types:** migrate core terms to phrase/exact; keep a small, tightly-negated broad discovery layer.
+- **Target CPA:** phase £230 → £200 → £180, offset from the budget change.
+- **Landing / quote form:** above-fold CTA, shorter two-step form, trust signals, reliable GA4 tracking, click-to-call.
+- **Next input needed:** the Domestic search-terms report to finalise the negative list.`},
+{title:"GA4 Traffic Review",meta:"4 Jun 2026 · GA4 1 Jan–4 Jun 2026 (155 days)",github:"https://github.com/hudlconsultancy/hudl-website/blob/main/clients/abels/reports/2026-06-04-ga4-and-data-review.md",notion:"https://app.notion.com/p/375f7577c39281d196d0eab6e1e4f5c2",md:`**12,633 active users** across 15,836 sessions, but **~90% new visitors** (12,404 new vs ~1,273 returning) — normal for removals; the site is a **first-touch acquisition channel**.
+
+Engaged sessions/user 0.80 · avg engagement 44.2s · key-event rate ~4.1%. Busiest days cluster Jan–early Feb (New-Year moving intent). Modest engagement + low return rate mean acquisition does the heavy lifting — worth reviewing the quote-request journey.`}
+];
+(function(){
+  var c=document.getElementById('reportsContainer');
+  if(!c||!window.marked)return;
+  ABELS_REPORTS.forEach(function(r){
+    var d=document.createElement('div');
+    d.className='report-doc';
+    var links='<a href="'+r.github+'" target="_blank" rel="noopener">Full report (GitHub) →</a>'+(r.notion?'<a href="'+r.notion+'" target="_blank" rel="noopener">Open in Notion →</a>':'');
+    d.innerHTML='<div class="report-meta">'+r.meta+'</div><h2 style="border-top:none;padding-top:0;margin-top:0">'+r.title+'</h2><div class="report-links">'+links+'</div>'+marked.parse(r.md);
+    c.appendChild(d);
+  });
+})();
 </script>
 </body>
 </html>
