@@ -4,14 +4,14 @@
 **Prepared by:** HUDL Consultancy — Woody, Fractional Marketing Director
 **Prepared for:** AGM Board
 **Report date:** 5 June 2026
-**Reporting period:** May 2026 (with Jan–Apr 2026 trend; partial YoY comparison — see context box below)
-**Status:** First draft — internal review before submission to Neil Pertoldi
+**Reporting period:** May 2026 (with Jan–Apr 2026 trend; YoY comparison where like-for-like — see context box below)
+**Status:** Second draft — YoY data incorporated — internal review before submission to Neil Pertoldi
 
 ---
 
 ## Executive Summary
 
-Abels' paid media is working. The Google Ads account generated 97 enquiries at a blended cost of £170 per lead across the first five months of 2026 — a solid performance for a premium removals service, and well within profitable territory given the value of each removal job. Website traffic is lower year-on-year, but this is a deliberate strategic consequence: the 2025 account ran MCM-managed Performance Max campaigns with over 11 million impressions and large volumes of cross-network traffic driving bulk visitors; 2026 runs a leaner, JDR Search-led structure targeting high-intent queries only. The result is fewer visitors but a materially higher-quality audience — the 9.6% Search conversion rate is the clearest evidence of this shift. The account's structural challenge is clear and already being addressed: budget has historically been over-concentrated in the Domestic campaign, which returns the weakest results, while the Europe and London campaigns — the most efficient performers — have been throttled by insufficient budget. The reallocation and clean-up work we have completed this month sets the platform for a materially stronger Q3.
+Abels' paid media is working. The Google Ads account generated 97 enquiries at a blended cost of £170 per lead across the first five months of 2026 — a solid performance for a premium removals service, and well within profitable territory given the value of each removal job. Website visitors are down 37% year-on-year in May (3,918 in May 2025 vs 2,478 in May 2026), but this is a deliberate strategic consequence of a shift from MCM-managed Performance Max to a lean, JDR Search-led structure: we traded volume for intent, and the 9.6% Search conversion rate is the clearest evidence that the trade is working. For conversion volume and cost per lead, a direct YoY comparison would be misleading — the two years used different conversion-tracking definitions, and this is explained fully below. The account's structural challenge is clear and already being addressed: budget has historically been over-concentrated in the Domestic campaign, which returns the weakest results, while the Europe and London campaigns — the most efficient performers — have been throttled by insufficient budget. The reallocation and clean-up work completed this month sets the platform for a materially stronger Q3.
 
 > **A note on year-on-year comparisons in this report.** Where 2025 data is referenced, two things changed simultaneously: the campaign strategy shifted from PMAX-heavy to Search-only, and the conversion-tracking definition changed. Website visitors is the one clean, like-for-like metric. For conversion volume and cost per lead, the two years are not directly comparable — see the "Year-on-year: how to read it" section immediately below.
 
@@ -25,7 +25,7 @@ This report incorporates 2025 data for the first time. Before drawing any YoY co
 
 **1. Strategy: PMAX-heavy (2025) vs Search-led (2026)**
 
-The 2025 account was managed by MCM Digital with a heavy reliance on Performance Max campaigns. Full-year 2025 data shows:
+The 2025 account was managed by MCM Digital with a heavy reliance on Performance Max campaigns. Full-year 2025 figures are now confirmed from the Google Ads export (1 Jan–31 Dec 2025):
 
 | Metric | 2025 full year |
 |---|---|
@@ -37,6 +37,21 @@ The 2025 account was managed by MCM Digital with a heavy reliance on Performance
 | Monthly spend average | ~£3,817/month |
 
 PMAX across London, Domestic, USA/Canada, International and Asia generated 11.4 million impressions — almost entirely display and cross-network traffic with a click-through rate well below 1%. This drove large volumes of low-intent website visitors. The 2026 account runs five Search-only campaigns with ~21,000 impressions in the same period and a 9.6% conversion rate. Less volume, far higher intent.
+
+The 2025 Search campaigns (shown below) further clarify the conversion-tracking point covered in section 2:
+
+| Campaign (2025 Search) | Spend | Conversions | CPA | Conv. rate |
+|---|---|---|---|---|
+| Search – Domestic | £8,309 | 450.7 | £18 | 9.6% |
+| Search – London | £7,536 | 154.1 | £49 | 5.7% |
+| Search – International – Europe | £4,830 | 378.0 | £13 | 8.0% |
+| Search – Domestic – East Anglia | £2,860 | 167.0 | £17 | 14.7% |
+| Search – International – Generic | £1,520 | 87.0 | £17 | 12.3% |
+| Search – International – Worldwide | £477 | 51.0 | £9 | 19.3% |
+| Search – Domestic Aud. A/B Test | £370 | 22.0 | £17 | 4.3% |
+| **2025 Search total** | **£27,005** | **1,345.7** | **£20** | **~8.9%** |
+
+A £13–20 blended Search CPA in 2025 is the most telling indicator that the two years are not measuring the same thing. The 2026 Search CPA is £170. That is not an 8× deterioration in paid search efficiency — it reflects a much narrower, more valuable conversion definition. The 2025 account was counting many events that the 2026 account does not; the 2026 account is counting only what matters commercially. Until the conversion definitions are reconciled, treating either figure as a genuine lead-volume or CPL benchmark would be misleading.
 
 **2. Conversion tracking: different definitions, not comparable**
 
@@ -60,7 +75,7 @@ Website visitors (GA4 active users and sessions) is independent of ad structure 
 | Conversion Volume (enquiries) | Not isolatable — see note | ~19.4/month (Jan–May blended) | Data required for monthly view | Not comparable — conversion definition changed; see KPI 2 |
 | Conversion Quality (% qualified) | Data required | Data required | Data required | Data required |
 | Cost per Lead (CPL / CPA) | Not isolatable — see note | £170 blended (Jan–May) | Data required for monthly view | Not comparable — conversion definition changed; see KPI 4 |
-| Marketing Spend vs Budget | Not isolatable — see note | ~£3,286/month (Jan–May Search) | 2025 avg ~£3,817/month all-in | ~£3,817/month (all campaign types inc. PMAX; see KPI 5) |
+| Marketing Spend vs Budget | Not isolatable — see note | ~£3,286/month (Jan–May Search) | 2025 monthly avg ~£3,817/month all-in; spend broadly comparable — see KPI 5 | ~£3,817/month (2025 all campaign types; see KPI 5) |
 
 > Three of the five KPIs cannot be reported at a May-only level from the data currently available. The YoY conversion and CPL columns have been marked "not comparable" rather than populated with a misleading figure — the two years used different conversion definitions. Website visitors is the one clean like-for-like metric. See the Data Required section and the Year-on-year context box above.
 
@@ -89,9 +104,9 @@ The overall Jan–May 2026 total is 13,329 active users across 15,847 sessions.
 |---|---|---|---|
 | Active users | 3,918 | 2,478 | −36.8% |
 | Sessions | 4,517 | 2,847 | −37.0% |
-| New users | 3,441 | — (not yet isolated) | — |
+| New users | 3,441 | — (not isolated in current 2026 export) | — |
 
-Source: GA4 export (abels.co.uk). May 2025 figures are clean, like-for-like.
+Source: GA4 exports (abels.co.uk). May 2025 figures confirmed from the 2025 GA4 daily dataset. Like-for-like comparison — both periods use the same GA4 property and the same active-user/session definitions.
 
 ### Context
 
@@ -122,7 +137,7 @@ Paid Search (Google Ads) is the primary acquisition channel in 2026, supported b
 **What would improve this KPI?**
 Three things: unlocking the lost impression share on the Europe and London campaigns (currently losing 44% and 63% of available impressions to budget constraints respectively); improving organic visibility through structured SEO activity; and — if the board wants to recover visitor volume — selectively reintroducing PMAX with tighter audience signals and a separate conversion-tracking setup to prevent it polluting the Search-quality story. All are in scope for Q3 review.
 
-**What data is still needed:** month-level 2025 Google Ads data (to isolate May 2025 spend and conversions) and the reconciliation of conversion definitions (see KPI 2). May 2025 website visitors is now confirmed and clean.
+**What data is still needed:** a month-segmented 2025 Google Ads export to isolate May 2025 spend and conversion volume specifically (the current export covers the full year as an aggregate, so May cannot be separated). May 2025 website visitors is confirmed and clean. Conversion-definition reconciliation is the outstanding analytical priority — see KPI 2.
 
 ---
 
@@ -143,6 +158,16 @@ The Google Ads export covers the full period 1 January – 31 May 2026 as a sing
 This is a healthy conversion rate for paid search in a high-consideration, high-value service category. For context: average conversion rates across all industries on Google Search sit below 5%; a 9.6% blended rate indicates that Abels is attracting well-qualified, high-intent traffic — people actively searching for a professional removals company, not browsers or researchers.
 
 **Note on conversion definition:** Google Ads records a "conversion" when a user completes a key action tracked on the Abels website (most likely a quote form submission or equivalent). This is a lead/enquiry, not a booked job. The relationship between conversions and actual revenue is addressed under Conversion Quality below.
+
+**2025 context — conversion volume side by side (not a like-for-like comparison):**
+
+| | 2025 (full year) | 2025 monthly average | 2026 monthly average (Jan–May) |
+|---|---|---|---|
+| Reported conversions | 2,121.6 | ~177/month | ~19.4/month |
+| Reported CPA | £21.59 blended | — | £170 |
+| Conversion basis | Broad — includes micro-events, form views, chat initiations, phone clicks and form completions | Same | Tight — likely enquiry completions only |
+
+These figures are shown side by side for transparency, not for direct comparison. The ~9× difference in monthly volume (177 vs 19) and ~8× difference in CPA (£22 vs £170) is consistent with a conversion-definition change, not a performance collapse. Until the definitions are reconciled (see Gap 1b in Data Required), no YoY conversion-volume or CPL delta should be presented to the board.
 
 ### Context
 
@@ -199,6 +224,17 @@ The Domestic campaign is spending £300 per enquiry against a blended account av
 **How are we fixing this?**
 The Domestic Clean-Up Pack — a structured programme of negative keyword additions, match-type tightening, tCPA calibration, and ad copy review — has been prepared and is scheduled for implementation from 23 June (negatives and keywords) with budget adjustment and tCPA target setting in the week of 7 July. The target is to bring Domestic CPA from £299 toward £200–230 over the 6–8 weeks following go-live. Europe and London receive increased budgets from the same go-live date to recover lost impression share.
 
+**2025 context — CPL side by side (not a like-for-like comparison):**
+
+The 2025 Google Ads export shows a blended CPA of £21.59 across all campaign types, and £20.07 for Search campaigns only. The 2026 Search CPA is £170. The 2025 Search campaigns specifically returned CPAs of £13–£49 per campaign — the Domestic campaign at £18, International-Europe at £13, London at £49. At face value this looks like the 2026 campaign is delivering leads at 3–10× the 2025 cost. It is not. The 2025 figures are counting conversions that almost certainly included micro-events, phone-click events, and form interactions that the 2026 account does not count. Once the conversion definitions are reconciled, the like-for-like CPA will almost certainly be materially lower in 2026 than the headline £170 suggests.
+
+| | 2025 Search CPA (reported) | 2026 Search CPA (reported) | Comparable? |
+|---|---|---|---|
+| Blended | £20 | £170 | No — different conversion definitions |
+| Domestic | £18 | £299 | No |
+| London | £49 | £151 | No |
+| International / Europe | £13 | £130–174 | No |
+
 **May-only CPL data:** not available from the aggregate export. Month-segmented data required — see Data Required section.
 
 ---
@@ -223,7 +259,17 @@ Daily budgets currently in place (all Search campaigns):
 
 The implied monthly average spend (£3,286) is notably lower than the total daily budget allowance (~£6,000/month). This apparent underspend reflects a combination of factors: the aggregate is divided over five months including January (when spending may have begun mid-month or campaigns were still being optimised), and budget-limited campaigns automatically pause delivery when their daily cap is reached — they do not always spend their full daily budget, particularly if Quality Score issues limit ad rank. The actual monthly spend figures will be confirmed via a month-segmented export.
 
-**Note on Performance Max and total account spend:** the Google Ads account total (all campaign types) shows £23,375 in the same period. The £16,432 referenced throughout this report covers Search campaigns only (the five JDR-managed campaigns). The remainder (£6,943) is Performance Max. All CPL and campaign-level analysis in this report covers Search.
+**Note on Performance Max and total account spend:** the Google Ads account total (all campaign types, Jan–May 2026) shows £23,375. The £16,432 referenced throughout this report covers Search campaigns only (the five JDR-managed campaigns). The remainder (£6,943) is Performance Max. All CPL and campaign-level analysis in this report covers Search.
+
+**2025 annual context — spend at scale:**
+
+| | 2025 full year | 2025 monthly average | 2026 Jan–May average |
+|---|---|---|---|
+| Total spend (all types) | £45,799 | ~£3,817/month | ~£4,675/month (Search + PMAX) |
+| Search spend | £27,005 | ~£2,250/month | ~£3,286/month |
+| PMAX spend | £18,794 | ~£1,566/month | ~£1,389/month |
+
+The 2026 Search-only run-rate (~£3,286/month) is broadly comparable to 2025 total spend per month (~£3,817/month), despite the 2026 structure being Search-only and the 2025 structure being Search plus heavily-funded PMAX. In other words, the budget is similar — the mix has shifted entirely to Search. This reinforces the conversion-tracking change as the explanation for the CPA difference: the account is not spending dramatically more for fewer results, it is spending comparably but measuring results very differently.
 
 ### Context
 
@@ -274,21 +320,30 @@ The following four data gaps prevent complete May 2026 KPI reporting. These are 
 
 ---
 
-**Gap 1: May 2025 data (YoY comparison)**
+**Gap 1: May 2025 data (YoY comparison) — PARTIALLY CLOSED**
 
-Required for: all five KPIs (year-on-year comparison column).
+The following 2025 data is now available and incorporated:
 
-What is needed: GA4 and Google Ads exports for May 2025 (1–31 May 2025). These can be pulled directly from Google Analytics and Google Ads.
+- GA4 daily data (5 Apr – 31 Dec 2025) — used to confirm May 2025 website visitors (3,918 active users / 4,517 sessions / 3,441 new users). This is clean and like-for-like.
+- Full-year GA4 events (2025) — confirms the scope of conversion events tracked in 2025. Incorporated into the conversion-definition analysis in the Year-on-year section.
+- GA4 channel/weekly snapshot (2025) — confirms full-year channel mix (Paid Search 13,882 new users, Cross-network 11,942, Organic 9,429, Direct 9,155). Incorporated.
+- Full-year Google Ads (1 Jan – 31 Dec 2025) — confirms full-year campaign totals (£45,799 spend, 2,121.6 conv, £21.59 CPA). Incorporated.
 
-Who provides it: Woody / account access.
+Still outstanding within Gap 1:
+
+(a) **Month-segmented 2025 Google Ads export** — the 2025 Ads export is a full-year aggregate; May 2025 spend and conversions cannot be isolated from it. A monthly breakdown (or a May-only export) would complete the conversion and CPL YoY columns.
+
+(b) **Reconciliation of conversion definitions** — which specific Google Ads conversion actions were counting as conversions in the 2025 account (MCM-managed), compared with the 2026 account (JDR-managed). This is the single most important analytical step before any conversion-volume or CPL YoY figure is presented to the board.
+
+Who provides it: Woody, via Google Ads conversion action settings for both the 2025 (MCM) account configuration and the current (JDR) setup.
 
 ---
 
-**Gap 2: Month-segmented Google Ads export**
+**Gap 2: Month-segmented Google Ads export (2026)**
 
 Required for: Conversion Volume (May-only), CPL (May-only), Marketing Spend vs Budget (May-only).
 
-The current export is a single aggregate for 1 January – 31 May 2026. Google Ads can export campaign performance segmented by month. A segmented export — or a series of monthly exports — is needed to isolate May 2026 spend, conversions and CPA from the Jan–May total.
+The current 2026 export is a single aggregate for 1 January – 31 May 2026. Google Ads can export campaign performance segmented by month. A segmented export — or a series of monthly exports — is needed to isolate May 2026 spend, conversions and CPA from the Jan–May total. Note: a month-segmented export for 2025 is also needed to isolate May 2025 (see Gap 1b above).
 
 What is needed: re-export the Campaign performance report from Google Ads with "Month" as a segment, covering 1 January – 31 May 2026. Columns: Campaign, Month, Clicks, Impressions, CTR, Cost, Conversions, Conv. rate, Cost/conv.
 
@@ -335,6 +390,6 @@ Source: Google Ads Campaign performance export, 1 January – 31 May 2026, GBP. 
 
 ---
 
-*This is an internal first draft prepared by HUDL Consultancy for Woody's review. Not for distribution to the client or board in this form. All forward-looking projections are directional estimates only and do not constitute guarantees of performance.*
+*This is an internal second draft prepared by HUDL Consultancy for Woody's review. YoY data incorporated 5 June 2026. Not for distribution to the client or board in this form. All forward-looking projections are directional estimates only and do not constitute guarantees of performance.*
 
 *Prepared by Pippa, HUDL PPC Analyst · woody@hudl.gg · 5 June 2026*
