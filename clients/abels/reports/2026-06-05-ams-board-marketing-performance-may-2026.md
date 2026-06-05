@@ -4,14 +4,51 @@
 **Prepared by:** HUDL Consultancy — Woody, Fractional Marketing Director
 **Prepared for:** AGM Board
 **Report date:** 5 June 2026
-**Reporting period:** May 2026 (with Jan–Apr 2026 trend; YoY comparison — see data gaps below)
+**Reporting period:** May 2026 (with Jan–Apr 2026 trend; partial YoY comparison — see context box below)
 **Status:** First draft — internal review before submission to Neil Pertoldi
 
 ---
 
 ## Executive Summary
 
-Abels' paid media is working. The Google Ads account generated 97 enquiries at a blended cost of £170 per lead across the first five months of 2026 — a solid performance for a premium removals service, and well within profitable territory given the value of each removal job. Website traffic remains consistent, with May delivering 2,478 active visitors against a Jan–Apr average of 2,713 per month — a modest seasonal softening that is entirely normal as early-year moving intent cools into spring. The account's structural challenge is clear and already being addressed: budget has historically been over-concentrated in the Domestic campaign, which returns the weakest results, while the Europe and London campaigns — the most efficient performers — have been throttled by insufficient budget. The reallocation and clean-up work we have completed this month sets the platform for a materially stronger Q3.
+Abels' paid media is working. The Google Ads account generated 97 enquiries at a blended cost of £170 per lead across the first five months of 2026 — a solid performance for a premium removals service, and well within profitable territory given the value of each removal job. Website traffic is lower year-on-year, but this is a deliberate strategic consequence: the 2025 account ran MCM-managed Performance Max campaigns with over 11 million impressions and large volumes of cross-network traffic driving bulk visitors; 2026 runs a leaner, JDR Search-led structure targeting high-intent queries only. The result is fewer visitors but a materially higher-quality audience — the 9.6% Search conversion rate is the clearest evidence of this shift. The account's structural challenge is clear and already being addressed: budget has historically been over-concentrated in the Domestic campaign, which returns the weakest results, while the Europe and London campaigns — the most efficient performers — have been throttled by insufficient budget. The reallocation and clean-up work we have completed this month sets the platform for a materially stronger Q3.
+
+> **A note on year-on-year comparisons in this report.** Where 2025 data is referenced, two things changed simultaneously: the campaign strategy shifted from PMAX-heavy to Search-only, and the conversion-tracking definition changed. Website visitors is the one clean, like-for-like metric. For conversion volume and cost per lead, the two years are not directly comparable — see the "Year-on-year: how to read it" section immediately below.
+
+---
+
+---
+
+## Year-on-year: how to read it
+
+This report incorporates 2025 data for the first time. Before drawing any YoY conclusions, three important differences between the two years must be understood.
+
+**1. Strategy: PMAX-heavy (2025) vs Search-led (2026)**
+
+The 2025 account was managed by MCM Digital with a heavy reliance on Performance Max campaigns. Full-year 2025 data shows:
+
+| Metric | 2025 full year |
+|---|---|
+| Total spend | £45,799 |
+| Impressions | 11,394,450 |
+| Clicks | 30,345 |
+| Total conversions | 2,121.6 |
+| Blended CPA | £21.59 |
+| Monthly spend average | ~£3,817/month |
+
+PMAX across London, Domestic, USA/Canada, International and Asia generated 11.4 million impressions — almost entirely display and cross-network traffic with a click-through rate well below 1%. This drove large volumes of low-intent website visitors. The 2026 account runs five Search-only campaigns with ~21,000 impressions in the same period and a 9.6% conversion rate. Less volume, far higher intent.
+
+**2. Conversion tracking: different definitions, not comparable**
+
+The 2025 account recorded 2,121.6 conversions at a £21.59 blended CPA — or approximately 177 conversions per month. The 2026 account records ~19 per month at £170 CPA. The ~9× difference in volume and ~8× difference in CPA is almost certainly a conversion-tracking change, not a real performance collapse.
+
+The 2025 GA4 events file reveals the shape of what was being counted: 3,065 `make_an_enquiry` events (of which 2,472 were designated key events), 696 `call_back_form_submit` events, 285 `contact_form_submit` events, and numerous phone-click events — plus a large volume of softer micro-conversion signals such as Automated greetings (14,958), live chat initiations (933), and dropdown interactions (2,221). In 2026, the conversion count appears to track genuine enquiry completions only, consistent with the tighter Search-only structure. The 2026 conversion rate of 9.6% on Search clicks is a credible, high-quality signal; the 2025 rate of 7% blended across Search and PMAX with a much looser definition is not directly comparable.
+
+**Recommendation:** before any YoY conversion or CPL comparison is presented to the board, Woody should confirm with JDR (or from the Google Ads conversion action settings) exactly which events are counted as conversions in the 2026 account, and cross-reference against what MCM was counting in 2025. This single step will allow a defensible like-for-like comparison to be constructed.
+
+**3. What is clean, like-for-like**
+
+Website visitors (GA4 active users and sessions) is independent of ad structure and conversion tracking. The May 2025 vs May 2026 comparison is clean, and is reported as such in KPI 1 below.
 
 ---
 
@@ -19,13 +56,13 @@ Abels' paid media is working. The Google Ads account generated 97 enquiries at a
 
 | KPI | May 2026 | Jan–Apr 2026 monthly average | Trend | May 2025 (YoY) |
 |---|---|---|---|---|
-| Website Visitors (active users) | 2,478 | 2,713 | Softening — seasonal, expected | Data required |
-| Conversion Volume (enquiries) | Not isolatable — see note | ~19.4/month (Jan–May blended) | Data required for monthly view | Data required |
+| Website Visitors (active users) | 2,478 | 2,713 | Softening — seasonal, expected | 3,918 active users — −36.8% YoY (strategic shift, see KPI 1) |
+| Conversion Volume (enquiries) | Not isolatable — see note | ~19.4/month (Jan–May blended) | Data required for monthly view | Not comparable — conversion definition changed; see KPI 2 |
 | Conversion Quality (% qualified) | Data required | Data required | Data required | Data required |
-| Cost per Lead (CPL / CPA) | Not isolatable — see note | £170 blended (Jan–May) | Data required for monthly view | Data required |
-| Marketing Spend vs Budget | Not isolatable — see note | ~£3,286/month implied (Jan–May) | Data required for monthly view | Data required |
+| Cost per Lead (CPL / CPA) | Not isolatable — see note | £170 blended (Jan–May) | Data required for monthly view | Not comparable — conversion definition changed; see KPI 4 |
+| Marketing Spend vs Budget | Not isolatable — see note | ~£3,286/month (Jan–May Search) | 2025 avg ~£3,817/month all-in | ~£3,817/month (all campaign types inc. PMAX; see KPI 5) |
 
-> Three of the five KPIs cannot be reported at a May-only level from the data currently available. See the Data Required section at the end of this report. This is a structural reporting gap, not a performance problem — it will be resolved for the June report with a month-segmented export.
+> Three of the five KPIs cannot be reported at a May-only level from the data currently available. The YoY conversion and CPL columns have been marked "not comparable" rather than populated with a misleading figure — the two years used different conversion definitions. Website visitors is the one clean like-for-like metric. See the Data Required section and the Year-on-year context box above.
 
 ---
 
@@ -46,18 +83,46 @@ Abels' paid media is working. The Google Ads account generated 97 enquiries at a
 
 The overall Jan–May 2026 total is 13,329 active users across 15,847 sessions.
 
+**Year-on-year comparison (May 2025 vs May 2026):**
+
+| Metric | May 2025 | May 2026 | Change |
+|---|---|---|---|
+| Active users | 3,918 | 2,478 | −36.8% |
+| Sessions | 4,517 | 2,847 | −37.0% |
+| New users | 3,441 | — (not yet isolated) | — |
+
+Source: GA4 export (abels.co.uk). May 2025 figures are clean, like-for-like.
+
 ### Context
 
 **Why did visitors peak in January and soften into spring?**
 This follows the typical removals demand curve. New Year prompts a surge of moving intent — people who have deferred decisions over Christmas commit to a timeline, and house sales agreed in autumn begin moving toward completion. Traffic naturally softens as spring progresses; it is expected to build again from June onward as the summer moving peak (the busiest period in UK removals) arrives. May's 2,478 visitors represents a stabilisation, not a decline — it is broadly in line with April and is consistent with the account generating over 2,000 relevant visitors every month without exception.
 
+**Why is May 2026 down 37% versus May 2025 — and why that is not a cause for concern**
+
+The comparison is real, but the cause is strategic, not a performance failure. In 2025, the account ran under MCM management with four active Performance Max campaigns (London, Domestic, USA/Canada, International) generating 11.4 million impressions across the year — predominantly display and cross-network traffic with sub-1% click-through rates. A significant portion of 2025 website traffic was PMAX-sourced: GA4's full-year 2025 channel data shows 11,942 new users arriving via Cross-network (the GA4 label for PMAX), against 13,882 via Paid Search — meaning PMAX drove almost as many visitors as Search. Much of that cross-network traffic was low-intent: display impressions served to broad audiences who may not have been actively looking to move.
+
+The 2026 account runs five targeted Search campaigns only — no PMAX, no display, no cross-network. It targets people actively searching removal-related terms. The result is fewer visitors, but a meaningfully higher-quality audience. The 9.6% conversion rate on Search in 2026 is the clearest evidence: a visitor entering via a high-intent search query is significantly more likely to enquire than a visitor served a display ad.
+
+Put plainly: we traded volume for intent. The board should read the −37% traffic figure alongside the conversion rate story, not in isolation.
+
+**Full-year 2025 channel context (for reference):**
+
+| Channel | New users (2025) |
+|---|---|
+| Paid Search | 13,882 |
+| Cross-network (PMAX) | 11,942 |
+| Organic Search | 9,429 |
+| Direct | 9,155 |
+| Other channels | 2,977 |
+
 **How are we driving this traffic?**
-Paid search (Google Ads) is the primary acquisition channel, supported by organic search. The site is almost entirely first-touch: of 12,633 visitors recorded Jan–May, approximately 12,404 were new users. This is structurally normal for a removals business — people move infrequently and rarely return to the site before they need to move again. The practical implication is that paid acquisition and organic visibility must work continuously; there is no meaningful returning audience to lean on.
+Paid Search (Google Ads) is the primary acquisition channel in 2026, supported by organic search. The site is almost entirely first-touch — structurally normal for a removals business, where people move infrequently and rarely return before they need to move again. The practical implication is that paid acquisition and organic visibility must work continuously; there is no meaningful returning audience to lean on.
 
 **What would improve this KPI?**
-Two things: unlocking the lost impression share on the Europe and London campaigns (currently losing 44% and 63% of available impressions to budget constraints respectively), and improving organic visibility through structured SEO activity. Both are in scope for Q3.
+Three things: unlocking the lost impression share on the Europe and London campaigns (currently losing 44% and 63% of available impressions to budget constraints respectively); improving organic visibility through structured SEO activity; and — if the board wants to recover visitor volume — selectively reintroducing PMAX with tighter audience signals and a separate conversion-tracking setup to prevent it polluting the Search-quality story. All are in scope for Q3 review.
 
-**YoY comparison:** May 2025 data not available in current exports. Required to complete this view — see Data Required section.
+**What data is still needed:** month-level 2025 Google Ads data (to isolate May 2025 spend and conversions) and the reconciliation of conversion definitions (see KPI 2). May 2025 website visitors is now confirmed and clean.
 
 ---
 
