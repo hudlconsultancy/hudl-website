@@ -1,0 +1,244 @@
+Campaign performance
+1 January 2025 - 31 December 2025
+Campaign,Campaign state,Campaign type,Clicks,Impr.,CTR,Currency code,Avg. CPC,Cost,Impr. (Abs. Top) %,Impr. (Top) %,Conversions,View-through conv.,Cost / conv.,Conv. rate
+PMAX - London,Paused,Performance Max,"4,764","3,576,062",0.13%,GBP,1.19,5653.01,0,0,160.79,0,35.16,2.40%
+Search - International - Europe,Paused,Search,"4,729","69,373",6.82%,GBP,1.02,4830.49,19.52%,67.25%,377.95,0,12.78,7.99%
+Search  - Domestic,Paused,Search,"4,701","34,706",13.55%,GBP,1.77,8309.11,12.93%,48.83%,450.74,0,18.43,9.59%
+PMAX - USA/Canada,Paused,Performance Max,"3,797","1,207,298",0.31%,GBP,0.89,3370.85,0,0,153.24,0,22.00,2.16%
+PMAX - Domestic,Paused,Performance Max,"3,000","1,092,562",0.27%,GBP,2.04,6116.92,0,0,289.42,0,21.13,7.11%
+PMAX - International,Paused,Performance Max,"2,717","4,595,783",0.06%,GBP,1.20,3257.77,0,0,132.36,0,24.61,2.60%
+Search - London,Paused,Search,"2,690","42,926",6.27%,GBP,2.80,7535.75,19.13%,56.35%,154.05,0,48.92,5.73%
+Search - Domestic - East Anglia,Paused,Search,"1,136","18,846",6.03%,GBP,2.52,2859.63,9.38%,48.95%,167.00,0,17.12,14.70%
+Search - International - Generic,Paused,Search,709,"10,045",7.06%,GBP,2.14,1520.47,13.78%,53.06%,87.00,0,17.48,12.27%
+Search  - Domestic Search Domestic Aud. A/B Test Apr-May 2025,Enabled,Search,513,"5,196",9.87%,GBP,0.72,369.88,14.71%,49.19%,22.00,0,16.81,4.29%
+PMAX - Asia,Paused,Performance Max,440,"719,356",0.06%,GBP,0.61,267.49,0,0,28.00,0,9.55,5.96%
+Search European Moves KW Match Type A/B Test,Enabled,Search,341,"3,060",11.14%,GBP,0.86,292.07,14.79%,59.73%,30.00,0,9.74,8.80%
+Search - International - Worldwide,Paused,Search,264,"2,837",9.31%,GBP,1.81,477.15,23.67%,73.61%,51.00,0,9.36,19.32%
+Search - London - Headline 'Pin' Test,Enabled,Search,254,"4,280",5.93%,GBP,2.05,520.82,21.07%,70.24%,4.00,0,130.20,1.57%
+PMAX - Aus/NZ,Paused,Performance Max,150,"10,638",1.41%,GBP,0.85,127.84,0,0,12.00,0,10.65,8.00%
+JDR Search - Storage Only (old),Paused,Search,134,"1,353",9.90%,GBP,1.50,201.17,33.59%,78.05%,2.00,0,100.58,1.49%
+JDR - Premium Services (old),Paused,Search,6,129,4.65%,GBP,14.77,88.61,73.08%,89.74%,0.00,0,0,0.00%
+Domestic Removals,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Removals Company - live,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Moving Company,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Moving Services,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Relocation Service,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+House Removals Company,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+House Moving Company,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Furniture Removal Companies,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Local Removals Company,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Home Moving Company,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Home Removals,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+House Removals,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+House Movers,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Zoopla,Paused,Display,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Location - live,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Zoopla #2,Paused,Display,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Location - New Landing Pages - live,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Location - New Landing Pages - Huntingdon,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Location - New Landing Pages - Ipswich,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Location - New Landing Pages - Kings Lynn,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Location - New Landing Pages - Leeds,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Location - New Landing Pages - London - live,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Location - New Landing Pages - Manchester,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Location - New Landing Pages - Newcastle,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Location - New Landing Pages - Newmarket,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Location - New Landing Pages - St Albans,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Location - New Landing Pages - Stevenage,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Location - New Landing Pages - Belfast,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Location - New Landing Pages - Birmingham,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Location - New Landing Pages - Cardiff,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Location - New Landing Pages - Colchester,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Location - New Landing Pages - Edinburgh,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Location - New Landing Pages - Holt,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Storage,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Existing Customer Advertising,Paused,Display,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Customer Match Video,Paused,In-stream video,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Moving Company - live,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - CR - Keywords,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+WL - Keywords Chelsea,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - WL - Keywords Kensington,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - WL - Keywords Mayfair,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - WL - Keywords Fulham,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+WL - Keywords Battersea,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - WL - Keywords Hampstead,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - WL - Keywords Highgate,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - WL - Keywords Islington,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - WL - Locations,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+WL New Landing Page - Chelsea Removals (postcode targeted),Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+WL New Landing Page - Fulham Removals (postcode targeted),Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+WL New Landing Page - Hampstead Removals (postcode targeted),Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+WL New Landing Page - Highgate Removals (postcode targeted),Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+WL New Landing Page - Islington Removals (postcode targeted),Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+WL New Landing Page - Kensington Removals (postcode targeted),Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+WL New Landing Page - Mayfair Removals (postcode targeted),Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - CR - Location,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+MCM | Domestic - Cambridgeshire REM | Display | UK,Paused,Display,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+MCM | Domestic - London REM | Display | UK,Paused,Display,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - WL - London Keywords,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - London - London,Paused,Display,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Remarketing - Estate Agents,Paused,Display,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+RLSA WL New Landing Page - London Removals (keyword targeted),Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Removals Company - live ad op ex,Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Domestic - Brand,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+CR - Keywords ad ro op,Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - WL - DSA,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - CR - DSA,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Austria,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Bahrain,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Belgium,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Canada,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Cayman Islands,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Hong Kong,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Cyprus,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Denmark,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Finland,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - France,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Germany,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Israel,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Japan,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Kuwait,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Malaysia,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Malta,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Netherlands,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - New Zealand,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Norway,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Oman,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Qatar,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Singapore,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Sweden,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Switzerland,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - UAE,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - USA,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+International - UK - DSA,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - General,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - Canada (language test),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Removal Company - live (CPA target),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - USA (CPA target),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - Sweden (CPA target),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+WL - Location (ad ro op),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+OX - DSA,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - NW - DSA,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - Cyprus (CPA target),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+WL - London Keywords (target CPA),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+CR - Location (target CPA),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - France (target CPA),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+NW - Keywords,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+NW - Location,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+CR - Keywords (target CPA),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UAE (target CPA),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - Canada (target CPA),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - Malta (target CPA),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - Singapore (target CPA),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+CR - UK (topic),Enabled,Display,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Removals Company - live (target CPA),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+WL - Locations (target CPA),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - Austria (target CPA),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Bedfordshire - PROS,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Bedfordshire - RM,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Suffolk - RM,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Suffolk - PROS,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Norfolk - RM,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Norfolk - PROS,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Hertfordshire - PROS,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Hertfordshire - RM,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Essex - RM,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Essex - PROS,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Surrey - RM,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Surrey - PROS,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Oxfordshire - PROS,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Oxfordshire - RM,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Northamptonshire - PROS,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Northamptonshire - RM,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Berkshire - PROS,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Berkshire - RM,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Buckinghamshire - PROS,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Buckinghamshire - RM,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Gloucestershire - PROS,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Gloucestershire - RM,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Hampshire - PROS,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Hampshire - RM,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Wiltshire - PROS,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Wiltshire - RM,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Warwickshire - PROS,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Warwickshire - RM,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+WL - Keywords Highgate (Target CPA),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Malaysia (Target CPA),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - New Zealand (Target CPA),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Denmark (Target CPA),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Belgium (Target CPA),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - Netherlands (Target CPA),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - UK - DSA,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Brand (target CPA),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Cambridgeshire - PROS,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - Cambridgeshire - RM,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - London - RM,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Dom - London - PROS,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+DOM - LONDON - PROS [CPA Experiment],Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Inter - UK - USA (CPA EXPERIMENT),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+DOM - WARWICKSHIRE - PROS (CPA EXPERIMENT),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+INTER - UK - GENERAL (CPA EXPERIMENT),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+INTER - UK - JAPAN (CPA EXPERIMENT),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+CPA EXPERIMENT 7,Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+CPA EXPERIMENT 9,Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+CPA EXPERIMENT 2,Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+CPA EXPERIMENT 3,Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+CPA EXPERIMENT 4,Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+CPA EXPERIMENT 5,Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+CPA EXPERIMENT 6,Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+CPA EXPERIMENT 8,Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+CPA EXPERIMENT,Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Domestic - Prospecting - Display,Paused,Display,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+MCM | Domestic - Norfolk REM | Display | UK,Paused,Display,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Abels|UK|Search|International|Belgium,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+International - France,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Abels|UK|Search|International|Austria,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Abels|UK|Search|International|Bahrain,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+International - Canada,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Abels|UK|Search|International|Cayman Islands,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Abels|UK|Search|International|Cyprus,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Abels|UK|Search|International|Denmark,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Abels|UK|Search|International|Finland,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Abels|UK|Search|International|Germany,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Abels|UK|Search|International|Hong Kong,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Abels|UK|Search|International|Israel,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Abels|UK|Search|International|Japan,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Abels|UK|Search|International|Kuwait,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Abels|UK|Search|International|Malaysia,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Abels|UK|Search|International|Netherlands,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Abels|UK|Search|International|New Zealand,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Abels|UK|Search|International|Norway,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Abels|UK|Search|International|Oman,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Abels|UK|Search|International|Qatar,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Abels|UK|Search|International|Singapore,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Abels|UK|Search|Intenational|Switzerland,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Abels|UK|Search|International|UAE,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+International - USA,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+International - Generic,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Domestic - Removals,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Domestic - DSA Dynamic,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+MCM | Domestic | Performance Max | UK,Paused,Performance Max,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+MCM | International | Performance Max | UK,Paused,Performance Max,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Domestic - Item,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Domestic - Removals (Premium Messaging),Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Domestic - Competitors,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Domestic - Premium,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Domestic - Remarketing - Display,Paused,Display,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Domestic - London Location,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+International - Europe,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+International - Europe - Location,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+International | Further Afield | Location,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+PMax: Domestic - DSA Dynamic,Paused,Performance Max,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Domestic - Regional,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+PMAX - International Removals,Paused,Performance Max,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+Search European Moves Audience Signal A/B Test,Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+JDR Search | London,Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+JDR Search | Domestic (Removals & Packing),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+JDR Search | Europe (Outbound),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+JDR Search | International (High CPC Markets - Outbound),Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+JDR Search | Europe (Inbound),Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+JDR Search | International (Inbound),Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+JDR Search | International (High CPC Markets - Inbound),Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+JDR Search | International (Outbound),Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+JDR Search | Domestic (Premium & Storage),Paused,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0
+JDR Search | Brand,Enabled,Search,0,0,0,GBP,0,0.00,0,0,0.00,0,0,0

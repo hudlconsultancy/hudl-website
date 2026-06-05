@@ -16,6 +16,7 @@ Each agent has a friendly name and a job. You can call them by name in plain Eng
 | **Dash** | Dashboard Builder | `dashboard-builder` | New client dashboards, turning a CSV into a report, KPI views |
 | **Otis** | Outreach Copywriter | `outreach-copywriter` | Cold/warm emails, ad copy, proposals, conversion copy |
 | **Solo** | Social Media Manager | `social-media-manager` | Content calendars, LinkedIn/IG/X posts, Canva visuals |
+| **Slate** | Slides Builder | `slides-builder` | Google Slides board packs, pitch decks, results presentations — generates a Google Apps Script the user runs in script.google.com |
 
 **Hunter is the front door.** If you're not sure who to ask, ask Hunter — it routes the work and assembles the result.
 
