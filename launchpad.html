@@ -184,6 +184,65 @@
   #password-gate .gate-error{font-size:12px;color:#ff515e;margin-top:10px;min-height:18px;}
   #password-gate .gate-footer{font-size:11px;color:#444;margin-top:24px;}
 </style>
+<style>
+/* ── Reports Viewer ── */
+.rv-wrap{background:linear-gradient(135deg,rgba(69,174,255,0.08),rgba(30,223,212,0.04));border:1px solid rgba(69,174,255,0.28);border-radius:var(--radius);padding:28px 30px 26px;}
+.rv-wrap h2{font-family:var(--font-display);font-size:30px;font-weight:900;text-transform:uppercase;letter-spacing:0.5px;line-height:1;}
+.rv-top{display:flex;align-items:center;gap:14px;margin-bottom:6px;}
+.rv-icon{width:48px;height:48px;border-radius:10px;background:rgba(69,174,255,0.16);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.rv-csub{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:3px;}
+.rv-intro{color:#e6e6e6;font-size:16px;margin:6px 0 18px;max-width:780px;}
+.rv-layout{display:grid;grid-template-columns:240px 1fr;gap:20px;}
+@media(max-width:900px){.rv-layout{grid-template-columns:1fr;}}
+.rv-sidebar{display:flex;flex-direction:column;gap:12px;}
+.rv-sidebar label{display:block;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.rv-sidebar select{width:100%;background:var(--black);border:1px solid var(--border);border-radius:6px;color:#eee;font-family:inherit;font-size:14px;padding:10px 12px;appearance:none;cursor:pointer;transition:border-color .15s;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%237a7a7a' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;}
+.rv-sidebar select:focus{outline:none;border-color:var(--blue);}
+.rv-list{display:flex;flex-direction:column;gap:4px;max-height:440px;overflow-y:auto;}
+.rv-file{display:flex;align-items:flex-start;gap:8px;padding:10px 12px;border:1px solid var(--border);border-radius:6px;cursor:pointer;transition:all .15s;background:var(--black);}
+.rv-file:hover{border-color:rgba(69,174,255,0.5);background:#0a0a12;}
+.rv-file.rv-active{border-color:var(--blue);background:rgba(69,174,255,0.1);}
+.rv-file-label{font-size:13px;color:#dcdcdc;line-height:1.4;flex:1;}
+.rv-badge{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;border-radius:10px;white-space:nowrap;flex-shrink:0;margin-top:2px;}
+.rv-badge-report{background:rgba(251,191,70,0.15);color:var(--yellow);}
+.rv-badge-campaign{background:rgba(30,223,212,0.15);color:var(--cyan);}
+.rv-badge-social{background:rgba(255,81,94,0.15);color:var(--red);}
+.rv-badge-content{background:rgba(69,174,255,0.15);color:var(--blue);}
+.rv-badge-data{background:rgba(122,122,122,0.2);color:var(--muted);}
+.rv-panel{background:var(--black);border:1px solid var(--border);border-radius:8px;display:flex;flex-direction:column;overflow:hidden;min-height:400px;}
+.rv-toolbar{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--border);gap:10px;flex-wrap:wrap;}
+.rv-toolbar-name{font-size:12px;color:#bdbdbd;font-family:'SFMono-Regular',Consolas,monospace;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.rv-toolbar-btns{display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap;}
+.rv-btn{font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:7px 14px;border-radius:5px;border:1px solid var(--border);background:transparent;color:#cfcfcf;cursor:pointer;transition:all .15s;white-space:nowrap;}
+.rv-btn:hover{border-color:var(--blue);color:var(--blue);}
+.rv-btn.rv-btn-primary{border-color:var(--blue);color:var(--blue);}
+.rv-btn.rv-btn-primary:hover{background:var(--blue);color:var(--black);}
+.rv-btn.rv-btn-csv{border-color:var(--cyan);color:var(--cyan);}
+.rv-btn.rv-btn-csv:hover{background:var(--cyan);color:var(--black);}
+.rv-content{padding:24px 28px;overflow-y:auto;max-height:540px;flex:1;}
+.rv-empty{display:flex;align-items:center;justify-content:center;flex:1;color:var(--muted);font-size:15px;text-align:center;padding:40px;}
+.rv-md{color:#dcdcdc;font-size:15px;line-height:1.7;}
+.rv-md h1,.rv-md h2{font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.5px;color:#fff;border-bottom:1px solid var(--border);padding-bottom:8px;margin:28px 0 14px;}
+.rv-md h1{font-size:26px;font-weight:900;}
+.rv-md h2{font-size:20px;font-weight:800;}
+.rv-md h3{font-family:var(--font-display);font-size:16px;font-weight:700;text-transform:uppercase;color:#cfcfcf;margin:20px 0 8px;}
+.rv-md h4{font-size:15px;font-weight:700;color:#cfcfcf;margin:14px 0 6px;}
+.rv-md p{margin-bottom:12px;}
+.rv-md strong{color:#fff;font-weight:700;}
+.rv-md code{font-family:'SFMono-Regular',Consolas,monospace;font-size:12.5px;color:var(--cyan);background:rgba(30,223,212,0.08);padding:2px 6px;border-radius:3px;}
+.rv-md pre{background:#0a0a0a;border:1px solid var(--border);border-radius:6px;padding:14px;overflow-x:auto;margin:12px 0;}
+.rv-md pre code{background:none;padding:0;color:#dcdcdc;}
+.rv-md table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;}
+.rv-md th{background:rgba(69,174,255,0.1);color:var(--blue);font-weight:700;text-align:left;padding:8px 12px;border:1px solid rgba(69,174,255,0.2);}
+.rv-md td{padding:7px 12px;border:1px solid var(--border);color:#cfcfcf;}
+.rv-md tr:nth-child(even) td{background:rgba(255,255,255,0.02);}
+.rv-md blockquote{border-left:3px solid var(--blue);margin:12px 0;padding:10px 16px;background:rgba(69,174,255,0.06);color:#b0c8e6;}
+.rv-md ul,.rv-md ol{padding-left:22px;margin-bottom:12px;}
+.rv-md li{margin-bottom:4px;}
+.rv-md hr{border:none;border-top:1px solid var(--border);margin:22px 0;}
+.rv-hint{font-size:13px;color:var(--muted);margin-top:14px;line-height:1.5;}
+.rv-hint b{color:#cfcfcf;}
+</style>
 <script>
   const LAUNCHPAD_PASSWORD = 'HUDLAGENTS2026';
   function checkPassword(){
@@ -224,6 +283,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="#brief">Brief Pad</a></li>
+      <li><a href="#reports">Reports</a></li>
       <li><a href="#agents">Agents</a></li>
       <li><a href="#brain">The Brain</a></li>
       <li><a href="#clients">Clients</a></li>
@@ -593,6 +653,53 @@
   </div>
 </section>
 
+<section id="reports" style="padding-top:32px;padding-bottom:0;">
+  <div class="container">
+    <div class="rv-wrap">
+      <div class="rv-top">
+        <div class="rv-icon">📁</div>
+        <div>
+          <h2>Reports &amp; Deliverables</h2>
+          <div class="rv-csub">Browse · preview · download</div>
+        </div>
+      </div>
+      <p class="rv-intro">Every report, brief and deliverable the agents produce. Pick a client, select a file, preview it inline — then download as <code>.md</code>, copy the text, or extract all tables straight to CSV for Google Sheets.</p>
+      <div class="rv-layout">
+        <div class="rv-sidebar">
+          <div>
+            <label for="rv-client">Client workspace</label>
+            <select id="rv-client" onchange="rvSelectClient(this.value)">
+              <option value="">— Select client —</option>
+              <option value="abels">Abels Moving Services</option>
+              <option value="hudl">HUDL (Our Marketing)</option>
+              <option value="bishops">Bishops Move</option>
+              <option value="gerson">Gerson Relocation</option>
+              <option value="gms">Gerson Moving Services</option>
+              <option value="agm">AGM Group</option>
+            </select>
+          </div>
+          <div id="rv-list" class="rv-list">
+            <div style="color:var(--muted);font-size:13px;padding:8px 0;">Select a client above.</div>
+          </div>
+        </div>
+        <div class="rv-panel">
+          <div id="rv-toolbar" class="rv-toolbar" style="display:none;">
+            <span id="rv-fname" class="rv-toolbar-name"></span>
+            <div class="rv-toolbar-btns">
+              <button class="rv-btn rv-btn-primary" onclick="rvDownloadMd()">⬇ Download .md</button>
+              <button class="rv-btn" id="rv-copy-btn" onclick="rvCopyText()">⎘ Copy text</button>
+              <button class="rv-btn rv-btn-csv" onclick="rvExportCsv()">📊 Tables → CSV</button>
+            </div>
+          </div>
+          <div id="rv-content" class="rv-content" style="display:none;"></div>
+          <div id="rv-empty" class="rv-empty">Select a file from the list to preview it here.</div>
+        </div>
+      </div>
+      <p class="rv-hint"><b>Google Docs:</b> Download <code>.md</code> → open Google Docs → File → Open → upload the file. &nbsp;|&nbsp; <b>Google Sheets:</b> Use <em>Tables → CSV</em> to extract all markdown tables as a CSV — open directly in Sheets.</p>
+    </div>
+  </div>
+</section>
+
 <section id="how">
   <div class="container">
     <div class="section-title">How it works</div>
@@ -721,6 +828,136 @@
     }catch(e){}
     buildBrief();
   })();
+
+  /* ── Reports Viewer ── */
+  const RV_INDEX = {
+    abels: { name: 'Abels Moving Services', files: [
+      { label:'Board Report — May 2026 (Final)', path:'clients/abels/reports/2026-06-05-ams-board-marketing-performance-may-2026.md', type:'report' },
+      { label:'Board Presentation — Google Sheets format', path:'clients/abels/reports/2026-06-05-ams-board-presentation.md', type:'report' },
+      { label:'PPC Review — June 2026', path:'clients/abels/reports/2026-06-04-ppc-review.md', type:'report' },
+      { label:'GA4 & Data Review', path:'clients/abels/reports/2026-06-04-ga4-and-data-review.md', type:'report' },
+      { label:'Domestic Clean-Up Pack', path:'clients/abels/reports/2026-06-04-domestic-cleanup-pack.md', type:'report' },
+      { label:'Budget Reallocation Plan', path:'clients/abels/reports/2026-06-04-budget-reallocation-plan.md', type:'report' },
+      { label:'Q3 2026 — Campaign Brief', path:'clients/abels/campaigns/2026-q3-lead-gen/brief.md', type:'campaign' },
+      { label:'Q3 2026 — RSA Ad Copy', path:'clients/abels/campaigns/2026-q3-lead-gen/ad-copy.md', type:'campaign' },
+      { label:'Q3 2026 — Landing Pages', path:'clients/abels/campaigns/2026-q3-lead-gen/landing-pages.md', type:'campaign' },
+    ]},
+    hudl: { name: 'HUDL (Our Marketing)', files: [
+      { label:'SEO Content Plan', path:'clients/hudl/content/seo-content-plan.md', type:'content' },
+      { label:'Social — June 2026 Content Calendar', path:'clients/hudl/content/social/2026-06-content-calendar.md', type:'social' },
+      { label:'Social — June 2026 Launch Posts', path:'clients/hudl/content/social/2026-06-launch-posts.md', type:'social' },
+      { label:'Social Voice & Examples Guide', path:'clients/hudl/content/social/voice-and-examples.md', type:'social' },
+    ]},
+    bishops: { name: 'Bishops Move', files: [] },
+    gerson:  { name: 'Gerson Relocation', files: [] },
+    gms:     { name: 'Gerson Moving Services', files: [] },
+    agm:     { name: 'AGM Group', files: [] },
+  };
+
+  let rvFile = null, rvRaw = '';
+
+  function rvSelectClient(slug){
+    const list = document.getElementById('rv-list');
+    rvFile = null; rvRaw = '';
+    rvResetPanel();
+    if(!slug || !RV_INDEX[slug] || !RV_INDEX[slug].files.length){
+      list.innerHTML = '<div style="color:var(--muted);font-size:13px;padding:8px 0;">No deliverables indexed for this client yet.</div>';
+      return;
+    }
+    list.innerHTML = RV_INDEX[slug].files.map((f,i)=>`
+      <div class="rv-file" id="rvf-${i}" onclick="rvLoad(${i},'${slug}')">
+        <span class="rv-file-label">${escapeHtml(f.label)}</span>
+        <span class="rv-badge rv-badge-${f.type}">${f.type}</span>
+      </div>`).join('');
+  }
+
+  function rvResetPanel(){
+    document.getElementById('rv-toolbar').style.display='none';
+    document.getElementById('rv-content').style.display='none';
+    document.getElementById('rv-empty').style.display='flex';
+    document.getElementById('rv-list').querySelectorAll('.rv-file').forEach(el=>el.classList.remove('rv-active'));
+  }
+
+  function rvLoad(idx, slug){
+    const f = RV_INDEX[slug].files[idx];
+    if(!f) return;
+    rvFile = f; rvRaw = '';
+    document.querySelectorAll('.rv-file').forEach(el=>el.classList.remove('rv-active'));
+    const el = document.getElementById('rvf-'+idx);
+    if(el) el.classList.add('rv-active');
+    const toolbar = document.getElementById('rv-toolbar');
+    const content = document.getElementById('rv-content');
+    const empty   = document.getElementById('rv-empty');
+    document.getElementById('rv-fname').textContent = f.label;
+    toolbar.style.display='flex';
+    content.style.display='block';
+    empty.style.display='none';
+    content.innerHTML='<div style="color:var(--muted);padding:16px 0;">Loading…</div>';
+    fetch('/'+f.path+'?nc='+Date.now())
+      .then(r=>{ if(!r.ok) throw new Error(r.status); return r.text(); })
+      .then(text=>{
+        rvRaw = text;
+        if(window.marked){
+          content.innerHTML='<div class="rv-md">'+marked.parse(text)+'</div>';
+        } else {
+          content.innerHTML='<pre style="white-space:pre-wrap;font-size:13px;color:#dcdcdc;line-height:1.6;">'+escapeHtml(text)+'</pre>';
+        }
+      })
+      .catch(()=>{
+        content.innerHTML='<div style="color:var(--red);padding:16px 0;">Could not load file — it may not yet be deployed to this URL. Try after the next Netlify deploy, or access it directly on GitHub.</div>';
+      });
+  }
+
+  function rvDownloadMd(){
+    if(!rvRaw || !rvFile) return;
+    const fname = rvFile.path.split('/').pop();
+    const blob = new Blob([rvRaw],{type:'text/markdown;charset=utf-8'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = fname; a.click();
+    URL.revokeObjectURL(a.href);
+  }
+
+  function rvCopyText(){
+    if(!rvRaw) return;
+    const btn = document.getElementById('rv-copy-btn');
+    const orig = btn.textContent;
+    const done = ()=>{ btn.textContent='Copied ✓'; setTimeout(()=>{ btn.textContent=orig; },1400); };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(rvRaw).then(done).catch(()=>fallbackCopy(rvRaw,done));
+    } else { fallbackCopy(rvRaw,done); }
+  }
+
+  function rvExportCsv(){
+    if(!rvRaw || !rvFile){ return; }
+    const lines = rvRaw.split('\n');
+    const tables = [];
+    let headers=[], rows=[], inTable=false;
+    for(const line of lines){
+      const t = line.trim();
+      if(t.startsWith('|') && t.endsWith('|')){
+        const cells = t.slice(1,-1).split('|').map(c=>c.trim());
+        if(cells.every(c=>/^[-: ]+$/.test(c))){ continue; }
+        if(!inTable){ inTable=true; headers=cells; }
+        else { rows.push(cells); }
+      } else {
+        if(inTable && rows.length){ tables.push({headers:[...headers],rows:[...rows]}); }
+        headers=[]; rows=[]; inTable=false;
+      }
+    }
+    if(inTable && rows.length) tables.push({headers,rows});
+    if(!tables.length){ alert('No tables found in this document.'); return; }
+    let csv='';
+    tables.forEach((tbl,i)=>{
+      if(i>0) csv+='\n';
+      csv+=tbl.headers.map(h=>'"'+h.replace(/\*\*/g,'').replace(/"/g,'""')+'"').join(',')+'\n';
+      tbl.rows.forEach(r=>{ csv+=r.map(c=>'"'+c.replace(/\*\*/g,'').replace(/"/g,'""')+'"').join(',')+'\n'; });
+    });
+    const fname = rvFile.path.split('/').pop().replace('.md','')+'-tables.csv';
+    const blob = new Blob([csv],{type:'text/csv;charset=utf-8'});
+    const a = document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=fname; a.click();
+    URL.revokeObjectURL(a.href);
+  }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </body>
 </html>
