@@ -1,0 +1,72 @@
+Campaign report,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1 January 2026 - 31 May 2026,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Month,Campaign status,Campaign,Budget,Budget name,Budget type,Currency code,Status,Status reasons,Optimisation score,Campaign type,TrueView avg. CPV,Impr.,Interactions,Interaction rate,Avg. cost,Clicks,Conv. rate,Avg. CPC,Cost / conv.,Cost,Conversions,Impr. (Top) %,Search lost top IS (rank),Search impr. share,Search lost IS (budget),Search exact match IS,Bid strategy type,Conv. value,Conv. value / cost,Original conv. value
+Jan-26,Enabled,JDR Search | Brand,5, --,Daily,GBP,Eligible,,78.82,Search,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,Maximise Conversions,0,0,0
+Feb-26,Enabled,JDR Search | Brand,5, --,Daily,GBP,Eligible,,78.82,Search,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,Maximise Conversions,0,0,0
+Mar-26,Enabled,JDR Search | Brand,5, --,Daily,GBP,Eligible,,78.82,Search,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,Maximise Conversions,0,0,0
+Apr-26,Enabled,JDR Search | Brand,5, --,Daily,GBP,Eligible,,78.82,Search,0,14,5,35.71%,4.59,5,40.00%,4.59,11.49,22.97,2,92.31%,0.00%,72.22%,27.78%,69.23%,Maximise Conversions,404,17.59,404
+May-26,Enabled,JDR Search | Brand,5, --,Daily,GBP,Eligible,,78.82,Search,0,33,14,42.42%,3.48,14,7.14%,3.48,48.79,48.79,1,88.00%,3.33%,83.33%,16.67%,88.89%,Maximise Conversions,0,0,0
+Jan-26,Enabled,JDR Search | International (High CPC Markets - Outbound),30, --,Daily,GBP,Eligible (Limited),limited by budget,70.68,Search,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,Maximise Conversions (Target CPA),0,0,0
+Feb-26,Enabled,JDR Search | International (High CPC Markets - Outbound),30, --,Daily,GBP,Eligible (Limited),limited by budget,70.68,Search,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,Maximise Conversions (Target CPA),0,0,0
+Mar-26,Enabled,JDR Search | International (High CPC Markets - Outbound),30, --,Daily,GBP,Eligible (Limited),limited by budget,70.68,Search,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,Maximise Conversions (Target CPA),0,0,0
+Apr-26,Enabled,JDR Search | International (High CPC Markets - Outbound),30, --,Daily,GBP,Eligible (Limited),limited by budget,70.68,Search,0,549,20,3.64%,23.95,20,20.00%,23.95,119.76,479.03,4,86.07%,30.97%,36.19%,37.48%,28.76%,Maximise Conversions (Target CPA),"1,616.00",3.37,"1,616.00"
+May-26,Enabled,JDR Search | International (High CPC Markets - Outbound),30, --,Daily,GBP,Eligible (Limited),limited by budget,70.68,Search,0,"1,528",60,3.93%,15.19,60,8.33%,15.19,182.32,911.59,5,87.52%,39.02%,47.81%,19.58%,47.52%,Maximise Conversions (Target CPA),"1,212.00",1.33,"1,212.00"
+Jan-26,Enabled,JDR Search | Europe (Outbound),97, --,Daily,GBP,Eligible (Limited),limited by budget,72.47,Search,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,Maximise Conversions (Target CPA),0,0,0
+Feb-26,Enabled,JDR Search | Europe (Outbound),97, --,Daily,GBP,Eligible (Limited),limited by budget,72.47,Search,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,Maximise Conversions (Target CPA),0,0,0
+Mar-26,Enabled,JDR Search | Europe (Outbound),97, --,Daily,GBP,Eligible (Limited),limited by budget,72.47,Search,0,"1,547",78,5.04%,20.43,78,11.54%,20.43,177.05,1593.47,9,83.89%,42.60%,41.57%,21.75%,56.00%,Maximise Conversions (Target CPA),"2,828.00",1.77,"2,828.00"
+Apr-26,Enabled,JDR Search | Europe (Outbound),97, --,Daily,GBP,Eligible (Limited),limited by budget,72.47,Search,0,"2,036",111,5.45%,18.87,111,17.02%,18.87,110.85,2094.57,18.89,84.54%,41.61%,41.87%,22.46%,65.00%,Maximise Conversions (Target CPA),"6,017.52",2.87,"6,017.52"
+May-26,Enabled,JDR Search | Europe (Outbound),97, --,Daily,GBP,Eligible (Limited),limited by budget,72.47,Search,0,"2,521",144,5.71%,16.88,144,13.19%,16.88,127.94,2430.87,19,83.12%,47.88%,44.52%,15.23%,34.73%,Maximise Conversions (Target CPA),"6,868.00",2.83,"6,868.00"
+Jan-26,Enabled,JDR Search | Domestic (Removals & Packing),40, --,Daily,GBP,Eligible (Limited),limited by budget,56.04,Search,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,Maximise Conversions (Target CPA),0,0,0
+Feb-26,Enabled,JDR Search | Domestic (Removals & Packing),40, --,Daily,GBP,Eligible (Limited),limited by budget,56.04,Search,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,Maximise Conversions (Target CPA),0,0,0
+Mar-26,Enabled,JDR Search | Domestic (Removals & Packing),40, --,Daily,GBP,Eligible (Limited),limited by budget,56.04,Search,0,"3,229",127,3.93%,20.52,127,7.09%,20.52,289.51,2605.55,9,83.60%,35.00%,42.82%,27.99%,49.07%,Maximise Conversions (Target CPA),"2,020.00",0.78,"2,020.00"
+Apr-26,Enabled,JDR Search | Domestic (Removals & Packing),40, --,Daily,GBP,Eligible (Limited),limited by budget,56.04,Search,0,"3,259",138,4.23%,15.78,138,3.62%,15.78,435.56,2177.8,5,78.78%,39.65%,36.95%,30.51%,42.08%,Maximise Conversions (Target CPA),808,0.37,808
+May-26,Enabled,JDR Search | Domestic (Removals & Packing),40, --,Daily,GBP,Eligible (Limited),limited by budget,56.04,Search,0,"2,469",128,5.18%,9.34,128,4.69%,9.34,199.32,1195.92,6,63.03%,12.73%,13.16%,76.77%,13.34%,Maximise Conversions (Target CPA),"1,616.00",1.35,"1,616.00"
+Jan-26,Enabled,JDR Search | London,28, --,Daily,GBP,Eligible (Limited),limited by budget,57.72,Search,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,Maximise Conversions (Target CPA),0,0,0
+Feb-26,Enabled,JDR Search | London,28, --,Daily,GBP,Eligible (Limited),limited by budget,57.72,Search,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,Maximise Conversions (Target CPA),0,0,0
+Mar-26,Enabled,JDR Search | London,28, --,Daily,GBP,Eligible (Limited),limited by budget,57.72,Search,0,"1,088",64,5.88%,16.3,64,7.81%,16.3,208.59,1042.95,5,79.11%,52.48%,31.81%,21.66%,40.71%,Maximise Conversions (Target CPA),404,0.39,404
+Apr-26,Enabled,JDR Search | London,28, --,Daily,GBP,Eligible (Limited),limited by budget,57.72,Search,0,"1,538",62,4.03%,16.14,62,12.90%,16.14,125.05,1000.41,8,68.04%,60.26%,24.02%,23.09%,35.19%,Maximise Conversions (Target CPA),"2,828.00",2.83,"2,828.00"
+May-26,Enabled,JDR Search | London,28, --,Daily,GBP,Eligible (Limited),limited by budget,57.72,Search,0,"1,256",58,4.62%,14.28,58,10.34%,14.28,138.08,828.5,6,69.43%,71.02%,20.04%,15.15%,24.63%,Maximise Conversions (Target CPA),"2,020.00",2.44,"2,020.00"
+ --,Total: Campaigns, --, --, --, --,GBP, --,, --, --,0,"21,067","1,009",4.79%,16.29,"1,009",9.70%,16.29,167.86,16432.42,97.89,77.92%,36.03%,28.40%,40.82%,31.47%, --,"28,641.52",1.74,"28,641.52"
+ --,Total: Campaigns, --, --, --, --,GBP, --,, --, --,0,0,0, --,0,0, --,0,0,0,0, --, --, --, --, --, --,0,0,0
+ --,Total: Campaigns, --, --, --, --, --, --,, --, --,0,0,0, --,0,0, --,0,0,0,0, --, --, --, --, --, --,0,0,0
+Jan-26,Total: Campaigns, --, --, --, --, --, --,, --, --,0,0,0, --,0,0, --,0,0,0,0, --, --, --, --, --, --,0,0,0
+Feb-26,Total: Campaigns, --, --, --, --, --, --,, --, --,0,0,0, --,0,0, --,0,0,0,0, --, --, --, --, --, --,0,0,0
+Mar-26,Total: Campaigns, --, --, --, --, --, --,, --, --,0,0,0, --,0,0, --,0,0,0,0, --, --, --, --, --, --,0,0,0
+Apr-26,Total: Campaigns, --, --, --, --, --, --,, --, --,0,0,0, --,0,0, --,0,0,0,0, --, --, --, --, --, --,0,0,0
+May-26,Total: Campaigns, --, --, --, --, --, --,, --, --,0,0,0, --,0,0, --,0,0,0,0, --, --, --, --, --, --,0,0,0
+ --,Total: Campaigns, --, --, --, --, --, --,, --, --,0,0,0, --,0,0, --,0,0,0,0, --, --, --, --, --, --,0,0,0
+Jan-26,Total: Campaigns, --, --, --, --,GBP, --,, --, --,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --, --,0,0,0
+Feb-26,Total: Campaigns, --, --, --, --,GBP, --,, --, --,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --, --,0,0,0
+Mar-26,Total: Campaigns, --, --, --, --,GBP, --,, --, --,0,"5,864",269,4.59%,19.49,269,8.55%,19.49,227.91,5241.97,23,82.82%,41.04%,39.88%,24.95%,45.38%, --,"5,252.00",1,"5,252.00"
+Apr-26,Total: Campaigns, --, --, --, --,GBP, --,, --, --,0,"7,396",336,4.54%,17.19,336,11.28%,17.19,152.39,5774.77,37.89,78.53%,45.85%,33.98%,26.91%,37.27%, --,"11,673.52",2.02,"11,673.52"
+May-26,Total: Campaigns, --, --, --, --,GBP, --,, --, --,0,"7,807",404,5.17%,13.41,404,9.16%,13.41,146.37,5415.67,37,74.08%,29.07%,21.35%,53.82%,25.38%, --,"11,716.00",2.16,"11,716.00"
+,Total: Account,,,,,GBP,,,,,0.009,"119,107","37,810",31.74%,0.62,"3,142",0.36%,7.44,172.09,23374.6,135.83,74.07%,56.66%,18.28%,23.44%,13.33%,,"43,966.59",1.88,"43,966.59"
+May-26,Total: Account,,,,,GBP,,,,,0,"8,535",467,5.47%,12.7,467,7.92%,12.7,160.25,5929.37,37,74.67%,30.71%,21.59%,51.96%,25.58%,,"11,716.00",1.98,"11,716.00"
+Apr-26,Total: Account,,,,,GBP,,,,,0,"7,596",351,4.62%,17.39,351,10.80%,17.39,161.05,6103.13,37.89,78.76%,45.50%,34.35%,26.88%,37.45%,,"11,673.52",1.91,"11,673.52"
+Jan-26,Total: Account,,,,,GBP,,,,,0.009,"67,101","21,887",32.62%,0.2,"1,578",0.13%,2.83,154.48,4469.54,28.93,68.81%,67.26%,14.64%,17.46%,10.55%,,"11,689.07",2.62,"11,689.07"
+Feb-26,Total: Account,,,,,GBP,,,,,0.01,"30,011","14,836",49.44%,0.11,477,0.06%,3.42,181.18,1630.59,9,74.86%,73.04%,12.46%,13.47%,11.53%,,"3,636.00",2.23,"3,636.00"
+Mar-26,Total: Account,,,,,GBP,,,,,0,"5,864",269,4.59%,19.49,269,8.55%,19.49,227.91,5241.97,23,82.82%,41.04%,39.88%,24.95%,45.38%,,"5,252.00",1,"5,252.00"
+,Total: Display,,,,,GBP,,,,Display,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,,0,0,0
+,Total: Performance Max,,,,,GBP,,,,Performance Max,0.009,"75,623","35,433",46.85%,0.03,765,0.00%,1.32,0,1010.05,0, --, --,< 10%,11.24%,< 10%,,0,0,0
+,Total: Search,,,,,GBP,,,,Search,0,"43,484","2,377",5.47%,9.41,"2,377",5.71%,9.41,164.65,22364.55,135.83,74.07%,56.66%,21.41%,26.79%,21.80%,,"43,966.59",1.97,"43,966.59"
+,Total: In-stream video,,,,,GBP,,,,In-stream video,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,,0,0,0
+May-26,Total: Performance Max,,,,,GBP,,,,Performance Max,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,,0,0,0
+Apr-26,Total: Display,,,,,GBP,,,,Display,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,,0,0,0
+Jan-26,Total: Performance Max,,,,,GBP,,,,Performance Max,0.009,"50,251","20,886",41.56%,0.03,577,0.00%,1.24,0,718.3,0, --, --,< 10%,12.37%,< 10%,,0,0,0
+Feb-26,Total: Performance Max,,,,,GBP,,,,Performance Max,0.01,"25,372","14,547",57.33%,0.02,188,0.00%,1.55,0,291.75,0, --, --,< 10%,8.37%,< 10%,,0,0,0
+Apr-26,Total: Search,,,,,GBP,,,,Search,0,"7,596",351,4.62%,17.39,351,10.80%,17.39,161.05,6103.13,37.89,78.76%,45.50%,34.35%,26.88%,37.45%,,"11,673.52",1.91,"11,673.52"
+May-26,Total: In-stream video,,,,,GBP,,,,In-stream video,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,,0,0,0
+May-26,Total: Display,,,,,GBP,,,,Display,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,,0,0,0
+May-26,Total: Search,,,,,GBP,,,,Search,0,"8,535",467,5.47%,12.7,467,7.92%,12.7,160.25,5929.37,37,74.67%,30.71%,21.59%,51.96%,25.58%,,"11,716.00",1.98,"11,716.00"
+Jan-26,Total: Search,,,,,GBP,,,,Search,0,"16,850","1,001",5.94%,3.75,"1,001",2.89%,3.75,129.65,3751.23,28.93,68.81%,67.26%,18.16%,19.61%,19.06%,,"11,689.07",3.12,"11,689.07"
+Feb-26,Total: Display,,,,,GBP,,,,Display,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,,0,0,0
+Mar-26,Total: Display,,,,,GBP,,,,Display,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,,0,0,0
+Feb-26,Total: Search,,,,,GBP,,,,Search,0,"4,639",289,6.23%,4.63,289,3.11%,4.63,148.76,1338.84,9,74.86%,73.04%,14.53%,15.94%,15.37%,,"3,636.00",2.72,"3,636.00"
+Jan-26,Total: Display,,,,,GBP,,,,Display,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,,0,0,0
+Jan-26,Total: In-stream video,,,,,GBP,,,,In-stream video,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,,0,0,0
+Mar-26,Total: In-stream video,,,,,GBP,,,,In-stream video,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,,0,0,0
+Mar-26,Total: Performance Max,,,,,GBP,,,,Performance Max,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,,0,0,0
+Apr-26,Total: Performance Max,,,,,GBP,,,,Performance Max,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,,0,0,0
+Apr-26,Total: In-stream video,,,,,GBP,,,,In-stream video,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,,0,0,0
+Mar-26,Total: Search,,,,,GBP,,,,Search,0,"5,864",269,4.59%,19.49,269,8.55%,19.49,227.91,5241.97,23,82.82%,41.04%,39.88%,24.95%,45.38%,,"5,252.00",1,"5,252.00"
+Feb-26,Total: In-stream video,,,,,GBP,,,,In-stream video,0,0,0, --,0,0,0.00%,0,0,0,0, --, --, --, --, --,,0,0,0
