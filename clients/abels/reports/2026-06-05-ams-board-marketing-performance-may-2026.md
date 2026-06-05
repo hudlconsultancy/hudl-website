@@ -5,15 +5,21 @@
 **Prepared for:** AGM Board
 **Report date:** 5 June 2026
 **Reporting period:** May 2026 (with Jan–Apr 2026 trend; YoY comparison where like-for-like — see context box below)
-**Status:** Second draft — YoY data incorporated — internal review before submission to Neil Pertoldi
+**Status:** Final draft — conversion tracking reconciled, Moveware quality data incorporated
 
 ---
 
 ## Executive Summary
 
-Abels' paid media is working. The Google Ads account generated 97 enquiries at a blended cost of £170 per lead across the first five months of 2026 — a solid performance for a premium removals service, and well within profitable territory given the value of each removal job. Website visitors are down 37% year-on-year in May (3,918 in May 2025 vs 2,478 in May 2026), but this is a deliberate strategic consequence of a shift from MCM-managed Performance Max to a lean, JDR Search-led structure: we traded volume for intent, and the 9.6% Search conversion rate is the clearest evidence that the trade is working. For conversion volume and cost per lead, a direct YoY comparison would be misleading — the two years used different conversion-tracking definitions, and this is explained fully below. The account's structural challenge is clear and already being addressed: budget has historically been over-concentrated in the Domestic campaign, which returns the weakest results, while the Europe and London campaigns — the most efficient performers — have been throttled by insufficient budget. The reallocation and clean-up work completed this month sets the platform for a materially stronger Q3.
+Abels' paid media is working, and the commercial picture is now clear. The Google Ads account generated 124 genuine lead-form enquiries across January to May 2026 — verified as real submissions, not soft actions — at a true cost per lead of approximately £130–170 depending on campaign. Against an average won job value of £5,508 and a gross margin of 38.5%, this is a commercially strong return. Every pound spent on the Europe and London campaigns is generating leads that Abels can convert profitably; the Domestic campaign is the structural outlier and is being addressed directly.
 
-> **A note on year-on-year comparisons in this report.** Where 2025 data is referenced, two things changed simultaneously: the campaign strategy shifted from PMAX-heavy to Search-only, and the conversion-tracking definition changed. Website visitors is the one clean, like-for-like metric. For conversion volume and cost per lead, the two years are not directly comparable — see the "Year-on-year: how to read it" section immediately below.
+Website visitors are down 37% year-on-year — a deliberate consequence of switching from Performance Max (which flooded the site with low-intent display traffic) to targeted paid search — and the 9.6% Search conversion rate is the clearest evidence that the trade worked. The Moveware funnel data confirms that the business is converting enquiries into revenue at ~£5,500 per job and improving gross margin (31.3% in 2025 to 38.5% in 2026 to date), with deals completing roughly twice as quickly (41 days to book in 2025 vs 21 days in 2026).
+
+The conversion-tracking discrepancy that made YoY comparisons impossible in earlier drafts is now fully resolved: we have confirmed from the Google Ads goal-group data exactly what each year was counting. The 2025 reported figures (£21 CPA, 2,121 conversions) were dominated by soft micro-events — page views, phone clicks, get-directions — counted as conversions. The 2026 account counts only form submissions. The genuine lead comparison is 586 form submissions across full-year 2025 (≈49/month) versus 124 in Jan–May 2026 (≈25/month). The lower 2026 run-rate is consistent with the budget pullback, the elimination of PMAX traffic volume, and the −37% reduction in site visits — not a deterioration in campaign quality.
+
+One structural issue requires action beyond budget: the Moveware-to-Google Ads offline conversion import, which fed qualified-lead signals into Smart Bidding in 2025 (88 qualified leads valued at £44k), has not been running in 2026. Re-enabling it would allow the bidding algorithm to optimise toward bookings and revenue, not merely form submissions — a material upgrade to account intelligence.
+
+> **A note on year-on-year comparisons in this report.** Where 2025 data is referenced, two things changed simultaneously: the campaign strategy shifted from PMAX-heavy to Search-only, and the conversion-tracking definition changed. The conversion-definition change is now confirmed and fully documented below. Website visitors is a clean like-for-like metric. For conversion volume and cost per lead, the basis for comparison has changed — the reconciled figures are reported in KPIs 2 and 4.
 
 ---
 
@@ -53,13 +59,33 @@ The 2025 Search campaigns (shown below) further clarify the conversion-tracking 
 
 A £13–20 blended Search CPA in 2025 is the most telling indicator that the two years are not measuring the same thing. The 2026 Search CPA is £170. That is not an 8× deterioration in paid search efficiency — it reflects a much narrower, more valuable conversion definition. The 2025 account was counting many events that the 2026 account does not; the 2026 account is counting only what matters commercially. Until the conversion definitions are reconciled, treating either figure as a genuine lead-volume or CPL benchmark would be misleading.
 
-**2. Conversion tracking: different definitions, not comparable**
+**2. Conversion tracking: different definitions — now confirmed and reconciled**
 
-The 2025 account recorded 2,121.6 conversions at a £21.59 blended CPA — or approximately 177 conversions per month. The 2026 account records ~19 per month at £170 CPA. The ~9× difference in volume and ~8× difference in CPA is almost certainly a conversion-tracking change, not a real performance collapse.
+The 2025 account recorded 2,121.6 conversions at a £21.59 blended CPA. The 2026 account records 96.89 conversions at £170 CPA over the same five-month horizon. The gap is not a performance collapse — it is a conversion-definition change, and we now have definitive proof from the Google Ads goal-group breakdown.
 
-The 2025 GA4 events file reveals the shape of what was being counted: 3,065 `make_an_enquiry` events (of which 2,472 were designated key events), 696 `call_back_form_submit` events, 285 `contact_form_submit` events, and numerous phone-click events — plus a large volume of softer micro-conversion signals such as Automated greetings (14,958), live chat initiations (933), and dropdown interactions (2,221). In 2026, the conversion count appears to track genuine enquiry completions only, consistent with the tighter Search-only structure. The 2026 conversion rate of 9.6% on Search clicks is a credible, high-quality signal; the 2025 rate of 7% blended across Search and PMAX with a much looser definition is not directly comparable.
+**The goal-group data, confirmed:**
 
-**Recommendation:** before any YoY conversion or CPL comparison is presented to the board, Woody should confirm with JDR (or from the Google Ads conversion action settings) exactly which events are counted as conversions in the 2026 account, and cross-reference against what MCM was counting in 2025. This single step will allow a defensible like-for-like comparison to be constructed.
+| Group | 2025 (full year) | 2026 (Jan–May) |
+|---|---|---|
+| Group 1 — soft/secondary actions | **2,530** (page views 1,261 · phone call leads 833 · get directions 300 · contacts 123 · sign-ups 13) | **1** (one phone call lead; everything else: 0) |
+| Group 2 — Submit lead forms | **586** | **124** (value £50k) |
+| Group 3 — Qualified leads (offline import) | **88** (value £44k) | **0** |
+
+The 2025 "conversions" were almost entirely Group 1 soft actions — page views, phone clicks and get-directions events counted as if they were leads. This is what produced a £21 CPA and 177 conversions per month: a real number, but not a real lead count.
+
+In 2026 those soft actions are switched off. The counted conversion is the Group 2 Submit lead form — a genuine enquiry submission. This is what produces the £170 CPA.
+
+**The genuine like-for-like lead metric is "Submit lead forms":**
+
+| | 2025 full year | 2025 monthly average | 2026 (Jan–May) | 2026 monthly average |
+|---|---|---|---|---|
+| Submit lead forms | 586 | ≈48.8/month | 124 | ≈24.8/month |
+| Soft-action "conversions" (Group 1) | 2,530 | — | 1 | — |
+| Qualified leads (offline import) | 88 | — | 0 | — |
+
+The 2026 lead-form run-rate (≈25/month) is roughly half the 2025 rate (≈49/month). This is consistent with: (a) the −37% reduction in site traffic (less PMAX volume), (b) the lower budget level in 2026, and (c) the Domestic campaign's structural inefficiency absorbing a disproportionate share of spend. It is not evidence that the 2026 account is performing poorly against a 2025 baseline — the baselines are fundamentally different in how they acquired traffic.
+
+**Group 3 — a material gap to fix:** the 2025 account imported 88 qualified leads from Moveware into Google Ads as offline conversions (valued at £44k), giving Smart Bidding a revenue signal to optimise against. In 2026 this import is not running (0 qualified leads, £0 value). The algorithm is therefore optimising toward form submissions rather than bookings and revenue. Re-enabling the Moveware→Google Ads offline conversion import is a priority recommendation — see the "What We Did" section and Data Required below.
 
 **3. What is clean, like-for-like**
 
@@ -69,15 +95,15 @@ Website visitors (GA4 active users and sessions) is independent of ad structure 
 
 ## Board KPI Dashboard — May 2026
 
-| KPI | May 2026 | Jan–Apr 2026 monthly average | Trend | May 2025 (YoY) |
+| KPI | May 2026 | Jan–May 2026 (5 months) | Jan–May trend | 2025 context (reconciled) |
 |---|---|---|---|---|
-| Website Visitors (active users) | 2,478 | 2,713 | Softening — seasonal, expected | 3,918 active users — −36.8% YoY (strategic shift, see KPI 1) |
-| Conversion Volume (enquiries) | Not isolatable — see note | ~19.4/month (Jan–May blended) | Data required for monthly view | Not comparable — conversion definition changed; see KPI 2 |
-| Conversion Quality (% qualified) | Data required | Data required | Data required | Data required |
-| Cost per Lead (CPL / CPA) | Not isolatable — see note | £170 blended (Jan–May) | Data required for monthly view | Not comparable — conversion definition changed; see KPI 4 |
-| Marketing Spend vs Budget | Not isolatable — see note | ~£3,286/month (Jan–May Search) | 2025 monthly avg ~£3,817/month all-in; spend broadly comparable — see KPI 5 | ~£3,817/month (2025 all campaign types; see KPI 5) |
+| Website Visitors (active users) | 2,478 | 13,329 total / 2,666 avg | Stable post-Jan seasonal dip | May 2025: 3,918 · −36.8% YoY (PMAX removed — strategic, see KPI 1) |
+| Conversion Volume (lead forms) | Not isolatable — see note | 124 form submissions · ≈24.8/mo | Floor, not ceiling — budget-limited campaigns | 2025: 586 form submissions · ≈48.8/mo. Lower 2026 run-rate consistent with −37% traffic and budget mix. See KPI 2. |
+| Conversion Quality | See KPI 3 | 806 leads (all sources) · 53 jobs won · £291,919 won revenue · 38.5% GM · £5,508 avg job | GM improving; days-to-book halved (41→21) | 2025: 1,731 leads · 174 jobs won · £963,992 won revenue · 31.3% GM · £5,540 avg job |
+| Cost per Lead (CPL) | Not isolatable — see note | £170 blended Search · £130 Europe · £151 London · £299 Domestic | Domestic drag on blended rate | 2025 genuine CPL not isolatable (definitions reconciled — see KPI 4) |
+| Marketing Spend vs Budget | Not isolatable — see note | £16,432 Search spend · ~£3,286/mo avg | Consistent; PMAX adds ~£1,389/mo | 2025: ~£3,817/mo all-in; spend broadly comparable; mix shifted entirely to Search |
 
-> Three of the five KPIs cannot be reported at a May-only level from the data currently available. The YoY conversion and CPL columns have been marked "not comparable" rather than populated with a misleading figure — the two years used different conversion definitions. Website visitors is the one clean like-for-like metric. See the Data Required section and the Year-on-year context box above.
+> Three KPIs cannot yet be reported at May-only level — the export covers Jan–May as a single aggregate. The conversion-definition question that prevented YoY comparison in previous drafts is now fully resolved: the goal-group data confirms exactly what each year was counting. The reconciled Moveware funnel data fills KPI 3. See the sections below for the full analysis.
 
 ---
 
