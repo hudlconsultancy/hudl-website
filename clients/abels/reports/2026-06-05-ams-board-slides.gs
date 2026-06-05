@@ -230,7 +230,7 @@ function buildPresentation() {
     stripe(s);
 
     // Badge + title
-    var badge = s.insertShape(SlidesApp.ShapeType.ROUNDED_RECTANGLE, 20, 10, 56, 22);
+    var badge = s.insertShape(SlidesApp.ShapeType.ROUND_RECTANGLE, 20, 10, 56, 22);
     badge.getFill().setSolidFill(kpi.color);
     badge.getBorder().setTransparent();
     txt(s, 'KPI ' + kpi.num, 20, 10, 56, 22, {color: C.black, size: 10, bold: true, center: true});
