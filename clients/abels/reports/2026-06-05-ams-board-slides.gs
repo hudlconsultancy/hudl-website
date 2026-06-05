@@ -81,7 +81,7 @@ function buildPresentation() {
   function rect(slide, left, top, width, height, fillHex, borderHex) {
     var r = slide.insertShape(SlidesApp.ShapeType.RECTANGLE, left, top, width, height);
     r.getFill().setSolidFill(fillHex || C.card);
-    if (borderHex) { r.getBorder().setSolidFill(borderHex); }
+    if (borderHex) { r.getBorder().getFill().setSolidFill(borderHex); }
     else           { r.getBorder().setTransparent(); }
     return r;
   }
@@ -401,7 +401,7 @@ function buildPresentation() {
       var x = 20 + i * (mw + 5);
       var box = s.insertShape(SlidesApp.ShapeType.RECTANGLE, x, 42, mw, 68);
       box.getFill().setSolidFill(C.card);
-      box.getBorder().setSolidFill(m.color);
+      box.getBorder().getFill().setSolidFill(m.color);
       txt(s, m.date,  x + 8, 46,  mw - 16, 18, {color: m.color, size: 13, bold: true});
       txt(s, m.label, x + 8, 66,  mw - 16, 18, {color: C.white, size: 11, bold: true});
       txt(s, m.note,  x + 8, 84,  mw - 16, 18, {color: C.muted, size: 10});
@@ -434,7 +434,7 @@ function buildPresentation() {
     txt(s, 'OUTSTANDING ACTION', W/2 + 10, 134, W/2 - 30, 16, {color: C.muted, size: 9, bold: true});
     var actBox = s.insertShape(SlidesApp.ShapeType.RECTANGLE, W/2 + 10, 152, W/2 - 30, H - 172 - 30);
     actBox.getFill().setSolidFill('#0a1020');
-    actBox.getBorder().setSolidFill(C.blue);
+    actBox.getBorder().getFill().setSolidFill(C.blue);
     txt(s, 'Re-enable Moveware → Google Ads offline conversion import',
         W/2 + 18, 158, W/2 - 46, 22, {color: C.blue, size: 11, bold: true});
     txt(s, '2025: 88 qualified leads imported → Smart Bidding optimised toward booked revenue\n2026: 0 imported → algorithm optimises toward form fills only\n\nAction: Woody + JDR (upload schedule) + NetDesigner (GCLID capture)\nImpact: Smart Bidding optimises toward revenue, not just enquiries',
