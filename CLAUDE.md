@@ -26,6 +26,7 @@ Claude Code subagents tailored to the business, each with a friendly name — se
 - **Dash** (`dashboard-builder`) — new client dashboards matching `dashboards/*.html`.
 - **Otis** (`outreach-copywriter`) — outreach emails, ad copy, landing pages, proposals.
 - **Solo** (`social-media-manager`) — social calendar + platform-native posts (LinkedIn/Instagram/X/Facebook), Canva visuals, scheduling. Prepares ready-to-publish packs; can't auto-post without a publishing integration.
+- **Slate** (`slides-builder`) — builds Google Slides board packs and pitch decks. Generates a Google Apps Script (`.gs` file saved to `clients/<slug>/reports/`) that the user runs once in script.google.com to create a fully formatted deck in their Google Drive.
 
 All agents are **client-aware**: after the Brain, when a client is named they read `clients/<slug>/profile.md` **and `clients/<slug>/decisions.md`** (the client's learned preferences/corrections), work from that client's `data/`, and write deliverables into the client's `reports/`/`content/`/`outreach/` folders. New corrections/preferences get logged back to `decisions.md` so the team never has to be told twice.
 
