@@ -16,6 +16,7 @@
 | **3. Conversion quality** | 38.5% GM / 21-day book | — | ↑ from 31.3% / 41-day | 🟢 Improving |
 | **4. Cost per Lead** | £160 | −0.5% | Not comparable* | 🟢 Efficient & steady |
 | **5. Spend vs budget** | £5,929 (£191/day) | −3% | +96% | 🟢 Within £200/day cap |
+| **6. SEO (organic)** | 832 clicks · pos 25.5 | flat | Position ↑17 places, CTR 2× | 🟢 Much better rankings |
 
 *\*Conversion definition changed in 2026 — see caveat above.*
 
@@ -98,23 +99,35 @@
 
 ---
 
-## Bonus — SEO (organic search) trend
+## 6 · SEO (organic search) — now with YoY
 
-No May 2025 Search Console data exists, so **no YoY is possible** — but the 2026 trend is on file:
+**May 2026: 832 organic clicks · 218,120 impressions · 0.38% CTR · avg position 25.5.**
 
 | | Jan | Feb | Mar | Apr | **May** |
 |---|--:|--:|--:|--:|--:|
 | Organic clicks | 825 | 953 | 947 | 811 | **832** |
+| CTR | 0.28% | 0.38% | 0.36% | 0.38% | **0.38%** |
 | Avg position | 27.7 | 25.6 | 21.7 | 23.4 | **25.5** |
 
-Organic is **stable but flat** (~800–950 clicks/month) and brand-dependent; average position improved into March then drifted back. The growth lever is unchanged: lift the high-visibility commercial pages (London/international/storage) off page 3–5.
+**Trend (Jan–May):** organic is **stable but flat** (~800–950 clicks/month) and brand-dependent; CTR has firmed to ~0.38% and average position improved into March before drifting back.
+
+**YoY (May 2025 → May 2026) — a clear quality improvement:**
+
+| Organic metric | May 2025 | May 2026 | YoY |
+|---|--:|--:|:--:|
+| Clicks | 978 | 832 | −15% |
+| Impressions | 560,731 | 218,120 | −61% |
+| **CTR** | 0.17% | **0.38%** | **+124%** |
+| **Avg position** | **42.2** | **25.5** | **↑ 17 places** |
+
+**Read:** a year ago the site was racking up huge impression volume at **position ~42 (page 4+)** — visibility with almost no clicks (0.17% CTR). Today it ranks **~17 places higher (page 2–3)** and **clicks through more than twice as well (0.38%)**. So although total impressions are down 61% and clicks down 15%, this is a **healthier position**: far better rankings and click-through on more relevant queries, rather than vast low-quality exposure. The step-change happened around **September–October 2025** (impressions fell from ~600k to ~200k as average position jumped from ~42 to ~26) — consistent with the website rebuild / cleaner indexing. *The growth lever is unchanged: lift the high-visibility commercial pages (London / international / storage) off page 3–5 to convert the visibility that remains.*
 
 ---
 
 ## Data notes & what would sharpen next month's report
 
 1. **GA4 channel split** — would let us report organic vs paid vs direct *sessions* by month (currently only total sessions + separate Ads/Search Console click counts).
-2. **2025 Search Console export** — would unlock SEO year-on-year.
+2. ~~2025 Search Console export~~ — **supplied 8 June; SEO YoY now included** (KPI 6).
 3. **Re-enabled Moveware import** — would restore paid-media lead *quality* attribution and close the qualified-lead gap.
 
 ## Recommended actions
@@ -125,6 +138,6 @@ Organic is **stable but flat** (~800–950 clicks/month) and brand-dependent; av
 | 2 | Hold Domestic on the clean-up — protect the £199 May gain | PPC (Pippa) |
 | 3 | Re-enable the Moveware → Google Ads qualified-lead import | Woody / JDR |
 | 4 | Begin the SEO push on the commercial/location pages | SEO (JDR / HUDL) |
-| 5 | Supply GA4 channel export + 2025 Search Console for fuller YoY | Woody / JDR |
+| 5 | Supply GA4 channel export for fuller traffic attribution | Woody / JDR |
 
 *Abels Moving Services (AGM Relocation Ltd) · Report period May 2026 · prepared 8 June 2026. Royal Warrant omitted pending compliance sign-off.*
