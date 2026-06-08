@@ -3,7 +3,7 @@
 
 > **Workspace:** `clients/abels/` · **Prepared:** 5 June 2026 · **For:** Woody (group marketing)
 > **Status:** Internal — not for external distribution. Built only from data on file in `clients/abels/data/`; no figures invented.
-> **Sources:** `abels-google-ads-monthly-2026-01-01_2026-05-31.csv` (PPC), `abels-ga4-2026-01-01_2026-06-04.csv` (Website), `abels-conversion-and-moveware-2025-2026.md` (conversion definition).
+> **Sources:** `abels-google-ads-monthly-2026-01-01_2026-05-31.csv` (PPC), `abels-ga4-2026-01-01_2026-06-04.csv` (Website), `abels-gsc-*-2026-01-01_2026-05-31.csv` — Google Search Console chart/queries/pages/countries/devices (SEO), `abels-conversion-and-moveware-2025-2026.md` (conversion definition).
 
 ---
 
@@ -13,9 +13,9 @@
 |---|---|---|
 | **PPC (Google Ads)** | ✅ Full | Spend, conversions, CPA, impressions, clicks, conv. value — by month and by campaign (Mar–May) |
 | **Website (GA4)** | ✅ Mostly | Sessions, new users, engagement, key-event rate — by month. **Missing:** channel split (paid vs organic vs direct) for 2026, and month-segmented *unique* active users |
-| **SEO** | ❌ **Missing** | **No 2026 SEO data on file** — see the SEO section for exactly what's needed |
+| **SEO (Search Console)** | ✅ Full | Organic clicks, impressions, CTR, average position — by month, plus top pages, queries, countries and devices for the full Jan–May 2026 window |
 
-**Bottom line:** PPC and Website are complete and reported in full below. **SEO cannot be reported for 2026 — the data isn't in the workspace.** What's needed to produce it is listed at the end.
+**Bottom line:** all three areas are now complete and reported in full below. (Search Console data was supplied 8 June and folded in.)
 
 ---
 
@@ -120,45 +120,77 @@ Source: GA4 daily export aggregated to months. Sessions and new users are additi
 - **Key-event rate is volatile** (2.8%–6.3%) — February spiked to 6.3%. Worth confirming which key events GA4 is counting, as this drives the on-site conversion read.
 - **New users dominate** (~80%+ of sessions) — a low returning-visitor base, normal for a one-off, high-consideration purchase like a house move.
 
-**Website data gap:** the 2026 GA4 export has **no channel breakdown** (organic vs paid vs direct vs referral). We can see total traffic but not how much came from PPC vs SEO vs direct. The 2025 files *do* carry a channel split — a matching 2026 channel export would let us attribute this traffic and complete the SEO picture below.
+**Website data gap (minor):** the 2026 GA4 export has **no channel breakdown** (organic vs paid vs direct vs referral). We can see total site traffic but not how much came from PPC vs organic vs direct. Search Console (§3) now tells us the organic *search* side directly; a GA4 channel export would let us tie all three together on-site. This is the one remaining data item.
 
 ---
 
-## 3. SEO — Jan to May 2026
+## 3. SEO (Organic Search) — Jan to May 2026
 
-### ❌ No 2026 SEO data is on file. This section cannot be reported.
+Source: Google Search Console, Web search, 1 Jan–31 May 2026. These are **organic** clicks and impressions (separate from the paid figures in §1). SEO has historically been JDR Group's remit (currently under review).
 
-SEO has historically been **JDR Group's remit and is currently under review** (per the client profile). None of the inputs needed to report organic search performance for 2026 are in the workspace:
+### Monthly summary
 
-| To report SEO we need… | On file for 2026? |
-|---|---|
-| **Google Search Console** export (impressions, clicks, avg. position, CTR, top queries, top pages) | ❌ No |
-| **GA4 Organic Search channel** sessions/users by month | ❌ No (2026 GA4 export has no channel split; 2025 has it) |
-| **Keyword rank tracking** (target terms, positions, movement) | ❌ No |
-| **Organic landing-page performance** (entrances, conversions by page) | ❌ No |
-| **Backlink / technical SEO** snapshot (Ahrefs/SEMrush/Screaming Frog) | ❌ No |
+| Month | Clicks | Impressions | CTR | Avg. position |
+|---|--:|--:|--:|--:|
+| **Jan** | 825 | 297,226 | 0.28% | 27.7 |
+| **Feb** | 953 | 250,718 | 0.38% | 25.6 |
+| **Mar** | 947 | 264,136 | 0.36% | 21.7 |
+| **Apr** | 811 | 212,369 | 0.38% | 23.4 |
+| **May** | 832 | 218,120 | 0.38% | 25.5 |
+| **Total** | **4,368** | **1,242,569** | **0.35%** | **24.9** |
 
-**What we *do* have is 2025 only:** the 2025 GA4 files show Organic Search at 9,429 / 15,548 users across periods — useful as a baseline, but it tells us nothing about Jan–May 2026.
+**What this shows:**
+- **Huge visibility, very little of it converted.** Abels was shown in organic results **1.24 million times** in five months but earned only **4,368 clicks (0.35% CTR)**. The cause is **average position ~25** — most rankings sit on page 2–3, below where clicks happen.
+- **Average position improved Jan→Mar (27.7 → 21.7)** then drifted back to 25.5 by May. CTR firmed from 0.28% to ~0.38%. Clicks are broadly flat at ~800–950/month — no growth trend, no collapse.
+- Impressions fell from a January peak (297k) toward ~215k — consistent with the seasonal dip also seen in the website and PPC data.
 
-**To produce the SEO report, please supply any of the following** (Search Console + the GA4 channel export would be enough on their own):
-1. **Google Search Console** — export Jan–May 2026 (Performance → by month, plus top queries and top pages). This is the single most valuable input.
-2. **GA4 with a "Session default channel group" dimension** for 1 Jan–31 May 2026 — gives organic vs paid vs direct sessions by month, and lets us attribute the website traffic in §2.
-3. **Rank-tracking export** if JDR or any tool is tracking target keywords.
+### The core SEO finding — branded clicks vs unconverted commercial demand
 
-Once any of these land in `clients/abels/data/`, I can produce the monthly SEO breakdown to match the PPC and Website sections above.
+- **Almost every click is the homepage or a brand/navigational search.** The homepage alone took **1,815 clicks (42% of all organic clicks)** — these are overwhelmingly people who already know Abels. Branded "abels…" queries convert at ~6–19% CTR; non-branded commercial queries convert at **~0.1–0.3%**.
+- **The big commercial pages rank on page 3–5, so their enormous impression volume earns almost nothing:**
+
+| Commercial page | Impressions | Clicks | CTR | Avg. position |
+|---|--:|--:|--:|--:|
+| International removals services | 122,644 | 46 | 0.04% | 28.4 |
+| London removals company | 101,545 | 81 | 0.08% | 47.0 |
+| London storage | 72,239 | 18 | 0.02% | 21.6 |
+| Norwich removals | 23,202 | 31 | 0.13% | 30.8 |
+| Furniture storage | 17,531 | 1 | 0.01% | 25.4 |
+
+  Those five pages alone account for **~337k impressions (27% of the site's total)** but just **177 clicks**. Top non-branded queries tell the same story: *"international removals"* (6,022 impr, 0 clicks, pos 32), *"moving company"* (6,328 impr, 1 click, pos 21), *"storage and moving solutions london"* (5,857 impr, 0 clicks, pos 7). **This is the single biggest SEO opportunity: move the commercial/location pages from page 3–5 onto page 1–2 and clicks multiply off demand that already exists.**
+
+### What's working
+
+- **Informational content ranks well** — the *how to move a grandfather/longcase clock* advice article earned 136 clicks at **position 7 / 2.24% CTR**; country guides (Hawaii, Israel, Jamaica, Kenya) and the relocation-guide PDFs (Zimbabwe 96 clicks, Oman, Pakistan) consistently rank in positions 5–9. Useful for authority and top-of-funnel, but low commercial intent.
+- **The Royal Warrant holders page** earned 59 clicks at position 13 / 3.24% CTR — a credibility asset pulling its weight (note: any outward-facing use needs compliance sign-off).
+- **Google Business Profile is strong locally** — the GBP-tagged homepage variants for *Ely* (218 clicks, 2.37% CTR) and *Potters Bar* (58 clicks) show healthy local-pack presence around the depots.
+
+### Devices & geography
+
+| Device | Clicks | Impressions | CTR | Avg. position |
+|---|--:|--:|--:|--:|
+| Desktop | 2,283 | 831,926 | 0.27% | 25.7 |
+| Mobile | 1,994 | 403,761 | 0.49% | 23.4 |
+| Tablet | 91 | 6,882 | 1.32% | 18.2 |
+
+- **Mobile converts nearly 2× better than desktop** (0.49% vs 0.27% CTR) on less than half the impressions — worth confirming mobile page experience on the key commercial pages.
+- **The UK is 80% of clicks** (3,516 of 4,368) but a smaller share of impressions — Abels surfaces heavily overseas (US 104k impressions / 108 clicks, India, France, Canada, Spain) on international-removals terms, at low CTR. International visibility is real but not yet converting.
+
+**SEO read of the period:** stable but flat, and heavily dependent on brand. The website earns its organic clicks from people already looking for Abels and from a strong informational content library — **not** from the high-value commercial terms where it has massive impression share but page-3+ rankings. The growth path is clear: improve rankings on the London / international / storage commercial pages.
 
 ---
 
 ## Summary & recommended next steps
 
-**Performance, in one line:** PPC found its feet after a March rebuild — **April and May are the true run-rate (~£6k/mo, ~37 leads, ~£160 CPA)**, led by Europe and London; Domestic is improving but still the costliest lane; Performance Max was correctly paused after returning zero leads for £1,010. Website traffic eased from a January peak but **engagement quality held and improved into May**.
+**Performance, in one line:** PPC found its feet after a March rebuild — **April and May are the true run-rate (~£6k/mo, ~37 leads, ~£160 CPA)**, led by Europe and London; Domestic is improving but still costliest; Performance Max was correctly paused after returning zero leads for £1,010. Website traffic eased from a January peak but **engagement quality held and improved into May**. **Organic search is stable but flat and brand-dependent** — 1.24m impressions yet only 4,368 clicks, because the valuable commercial pages rank on page 3–5.
 
 | # | Action | Owner | Why |
 |---|---|---|---|
-| 1 | **Supply Search Console + GA4 channel export** for Jan–May 2026 | Woody / JDR | Unblocks the entire SEO report and lets us attribute website traffic |
-| 2 | **Shift budget toward Europe & London** | PPC (Pippa) | Lowest CPA (£110–138), still budget-limited — best marginal return |
+| 1 | **Prioritise SEO on the commercial/location pages** (London removals, international removals, London storage) | SEO (JDR / HUDL) | ~337k impressions / 27% of total but page 3–5 rankings and ~177 clicks — the biggest single organic opportunity |
+| 2 | **Shift PPC budget toward Europe & London** | PPC (Pippa) | Lowest CPA (£110–138), still budget-limited — best marginal return |
 | 3 | **Hold Domestic on the clean-up pack + trimmed budget** | PPC (Pippa) | CPA still £200+; May's £199 shows the fix is working |
 | 4 | **Re-enable the Moveware → Google Ads offline import** | Woody / JDR | Group 3 qualified-lead import is off in 2026 (88 leads / £44k in 2025, 0 now) — restoring it lets Smart Bidding optimise to booked revenue, not just form-fills |
-| 5 | **Confirm GA4 key-event definitions** | Analytics | Key-event rate swings 2.8–6.3%; we should know exactly what's being counted |
+| 5 | **Supply a GA4 channel-split export** for Jan–May 2026 | Woody / JDR | Last remaining gap — lets us attribute website traffic to organic vs paid vs direct and tie SEO/PPC to on-site sessions |
+| 6 | **Confirm GA4 key-event definitions; check mobile UX on commercial pages** | Analytics / Web | Key-event rate swings 2.8–6.3%; mobile organic CTR is ~2× desktop, so mobile experience matters |
 
-*Internal — Abels Moving Services (AGM Relocation Ltd). Built from data on file 5 June 2026. Royal Warrant references omitted pending compliance sign-off.*
+*Internal — Abels Moving Services (AGM Relocation Ltd). Built from data on file; Search Console data supplied 8 June 2026. Royal Warrant references omitted pending compliance sign-off.*
