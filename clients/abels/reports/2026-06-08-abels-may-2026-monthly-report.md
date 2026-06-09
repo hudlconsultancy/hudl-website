@@ -13,7 +13,7 @@
 |---|---|---|---|---|
 | **1. Website visitors** | 2,847 sessions | +10.5% | −37% (by design) | 🟡 Smaller but more engaged |
 | **2. Conversion volume (paid)** | 37 enquiries | −2% | Not comparable* | 🟢 Stable run-rate |
-| **3. Conversion quality** | 38.5% GM / 21-day book | — | ↑ from 31.3% / 41-day | 🟢 Improving |
+| **3. Conversion quality** | 38.4% GM / 21-day book | — | Margin ↑, but jobs won ↓28% | 🟡 Better quality, fewer jobs |
 | **4. Cost per Lead** | £160 | −0.5% | Not comparable* | 🟢 Efficient & steady |
 | **5. Spend vs budget** | £5,929 (£191/day) | −3% | +96% | 🟢 Within £200/day cap |
 | **6. SEO (organic)** | 832 clicks · pos 25.5 | flat | Position ↑17 places, CTR 2× | 🟢 Much better rankings |
@@ -56,17 +56,26 @@
 
 ## 3 · Conversion Quality — leads meeting qualification
 
-**Latest position: 27% of leads progress to a quote, 6.6% become booked jobs, at 38.5% gross margin.**
+**Now a true like-for-like comparison: Jan–May 2025 vs Jan–May 2026 (same five months both years), all-source via Moveware/CRM.**
 
-| Quality metric | 2025 (full year) | 2026 (Jan–May) | Direction |
+| Quality metric | Jan–May 2025 | Jan–May 2026 | YoY |
 |---|--:|--:|:--:|
-| Lead → quote/opportunity | 33% | 27% | ↓ |
-| Lead → booked job | 10.1% | 6.6% | ↓ (partly pipeline lag) |
-| Avg won-job value | £5,540 | £5,508 | → steady |
-| **Gross margin %** | 31.3% | **38.5%** | **↑** |
-| Avg days to book | 41 | **21** | **↑ faster** |
+| Total leads | 669 | 788 | **+18%** |
+| Lead → quote/opportunity | 40% | 28% | ↓ 12pp |
+| **Jobs won** | 76 | 55 | **↓ 28%** |
+| **Won revenue** | £388,581 | £296,893 | **↓ 24%** |
+| Won margin (£) | £102,842 | £113,934 | **↑ 11%** |
+| **Won gross margin %** | 26.5% | **38.4%** | **↑ 11.9pp** |
+| Avg won-job value | £5,113 | £5,398 | ↑ 6% |
+| **Avg days to book** | 51 | **21** | **↑ much faster** |
 
-**Read:** quality is **improving on the measures that matter commercially** — margin up 7 points and time-to-book halved. The lower lead→job rate is partly genuine and partly pipeline lag (recent leads not yet booked). *Note: Moveware figures are all-source and can't be isolated to May or to paid media; 2026 is a partial year.* ⚠️ The **Moveware → Google Ads qualified-lead import remains off** (88 qualified leads fed back in 2025, 0 in 2026) — re-enabling it would let Google optimise toward booked revenue.
+**Read — a genuine mixed picture, told straight:**
+- **More leads, fewer jobs.** Lead volume is **up 18%**, but jobs won are **down 28%** and won revenue **down 24%**. This is the one area to watch.
+- **Why:** it's largely a **lead-mix shift, not collapsing demand.** In 2026 the *"Abels Main Webform"* alone contributed **204 leads but converted at just 2% to a won job** — a flood of low-converting webform enquiries inflating the lead count and dragging the headline conversion rate down (lead→opportunity 40% → 28%).
+- **But profitability per job improved markedly:** **gross margin 26.5% → 38.4%**, total won margin actually **up 11%** despite lower revenue, average job value up 6%, and **average time-to-book halved (51 → 21 days)**.
+- **Net:** Abels is winning **fewer but better, faster, higher-margin jobs** on a noisier top-of-funnel. *Action: investigate the Abels Main Webform lead quality/qualification (capture change?) and re-enable the **Moveware → Google Ads qualified-lead import** (88 qualified leads fed back in 2025, 0 in 2026) so paid bidding optimises toward booked jobs.*
+
+> *Caveat: Moveware is all-source (not paid-media only); the most recent 2026 leads may still firm up as they mature, though the 21-day average book time limits this.*
 
 ---
 
@@ -139,5 +148,6 @@
 | 3 | Re-enable the Moveware → Google Ads qualified-lead import | Woody / JDR |
 | 4 | Begin the SEO push on the commercial/location pages | SEO (JDR / HUDL) |
 | 5 | Supply GA4 channel export for fuller traffic attribution | Woody / JDR |
+| 6 | Investigate "Abels Main Webform" lead quality (204 leads → 2% won) | Woody / Sales |
 
 *Abels Moving Services (AGM Relocation Ltd) · Report period May 2026 · prepared 8 June 2026. Royal Warrant omitted pending compliance sign-off.*
