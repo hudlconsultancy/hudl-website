@@ -310,6 +310,31 @@
       metaDesc.content = meta.summary || '';
       document.head.appendChild(metaDesc);
 
+      // BlogPosting structured data (schema.org JSON-LD)
+      const pageUrl = `https://www.hudl.gg/article?post=${slug}`;
+      const imageUrl = meta.thumbnail
+        ? (meta.thumbnail.startsWith('http') ? meta.thumbnail : `https://www.hudl.gg${meta.thumbnail}`)
+        : '';
+      const ld = {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline: meta.title || '',
+        description: meta.summary || '',
+        image: imageUrl,
+        datePublished: meta.date || '',
+        author: { '@type': 'Organization', name: 'HUDL' },
+        publisher: {
+          '@type': 'Organization',
+          name: 'HUDL',
+          logo: { '@type': 'ImageObject', url: 'https://hudl.gg/logo.png' }
+        },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl }
+      };
+      const ldScript = document.createElement('script');
+      ldScript.type = 'application/ld+json';
+      ldScript.textContent = JSON.stringify(ld);
+      document.head.appendChild(ldScript);
+
       const cat = meta.category || '';
       const heroImg = meta.thumbnail ? `<img class="article-hero-img" src="${meta.thumbnail}" alt="${meta.title}">` : '';
 
