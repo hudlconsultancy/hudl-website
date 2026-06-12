@@ -11,10 +11,8 @@ summary: >-
 
   Learn how HUDL’s strategy first approach can turn your marketing into a high-performance growth engine.
 read_time: 5 min read
-thumbnail: /images/uploads/tkpdczqtpzo10-reasons-your-buckinghamshire-small-business-marketing-strategy-isn’t-working-and-how-to-fix-it-.svg
+thumbnail: /images/uploads/10-reasons-your-buckinghamshire-small-business-marketing-strategy-isn’t-working-and-how-to-fix-it-.png
 ---
-# 10 REASONS YOUR BUCKINGHAMSHIRE SMALL BUSINESS MARKETING STRATEGY ISN’T WORKING (AND HOW TO FIX IT)
-
 Stagnant leads. Shrinking margins. Ghost-town socials. 
 
 If you are a business owner in High Wycombe, Aylesbury, or Marlow, you might feel like your marketing is a black hole: money goes in, but growth never comes out. You’ve hired the freelancers, you’ve boosted the posts, and you’ve waited for the phone to ring. 
