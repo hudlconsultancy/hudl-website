@@ -6,6 +6,7 @@ Static marketing site for **HUDL Consultancy** (hudl.gg), a UK strategic marketi
 - `index.html`, `blog.html`, `article.html`, `thank-you.html` — top-level pages.
 - `_posts/YYYY-MM-DD-slug.md` — blog source (markdown + frontmatter), edited via Decap/Netlify CMS (`admin/config.yml`). Frontmatter: `title, date, category, summary, read_time, thumbnail`.
 - `posts/slug.html` — companion HTML page per post (renders markdown with marked.js).
+- `BLOG_FORMAT.md` — exact authoring spec for blog posts (frontmatter, slug rules, heading levels → title colour, British English). Share with any external tool (e.g. Marblism) that drafts posts so they upload with no manual fixes.
 - `dashboards/*.html` — self-contained, password-gated client reporting dashboards.
 - `Campaign performance.csv` — example Google Ads export (GBP).
 - `launchpad.html` — internal control panel for the AI agents (noindex).
