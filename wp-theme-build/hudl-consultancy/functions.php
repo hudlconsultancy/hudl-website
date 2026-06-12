@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'HUDL_VERSION' ) ) {
-	define( 'HUDL_VERSION', '1.0.0' );
+	define( 'HUDL_VERSION', '1.1.0' );
 }
 
 /**
@@ -107,10 +107,16 @@ function hudl_assets() {
 	);
 
 	// Main theme stylesheet (the style.css header + all rules).
-	wp_enqueue_style( 'hudl-style', get_stylesheet_uri(), array( 'hudl-fonts' ), HUDL_VERSION );
+	// Use the file modification time as the version so updated CSS is never
+	// served from a stale browser/CDN cache after the theme is changed.
+	$style_path = get_stylesheet_directory() . '/style.css';
+	$style_ver  = file_exists( $style_path ) ? filemtime( $style_path ) : HUDL_VERSION;
+	wp_enqueue_style( 'hudl-style', get_stylesheet_uri(), array( 'hudl-fonts' ), $style_ver );
 
 	// Front-end behaviour: nav scroll, hamburger, smooth scroll, reveal-on-scroll.
-	wp_enqueue_script( 'hudl-theme', get_template_directory_uri() . '/js/theme.js', array(), HUDL_VERSION, true );
+	$script_path = get_template_directory() . '/js/theme.js';
+	$script_ver  = file_exists( $script_path ) ? filemtime( $script_path ) : HUDL_VERSION;
+	wp_enqueue_script( 'hudl-theme', get_template_directory_uri() . '/js/theme.js', array(), $script_ver, true );
 
 	// Threaded comments where enabled.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
