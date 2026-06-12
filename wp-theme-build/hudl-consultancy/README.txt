@@ -46,6 +46,15 @@ The theme works out of the box. For the best match to hudl.gg:
    - A text wordmark (HUDL in brand colours) is used by default.
    - To use an image logo instead: Appearance → Customize → Site Identity → Logo.
 
+6. THANK YOU PAGE (form confirmation)
+   - Create a Page titled "Thank You" with the slug "thank-you"
+     (Pages → Add New → Title "Thank You" → confirm the permalink slug is
+     "thank-you" → Publish).
+   - The theme automatically renders it with the branded confirmation design
+     (page-thank-you.php) — you do NOT need to add any content. If you do add
+     body content it replaces the default headline/message.
+   - The consultation form already posts to /thank-you/, so submissions land here.
+
 == Files ==
 
   style.css              Theme header + all styles
