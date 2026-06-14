@@ -9,59 +9,39 @@
 $hudl_email = antispambot( 'contact@hudl.gg' );
 ?>
 
-<!-- ===== HERO ===== -->
-<section id="hero" aria-label="<?php esc_attr_e( 'Hero section', 'hudl-consultancy' ); ?>">
-	<div class="hero-bg" aria-hidden="true"></div>
-	<div class="hero-stripes-right" aria-hidden="true">
-		<div class="vstripe y"></div>
-		<div class="vstripe b"></div>
-		<div class="vstripe r"></div>
-		<div class="vstripe c"></div>
-	</div>
+<!-- ===== HERO (kinetic scroll) ===== -->
+<?php get_template_part( 'template-parts/hero-kinetic' ); ?>
+
+<!-- ===== TRUST / PROOF STRIP (preserves the original hero stats + quote) ===== -->
+<section id="proof" class="proof-section" aria-label="<?php esc_attr_e( 'Why HUDL', 'hudl-consultancy' ); ?>">
 	<div class="container">
-		<div class="hero-content">
-			<div class="hero-left">
-				<p class="hero-eyebrow reveal"><?php esc_html_e( 'MARKETING CONSULTANCY — SINCE 2020', 'hudl-consultancy' ); ?></p>
-				<h1 class="hero-headline reveal reveal-delay-1">
-					LET'S <span class="hero-hudl"><?php echo hudl_wordmark(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span><br>
-					TOGETHER<br>
-					AND GROW.
-				</h1>
-				<p class="hero-sub reveal reveal-delay-2">
-					<?php esc_html_e( 'Strategic clarity, creative insight, measurable results. HUDL aligns your marketing with commercial goals — sharpening your brand, optimising performance, and driving sustainable growth.', 'hudl-consultancy' ); ?>
-				</p>
-				<div class="hero-actions reveal reveal-delay-3">
-					<a href="#cta" class="btn-primary">
-						<?php esc_html_e( 'BOOK YOUR FREE CONSULTATION', 'hudl-consultancy' ); ?>
-						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-					</a>
-					<a href="#services" class="btn-secondary"><?php esc_html_e( 'Our Services', 'hudl-consultancy' ); ?></a>
+		<header class="section-header proof-header reveal">
+			<span class="tag"><?php esc_html_e( 'Why HUDL', 'hudl-consultancy' ); ?></span>
+			<h2><?php esc_html_e( 'PROVEN BY THE', 'hudl-consultancy' ); ?> <span class="yellow"><?php esc_html_e( 'NUMBERS', 'hudl-consultancy' ); ?></span></h2>
+		</header>
+		<div class="proof-grid reveal reveal-delay-1">
+			<div class="hero-stat-grid">
+				<div class="stat-card y">
+					<div class="stat-num yellow">25+</div>
+					<div class="stat-label"><?php esc_html_e( 'Years combined experience', 'hudl-consultancy' ); ?></div>
+				</div>
+				<div class="stat-card b">
+					<div class="stat-num blue">6</div>
+					<div class="stat-label"><?php esc_html_e( 'Specialist service areas', 'hudl-consultancy' ); ?></div>
+				</div>
+				<div class="stat-card r">
+					<div class="stat-num red">2020</div>
+					<div class="stat-label"><?php esc_html_e( 'Founded in London, UK', 'hudl-consultancy' ); ?></div>
+				</div>
+				<div class="stat-card c">
+					<div class="stat-num cyan">10+</div>
+					<div class="stat-label"><?php esc_html_e( 'Sectors served', 'hudl-consultancy' ); ?></div>
 				</div>
 			</div>
-			<div class="hero-right reveal reveal-delay-2">
-				<div class="hero-stat-grid">
-					<div class="stat-card y">
-						<div class="stat-num yellow">25+</div>
-						<div class="stat-label"><?php esc_html_e( 'Years combined experience', 'hudl-consultancy' ); ?></div>
-					</div>
-					<div class="stat-card b">
-						<div class="stat-num blue">6</div>
-						<div class="stat-label"><?php esc_html_e( 'Specialist service areas', 'hudl-consultancy' ); ?></div>
-					</div>
-					<div class="stat-card r">
-						<div class="stat-num red">2020</div>
-						<div class="stat-label"><?php esc_html_e( 'Founded in London, UK', 'hudl-consultancy' ); ?></div>
-					</div>
-					<div class="stat-card c">
-						<div class="stat-num cyan">10+</div>
-						<div class="stat-label"><?php esc_html_e( 'Sectors served', 'hudl-consultancy' ); ?></div>
-					</div>
-				</div>
-				<blockquote class="hero-quote">
-					<?php esc_html_e( "We don't just advise — we take ownership. If we don't believe it'll work, we won't recommend it.", 'hudl-consultancy' ); ?>
-					<cite><?php esc_html_e( '— Craig Wood · Founder · HUDL Consultancy', 'hudl-consultancy' ); ?></cite>
-				</blockquote>
-			</div>
+			<blockquote class="hero-quote">
+				<?php esc_html_e( "We don't just advise — we take ownership. If we don't believe it'll work, we won't recommend it.", 'hudl-consultancy' ); ?>
+				<cite><?php esc_html_e( '— Craig Wood · Founder · HUDL Consultancy', 'hudl-consultancy' ); ?></cite>
+			</blockquote>
 		</div>
 	</div>
 </section>

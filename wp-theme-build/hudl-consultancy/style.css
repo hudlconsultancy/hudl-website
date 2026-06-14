@@ -4,7 +4,7 @@ Theme URI: https://www.hudl.gg/
 Author: HUDL Consultancy
 Author URI: https://www.hudl.gg/
 Description: Custom WordPress theme for HUDL Consultancy — a UK strategic marketing consultancy. Dark theme, four-colour brand stripe (yellow/blue/red/cyan), bold uppercase Barlow Condensed display type with Source Sans 3 body. Converted from the static hudl.gg single-page site, with matching blog grid and article templates.
-Version: 1.1.0
+Version: 1.2.0
 Requires at least: 5.5
 Tested up to: 6.5
 Requires PHP: 7.2
@@ -314,6 +314,31 @@ nav.site-nav.scrolled { box-shadow: 0 4px 40px rgba(0,0,0,0.6); }
   text-transform: uppercase;
   color: var(--yellow);
   font-family: var(--font-display);
+}
+
+/* ===========================
+   TRUST / PROOF STRIP
+   (the original hero stat cards + founder quote, relocated below the
+   kinetic hero so the trust points are preserved)
+=========================== */
+.proof-section {
+  background: var(--black);
+  padding: 100px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.proof-header { text-align: left; margin-bottom: 48px; }
+.proof-header h2 { font-size: clamp(36px, 5vw, 64px); }
+.proof-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.proof-grid .hero-stat-grid { margin: 0; }
+.proof-grid .hero-quote { margin: 0; }
+@media (max-width: 900px) {
+  .proof-grid { grid-template-columns: 1fr; gap: 28px; }
 }
 
 /* ===========================

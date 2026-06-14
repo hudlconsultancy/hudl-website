@@ -1,0 +1,193 @@
+/* ===========================================================================
+   HUDL — Kinetic scroll hero (Variant B "spin converge")
+   Scoped under .kh-hero so it never collides with the rest of the theme.
+   Fonts: Anton (headline/logo), Space Mono (eyebrow/buttons), Archivo (body).
+   =========================================================================== */
+
+/* --- Section box. Overrides the old #hero rules from style.css via the
+       higher-specificity #hero.kh-hero selector. Default (no-JS / reduced
+       motion) = a normal, non-pinned hero. JS adds .is-animating to switch
+       on the 205vh scroll runway + sticky pin. --- */
+#hero.kh-hero {
+  position: relative;
+  display: block;
+  min-height: 0;
+  height: auto;
+  padding: 0;
+  overflow: visible;
+  background: #000;
+}
+#hero.kh-hero.is-animating {
+  height: 205vh;
+}
+
+.kh-hero .kh-sticky {
+  position: static;
+}
+#hero.kh-hero.is-animating .kh-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.kh-hero .kh-stage {
+  position: relative;
+  width: 100%;
+  min-height: 86vh;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 7%;
+  overflow: hidden;
+}
+#hero.kh-hero.is-animating .kh-stage {
+  min-height: 0;
+  height: 100%;
+}
+
+/* Decorative vertical brand bars down the right (nod to the live site). */
+.kh-hero .kh-stripes {
+  position: absolute;
+  top: 0;
+  right: 4%;
+  bottom: 0;
+  display: flex;
+  gap: 14px;
+  opacity: 0.16;
+  z-index: 1;
+  pointer-events: none;
+}
+.kh-hero .kh-stripes span { display: block; width: 6px; height: 100%; }
+.kh-hero .kh-stripes span:nth-child(1) { background: #fbbf46; }
+.kh-hero .kh-stripes span:nth-child(2) { background: #45aeff; }
+.kh-hero .kh-stripes span:nth-child(3) { background: #ff515e; }
+.kh-hero .kh-stripes span:nth-child(4) { background: #1edfd4; }
+
+.kh-hero .kh-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1180px;
+  width: 100%;
+}
+
+/* Eyebrow */
+.kh-hero .kh-eyebrow {
+  margin: 0 0 22px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: #fbbf46;
+  font-size: clamp(11px, 1.1vw, 18px);
+}
+
+/* Headline */
+.kh-hero .kh-headline {
+  margin: 0;
+  font-family: "Anton", "Archivo Black", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.98;
+  letter-spacing: 0.025em;
+  font-size: clamp(2.5rem, 8.5vw, 9rem);
+  color: #fff;
+}
+.kh-hero .kh-headline .kh-word { display: inline-block; white-space: nowrap; }
+.kh-hero .kh-headline .kh-space { display: inline-block; width: 0.38em; }
+.kh-hero .kh-headline .kh-letter {
+  display: inline-block;
+  white-space: pre;
+  will-change: transform, opacity;
+}
+
+/* Subline */
+.kh-hero .kh-subline {
+  margin: 26px 0 0;
+  font-family: Archivo, system-ui, sans-serif;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(14px, 1.5vw, 22px);
+  line-height: 1.5;
+  max-width: 620px;
+}
+
+/* CTAs */
+.kh-hero .kh-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 30px;
+}
+.kh-hero .kh-btn-primary,
+.kh-hero .kh-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: clamp(12px, 1.1vw, 18px);
+  padding: 18px 26px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, color 0.18s ease, filter 0.18s ease;
+}
+.kh-hero .kh-btn-primary { background: #fbbf46; color: #000; border: 1.5px solid #fbbf46; }
+.kh-hero .kh-btn-primary:hover { filter: brightness(0.95); transform: translateY(-2px); }
+.kh-hero .kh-btn-secondary { background: transparent; color: #fff; border: 1.5px solid rgba(255, 255, 255, 0.28); padding: 17px 24px; }
+.kh-hero .kh-btn-secondary:hover { border-color: #fff; color: #fff; }
+.kh-hero .kh-arrow-cta { font-size: 1.1em; }
+
+/* Scroll hint — only meaningful while animating */
+.kh-hero .kh-scrollhint {
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+  z-index: 2;
+}
+#hero.kh-hero.is-animating .kh-scrollhint { display: flex; }
+.kh-hero .kh-scrollhint-label {
+  font-family: "Space Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+.kh-hero .kh-scrollhint-arrow {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 18px;
+  animation: kh-bob 1.4s ease-in-out infinite;
+}
+@keyframes kh-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+
+/* While animating, hide supporting copy until JS reveals it on scroll. */
+#hero.kh-hero.is-animating .kh-eyebrow,
+#hero.kh-hero.is-animating .kh-subline,
+#hero.kh-hero.is-animating .kh-actions { opacity: 0; }
+
+/* Reduced motion / no-JS: guarantee everything is visible and assembled. */
+#hero.kh-hero.kh-static .kh-eyebrow,
+#hero.kh-hero.kh-static .kh-subline,
+#hero.kh-hero.kh-static .kh-actions { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  #hero.kh-hero { height: auto; }
+  #hero.kh-hero .kh-sticky { position: static; height: auto; }
+  .kh-hero .kh-scrollhint { display: none; }
+}
+
+/* Mobile tuning */
+@media (max-width: 768px) {
+  .kh-hero .kh-stage { padding: 32px 6%; }
+  .kh-hero .kh-stripes { display: none; }
+  .kh-hero .kh-actions { gap: 12px; }
+  .kh-hero .kh-btn-primary,
+  .kh-hero .kh-btn-secondary { padding: 15px 20px; }
+}

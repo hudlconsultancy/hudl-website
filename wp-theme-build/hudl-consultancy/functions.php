@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'HUDL_VERSION' ) ) {
-	define( 'HUDL_VERSION', '1.1.0' );
+	define( 'HUDL_VERSION', '1.2.0' );
 }
 
 /**
@@ -117,6 +117,25 @@ function hudl_assets() {
 	$script_path = get_template_directory() . '/js/theme.js';
 	$script_ver  = file_exists( $script_path ) ? filemtime( $script_path ) : HUDL_VERSION;
 	wp_enqueue_script( 'hudl-theme', get_template_directory_uri() . '/js/theme.js', array(), $script_ver, true );
+
+	// Kinetic scroll hero — only needed on the homepage.
+	if ( is_front_page() ) {
+		// Hero display fonts: Anton (headline), Space Mono (labels), Archivo (body).
+		wp_enqueue_style(
+			'hudl-hero-fonts',
+			'https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap',
+			array(),
+			null
+		);
+
+		$hero_css_path = get_template_directory() . '/hero-kinetic.css';
+		$hero_css_ver  = file_exists( $hero_css_path ) ? filemtime( $hero_css_path ) : HUDL_VERSION;
+		wp_enqueue_style( 'hudl-hero-kinetic', get_template_directory_uri() . '/hero-kinetic.css', array( 'hudl-style', 'hudl-hero-fonts' ), $hero_css_ver );
+
+		$hero_js_path = get_template_directory() . '/js/hero-kinetic.js';
+		$hero_js_ver  = file_exists( $hero_js_path ) ? filemtime( $hero_js_path ) : HUDL_VERSION;
+		wp_enqueue_script( 'hudl-hero-kinetic', get_template_directory_uri() . '/js/hero-kinetic.js', array(), $hero_js_ver, true );
+	}
 
 	// Threaded comments where enabled.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
