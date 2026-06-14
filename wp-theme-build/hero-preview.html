@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HUDL Hero — Preview (Hyper HUDL, centred)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+
+/* --- preview-only: reset + theme nav/stripe (approximates the real header) --- */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:#000;color:#fff;font-family:Archivo,system-ui,sans-serif;}
+ul{list-style:none;}
+a{color:inherit;text-decoration:none;}
+.stripe-bar{display:flex;height:5px;width:100%;}
+.stripe-bar span{flex:1;}
+.stripe-bar span:nth-child(1){background:#fbbf46;}
+.stripe-bar span:nth-child(2){background:#45aeff;}
+.stripe-bar span:nth-child(3){background:#ff515e;}
+.stripe-bar span:nth-child(4){background:#1edfd4;}
+nav.site-nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);
+  backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;
+  max-width:1400px;margin:0 auto;padding:0 32px;}
+.nav-logo{font-family:"Anton",sans-serif;font-size:26px;letter-spacing:2px;line-height:1;}
+.nav-logo .sub{display:block;font-family:"Space Mono",monospace;font-size:9px;font-weight:700;
+  letter-spacing:0.42em;color:rgba(255,255,255,0.55);margin-top:3px;}
+.nav-logo .lh{color:#fbbf46;}.nav-logo .lu{color:#45aeff;}.nav-logo .ld{color:#ff515e;}.nav-logo .ll{color:#1edfd4;}
+.nav-links{display:flex;gap:26px;align-items:center;}
+.nav-links a{font-family:"Space Mono",monospace;font-size:12px;font-weight:700;letter-spacing:0.08em;
+  text-transform:uppercase;color:rgba(255,255,255,0.82);}
+.nav-links a:hover{color:#fbbf46;}
+.nav-links .nav-cta{background:#fbbf46;color:#000;padding:13px 20px;border-radius:2px;}
+.preview-tail{padding:90px 7% 160px;border-top:1px solid rgba(255,255,255,0.07);}
+.preview-tail .note{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:0.16em;
+  text-transform:uppercase;color:rgba(255,255,255,0.4);}
+.preview-tail .ph{margin-top:26px;height:300px;border:1.5px dashed rgba(255,255,255,0.14);border-radius:6px;
+  display:flex;align-items:center;justify-content:center;font-family:"Space Mono",monospace;
+  font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);}
+@media(max-width:768px){.nav-links{display:none;}}
+
+/* ===========================================================================
+   HUDL — Kinetic scroll hero (Variant B "spin converge")
+   Scoped under .kh-hero so it never collides with the rest of the theme.
+   Fonts: Anton (headline/logo), Space Mono (eyebrow/buttons), Archivo (body).
+   =========================================================================== */
+
+/* --- Section box. Overrides the old #hero rules from style.css via the
+       higher-specificity #hero.kh-hero selector. Default (no-JS / reduced
+       motion) = a normal, non-pinned hero. JS adds .is-animating to switch
+       on the 205vh scroll runway + sticky pin. --- */
+#hero.kh-hero {
+  position: relative;
+  display: block;
+  min-height: 0;
+  height: auto;
+  padding: 0;
+  overflow: visible;
+  background: #000;
+}
+#hero.kh-hero.is-animating {
+  height: 205vh;
+}
+
+.kh-hero .kh-sticky {
+  position: static;
+}
+#hero.kh-hero.is-animating .kh-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.kh-hero .kh-stage {
+  position: relative;
+  width: 100%;
+  min-height: 86vh;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 7%;
+  overflow: hidden;
+}
+#hero.kh-hero.is-animating .kh-stage {
+  min-height: 0;
+  height: 100%;
+}
+
+/* Decorative vertical brand bars down the right (nod to the live site). */
+.kh-hero .kh-stripes {
+  position: absolute;
+  top: 0;
+  right: 4%;
+  bottom: 0;
+  display: flex;
+  gap: 14px;
+  opacity: 0.16;
+  z-index: 1;
+  pointer-events: none;
+}
+.kh-hero .kh-stripes span { display: block; width: 6px; height: 100%; }
+.kh-hero .kh-stripes span:nth-child(1) { background: #fbbf46; }
+.kh-hero .kh-stripes span:nth-child(2) { background: #45aeff; }
+.kh-hero .kh-stripes span:nth-child(3) { background: #ff515e; }
+.kh-hero .kh-stripes span:nth-child(4) { background: #1edfd4; }
+
+.kh-hero .kh-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1180px;
+  width: 100%;
+}
+
+/* Eyebrow */
+.kh-hero .kh-eyebrow {
+  margin: 0 0 22px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: #fbbf46;
+  font-size: clamp(11px, 1.1vw, 18px);
+}
+
+/* Headline */
+.kh-hero .kh-headline {
+  margin: 0;
+  font-family: "Anton", "Archivo Black", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.98;
+  letter-spacing: 0.025em;
+  font-size: clamp(2.5rem, 8.5vw, 9rem);
+  color: #fff;
+}
+.kh-hero .kh-headline .kh-word { display: inline-block; white-space: nowrap; }
+.kh-hero .kh-headline .kh-space { display: inline-block; width: 0.38em; }
+.kh-hero .kh-headline .kh-letter {
+  display: inline-block;
+  white-space: pre;
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+.kh-hero .kh-headline .kh-hudl { position: relative; z-index: 5; }
+
+/* Anti-FOUC: an inline script tags the hero with .kh-prep the moment it parses
+   (only runs when JS is enabled). The headline is hidden until the engine paints
+   its first frame, then .kh-prep is removed. With JS disabled the inline script
+   never runs, so the headline stays visible as a normal no-JS hero. */
+.kh-hero.kh-prep .kh-headline { opacity: 0; }
+
+/* Subline */
+.kh-hero .kh-subline {
+  margin: 26px 0 0;
+  font-family: Archivo, system-ui, sans-serif;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(14px, 1.5vw, 22px);
+  line-height: 1.5;
+  max-width: 620px;
+}
+
+/* CTAs */
+.kh-hero .kh-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 30px;
+}
+.kh-hero .kh-btn-primary,
+.kh-hero .kh-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: clamp(12px, 1.1vw, 18px);
+  padding: 18px 26px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, color 0.18s ease, filter 0.18s ease;
+}
+.kh-hero .kh-btn-primary { background: #fbbf46; color: #000; border: 1.5px solid #fbbf46; }
+.kh-hero .kh-btn-primary:hover { filter: brightness(0.95); transform: translateY(-2px); }
+.kh-hero .kh-btn-secondary { background: transparent; color: #fff; border: 1.5px solid rgba(255, 255, 255, 0.28); padding: 17px 24px; }
+.kh-hero .kh-btn-secondary:hover { border-color: #fff; color: #fff; }
+.kh-hero .kh-arrow-cta { font-size: 1.1em; }
+
+/* Scroll hint — only meaningful while animating */
+.kh-hero .kh-scrollhint {
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+  z-index: 2;
+}
+#hero.kh-hero.is-animating .kh-scrollhint { display: flex; }
+.kh-hero .kh-scrollhint-label {
+  font-family: "Space Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+.kh-hero .kh-scrollhint-arrow {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 18px;
+  animation: kh-bob 1.4s ease-in-out infinite;
+}
+@keyframes kh-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+
+/* While animating, hide supporting copy until JS reveals it on scroll. */
+#hero.kh-hero.is-animating .kh-eyebrow,
+#hero.kh-hero.is-animating .kh-subline,
+#hero.kh-hero.is-animating .kh-actions { opacity: 0; }
+
+/* Reduced motion / no-JS: guarantee everything is visible and assembled. */
+#hero.kh-hero.kh-static .kh-eyebrow,
+#hero.kh-hero.kh-static .kh-subline,
+#hero.kh-hero.kh-static .kh-actions { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  #hero.kh-hero { height: auto; }
+  #hero.kh-hero .kh-sticky { position: static; height: auto; }
+  .kh-hero .kh-scrollhint { display: none; }
+}
+
+/* Mobile tuning */
+@media (max-width: 768px) {
+  .kh-hero .kh-stage { padding: 32px 6%; }
+  .kh-hero .kh-stripes { display: none; }
+  .kh-hero .kh-actions { gap: 12px; }
+  .kh-hero .kh-btn-primary,
+  .kh-hero .kh-btn-secondary { padding: 15px 20px; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="stripe-bar" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo"><span><span class="lh">H</span><span class="lu">U</span><span class="ld">D</span><span class="ll">L</span></span><span class="sub">CONSULTANCY</span></a>
+    <ul class="nav-links">
+      <li><a href="#">About</a></li><li><a href="#">Services</a></li><li><a href="#">How We Work</a></li>
+      <li><a href="#">Meet Our Founders</a></li><li><a href="#">Clients</a></li><li><a href="#">Insights</a></li>
+      <li><a href="#" class="nav-cta">Book Your Free Consultation</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="hero" class="kh-hero" aria-label="Hero">
+  <div class="kh-sticky">
+    <div class="kh-stage">
+      <div class="kh-stripes" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <div class="kh-inner">
+        <p class="kh-eyebrow">Marketing Consultancy &mdash; Since 2020</p>
+        <h1 class="kh-headline">Let's HUDL together and grow</h1>
+        <p class="kh-subline">Strategic clarity, creative insight, measurable results. HUDL aligns your marketing with commercial goals &mdash; sharpening your brand, optimising performance, and driving sustainable growth.</p>
+        <div class="kh-actions">
+          <a class="kh-btn-primary" href="#">Book Your Free Consultation <span class="kh-arrow-cta" aria-hidden="true">&rarr;</span></a>
+          <a class="kh-btn-secondary" href="#">Our Services</a>
+        </div>
+      </div>
+      <div class="kh-scrollhint" aria-hidden="true">
+        <span class="kh-scrollhint-label">Scroll to assemble</span>
+        <span class="kh-scrollhint-arrow">&darr;</span>
+      </div>
+    </div>
+  </div>
+  <script>(function(){var s=document.currentScript;var h=s&&s.closest?s.closest('.kh-hero'):null;if(h){h.classList.add('kh-prep');}})();</script>
+</section>
+
+<section class="preview-tail">
+  <div class="note">&uarr; Hero releases &middot; normal page flow resumes here. Scroll back to the top &mdash; the headline stays assembled (no re-scramble).</div>
+  <div class="ph">Next section &mdash; proof strip / services / etc.</div>
+</section>
+
+<script>
+/**
+ * HUDL — Kinetic scroll hero · "Hyper HUDL" intro (vanilla port).
+ *
+ * Opening state: ONLY the four "HUDL" letters are on stage, hyper-scaled,
+ * tilted and spread left->right (H·U·D·L), CENTRED in the viewport. As the
+ * user scrolls, the HUDL letters shrink + untilt into their inline slot inside
+ * the headline while the rest of the words fly in and spin-converge to spell
+ * "LET'S HUDL TOGETHER AND GROW". Supporting copy fades up once it has landed.
+ *
+ * The giant HUDL cluster is re-centred on the stage (measured each layout), so
+ * the opening reads centred and responsive at any screen size, then resolves
+ * to the headline's natural (left-aligned) position as it assembles.
+ *
+ * Honours prefers-reduced-motion and degrades to a static hero with no JS.
+ * Reference maths: README §7–8 and production-reference/hero-kinetic.js.
+ */
+(function () {
+  'use strict';
+
+  var HUDL_COLORS = ['#fbbf46', '#45aeff', '#ff515e', '#1edfd4'];
+
+  // Hyper-sized intro anchors, one per HUDL letter (H, U, D, L).
+  //   ax = horizontal offset as a fraction of stage WIDTH (spread within cluster)
+  //   ay = vertical offset as a fraction of stage HEIGHT
+  //   rot = start rotation (deg) · sc = start scale multiplier
+  var GIANT = [
+    { ax: -0.24, ay: -0.06, rot: -12, sc: 4.0 },  // H
+    { ax: -0.05, ay:  0.08, rot:   8, sc: 4.4 },  // U
+    { ax:  0.15, ay: -0.08, rot:  -6, sc: 4.1 },  // D
+    { ax:  0.31, ay:  0.06, rot:  11, sc: 4.0 }   // L
+  ];
+  // Mean spread so the cluster can be re-centred (zero-mean spread around centre).
+  var MEAN_AX = (GIANT[0].ax + GIANT[1].ax + GIANT[2].ax + GIANT[3].ax) / 4;
+  var MEAN_AY = (GIANT[0].ay + GIANT[1].ay + GIANT[2].ay + GIANT[3].ay) / 4;
+
+  var HUDL_ASSEMBLE = 0.78; // HUDL letters reach home at 78% of progress
+  var ASSEMBLE_AT = 0.62;   // assembly completes at 62% of the scroll runway
+
+  // The other (white) letters fly in from a seeded scatter and spin-converge.
+  var CFG = { spread: 0.52, rot: 430, minScale: 0.3 };
+  var CONVERGE_START = 0.26;  // hidden until here
+  var CONVERGE_SPAN  = 0.30;  // per-letter stagger window
+
+  function clamp01(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+  function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+  // Deterministic PRNG so the scatter is stable, not re-randomised each frame.
+  function mulberry32(seed) {
+    var a = seed >>> 0;
+    return function () {
+      a |= 0; a = (a + 0x6D2B79F5) | 0;
+      var t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  function init() {
+    var hero = document.querySelector('.kh-hero');
+    if (!hero) { return; }
+
+    var stage = hero.querySelector('.kh-stage');
+    var h1 = hero.querySelector('.kh-headline');
+    var eyebrow = hero.querySelector('.kh-eyebrow');
+    var subline = hero.querySelector('.kh-subline');
+    var actions = hero.querySelector('.kh-actions');
+    var hint = hero.querySelector('.kh-scrollhint');
+    if (!stage || !h1) { hero.classList.remove('kh-prep'); return; }
+
+    // Tokenise the headline into words -> letters, flagging the "HUDL" word.
+    var text = h1.textContent.trim();
+    h1.textContent = '';
+    var words = text.split(/\s+/);
+    var letters = [];
+    var hudlLetters = [];
+    var li = 0;
+
+    words.forEach(function (word, wi) {
+      var wordSpan = document.createElement('span');
+      wordSpan.className = 'kh-word';
+      var clean = word.replace(/[^A-Za-z0-9]/g, '').toUpperCase();
+      var isHudlWord = clean === 'HUDL';
+      var hi = 0;
+
+      Array.prototype.forEach.call(word, function (ch) {
+        var isLetter = /[A-Za-z0-9]/.test(ch);
+        var span = document.createElement('span');
+        span.className = 'kh-letter';
+        span.textContent = ch;
+        var isHudl = isHudlWord && isLetter;
+        var rec = { el: span, i: li, isHudl: isHudl, hudlIndex: -1 };
+        if (isHudl) {
+          span.style.color = HUDL_COLORS[hi % 4];
+          span.classList.add('kh-hudl');
+          span.style.position = 'relative';
+          span.style.zIndex = '5';
+          rec.hudlIndex = hi;
+          hi++;
+          hudlLetters.push(rec);
+        }
+        wordSpan.appendChild(span);
+        letters.push(rec);
+        li++;
+      });
+
+      h1.appendChild(wordSpan);
+      if (wi < words.length - 1) {
+        var space = document.createElement('span');
+        space.className = 'kh-space';
+        space.setAttribute('aria-hidden', 'true');
+        space.appendChild(document.createTextNode(' '));
+        h1.appendChild(space);
+      }
+    });
+
+    var count = letters.length;
+
+    // Seeded scatter for the white letters (stable across frames).
+    var rand = mulberry32(7 + 4 * 13);
+    letters.forEach(function (L) {
+      L.dx = rand() * 2 - 1;
+      L.dy = rand() * 2 - 1;
+      L.rs = rand() < 0.5 ? -1 : 1;
+      L.rj = 0.6 + rand() * 0.4;
+    });
+
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) {
+      // Letters already sit assembled; just reveal and bail (no scroll binding).
+      hero.classList.add('kh-static');
+      hero.classList.remove('kh-prep');
+      return;
+    }
+
+    hero.classList.add('is-animating');
+
+    var dimW = 0;
+    var dimH = 0;
+    var centerX = 0; // offset to bring the assembled HUDL cluster to stage centre
+    var centerY = 0;
+
+    function measure() {
+      dimW = stage.clientWidth;
+      dimH = stage.clientHeight;
+
+      // Fluid headline size computed from the stage width (matches reference).
+      var fs = Math.max(34, Math.min(dimW * 0.092, 168));
+      h1.style.fontSize = fs + 'px';
+      if (eyebrow) {
+        eyebrow.style.fontSize = Math.max(11, fs * 0.105) + 'px';
+        eyebrow.style.marginBottom = (fs * 0.18) + 'px';
+      }
+      if (subline) {
+        subline.style.fontSize = Math.max(14, fs * 0.165) + 'px';
+        subline.style.marginTop = (fs * 0.26) + 'px';
+      }
+      if (actions) { actions.style.marginTop = (fs * 0.3) + 'px'; }
+      var btnSize = Math.max(12, fs * 0.13) + 'px';
+      hero.querySelectorAll('.kh-btn-primary, .kh-btn-secondary').forEach(function (b) {
+        b.style.fontSize = btnSize;
+      });
+
+      // Measure the HUDL letters' natural (untransformed) box to centre the
+      // giant intro cluster on the stage. Clear their transform first so the
+      // rects reflect pure layout, then the next render() re-applies them.
+      if (hudlLetters.length) {
+        for (var k = 0; k < hudlLetters.length; k++) { hudlLetters[k].el.style.transform = 'none'; }
+        var sr = stage.getBoundingClientRect();
+        var minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+        for (var j = 0; j < hudlLetters.length; j++) {
+          var r = hudlLetters[j].el.getBoundingClientRect();
+          if (r.left < minX) { minX = r.left; }
+          if (r.right > maxX) { maxX = r.right; }
+          if (r.top < minY) { minY = r.top; }
+          if (r.bottom > maxY) { maxY = r.bottom; }
+        }
+        var clusterCx = (minX + maxX) / 2 - sr.left;
+        var clusterCy = (minY + maxY) / 2 - sr.top;
+        centerX = sr.width / 2 - clusterCx;
+        centerY = sr.height / 2 - clusterCy;
+      }
+    }
+
+    function revealCopy(el, progress, start) {
+      if (!el) { return; }
+      var rv = clamp01((progress - start) / (1 - start));
+      el.style.opacity = rv.toFixed(3);
+      el.style.transform = 'translateY(' + ((1 - rv) * 22).toFixed(1) + 'px)';
+    }
+
+    function render(progress) {
+      var spreadX = dimW * CFG.spread;
+      var spreadY = dimH * CFG.spread * 1.05;
+
+      for (var i = 0; i < count; i++) {
+        var L = letters[i];
+
+        if (L.isHudl) {
+          // Hyper-sized intro: centred giant cluster -> natural inline slot.
+          var a = GIANT[L.hudlIndex] || GIANT[0];
+          var local = easeOutCubic(clamp01(progress / HUDL_ASSEMBLE));
+          var inv = 1 - local;
+          // Centring offset + zero-mean spread, both fading out as it assembles.
+          var gtx = (centerX + (a.ax - MEAN_AX) * dimW) * inv;
+          var gty = (centerY + (a.ay - MEAN_AY) * dimH) * inv;
+          var grot = a.rot * inv;
+          var gsc = 1 + (a.sc - 1) * inv;
+          L.el.style.transform = 'translate3d(' + gtx.toFixed(1) + 'px,' + gty.toFixed(1) + 'px,0) rotate(' + grot.toFixed(2) + 'deg) scale(' + gsc.toFixed(3) + ')';
+          L.el.style.opacity = '1';
+          L.el.style.filter = 'none';
+          continue;
+        }
+
+        // Other letters: hidden at start, then fly in & spin-converge.
+        var delay = count > 1 ? (L.i / (count - 1)) * CONVERGE_SPAN : 0;
+        var rr = clamp01((progress - CONVERGE_START - delay) / (1 - CONVERGE_START - delay));
+        var e = easeOutCubic(rr);
+        var cinv = 1 - e;
+        var tx = L.dx * spreadX * cinv;
+        var ty = L.dy * spreadY * cinv;
+        var crot = L.rs * CFG.rot * L.rj * cinv;
+        var csc = 1 - cinv * (1 - CFG.minScale);
+        L.el.style.transform = 'translate3d(' + tx.toFixed(1) + 'px,' + ty.toFixed(1) + 'px,0) rotate(' + crot.toFixed(1) + 'deg) scale(' + csc.toFixed(3) + ')';
+        L.el.style.opacity = e.toFixed(3);
+      }
+
+      revealCopy(eyebrow, progress, 0.62);
+      revealCopy(subline, progress, 0.80);
+      revealCopy(actions, progress, 0.88);
+      if (hint) { hint.style.opacity = progress < 0.96 ? '1' : '0'; }
+    }
+
+    // Monotonic "high-water mark": progress only moves forward, so scrolling
+    // back to the top never replays the scramble.
+    var peak = 0;
+    function update() {
+      var rect = hero.getBoundingClientRect();
+      var total = hero.offsetHeight - window.innerHeight;
+      var scrolled = clamp01(-rect.top / (total || 1));
+      var target = clamp01(scrolled / ASSEMBLE_AT);
+      if (target > peak) { peak = target; }
+      render(peak);
+    }
+
+    var ticking = false;
+    function onScroll() {
+      if (ticking) { return; }
+      ticking = true;
+      requestAnimationFrame(function () { ticking = false; update(); });
+    }
+
+    measure();
+    update();
+    hero.classList.remove('kh-prep'); // reveal now that the first frame is set
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', function () { measure(); update(); });
+
+    // Re-measure once webfonts have settled so sizing/centring stay accurate.
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(function () { measure(); update(); });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+</script>
+</body>
+</html>

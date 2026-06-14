@@ -98,8 +98,16 @@
 .kh-hero .kh-headline .kh-letter {
   display: inline-block;
   white-space: pre;
+  transform-origin: center center;
   will-change: transform, opacity;
 }
+.kh-hero .kh-headline .kh-hudl { position: relative; z-index: 5; }
+
+/* Anti-FOUC: an inline script tags the hero with .kh-prep the moment it parses
+   (only runs when JS is enabled). The headline is hidden until the engine paints
+   its first frame, then .kh-prep is removed. With JS disabled the inline script
+   never runs, so the headline stays visible as a normal no-JS hero. */
+.kh-hero.kh-prep .kh-headline { opacity: 0; }
 
 /* Subline */
 .kh-hero .kh-subline {

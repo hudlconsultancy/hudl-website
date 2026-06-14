@@ -39,4 +39,6 @@
 			</div>
 		</div>
 	</div>
+	<?php // Anti-FOUC: hide the headline until the engine paints its first frame. Only runs when JS is enabled. ?>
+	<script>(function(){var s=document.currentScript;var h=s&&s.closest?s.closest('.kh-hero'):null;if(h){h.classList.add('kh-prep');}})();</script>
 </section>
