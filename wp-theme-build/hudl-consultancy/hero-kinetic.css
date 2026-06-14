@@ -90,11 +90,14 @@
   text-transform: uppercase;
   line-height: 0.98;
   letter-spacing: 0.025em;
+  /* Word gap delivered via word-spacing (on real, collapsible spaces) so wrapped
+     lines never inherit a leading indent. Tuned to ~the design's 0.38em gap. */
+  word-spacing: 0.13em;
   font-size: clamp(2.5rem, 8.5vw, 9rem);
   color: #fff;
+  text-align: left;
 }
 .kh-hero .kh-headline .kh-word { display: inline-block; white-space: nowrap; }
-.kh-hero .kh-headline .kh-space { display: inline-block; width: 0.38em; }
 .kh-hero .kh-headline .kh-letter {
   display: inline-block;
   white-space: pre;

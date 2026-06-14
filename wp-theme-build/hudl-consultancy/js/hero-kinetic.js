@@ -105,11 +105,11 @@
 
       h1.appendChild(wordSpan);
       if (wi < words.length - 1) {
-        var space = document.createElement('span');
-        space.className = 'kh-space';
-        space.setAttribute('aria-hidden', 'true');
-        space.appendChild(document.createTextNode(' '));
-        h1.appendChild(space);
+        // A real, collapsible space between words: it provides the line-break
+        // opportunity AND is removed at the start of a wrapped line, so every
+        // line stays flush-left (no indent) at any screen size. The visual gap
+        // is set via `word-spacing` in the CSS.
+        h1.appendChild(document.createTextNode(' '));
       }
     });
 
