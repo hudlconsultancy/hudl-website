@@ -13,8 +13,10 @@
 
   var HUDL_COLORS = ['#fbbf46', '#45aeff', '#ff515e', '#1edfd4'];
 
-  // Variant B — "spin converge"
-  var CFG = { span: 0.26, spread: 0.52, rot: 430, minScale: 0.2 };
+  // Variant B — "spin converge".
+  // Tuned vs. the original spec for a bolder, more legible opening scatter:
+  // larger minScale (letters stay big), tighter spread, lighter blur.
+  var CFG = { span: 0.26, spread: 0.46, rot: 430, minScale: 0.6 };
   // Assembly completes at 62% of the scroll runway, then holds while pinned.
   var ASSEMBLE_AT = 0.62;
 
@@ -146,8 +148,9 @@
         var sc = 1 - inv * (1 - CFG.minScale);
 
         L.el.style.transform = 'translate3d(' + tx.toFixed(1) + 'px,' + ty.toFixed(1) + 'px,0) rotate(' + rot.toFixed(1) + 'deg) scale(' + sc.toFixed(3) + ')';
-        L.el.style.opacity = (0.34 + 0.66 * local).toFixed(3);
-        var blur = inv > 0.02 ? inv * 5 : 0;
+        // Keep the scattered letters clearly visible (HUDL reads even when scrambled).
+        L.el.style.opacity = (0.5 + 0.5 * local).toFixed(3);
+        var blur = inv > 0.04 ? inv * 2 : 0;
         L.el.style.filter = blur ? 'blur(' + blur.toFixed(1) + 'px)' : 'none';
       }
 
@@ -157,11 +160,17 @@
       if (hint) { hint.style.opacity = progress < 0.96 ? '1' : '0'; }
     }
 
+    // Monotonic "high-water mark": progress only ever moves forward. The intro
+    // scatter plays once on load; once the headline assembles it stays assembled,
+    // so scrolling back to the top never re-scrambles it.
+    var peak = 0;
     function update() {
       var rect = hero.getBoundingClientRect();
       var total = hero.offsetHeight - window.innerHeight;
       var scrolled = clamp01(-rect.top / (total || 1));
-      render(clamp01(scrolled / ASSEMBLE_AT));
+      var target = clamp01(scrolled / ASSEMBLE_AT);
+      if (target > peak) { peak = target; }
+      render(peak);
     }
 
     var ticking = false;
