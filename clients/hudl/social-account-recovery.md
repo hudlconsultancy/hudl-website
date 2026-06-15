@@ -7,7 +7,7 @@
 ## Status tracker
 | Platform  | Handle / URL                     | Status            | Route in progress            | Last action |
 |-----------|----------------------------------|-------------------|------------------------------|-------------|
-| Facebook  | facebook.com/HudL.gg             | 🟡 Recovering     | Business Page ownership claim | 2026-06-15 — preparing submission |
+| Facebook  | facebook.com/HudL.gg             | 🟡 Recovering     | Business Page ownership claim (ex-provider dispute) | 2026-06-15 — preparing submission |
 | Instagram | @hudl.gg                         | ⚪ Not started    | —                            | — |
 | Twitter/X | @HudL_gg                         | ⚪ Not started    | —                            | — |
 
@@ -16,6 +16,14 @@
 ## Facebook — chosen route: Business Page ownership claim
 
 **Why this route:** HUDL Consultancy Limited is the registered owner of the Page. A document-backed ownership claim is the most reliable path Meta offers — stronger than a password/ID reset, which fails if an attacker changed the email/phone or enabled 2FA. If we're also locked out of the personal profile that admins the Page, we run the `facebook.com/hacked` identity check **in parallel**.
+
+**What actually happened (case facts):** A social media manager engaged by HUDL was granted access, then **changed the login credentials and replaced the recovery details with their own personal mobile number** (not a HUDL or HUDL-owner number), locking the company out. This is unauthorised retention/alteration of access to a company-owned asset by a former/third-party provider — **an ownership dispute, not a generic hack.** This works in our favour: the company can prove it owns the brand, and the current recovery details demonstrably belong to an individual, not the business.
+
+### Extra evidence to gather for THIS case (strengthens the claim a lot)
+- [ ] Any **contract, engagement letter, invoice or email thread** with the social media manager showing they worked *for* HUDL (proves they were a service provider, not the owner).
+- [ ] Evidence the Page **predates** that engagement / that HUDL created or controlled it first (old emails, original setup confirmation, earlier posts).
+- [ ] A note that the **recovery mobile number now on the account is not owned by HUDL or its director** — name the provider/individual if known.
+- [ ] If you have it: written communication where you **asked them to return access and they refused/ignored** it.
 
 ### Where to submit
 1. **Primary:** Business Help Centre → https://www.facebook.com/business/help/support → search *"I can't access my Page" / report a Page you're locked out of*.
@@ -47,10 +55,14 @@ Subject: Loss of access to company-owned Facebook Page — HUDL Consultancy Limi
 I am writing on behalf of HUDL Consultancy Limited (UK company no. [COMPANY NUMBER]),
 the legal owner of the Facebook Page at https://www.facebook.com/HudL.gg.
 
-The company has lost administrative access to this Page as of [DATE / approx date].
-[Briefly: e.g. "the admin's login details were changed and we can no longer sign in" /
-"the previous admin is no longer with the company" / "we are unable to reach the
-account that held admin rights".]
+The company lost administrative access to this Page on/around [DATE]. A social media
+manager engaged by HUDL Consultancy Limited was granted access to the Page and then,
+without authorisation, changed the login credentials and replaced the account's
+recovery details with their own personal mobile number — a number that does not belong
+to HUDL Consultancy Limited or to the company's director. As a result the company, the
+rightful owner of the Page, is locked out of its own asset. This is an unauthorised
+retention of access by a former service provider, not a transfer of ownership; HUDL
+never authorised ownership or control of the Page to pass to this individual.
 
 HUDL Consultancy Limited owns the HUDL brand and this Page, which we use for the
 company's official marketing. I am [FULL NAME], a director/authorised representative
@@ -60,9 +72,11 @@ To verify ownership I have attached:
 - Certificate of incorporation / Companies House record for HUDL Consultancy Limited
 - [Government photo ID for the authorised representative]
 - [Domain/business document linking the company to the hudl.gg brand]
+- [Contract/invoice/emails showing the individual was engaged as a service provider]
 
-Please restore administrative access to this Page to my account, or advise the exact
-documents required to complete verification. I am happy to provide anything further.
+Please restore administrative access to this Page to my account and remove the
+unauthorised recovery details, or advise the exact documents required to complete
+verification. I am happy to provide anything further.
 
 Thank you,
 [FULL NAME]
